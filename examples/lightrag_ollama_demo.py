@@ -51,14 +51,14 @@ rag = LightRAG(
 )
 
 
-with open("./data/tiki_books_vn.txt", "r", encoding="utf-8") as f:
-  rag.insert(f.read())
-with open("./data/books_goodreads_en.txt", "r", encoding="utf-8") as f:
-  rag.insert(f.read())
+#with open("./data/tiki_books_vn.txt", "r", encoding="utf-8") as f:
+#  rag.insert(f.read())
+#with open("./data/books_goodreads_en.txt", "r", encoding="utf-8") as f:
+#  rag.insert(f.read())
 
 
 # Perform local search
-input = "Sách Cây Cam Ngọt Của Tôi được sản xuất bởi nhà xuất bản nào?"
+input = "Tư vấn Sách Cây Cam Ngọt Của Tôi"
 print("\n\n🔎🔎🔎 QUERY: " + input + "\n\n")
 
 # Perform local search

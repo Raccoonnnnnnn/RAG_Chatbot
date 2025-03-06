@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import configparser
 import os
+import warnings
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from functools import partial
@@ -35,7 +36,7 @@ from .operate import (
     mix_kg_vector_query,
     naive_query,
 )
-from .prompt import GRAPH_FIELD_SEP
+from .prompt import GRAPH_FIELD_SEP, PROMPTS
 from .utils import (
     EmbeddingFunc,
     always_get_an_event_loop,
@@ -45,9 +46,12 @@ from .utils import (
     lazy_external_import,
     limit_async_func_call,
     logger,
-    set_logger,
 )
 from .types import KnowledgeGraph
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv(override=True)
 
 # TODO: TO REMOVE @Yannick
 config = configparser.ConfigParser()
@@ -82,14 +86,10 @@ class LightRAG:
     doc_status_storage: str = field(default="JsonDocStatusStorage")
     """Storage type for tracking document processing statuses."""
 
-    # Logging
+    # Logging (Deprecated, use setup_logger in utils.py instead)
     # ---
-
-    log_level: int = field(default=logger.level)
-    """Logging level for the system (e.g., 'DEBUG', 'INFO', 'WARNING')."""
-
-    log_file_path: str = field(default=os.path.join(os.getcwd(), "lightrag.log"))
-    """Log file path."""
+    log_level: int | None = field(default=None)
+    log_file_path: str | None = field(default=None)
 
     # Entity extraction
     # ---
@@ -236,7 +236,11 @@ class LightRAG:
     max_parallel_insert: int = field(default=int(os.getenv("MAX_PARALLEL_INSERT", 20)))
     """Maximum number of parallel insert operations."""
 
-    addon_params: dict[str, Any] = field(default_factory=dict)
+    addon_params: dict[str, Any] = field(
+        default_factory=lambda: {
+            "language": os.getenv("SUMMARY_LANGUAGE", PROMPTS["DEFAULT_LANGUAGE"])
+        }
+    )
 
     # Storages Management
     # ---
@@ -263,9 +267,31 @@ class LightRAG:
     _storages_status: StoragesStatus = field(default=StoragesStatus.NOT_CREATED)
 
     def __post_init__(self):
-        os.makedirs(os.path.dirname(self.log_file_path), exist_ok=True)
-        set_logger(self.log_file_path, self.log_level)
-        logger.info(f"Logger initialized for working directory: {self.working_dir}")
+        from lightrag.kg.shared_storage import (
+            initialize_share_data,
+        )
+
+        # Handle deprecated parameters
+        if self.log_level is not None:
+            warnings.warn(
+                "WARNING: log_level parameter is deprecated, use setup_logger in utils.py instead",
+                UserWarning,
+                stacklevel=2,
+            )
+        if self.log_file_path is not None:
+            warnings.warn(
+                "WARNING: log_file_path parameter is deprecated, use setup_logger in utils.py instead",
+                UserWarning,
+                stacklevel=2,
+            )
+
+        # Remove these attributes to prevent their use
+        if hasattr(self, "log_level"):
+            delattr(self, "log_level")
+        if hasattr(self, "log_file_path"):
+            delattr(self, "log_file_path")
+
+        initialize_share_data()
 
         if not os.path.exists(self.working_dir):
             logger.info(f"Creating working directory {self.working_dir}")
@@ -355,14 +381,14 @@ class LightRAG:
                 self.namespace_prefix, NameSpace.VECTOR_STORE_ENTITIES
             ),
             embedding_func=self.embedding_func,
-            meta_fields={"entity_name"},
+            meta_fields={"entity_name", "source_id", "content"},
         )
         self.relationships_vdb: BaseVectorStorage = self.vector_db_storage_cls(  # type: ignore
             namespace=make_namespace(
                 self.namespace_prefix, NameSpace.VECTOR_STORE_RELATIONSHIPS
             ),
             embedding_func=self.embedding_func,
-            meta_fields={"src_id", "tgt_id"},
+            meta_fields={"src_id", "tgt_id", "source_id", "content"},
         )
         self.chunks_vdb: BaseVectorStorage = self.vector_db_storage_cls(  # type: ignore
             namespace=make_namespace(
@@ -387,6 +413,7 @@ class LightRAG:
                 namespace=make_namespace(
                     self.namespace_prefix, NameSpace.KV_STORE_LLM_RESPONSE_CACHE
                 ),
+                global_config=asdict(self),
                 embedding_func=self.embedding_func,
             )
 
@@ -400,16 +427,31 @@ class LightRAG:
 
         self._storages_status = StoragesStatus.CREATED
 
-        # Initialize storages
         if self.auto_manage_storages_states:
-            loop = always_get_an_event_loop()
-            loop.run_until_complete(self.initialize_storages())
+            self._run_async_safely(self.initialize_storages, "Storage Initialization")
 
     def __del__(self):
-        # Finalize storages
         if self.auto_manage_storages_states:
+            self._run_async_safely(self.finalize_storages, "Storage Finalization")
+
+    def _run_async_safely(self, async_func, action_name=""):
+        """Safely execute an async function, avoiding event loop conflicts."""
+        try:
             loop = always_get_an_event_loop()
-            loop.run_until_complete(self.finalize_storages())
+            if loop.is_running():
+                task = loop.create_task(async_func())
+                task.add_done_callback(
+                    lambda t: logger.info(f"{action_name} completed!")
+                )
+            else:
+                loop.run_until_complete(async_func())
+        except RuntimeError:
+            logger.warning(
+                f"No running event loop, creating a new loop for {action_name}."
+            )
+            loop = asyncio.new_event_loop()
+            loop.run_until_complete(async_func())
+            loop.close()
 
     async def initialize_storages(self):
         """Asynchronously initialize the storages"""
@@ -462,10 +504,10 @@ class LightRAG:
         return text
 
     async def get_knowledge_graph(
-        self, nodel_label: str, max_depth: int
+        self, node_label: str, max_depth: int
     ) -> KnowledgeGraph:
         return await self.chunk_entity_relation_graph.get_knowledge_graph(
-            node_label=nodel_label, max_depth=max_depth
+            node_label=node_label, max_depth=max_depth
         )
 
     def _get_storage_class(self, storage_name: str) -> Callable[..., Any]:
@@ -473,12 +515,17 @@ class LightRAG:
         storage_class = lazy_external_import(import_path, storage_name)
         return storage_class
 
+    @staticmethod
+    def clean_text(text: str) -> str:
+        """Clean text by removing null bytes (0x00) and whitespace"""
+        return text.strip().replace("\x00", "")
+
     def insert(
         self,
         input: str | list[str],
         split_by_character: str | None = None,
         split_by_character_only: bool = False,
-        ids: list[str] | None = None,
+        ids: str | list[str] | None = None,
     ) -> None:
         """Sync Insert documents with checkpoint support
 
@@ -487,7 +534,7 @@ class LightRAG:
             split_by_character: if split_by_character is not None, split the string by character, if chunk longer than
             split_by_character_only: if split_by_character_only is True, split the string by character only, when
             split_by_character is None, this parameter is ignored.
-            ids: list of unique document IDs, if not provided, MD5 hash IDs will be generated
+            ids: single string of the document ID or list of unique document IDs, if not provided, MD5 hash IDs will be generated
         """
         loop = always_get_an_event_loop()
         loop.run_until_complete(
@@ -499,7 +546,7 @@ class LightRAG:
         input: str | list[str],
         split_by_character: str | None = None,
         split_by_character_only: bool = False,
-        ids: list[str] | None = None,
+        ids: str | list[str] | None = None,
     ) -> None:
         """Async Insert documents with checkpoint support
 
@@ -515,17 +562,32 @@ class LightRAG:
             split_by_character, split_by_character_only
         )
 
-    def insert_custom_chunks(self, full_text: str, text_chunks: list[str]) -> None:
+    def insert_custom_chunks(
+        self,
+        full_text: str,
+        text_chunks: list[str],
+        doc_id: str | list[str] | None = None,
+    ) -> None:
         loop = always_get_an_event_loop()
-        loop.run_until_complete(self.ainsert_custom_chunks(full_text, text_chunks))
+        loop.run_until_complete(
+            self.ainsert_custom_chunks(full_text, text_chunks, doc_id)
+        )
 
     async def ainsert_custom_chunks(
-        self, full_text: str, text_chunks: list[str]
+        self, full_text: str, text_chunks: list[str], doc_id: str | None = None
     ) -> None:
         update_storage = False
         try:
-            doc_key = compute_mdhash_id(full_text.strip(), prefix="doc-")
-            new_docs = {doc_key: {"content": full_text.strip()}}
+            # Clean input texts
+            full_text = self.clean_text(full_text)
+            text_chunks = [self.clean_text(chunk) for chunk in text_chunks]
+
+            # Process cleaned texts
+            if doc_id is None:
+                doc_key = compute_mdhash_id(full_text, prefix="doc-")
+            else:
+                doc_key = doc_id
+            new_docs = {doc_key: {"content": full_text}}
 
             _add_doc_keys = await self.full_docs.filter_keys({doc_key})
             new_docs = {k: v for k, v in new_docs.items() if k in _add_doc_keys}
@@ -538,11 +600,10 @@ class LightRAG:
 
             inserting_chunks: dict[str, Any] = {}
             for chunk_text in text_chunks:
-                chunk_text_stripped = chunk_text.strip()
-                chunk_key = compute_mdhash_id(chunk_text_stripped, prefix="chunk-")
+                chunk_key = compute_mdhash_id(chunk_text, prefix="chunk-")
 
                 inserting_chunks[chunk_key] = {
-                    "content": chunk_text_stripped,
+                    "content": chunk_text,
                     "full_doc_id": doc_key,
                 }
 
@@ -568,7 +629,7 @@ class LightRAG:
                 await self._insert_done()
 
     async def apipeline_enqueue_documents(
-        self, input: str | list[str], ids: list[str] | None
+        self, input: str | list[str], ids: list[str] | None = None
     ) -> None:
         """
         Pipeline for Processing Documents
@@ -581,6 +642,8 @@ class LightRAG:
         """
         if isinstance(input, str):
             input = [input]
+        if isinstance(ids, str):
+            ids = [ids]
 
         # 1. Validate ids if provided or generate MD5 hash IDs
         if ids is not None:
@@ -593,13 +656,12 @@ class LightRAG:
                 raise ValueError("IDs must be unique")
 
             # Generate contents dict of IDs provided by user and documents
-            contents = {id_: doc.strip() for id_, doc in zip(ids, input)}
+            contents = {id_: doc for id_, doc in zip(ids, input)}
         else:
+            # Clean input text and remove duplicates
+            input = list(set(self.clean_text(doc) for doc in input))
             # Generate contents dict of MD5 hash IDs and documents
-            contents = {
-                compute_mdhash_id(doc.strip(), prefix="doc-"): doc.strip()
-                for doc in input
-            }
+            contents = {compute_mdhash_id(doc, prefix="doc-"): doc for doc in input}
 
         # 2. Remove duplicate contents
         unique_contents = {
@@ -627,8 +689,24 @@ class LightRAG:
         all_new_doc_ids = set(new_docs.keys())
         # Exclude IDs of documents that are already in progress
         unique_new_doc_ids = await self.doc_status.filter_keys(all_new_doc_ids)
+
+        # Log ignored document IDs
+        ignored_ids = [
+            doc_id for doc_id in unique_new_doc_ids if doc_id not in new_docs
+        ]
+        if ignored_ids:
+            logger.warning(
+                f"Ignoring {len(ignored_ids)} document IDs not found in new_docs"
+            )
+            for doc_id in ignored_ids:
+                logger.warning(f"Ignored document ID: {doc_id}")
+
         # Filter new_docs to only include documents with unique IDs
-        new_docs = {doc_id: new_docs[doc_id] for doc_id in unique_new_doc_ids}
+        new_docs = {
+            doc_id: new_docs[doc_id]
+            for doc_id in unique_new_doc_ids
+            if doc_id in new_docs
+        }
 
         if not new_docs:
             logger.info("No new unique documents were found.")
@@ -653,117 +731,253 @@ class LightRAG:
         3. Process each chunk for entity and relation extraction
         4. Update the document status
         """
-        # 1. Get all pending, failed, and abnormally terminated processing documents.
-        # Run the asynchronous status retrievals in parallel using asyncio.gather
-        processing_docs, failed_docs, pending_docs = await asyncio.gather(
-            self.doc_status.get_docs_by_status(DocStatus.PROCESSING),
-            self.doc_status.get_docs_by_status(DocStatus.FAILED),
-            self.doc_status.get_docs_by_status(DocStatus.PENDING),
+        from lightrag.kg.shared_storage import (
+            get_namespace_data,
+            get_pipeline_status_lock,
         )
 
-        to_process_docs: dict[str, DocProcessingStatus] = {}
-        to_process_docs.update(processing_docs)
-        to_process_docs.update(failed_docs)
-        to_process_docs.update(pending_docs)
+        # Get pipeline status shared data and lock
+        pipeline_status = await get_namespace_data("pipeline_status")
+        pipeline_status_lock = get_pipeline_status_lock()
 
-        if not to_process_docs:
-            logger.info("All documents have been processed or are duplicates")
-            return
+        # Check if another process is already processing the queue
+        async with pipeline_status_lock:
+            # Ensure only one worker is processing documents
+            if not pipeline_status.get("busy", False):
+                # 先检查是否有需要处理的文档
+                processing_docs, failed_docs, pending_docs = await asyncio.gather(
+                    self.doc_status.get_docs_by_status(DocStatus.PROCESSING),
+                    self.doc_status.get_docs_by_status(DocStatus.FAILED),
+                    self.doc_status.get_docs_by_status(DocStatus.PENDING),
+                )
 
-        # 2. split docs into chunks, insert chunks, update doc status
-        docs_batches = [
-            list(to_process_docs.items())[i : i + self.max_parallel_insert]
-            for i in range(0, len(to_process_docs), self.max_parallel_insert)
-        ]
+                to_process_docs: dict[str, DocProcessingStatus] = {}
+                to_process_docs.update(processing_docs)
+                to_process_docs.update(failed_docs)
+                to_process_docs.update(pending_docs)
 
-        logger.info(f"Number of batches to process: {len(docs_batches)}.")
+                # 如果没有需要处理的文档，直接返回，保留 pipeline_status 中的内容不变
+                if not to_process_docs:
+                    logger.info("No documents to process")
+                    return
 
-        batches: list[Any] = []
-        # 3. iterate over batches
-        for batch_idx, docs_batch in enumerate(docs_batches):
-
-            async def batch(
-                batch_idx: int,
-                docs_batch: list[tuple[str, DocProcessingStatus]],
-                size_batch: int,
-            ) -> None:
-                logger.info(f"Start processing batch {batch_idx + 1} of {size_batch}.")
-                # 4. iterate over batch
-                for doc_id_processing_status in docs_batch:
-                    doc_id, status_doc = doc_id_processing_status
-                    # Generate chunks from document
-                    chunks: dict[str, Any] = {
-                        compute_mdhash_id(dp["content"], prefix="chunk-"): {
-                            **dp,
-                            "full_doc_id": doc_id,
-                        }
-                        for dp in self.chunking_func(
-                            status_doc.content,
-                            split_by_character,
-                            split_by_character_only,
-                            self.chunk_overlap_token_size,
-                            self.chunk_token_size,
-                            self.tiktoken_model_name,
-                        )
+                # 有文档需要处理，更新 pipeline_status
+                pipeline_status.update(
+                    {
+                        "busy": True,
+                        "job_name": "indexing files",
+                        "job_start": datetime.now().isoformat(),
+                        "docs": 0,
+                        "batchs": 0,
+                        "cur_batch": 0,
+                        "request_pending": False,  # Clear any previous request
+                        "latest_message": "",
                     }
-                    # Process document (text chunks and full docs) in parallel
-                    tasks = [
-                        self.doc_status.upsert(
-                            {
-                                doc_id: {
-                                    "status": DocStatus.PROCESSING,
-                                    "updated_at": datetime.now().isoformat(),
-                                    "content": status_doc.content,
-                                    "content_summary": status_doc.content_summary,
-                                    "content_length": status_doc.content_length,
-                                    "created_at": status_doc.created_at,
-                                }
-                            }
-                        ),
-                        self.chunks_vdb.upsert(chunks),
-                        self._process_entity_relation_graph(chunks),
-                        self.full_docs.upsert(
-                            {doc_id: {"content": status_doc.content}}
-                        ),
-                        self.text_chunks.upsert(chunks),
-                    ]
-                    try:
-                        await asyncio.gather(*tasks)
-                        await self.doc_status.upsert(
-                            {
-                                doc_id: {
-                                    "status": DocStatus.PROCESSED,
-                                    "chunks_count": len(chunks),
-                                    "content": status_doc.content,
-                                    "content_summary": status_doc.content_summary,
-                                    "content_length": status_doc.content_length,
-                                    "created_at": status_doc.created_at,
-                                    "updated_at": datetime.now().isoformat(),
-                                }
-                            }
-                        )
-                    except Exception as e:
-                        logger.error(f"Failed to process document {doc_id}: {str(e)}")
-                        await self.doc_status.upsert(
-                            {
-                                doc_id: {
-                                    "status": DocStatus.FAILED,
-                                    "error": str(e),
-                                    "content": status_doc.content,
-                                    "content_summary": status_doc.content_summary,
-                                    "content_length": status_doc.content_length,
-                                    "created_at": status_doc.created_at,
-                                    "updated_at": datetime.now().isoformat(),
-                                }
-                            }
-                        )
-                        continue
-                logger.info(f"Completed batch {batch_idx + 1} of {len(docs_batches)}.")
+                )
+                # Cleaning history_messages without breaking it as a shared list object
+                del pipeline_status["history_messages"][:]
+            else:
+                # Another process is busy, just set request flag and return
+                pipeline_status["request_pending"] = True
+                logger.info(
+                    "Another process is already processing the document queue. Request queued."
+                )
+                return
 
-            batches.append(batch(batch_idx, docs_batch, len(docs_batches)))
+        try:
+            # Process documents until no more documents or requests
+            while True:
+                if not to_process_docs:
+                    log_message = "All documents have been processed or are duplicates"
+                    logger.info(log_message)
+                    pipeline_status["latest_message"] = log_message
+                    pipeline_status["history_messages"].append(log_message)
+                    break
 
-        await asyncio.gather(*batches)
-        await self._insert_done()
+                # 2. split docs into chunks, insert chunks, update doc status
+                docs_batches = [
+                    list(to_process_docs.items())[i : i + self.max_parallel_insert]
+                    for i in range(0, len(to_process_docs), self.max_parallel_insert)
+                ]
+
+                log_message = f"Number of batches to process: {len(docs_batches)}."
+                logger.info(log_message)
+
+                # Update pipeline status with current batch information
+                pipeline_status["docs"] += len(to_process_docs)
+                pipeline_status["batchs"] += len(docs_batches)
+                pipeline_status["latest_message"] = log_message
+                pipeline_status["history_messages"].append(log_message)
+
+                batches: list[Any] = []
+                # 3. iterate over batches
+                for batch_idx, docs_batch in enumerate(docs_batches):
+                    # Update current batch in pipeline status (directly, as it's atomic)
+                    pipeline_status["cur_batch"] += 1
+
+                    async def batch(
+                        batch_idx: int,
+                        docs_batch: list[tuple[str, DocProcessingStatus]],
+                        size_batch: int,
+                    ) -> None:
+                        log_message = (
+                            f"Start processing batch {batch_idx + 1} of {size_batch}."
+                        )
+                        logger.info(log_message)
+                        pipeline_status["latest_message"] = log_message
+                        pipeline_status["history_messages"].append(log_message)
+                        # 4. iterate over batch
+                        for doc_id_processing_status in docs_batch:
+                            doc_id, status_doc = doc_id_processing_status
+                            # Generate chunks from document
+                            chunks: dict[str, Any] = {
+                                compute_mdhash_id(dp["content"], prefix="chunk-"): {
+                                    **dp,
+                                    "full_doc_id": doc_id,
+                                }
+                                for dp in self.chunking_func(
+                                    status_doc.content,
+                                    split_by_character,
+                                    split_by_character_only,
+                                    self.chunk_overlap_token_size,
+                                    self.chunk_token_size,
+                                    self.tiktoken_model_name,
+                                )
+                            }
+                            # Process document (text chunks and full docs) in parallel
+                            # Create tasks with references for potential cancellation
+                            doc_status_task = asyncio.create_task(
+                                self.doc_status.upsert(
+                                    {
+                                        doc_id: {
+                                            "status": DocStatus.PROCESSING,
+                                            "updated_at": datetime.now().isoformat(),
+                                            "content": status_doc.content,
+                                            "content_summary": status_doc.content_summary,
+                                            "content_length": status_doc.content_length,
+                                            "created_at": status_doc.created_at,
+                                        }
+                                    }
+                                )
+                            )
+                            chunks_vdb_task = asyncio.create_task(
+                                self.chunks_vdb.upsert(chunks)
+                            )
+                            entity_relation_task = asyncio.create_task(
+                                self._process_entity_relation_graph(chunks)
+                            )
+                            full_docs_task = asyncio.create_task(
+                                self.full_docs.upsert(
+                                    {doc_id: {"content": status_doc.content}}
+                                )
+                            )
+                            text_chunks_task = asyncio.create_task(
+                                self.text_chunks.upsert(chunks)
+                            )
+                            tasks = [
+                                doc_status_task,
+                                chunks_vdb_task,
+                                entity_relation_task,
+                                full_docs_task,
+                                text_chunks_task,
+                            ]
+                            try:
+                                await asyncio.gather(*tasks)
+                                await self.doc_status.upsert(
+                                    {
+                                        doc_id: {
+                                            "status": DocStatus.PROCESSED,
+                                            "chunks_count": len(chunks),
+                                            "content": status_doc.content,
+                                            "content_summary": status_doc.content_summary,
+                                            "content_length": status_doc.content_length,
+                                            "created_at": status_doc.created_at,
+                                            "updated_at": datetime.now().isoformat(),
+                                        }
+                                    }
+                                )
+                            except Exception as e:
+                                # Log error and update pipeline status
+                                error_msg = (
+                                    f"Failed to process document {doc_id}: {str(e)}"
+                                )
+                                logger.error(error_msg)
+                                pipeline_status["latest_message"] = error_msg
+                                pipeline_status["history_messages"].append(error_msg)
+
+                                # Cancel other tasks as they are no longer meaningful
+                                for task in [
+                                    chunks_vdb_task,
+                                    entity_relation_task,
+                                    full_docs_task,
+                                    text_chunks_task,
+                                ]:
+                                    if not task.done():
+                                        task.cancel()
+
+                                # Update document status to failed
+                                await self.doc_status.upsert(
+                                    {
+                                        doc_id: {
+                                            "status": DocStatus.FAILED,
+                                            "error": str(e),
+                                            "content": status_doc.content,
+                                            "content_summary": status_doc.content_summary,
+                                            "content_length": status_doc.content_length,
+                                            "created_at": status_doc.created_at,
+                                            "updated_at": datetime.now().isoformat(),
+                                        }
+                                    }
+                                )
+                                continue
+                        log_message = (
+                            f"Completed batch {batch_idx + 1} of {len(docs_batches)}."
+                        )
+                        logger.info(log_message)
+                        pipeline_status["latest_message"] = log_message
+                        pipeline_status["history_messages"].append(log_message)
+
+                    batches.append(batch(batch_idx, docs_batch, len(docs_batches)))
+
+                await asyncio.gather(*batches)
+                await self._insert_done()
+
+                # Check if there's a pending request to process more documents (with lock)
+                has_pending_request = False
+                async with pipeline_status_lock:
+                    has_pending_request = pipeline_status.get("request_pending", False)
+                    if has_pending_request:
+                        # Clear the request flag before checking for more documents
+                        pipeline_status["request_pending"] = False
+
+                if not has_pending_request:
+                    break
+
+                log_message = "Processing additional documents due to pending request"
+                logger.info(log_message)
+                pipeline_status["latest_message"] = log_message
+                pipeline_status["history_messages"].append(log_message)
+
+                # Check for pending documents again
+                processing_docs, failed_docs, pending_docs = await asyncio.gather(
+                    self.doc_status.get_docs_by_status(DocStatus.PROCESSING),
+                    self.doc_status.get_docs_by_status(DocStatus.FAILED),
+                    self.doc_status.get_docs_by_status(DocStatus.PENDING),
+                )
+
+                to_process_docs = {}
+                to_process_docs.update(processing_docs)
+                to_process_docs.update(failed_docs)
+                to_process_docs.update(pending_docs)
+
+        finally:
+            log_message = "Document processing pipeline completed"
+            logger.info(log_message)
+            # Always reset busy status when done or if an exception occurs (with lock)
+            async with pipeline_status_lock:
+                pipeline_status["busy"] = False
+                pipeline_status["latest_message"] = log_message
+                pipeline_status["history_messages"].append(log_message)
 
     async def _process_entity_relation_graph(self, chunk: dict[str, Any]) -> None:
         try:
@@ -794,20 +1008,33 @@ class LightRAG:
             if storage_inst is not None
         ]
         await asyncio.gather(*tasks)
-        logger.info("All Insert done")
 
-    def insert_custom_kg(self, custom_kg: dict[str, Any]) -> None:
+        log_message = "All Insert done"
+        logger.info(log_message)
+
+        # 获取 pipeline_status 并更新 latest_message 和 history_messages
+        from lightrag.kg.shared_storage import get_namespace_data
+
+        pipeline_status = await get_namespace_data("pipeline_status")
+        pipeline_status["latest_message"] = log_message
+        pipeline_status["history_messages"].append(log_message)
+
+    def insert_custom_kg(
+        self, custom_kg: dict[str, Any], full_doc_id: str = None
+    ) -> None:
         loop = always_get_an_event_loop()
-        loop.run_until_complete(self.ainsert_custom_kg(custom_kg))
+        loop.run_until_complete(self.ainsert_custom_kg(custom_kg, full_doc_id))
 
-    async def ainsert_custom_kg(self, custom_kg: dict[str, Any]) -> None:
+    async def ainsert_custom_kg(
+        self, custom_kg: dict[str, Any], full_doc_id: str = None
+    ) -> None:
         update_storage = False
         try:
             # Insert chunks into vector storage
             all_chunks_data: dict[str, dict[str, str]] = {}
             chunk_to_source_map: dict[str, str] = {}
-            for chunk_data in custom_kg.get("chunks", {}):
-                chunk_content = chunk_data["content"].strip()
+            for chunk_data in custom_kg.get("chunks", []):
+                chunk_content = self.clean_text(chunk_data["content"])
                 source_id = chunk_data["source_id"]
                 tokens = len(
                     encode_string_by_tiktoken(
@@ -826,7 +1053,9 @@ class LightRAG:
                     "source_id": source_id,
                     "tokens": tokens,
                     "chunk_order_index": chunk_order_index,
-                    "full_doc_id": source_id,
+                    "full_doc_id": full_doc_id
+                    if full_doc_id is not None
+                    else source_id,
                     "status": DocStatus.PROCESSED,
                 }
                 all_chunks_data[chunk_id] = chunk_entry
@@ -834,17 +1063,17 @@ class LightRAG:
                 update_storage = True
 
             if all_chunks_data:
-                await self.chunks_vdb.upsert(all_chunks_data)
-            if all_chunks_data:
-                await self.text_chunks.upsert(all_chunks_data)
+                await asyncio.gather(
+                    self.chunks_vdb.upsert(all_chunks_data),
+                    self.text_chunks.upsert(all_chunks_data),
+                )
 
             # Insert entities into knowledge graph
             all_entities_data: list[dict[str, str]] = []
             for entity_data in custom_kg.get("entities", []):
-                entity_name = f'"{entity_data["entity_name"].upper()}"'
+                entity_name = entity_data["entity_name"]
                 entity_type = entity_data.get("entity_type", "UNKNOWN")
                 description = entity_data.get("description", "No description provided")
-                # source_id = entity_data["source_id"]
                 source_chunk_id = entity_data.get("source_id", "UNKNOWN")
                 source_id = chunk_to_source_map.get(source_chunk_id, "UNKNOWN")
 
@@ -871,12 +1100,11 @@ class LightRAG:
             # Insert relationships into knowledge graph
             all_relationships_data: list[dict[str, str]] = []
             for relationship_data in custom_kg.get("relationships", []):
-                src_id = f'"{relationship_data["src_id"].upper()}"'
-                tgt_id = f'"{relationship_data["tgt_id"].upper()}"'
+                src_id = relationship_data["src_id"]
+                tgt_id = relationship_data["tgt_id"]
                 description = relationship_data["description"]
                 keywords = relationship_data["keywords"]
                 weight = relationship_data.get("weight", 1.0)
-                # source_id = relationship_data["source_id"]
                 source_chunk_id = relationship_data.get("source_id", "UNKNOWN")
                 source_id = chunk_to_source_map.get(source_chunk_id, "UNKNOWN")
 
@@ -916,34 +1144,43 @@ class LightRAG:
                     "tgt_id": tgt_id,
                     "description": description,
                     "keywords": keywords,
+                    "source_id": source_id,
+                    "weight": weight,
                 }
                 all_relationships_data.append(edge_data)
                 update_storage = True
 
-            # Insert entities into vector storage if needed
+            # Insert entities into vector storage with consistent format
             data_for_vdb = {
                 compute_mdhash_id(dp["entity_name"], prefix="ent-"): {
-                    "content": dp["entity_name"] + dp["description"],
+                    "content": dp["entity_name"] + "\n" + dp["description"],
                     "entity_name": dp["entity_name"],
+                    "source_id": dp["source_id"],
+                    "description": dp["description"],
+                    "entity_type": dp["entity_type"],
                 }
                 for dp in all_entities_data
             }
             await self.entities_vdb.upsert(data_for_vdb)
 
-            # Insert relationships into vector storage if needed
+            # Insert relationships into vector storage with consistent format
             data_for_vdb = {
                 compute_mdhash_id(dp["src_id"] + dp["tgt_id"], prefix="rel-"): {
                     "src_id": dp["src_id"],
                     "tgt_id": dp["tgt_id"],
-                    "content": dp["keywords"]
-                    + dp["src_id"]
-                    + dp["tgt_id"]
-                    + dp["description"],
+                    "source_id": dp["source_id"],
+                    "content": f"{dp['keywords']}\t{dp['src_id']}\n{dp['tgt_id']}\n{dp['description']}",
+                    "keywords": dp["keywords"],
+                    "description": dp["description"],
+                    "weight": dp["weight"],
                 }
                 for dp in all_relationships_data
             }
             await self.relationships_vdb.upsert(data_for_vdb)
 
+        except Exception as e:
+            logger.error(f"Error in ainsert_custom_kg: {e}")
+            raise
         finally:
             if update_storage:
                 await self._insert_done()
@@ -988,7 +1225,7 @@ class LightRAG:
         """
         if param.mode in ["local", "global", "hybrid"]:
             response = await kg_query(
-                query,
+                query.strip(),
                 self.chunk_entity_relation_graph,
                 self.entities_vdb,
                 self.relationships_vdb,
@@ -1009,7 +1246,7 @@ class LightRAG:
             )
         elif param.mode == "naive":
             response = await naive_query(
-                query,
+                query.strip(),
                 self.chunks_vdb,
                 self.text_chunks,
                 param,
@@ -1028,7 +1265,7 @@ class LightRAG:
             )
         elif param.mode == "mix":
             response = await mix_kg_vector_query(
-                query,
+                query.strip(),
                 self.chunk_entity_relation_graph,
                 self.entities_vdb,
                 self.relationships_vdb,
@@ -1174,8 +1411,6 @@ class LightRAG:
         return loop.run_until_complete(self.adelete_by_entity(entity_name))
 
     async def adelete_by_entity(self, entity_name: str) -> None:
-        entity_name = f'"{entity_name.upper()}"'
-
         try:
             await self.entities_vdb.delete_entity(entity_name)
             await self.relationships_vdb.delete_entity_relation(entity_name)
@@ -1194,6 +1429,68 @@ class LightRAG:
                 cast(StorageNameSpace, storage_inst).index_done_callback()
                 for storage_inst in [  # type: ignore
                     self.entities_vdb,
+                    self.relationships_vdb,
+                    self.chunk_entity_relation_graph,
+                ]
+            ]
+        )
+
+    def delete_by_relation(self, source_entity: str, target_entity: str) -> None:
+        """Synchronously delete a relation between two entities.
+
+        Args:
+            source_entity: Name of the source entity
+            target_entity: Name of the target entity
+        """
+        loop = always_get_an_event_loop()
+        return loop.run_until_complete(
+            self.adelete_by_relation(source_entity, target_entity)
+        )
+
+    async def adelete_by_relation(self, source_entity: str, target_entity: str) -> None:
+        """Asynchronously delete a relation between two entities.
+
+        Args:
+            source_entity: Name of the source entity
+            target_entity: Name of the target entity
+        """
+        try:
+            # Check if the relation exists
+            edge_exists = await self.chunk_entity_relation_graph.has_edge(
+                source_entity, target_entity
+            )
+            if not edge_exists:
+                logger.warning(
+                    f"Relation from '{source_entity}' to '{target_entity}' does not exist"
+                )
+                return
+
+            # Delete relation from vector database
+            relation_id = compute_mdhash_id(
+                source_entity + target_entity, prefix="rel-"
+            )
+            await self.relationships_vdb.delete([relation_id])
+
+            # Delete relation from knowledge graph
+            await self.chunk_entity_relation_graph.remove_edges(
+                [(source_entity, target_entity)]
+            )
+
+            logger.info(
+                f"Successfully deleted relation from '{source_entity}' to '{target_entity}'"
+            )
+            await self._delete_relation_done()
+        except Exception as e:
+            logger.error(
+                f"Error while deleting relation from '{source_entity}' to '{target_entity}': {e}"
+            )
+
+    async def _delete_relation_done(self) -> None:
+        """Callback after relation deletion is complete"""
+        await asyncio.gather(
+            *[
+                cast(StorageNameSpace, storage_inst).index_done_callback()
+                for storage_inst in [  # type: ignore
                     self.relationships_vdb,
                     self.chunk_entity_relation_graph,
                 ]
@@ -1248,29 +1545,41 @@ class LightRAG:
 
             logger.debug(f"Starting deletion for document {doc_id}")
 
-            # 2. Get all related chunks
-            chunks = await self.text_chunks.get_by_id(doc_id)
-            if not chunks:
+            # 2. Get all chunks related to this document
+            # Find all chunks where full_doc_id equals the current doc_id
+            all_chunks = await self.text_chunks.get_all()
+            related_chunks = {
+                chunk_id: chunk_data
+                for chunk_id, chunk_data in all_chunks.items()
+                if isinstance(chunk_data, dict)
+                and chunk_data.get("full_doc_id") == doc_id
+            }
+
+            if not related_chunks:
+                logger.warning(f"No chunks found for document {doc_id}")
                 return
 
-            chunk_ids = list(chunks.keys())
+            # Get all related chunk IDs
+            chunk_ids = set(related_chunks.keys())
             logger.debug(f"Found {len(chunk_ids)} chunks to delete")
 
             # 3. Before deleting, check the related entities and relationships for these chunks
             for chunk_id in chunk_ids:
                 # Check entities
+                entities_storage = await self.entities_vdb.client_storage
                 entities = [
                     dp
-                    for dp in self.entities_vdb.client_storage["data"]
-                    if dp.get("source_id") == chunk_id
+                    for dp in entities_storage["data"]
+                    if chunk_id in dp.get("source_id")
                 ]
                 logger.debug(f"Chunk {chunk_id} has {len(entities)} related entities")
 
                 # Check relationships
+                relationships_storage = await self.relationships_vdb.client_storage
                 relations = [
                     dp
-                    for dp in self.relationships_vdb.client_storage["data"]
-                    if dp.get("source_id") == chunk_id
+                    for dp in relationships_storage["data"]
+                    if chunk_id in dp.get("source_id")
                 ]
                 logger.debug(f"Chunk {chunk_id} has {len(relations)} related relations")
 
@@ -1282,68 +1591,79 @@ class LightRAG:
                 await self.text_chunks.delete(chunk_ids)
 
             # 5. Find and process entities and relationships that have these chunks as source
-            # Get all nodes in the graph
-            nodes = self.chunk_entity_relation_graph._graph.nodes(data=True)
-            edges = self.chunk_entity_relation_graph._graph.edges(data=True)
-
-            # Track which entities and relationships need to be deleted or updated
+            # Get all nodes and edges from the graph storage using storage-agnostic methods
             entities_to_delete = set()
             entities_to_update = {}  # entity_name -> new_source_id
             relationships_to_delete = set()
             relationships_to_update = {}  # (src, tgt) -> new_source_id
 
-            # Process entities
-            for node, data in nodes:
-                if "source_id" in data:
+            # Process entities - use storage-agnostic methods
+            all_labels = await self.chunk_entity_relation_graph.get_all_labels()
+            for node_label in all_labels:
+                node_data = await self.chunk_entity_relation_graph.get_node(node_label)
+                if node_data and "source_id" in node_data:
                     # Split source_id using GRAPH_FIELD_SEP
-                    sources = set(data["source_id"].split(GRAPH_FIELD_SEP))
+                    sources = set(node_data["source_id"].split(GRAPH_FIELD_SEP))
                     sources.difference_update(chunk_ids)
                     if not sources:
-                        entities_to_delete.add(node)
+                        entities_to_delete.add(node_label)
                         logger.debug(
-                            f"Entity {node} marked for deletion - no remaining sources"
+                            f"Entity {node_label} marked for deletion - no remaining sources"
                         )
                     else:
                         new_source_id = GRAPH_FIELD_SEP.join(sources)
-                        entities_to_update[node] = new_source_id
+                        entities_to_update[node_label] = new_source_id
                         logger.debug(
-                            f"Entity {node} will be updated with new source_id: {new_source_id}"
+                            f"Entity {node_label} will be updated with new source_id: {new_source_id}"
                         )
 
             # Process relationships
-            for src, tgt, data in edges:
-                if "source_id" in data:
-                    # Split source_id using GRAPH_FIELD_SEP
-                    sources = set(data["source_id"].split(GRAPH_FIELD_SEP))
-                    sources.difference_update(chunk_ids)
-                    if not sources:
-                        relationships_to_delete.add((src, tgt))
-                        logger.debug(
-                            f"Relationship {src}-{tgt} marked for deletion - no remaining sources"
+            for node_label in all_labels:
+                node_edges = await self.chunk_entity_relation_graph.get_node_edges(
+                    node_label
+                )
+                if node_edges:
+                    for src, tgt in node_edges:
+                        edge_data = await self.chunk_entity_relation_graph.get_edge(
+                            src, tgt
                         )
-                    else:
-                        new_source_id = GRAPH_FIELD_SEP.join(sources)
-                        relationships_to_update[(src, tgt)] = new_source_id
-                        logger.debug(
-                            f"Relationship {src}-{tgt} will be updated with new source_id: {new_source_id}"
-                        )
+                        if edge_data and "source_id" in edge_data:
+                            # Split source_id using GRAPH_FIELD_SEP
+                            sources = set(edge_data["source_id"].split(GRAPH_FIELD_SEP))
+                            sources.difference_update(chunk_ids)
+                            if not sources:
+                                relationships_to_delete.add((src, tgt))
+                                logger.debug(
+                                    f"Relationship {src}-{tgt} marked for deletion - no remaining sources"
+                                )
+                            else:
+                                new_source_id = GRAPH_FIELD_SEP.join(sources)
+                                relationships_to_update[(src, tgt)] = new_source_id
+                                logger.debug(
+                                    f"Relationship {src}-{tgt} will be updated with new source_id: {new_source_id}"
+                                )
 
             # Delete entities
             if entities_to_delete:
                 for entity in entities_to_delete:
                     await self.entities_vdb.delete_entity(entity)
                     logger.debug(f"Deleted entity {entity} from vector DB")
-                self.chunk_entity_relation_graph.remove_nodes(list(entities_to_delete))
+                await self.chunk_entity_relation_graph.remove_nodes(
+                    list(entities_to_delete)
+                )
                 logger.debug(f"Deleted {len(entities_to_delete)} entities from graph")
 
             # Update entities
             for entity, new_source_id in entities_to_update.items():
-                node_data = self.chunk_entity_relation_graph._graph.nodes[entity]
-                node_data["source_id"] = new_source_id
-                await self.chunk_entity_relation_graph.upsert_node(entity, node_data)
-                logger.debug(
-                    f"Updated entity {entity} with new source_id: {new_source_id}"
-                )
+                node_data = await self.chunk_entity_relation_graph.get_node(entity)
+                if node_data:
+                    node_data["source_id"] = new_source_id
+                    await self.chunk_entity_relation_graph.upsert_node(
+                        entity, node_data
+                    )
+                    logger.debug(
+                        f"Updated entity {entity} with new source_id: {new_source_id}"
+                    )
 
             # Delete relationships
             if relationships_to_delete:
@@ -1352,7 +1672,7 @@ class LightRAG:
                     rel_id_1 = compute_mdhash_id(tgt + src, prefix="rel-")
                     await self.relationships_vdb.delete([rel_id_0, rel_id_1])
                     logger.debug(f"Deleted relationship {src}-{tgt} from vector DB")
-                self.chunk_entity_relation_graph.remove_edges(
+                await self.chunk_entity_relation_graph.remove_edges(
                     list(relationships_to_delete)
                 )
                 logger.debug(
@@ -1361,12 +1681,15 @@ class LightRAG:
 
             # Update relationships
             for (src, tgt), new_source_id in relationships_to_update.items():
-                edge_data = self.chunk_entity_relation_graph._graph.edges[src, tgt]
-                edge_data["source_id"] = new_source_id
-                await self.chunk_entity_relation_graph.upsert_edge(src, tgt, edge_data)
-                logger.debug(
-                    f"Updated relationship {src}-{tgt} with new source_id: {new_source_id}"
-                )
+                edge_data = await self.chunk_entity_relation_graph.get_edge(src, tgt)
+                if edge_data:
+                    edge_data["source_id"] = new_source_id
+                    await self.chunk_entity_relation_graph.upsert_edge(
+                        src, tgt, edge_data
+                    )
+                    logger.debug(
+                        f"Updated relationship {src}-{tgt} with new source_id: {new_source_id}"
+                    )
 
             # 6. Delete original document and status
             await self.full_docs.delete([doc_id])
@@ -1381,42 +1704,81 @@ class LightRAG:
                 f"Updated {len(entities_to_update)} entities and {len(relationships_to_update)} relationships."
             )
 
+            async def process_data(data_type, vdb, chunk_id):
+                # Check data (entities or relationships)
+                storage = await vdb.client_storage
+                data_with_chunk = [
+                    dp
+                    for dp in storage["data"]
+                    if chunk_id in (dp.get("source_id") or "").split(GRAPH_FIELD_SEP)
+                ]
+
+                data_for_vdb = {}
+                if data_with_chunk:
+                    logger.warning(
+                        f"found {len(data_with_chunk)} {data_type} still referencing chunk {chunk_id}"
+                    )
+
+                    for item in data_with_chunk:
+                        old_sources = item["source_id"].split(GRAPH_FIELD_SEP)
+                        new_sources = [src for src in old_sources if src != chunk_id]
+
+                        if not new_sources:
+                            logger.info(
+                                f"{data_type} {item.get('entity_name', 'N/A')} is deleted because source_id is not exists"
+                            )
+                            await vdb.delete_entity(item)
+                        else:
+                            item["source_id"] = GRAPH_FIELD_SEP.join(new_sources)
+                            item_id = item["__id__"]
+                            data_for_vdb[item_id] = item.copy()
+                            if data_type == "entities":
+                                data_for_vdb[item_id]["content"] = data_for_vdb[
+                                    item_id
+                                ].get("content") or (
+                                    item.get("entity_name", "")
+                                    + (item.get("description") or "")
+                                )
+                            else:  # relationships
+                                data_for_vdb[item_id]["content"] = data_for_vdb[
+                                    item_id
+                                ].get("content") or (
+                                    (item.get("keywords") or "")
+                                    + (item.get("src_id") or "")
+                                    + (item.get("tgt_id") or "")
+                                    + (item.get("description") or "")
+                                )
+
+                    if data_for_vdb:
+                        await vdb.upsert(data_for_vdb)
+                        logger.info(f"Successfully updated {data_type} in vector DB")
+
             # Add verification step
             async def verify_deletion():
                 # Verify if the document has been deleted
                 if await self.full_docs.get_by_id(doc_id):
-                    logger.error(f"Document {doc_id} still exists in full_docs")
+                    logger.warning(f"Document {doc_id} still exists in full_docs")
 
                 # Verify if chunks have been deleted
-                remaining_chunks = await self.text_chunks.get_by_id(doc_id)
-                if remaining_chunks:
-                    logger.error(f"Found {len(remaining_chunks)} remaining chunks")
+                all_remaining_chunks = await self.text_chunks.get_all()
+                remaining_related_chunks = {
+                    chunk_id: chunk_data
+                    for chunk_id, chunk_data in all_remaining_chunks.items()
+                    if isinstance(chunk_data, dict)
+                    and chunk_data.get("full_doc_id") == doc_id
+                }
+
+                if remaining_related_chunks:
+                    logger.warning(
+                        f"Found {len(remaining_related_chunks)} remaining chunks"
+                    )
 
                 # Verify entities and relationships
                 for chunk_id in chunk_ids:
-                    # Check entities
-                    entities_with_chunk = [
-                        dp
-                        for dp in self.entities_vdb.client_storage["data"]
-                        if chunk_id
-                        in (dp.get("source_id") or "").split(GRAPH_FIELD_SEP)
-                    ]
-                    if entities_with_chunk:
-                        logger.error(
-                            f"Found {len(entities_with_chunk)} entities still referencing chunk {chunk_id}"
-                        )
-
-                    # Check relationships
-                    relations_with_chunk = [
-                        dp
-                        for dp in self.relationships_vdb.client_storage["data"]
-                        if chunk_id
-                        in (dp.get("source_id") or "").split(GRAPH_FIELD_SEP)
-                    ]
-                    if relations_with_chunk:
-                        logger.error(
-                            f"Found {len(relations_with_chunk)} relations still referencing chunk {chunk_id}"
-                        )
+                    await process_data("entities", self.entities_vdb, chunk_id)
+                    await process_data(
+                        "relationships", self.relationships_vdb, chunk_id
+                    )
 
             await verify_deletion()
 
@@ -1439,7 +1801,6 @@ class LightRAG:
                 - graph_data: Complete node data from the graph database
                 - vector_data: (optional) Data from the vector database
         """
-        entity_name = f'"{entity_name.upper()}"'
 
         # Get information from the graph
         node_data = await self.chunk_entity_relation_graph.get_node(entity_name)
@@ -1477,8 +1838,6 @@ class LightRAG:
                 - graph_data: Complete edge data from the graph database
                 - vector_data: (optional) Data from the vector database
         """
-        src_entity = f'"{src_entity.upper()}"'
-        tgt_entity = f'"{tgt_entity.upper()}"'
 
         # Get information from the graph
         edge_data = await self.chunk_entity_relation_graph.get_edge(
@@ -1518,3 +1877,546 @@ class LightRAG:
                 f"Storage implementation '{storage_name}' requires the following "
                 f"environment variables: {', '.join(missing_vars)}"
             )
+
+    async def aclear_cache(self, modes: list[str] | None = None) -> None:
+        """Clear cache data from the LLM response cache storage.
+
+        Args:
+            modes (list[str] | None): Modes of cache to clear. Options: ["default", "naive", "local", "global", "hybrid", "mix"].
+                             "default" represents extraction cache.
+                             If None, clears all cache.
+
+        Example:
+            # Clear all cache
+            await rag.aclear_cache()
+
+            # Clear local mode cache
+            await rag.aclear_cache(modes=["local"])
+
+            # Clear extraction cache
+            await rag.aclear_cache(modes=["default"])
+        """
+        if not self.llm_response_cache:
+            logger.warning("No cache storage configured")
+            return
+
+        valid_modes = ["default", "naive", "local", "global", "hybrid", "mix"]
+
+        # Validate input
+        if modes and not all(mode in valid_modes for mode in modes):
+            raise ValueError(f"Invalid mode. Valid modes are: {valid_modes}")
+
+        try:
+            # Reset the cache storage for specified mode
+            if modes:
+                await self.llm_response_cache.delete(modes)
+                logger.info(f"Cleared cache for modes: {modes}")
+            else:
+                # Clear all modes
+                await self.llm_response_cache.delete(valid_modes)
+                logger.info("Cleared all cache")
+
+            await self.llm_response_cache.index_done_callback()
+
+        except Exception as e:
+            logger.error(f"Error while clearing cache: {e}")
+
+    def clear_cache(self, modes: list[str] | None = None) -> None:
+        """Synchronous version of aclear_cache."""
+        return always_get_an_event_loop().run_until_complete(self.aclear_cache(modes))
+
+    async def aedit_entity(
+        self, entity_name: str, updated_data: dict[str, str], allow_rename: bool = True
+    ) -> dict[str, Any]:
+        """Asynchronously edit entity information.
+
+        Updates entity information in the knowledge graph and re-embeds the entity in the vector database.
+
+        Args:
+            entity_name: Name of the entity to edit
+            updated_data: Dictionary containing updated attributes, e.g. {"description": "new description", "entity_type": "new type"}
+            allow_rename: Whether to allow entity renaming, defaults to True
+
+        Returns:
+            Dictionary containing updated entity information
+        """
+        try:
+            # 1. Get current entity information
+            node_data = await self.chunk_entity_relation_graph.get_node(entity_name)
+            if not node_data:
+                raise ValueError(f"Entity '{entity_name}' does not exist")
+
+            # Check if entity is being renamed
+            new_entity_name = updated_data.get("entity_name", entity_name)
+            is_renaming = new_entity_name != entity_name
+
+            # If renaming, check if new name already exists
+            if is_renaming:
+                if not allow_rename:
+                    raise ValueError(
+                        "Entity renaming is not allowed. Set allow_rename=True to enable this feature"
+                    )
+
+                existing_node = await self.chunk_entity_relation_graph.get_node(
+                    new_entity_name
+                )
+                if existing_node:
+                    raise ValueError(
+                        f"Entity name '{new_entity_name}' already exists, cannot rename"
+                    )
+
+            # 2. Update entity information in the graph
+            new_node_data = {**node_data, **updated_data}
+            if "entity_name" in new_node_data:
+                del new_node_data[
+                    "entity_name"
+                ]  # Node data should not contain entity_name field
+
+            # If renaming entity
+            if is_renaming:
+                logger.info(f"Renaming entity '{entity_name}' to '{new_entity_name}'")
+
+                # Create new entity
+                await self.chunk_entity_relation_graph.upsert_node(
+                    new_entity_name, new_node_data
+                )
+
+                # Store relationships that need to be updated
+                relations_to_update = []
+
+                # Get all edges related to the original entity
+                edges = await self.chunk_entity_relation_graph.get_node_edges(
+                    entity_name
+                )
+                if edges:
+                    # Recreate edges for the new entity
+                    for source, target in edges:
+                        edge_data = await self.chunk_entity_relation_graph.get_edge(
+                            source, target
+                        )
+                        if edge_data:
+                            if source == entity_name:
+                                await self.chunk_entity_relation_graph.upsert_edge(
+                                    new_entity_name, target, edge_data
+                                )
+                                relations_to_update.append(
+                                    (new_entity_name, target, edge_data)
+                                )
+                            else:  # target == entity_name
+                                await self.chunk_entity_relation_graph.upsert_edge(
+                                    source, new_entity_name, edge_data
+                                )
+                                relations_to_update.append(
+                                    (source, new_entity_name, edge_data)
+                                )
+
+                # Delete old entity
+                await self.chunk_entity_relation_graph.delete_node(entity_name)
+
+                # Delete old entity record from vector database
+                old_entity_id = compute_mdhash_id(entity_name, prefix="ent-")
+                await self.entities_vdb.delete([old_entity_id])
+
+                # Update relationship vector representations
+                for src, tgt, edge_data in relations_to_update:
+                    description = edge_data.get("description", "")
+                    keywords = edge_data.get("keywords", "")
+                    source_id = edge_data.get("source_id", "")
+                    weight = float(edge_data.get("weight", 1.0))
+
+                    # Create new content for embedding
+                    content = f"{src}\t{tgt}\n{keywords}\n{description}"
+
+                    # Calculate relationship ID
+                    relation_id = compute_mdhash_id(src + tgt, prefix="rel-")
+
+                    # Prepare data for vector database update
+                    relation_data = {
+                        relation_id: {
+                            "content": content,
+                            "src_id": src,
+                            "tgt_id": tgt,
+                            "source_id": source_id,
+                            "description": description,
+                            "keywords": keywords,
+                            "weight": weight,
+                        }
+                    }
+
+                    # Update vector database
+                    await self.relationships_vdb.upsert(relation_data)
+
+                # Update working entity name to new name
+                entity_name = new_entity_name
+            else:
+                # If not renaming, directly update node data
+                await self.chunk_entity_relation_graph.upsert_node(
+                    entity_name, new_node_data
+                )
+
+            # 3. Recalculate entity's vector representation and update vector database
+            description = new_node_data.get("description", "")
+            source_id = new_node_data.get("source_id", "")
+            entity_type = new_node_data.get("entity_type", "")
+            content = entity_name + "\n" + description
+
+            # Calculate entity ID
+            entity_id = compute_mdhash_id(entity_name, prefix="ent-")
+
+            # Prepare data for vector database update
+            entity_data = {
+                entity_id: {
+                    "content": content,
+                    "entity_name": entity_name,
+                    "source_id": source_id,
+                    "description": description,
+                    "entity_type": entity_type,
+                }
+            }
+
+            # Update vector database
+            await self.entities_vdb.upsert(entity_data)
+
+            # 4. Save changes
+            await self._edit_entity_done()
+
+            logger.info(f"Entity '{entity_name}' successfully updated")
+            return await self.get_entity_info(entity_name, include_vector_data=True)
+        except Exception as e:
+            logger.error(f"Error while editing entity '{entity_name}': {e}")
+            raise
+
+    def edit_entity(
+        self, entity_name: str, updated_data: dict[str, str], allow_rename: bool = True
+    ) -> dict[str, Any]:
+        """Synchronously edit entity information.
+
+        Updates entity information in the knowledge graph and re-embeds the entity in the vector database.
+
+        Args:
+            entity_name: Name of the entity to edit
+            updated_data: Dictionary containing updated attributes, e.g. {"description": "new description", "entity_type": "new type"}
+            allow_rename: Whether to allow entity renaming, defaults to True
+
+        Returns:
+            Dictionary containing updated entity information
+        """
+        loop = always_get_an_event_loop()
+        return loop.run_until_complete(
+            self.aedit_entity(entity_name, updated_data, allow_rename)
+        )
+
+    async def _edit_entity_done(self) -> None:
+        """Callback after entity editing is complete, ensures updates are persisted"""
+        await asyncio.gather(
+            *[
+                cast(StorageNameSpace, storage_inst).index_done_callback()
+                for storage_inst in [  # type: ignore
+                    self.entities_vdb,
+                    self.chunk_entity_relation_graph,
+                ]
+            ]
+        )
+
+    async def aedit_relation(
+        self, source_entity: str, target_entity: str, updated_data: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Asynchronously edit relation information.
+
+        Updates relation (edge) information in the knowledge graph and re-embeds the relation in the vector database.
+
+        Args:
+            source_entity: Name of the source entity
+            target_entity: Name of the target entity
+            updated_data: Dictionary containing updated attributes, e.g. {"description": "new description", "keywords": "new keywords"}
+
+        Returns:
+            Dictionary containing updated relation information
+        """
+        try:
+            # 1. Get current relation information
+            edge_data = await self.chunk_entity_relation_graph.get_edge(
+                source_entity, target_entity
+            )
+            if not edge_data:
+                raise ValueError(
+                    f"Relation from '{source_entity}' to '{target_entity}' does not exist"
+                )
+
+            # 2. Update relation information in the graph
+            new_edge_data = {**edge_data, **updated_data}
+            await self.chunk_entity_relation_graph.upsert_edge(
+                source_entity, target_entity, new_edge_data
+            )
+
+            # 3. Recalculate relation's vector representation and update vector database
+            description = new_edge_data.get("description", "")
+            keywords = new_edge_data.get("keywords", "")
+            source_id = new_edge_data.get("source_id", "")
+            weight = float(new_edge_data.get("weight", 1.0))
+
+            # Create content for embedding
+            content = f"{source_entity}\t{target_entity}\n{keywords}\n{description}"
+
+            # Calculate relation ID
+            relation_id = compute_mdhash_id(
+                source_entity + target_entity, prefix="rel-"
+            )
+
+            # Prepare data for vector database update
+            relation_data = {
+                relation_id: {
+                    "content": content,
+                    "src_id": source_entity,
+                    "tgt_id": target_entity,
+                    "source_id": source_id,
+                    "description": description,
+                    "keywords": keywords,
+                    "weight": weight,
+                }
+            }
+
+            # Update vector database
+            await self.relationships_vdb.upsert(relation_data)
+
+            # 4. Save changes
+            await self._edit_relation_done()
+
+            logger.info(
+                f"Relation from '{source_entity}' to '{target_entity}' successfully updated"
+            )
+            return await self.get_relation_info(
+                source_entity, target_entity, include_vector_data=True
+            )
+        except Exception as e:
+            logger.error(
+                f"Error while editing relation from '{source_entity}' to '{target_entity}': {e}"
+            )
+            raise
+
+    def edit_relation(
+        self, source_entity: str, target_entity: str, updated_data: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Synchronously edit relation information.
+
+        Updates relation (edge) information in the knowledge graph and re-embeds the relation in the vector database.
+
+        Args:
+            source_entity: Name of the source entity
+            target_entity: Name of the target entity
+            updated_data: Dictionary containing updated attributes, e.g. {"description": "new description", "keywords": "keywords"}
+
+        Returns:
+            Dictionary containing updated relation information
+        """
+        loop = always_get_an_event_loop()
+        return loop.run_until_complete(
+            self.aedit_relation(source_entity, target_entity, updated_data)
+        )
+
+    async def _edit_relation_done(self) -> None:
+        """Callback after relation editing is complete, ensures updates are persisted"""
+        await asyncio.gather(
+            *[
+                cast(StorageNameSpace, storage_inst).index_done_callback()
+                for storage_inst in [  # type: ignore
+                    self.relationships_vdb,
+                    self.chunk_entity_relation_graph,
+                ]
+            ]
+        )
+
+    async def acreate_entity(
+        self, entity_name: str, entity_data: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Asynchronously create a new entity.
+
+        Creates a new entity in the knowledge graph and adds it to the vector database.
+
+        Args:
+            entity_name: Name of the new entity
+            entity_data: Dictionary containing entity attributes, e.g. {"description": "description", "entity_type": "type"}
+
+        Returns:
+            Dictionary containing created entity information
+        """
+        try:
+            # Check if entity already exists
+            existing_node = await self.chunk_entity_relation_graph.get_node(entity_name)
+            if existing_node:
+                raise ValueError(f"Entity '{entity_name}' already exists")
+
+            # Prepare node data with defaults if missing
+            node_data = {
+                "entity_type": entity_data.get("entity_type", "UNKNOWN"),
+                "description": entity_data.get("description", ""),
+                "source_id": entity_data.get("source_id", "manual"),
+            }
+
+            # Add entity to knowledge graph
+            await self.chunk_entity_relation_graph.upsert_node(entity_name, node_data)
+
+            # Prepare content for entity
+            description = node_data.get("description", "")
+            source_id = node_data.get("source_id", "")
+            entity_type = node_data.get("entity_type", "")
+            content = entity_name + "\n" + description
+
+            # Calculate entity ID
+            entity_id = compute_mdhash_id(entity_name, prefix="ent-")
+
+            # Prepare data for vector database update
+            entity_data_for_vdb = {
+                entity_id: {
+                    "content": content,
+                    "entity_name": entity_name,
+                    "source_id": source_id,
+                    "description": description,
+                    "entity_type": entity_type,
+                }
+            }
+
+            # Update vector database
+            await self.entities_vdb.upsert(entity_data_for_vdb)
+
+            # Save changes
+            await self._edit_entity_done()
+
+            logger.info(f"Entity '{entity_name}' successfully created")
+            return await self.get_entity_info(entity_name, include_vector_data=True)
+        except Exception as e:
+            logger.error(f"Error while creating entity '{entity_name}': {e}")
+            raise
+
+    def create_entity(
+        self, entity_name: str, entity_data: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Synchronously create a new entity.
+
+        Creates a new entity in the knowledge graph and adds it to the vector database.
+
+        Args:
+            entity_name: Name of the new entity
+            entity_data: Dictionary containing entity attributes, e.g. {"description": "description", "entity_type": "type"}
+
+        Returns:
+            Dictionary containing created entity information
+        """
+        loop = always_get_an_event_loop()
+        return loop.run_until_complete(self.acreate_entity(entity_name, entity_data))
+
+    async def acreate_relation(
+        self, source_entity: str, target_entity: str, relation_data: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Asynchronously create a new relation between entities.
+
+        Creates a new relation (edge) in the knowledge graph and adds it to the vector database.
+
+        Args:
+            source_entity: Name of the source entity
+            target_entity: Name of the target entity
+            relation_data: Dictionary containing relation attributes, e.g. {"description": "description", "keywords": "keywords"}
+
+        Returns:
+            Dictionary containing created relation information
+        """
+        try:
+            # Check if both entities exist
+            source_exists = await self.chunk_entity_relation_graph.has_node(
+                source_entity
+            )
+            target_exists = await self.chunk_entity_relation_graph.has_node(
+                target_entity
+            )
+
+            if not source_exists:
+                raise ValueError(f"Source entity '{source_entity}' does not exist")
+            if not target_exists:
+                raise ValueError(f"Target entity '{target_entity}' does not exist")
+
+            # Check if relation already exists
+            existing_edge = await self.chunk_entity_relation_graph.get_edge(
+                source_entity, target_entity
+            )
+            if existing_edge:
+                raise ValueError(
+                    f"Relation from '{source_entity}' to '{target_entity}' already exists"
+                )
+
+            # Prepare edge data with defaults if missing
+            edge_data = {
+                "description": relation_data.get("description", ""),
+                "keywords": relation_data.get("keywords", ""),
+                "source_id": relation_data.get("source_id", "manual"),
+                "weight": float(relation_data.get("weight", 1.0)),
+            }
+
+            # Add relation to knowledge graph
+            await self.chunk_entity_relation_graph.upsert_edge(
+                source_entity, target_entity, edge_data
+            )
+
+            # Prepare content for embedding
+            description = edge_data.get("description", "")
+            keywords = edge_data.get("keywords", "")
+            source_id = edge_data.get("source_id", "")
+            weight = edge_data.get("weight", 1.0)
+
+            # Create content for embedding
+            content = f"{keywords}\t{source_entity}\n{target_entity}\n{description}"
+
+            # Calculate relation ID
+            relation_id = compute_mdhash_id(
+                source_entity + target_entity, prefix="rel-"
+            )
+
+            # Prepare data for vector database update
+            relation_data_for_vdb = {
+                relation_id: {
+                    "content": content,
+                    "src_id": source_entity,
+                    "tgt_id": target_entity,
+                    "source_id": source_id,
+                    "description": description,
+                    "keywords": keywords,
+                    "weight": weight,
+                }
+            }
+
+            # Update vector database
+            await self.relationships_vdb.upsert(relation_data_for_vdb)
+
+            # Save changes
+            await self._edit_relation_done()
+
+            logger.info(
+                f"Relation from '{source_entity}' to '{target_entity}' successfully created"
+            )
+            return await self.get_relation_info(
+                source_entity, target_entity, include_vector_data=True
+            )
+        except Exception as e:
+            logger.error(
+                f"Error while creating relation from '{source_entity}' to '{target_entity}': {e}"
+            )
+            raise
+
+    def create_relation(
+        self, source_entity: str, target_entity: str, relation_data: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Synchronously create a new relation between entities.
+
+        Creates a new relation (edge) in the knowledge graph and adds it to the vector database.
+
+        Args:
+            source_entity: Name of the source entity
+            target_entity: Name of the target entity
+            relation_data: Dictionary containing relation attributes, e.g. {"description": "description", "keywords": "keywords"}
+
+        Returns:
+            Dictionary containing created relation information
+        """
+        loop = always_get_an_event_loop()
+        return loop.run_until_complete(
+            self.acreate_relation(source_entity, target_entity, relation_data)
+        )

@@ -57,7 +57,7 @@ def extract_product_links(html_content, source_url=""):
                         original_url = unquote(original_url)
                         link = original_url
                     except:
-                        pass
+                        print("")
             
             # Lấy thêm thông tin sản phẩm từ thẻ div nếu có
             product_name = ""

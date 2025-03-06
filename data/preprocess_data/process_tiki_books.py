@@ -45,8 +45,8 @@ def generate_book_sentences(row):
         for s in sellers_info:
             sentences.append(f'Sách "{name}" cũng được bán bởi {s["name"]} với giá {s["price"]} VND (link: {s["link"]}).')
     except:
-        pass  # Nếu không có dữ liệu nhà bán khác thì bỏ qua
-
+        print("")
+        
     return sentences
 
 # Chuyển đổi từng dòng thành danh sách câu văn

@@ -8,12 +8,12 @@ from typing import Any, Dict, List, Literal, Optional
 
 from fastapi import APIRouter, Depends, HTTPException
 from lightrag.base import QueryParam
-from ..utils_api import get_api_key_dependency
+from ..utils_api import get_api_key_dependency, get_auth_dependency
 from pydantic import BaseModel, Field, field_validator
 
 from ascii_colors import trace_exception
 
-router = APIRouter(tags=["query"])
+router = APIRouter(tags=["query"], dependencies=[Depends(get_auth_dependency())])
 
 
 class QueryRequest(BaseModel):
@@ -161,8 +161,6 @@ def create_query_routes(rag, api_key: Optional[str] = None, top_k: int = 60):
         """
         try:
             param = request.to_query_params(False)
-            if param.top_k is None:
-                param.top_k = top_k
             response = await rag.aquery(request.query, param=param)
 
             # If response is a string (e.g. cache hit), return directly
@@ -192,8 +190,6 @@ def create_query_routes(rag, api_key: Optional[str] = None, top_k: int = 60):
         """
         try:
             param = request.to_query_params(True)
-            if param.top_k is None:
-                param.top_k = top_k
             response = await rag.aquery(request.query, param=param)
 
             from fastapi.responses import StreamingResponse

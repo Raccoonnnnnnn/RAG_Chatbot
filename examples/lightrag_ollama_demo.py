@@ -51,11 +51,10 @@ rag = LightRAG(
 )
 
 
-#with open("./data/tiki_books_vn.txt", "r", encoding="utf-8") as f:
+with open("./data/tiki_books_vn.txt", "r", encoding="utf-8") as f:
+ rag.insert(f.read())
+# with open("./data/books_goodreads_en.txt", "r", encoding="utf-8") as f:
 #  rag.insert(f.read())
-#with open("./data/books_goodreads_en.txt", "r", encoding="utf-8") as f:
-#  rag.insert(f.read())
-
 
 # Perform local search
 input = "Tư vấn Sách Cây Cam Ngọt Của Tôi"
@@ -63,21 +62,21 @@ print("\n\n🔎🔎🔎 QUERY: " + input + "\n\n")
 
 # Perform local search
 print("\n🔎 **Truy vấn mode `LOCAL`** ...")
-response = rag.query(input, param=QueryParam(mode="local", top_k=10))
+response = rag.query(input, param=QueryParam(mode="local", top_k=5), system_prompt=PROMPTS["universal_rag_response"])
 print("\n🟢 **Kết quả (mode `LOCAL`):**\n" + response)
 
 # Perform global search
 print("\n🔎 **Truy vấn mode `GLOBAL`** ...")
-response = rag.query(input, param=QueryParam(mode="global", top_k=10))
+response = rag.query(input, param=QueryParam(mode="global", top_k=5), system_prompt=PROMPTS["universal_rag_response"])
 print("\n🟢 **Kết quả (mode `GLOBAL`):**\n" + response)
 
 # Perform hybrid search
 print("\n🔎 **Truy vấn mode `MIX`** ...")
-response = rag.query(input, param=QueryParam(mode="mix", top_k=10))
+response = rag.query(input, param=QueryParam(mode="mix", top_k=5), system_prompt=PROMPTS["mix_rag_response"])
 print("\n🟢 **Kết quả (mode `MIX`):**\n" + response)
 
 # stream response
-resp = rag.query(input, param=QueryParam(mode="hybrid", stream=True))
+resp = rag.query(input, param=QueryParam(mode="hybrid", stream=True), system_prompt=PROMPTS["universal_rag_response"])
 
 async def print_stream(stream):
     async for chunk in stream:

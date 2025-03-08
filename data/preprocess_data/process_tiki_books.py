@@ -40,12 +40,12 @@ def generate_book_sentences(row):
         sentences.append(f'Sách "{name}" có thể mua tại {link}.')
 
     # Xử lý thông tin nhà bán khác
-    try:
-        sellers_info = json.loads(row["Other_sellers"].replace("'", '"'))  # Chuyển chuỗi JSON về list
-        for s in sellers_info:
-            sentences.append(f'Sách "{name}" cũng được bán bởi {s["name"]} với giá {s["price"]} VND (link: {s["link"]}).')
-    except:
-        print("")
+    # try:
+    #     sellers_info = json.loads(row["Other_sellers"].replace("'", '"'))  # Chuyển chuỗi JSON về list
+    #     for s in sellers_info:
+    #         sentences.append(f'Sách "{name}" cũng được bán bởi {s["name"]} với giá {s["price"]} VND (link: {s["link"]}).')
+    # except:
+    #     print("")
         
     return sentences
 

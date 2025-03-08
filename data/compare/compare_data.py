@@ -49,14 +49,14 @@ def detect_changes(old_file, new_file):
         print(tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
 
     # Xuất dữ liệu ra file Excel
-    with pd.ExcelWriter("changes_report.xlsx") as writer:
+    with pd.ExcelWriter("./data/changes_report.xlsx") as writer:
         if not changed_df.empty:
             changed_df.to_excel(writer, sheet_name="Changed Books", index=False)
 
     return changed_df
 
 # Sử dụng hàm
-old_file_path = "tiki_books_vn.xlsx"
-new_file_path = "tiki_books_vn_generated.xlsx"
+old_file_path = "./data/tiki_books_vn.xlsx"
+new_file_path = "./data/tiki_books_vn_new.xlsx"
 
 changed = detect_changes(old_file_path, new_file_path)

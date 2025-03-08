@@ -4,14 +4,14 @@ from lightrag.utils import xml_to_json
 from neo4j import GraphDatabase
 
 # Constants
-WORKING_DIR = "./dickens"
+WORKING_DIR = "./dickens_ollama"
 BATCH_SIZE_NODES = 500
 BATCH_SIZE_EDGES = 100
 
 # Neo4j connection credentials
-NEO4J_URI = "bolt://localhost:7687"
+NEO4J_URI = "neo4j+s://9bbf16c8.databases.neo4j.io"
 NEO4J_USERNAME = "neo4j"
-NEO4J_PASSWORD = "your_password"
+NEO4J_PASSWORD = "_VL9DMBHJ5WxZ4Fgg9Rhgib7MdDQCkU8bKxWtYI3ciU"
 
 
 def convert_xml_to_json(xml_path, output_path):

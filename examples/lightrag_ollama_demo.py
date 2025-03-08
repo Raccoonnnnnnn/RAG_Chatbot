@@ -29,7 +29,7 @@ def custom_chunking_wrapper(
 ):
     return chunking_by_token_size(
         content=content,
-        split_by_character="\n",
+        split_by_character="\n\n",
         split_by_character_only=False,  
         overlap_token_size=50,         
         max_token_size=512,         
@@ -70,7 +70,7 @@ def main():
     rag = asyncio.run(initialize_rag())
 
     # Insert example text
-    with open("./data/tiki_books_vn.txt", "r", encoding="utf-8") as f:
+    with open("./data/tiki_books_json.txt", "r", encoding="utf-8") as f:
         rag.insert(f.read())
     # with open("./data/books_goodreads_en.txt", "r", encoding="utf-8") as f:
     #  rag.insert(f.read())

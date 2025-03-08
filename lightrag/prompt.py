@@ -10,7 +10,7 @@ PROMPTS["DEFAULT_TUPLE_DELIMITER"] = "<|>"
 PROMPTS["DEFAULT_RECORD_DELIMITER"] = "##"
 PROMPTS["DEFAULT_COMPLETION_DELIMITER"] = "<|COMPLETE|>"
 
-PROMPTS["DEFAULT_ENTITY_TYPES"] = ["Book", "Author", "Publisher", "Manufacturer", "Seller", "Genre", "Series", "Price", "Sold Quantity", "Discount", "Rating"]
+PROMPTS["DEFAULT_ENTITY_TYPES"] = ["Book", "Author", "Publisher", "Manufacturer", "Price", "Sold Quantity", "Discount", "Rating", "Link"]
 
 PROMPTS["entity_extraction"] = """---Goal---
 Given a text document that contains information about books, identify all entities of those types from the text and all relationships among the identified entities.

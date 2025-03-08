@@ -1,1754 +1,224 @@
 {
-  "chunk-69af5197f7b38be186f1b4e9a67581d6": {
-    "tokens": 16,
-    "content": "Sách \"Bản Đồ\" có giá 224250 VND.",
-    "chunk_order_index": 296,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7aa29967e5be83e1b97f31b99281ac03": {
-    "tokens": 15,
-    "content": "Sách \"Bản Đồ\" có mức giảm giá 35%.",
-    "chunk_order_index": 297,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-36de4ed180fa1029fd15d2c703079d60": {
-    "tokens": 17,
-    "content": "Sách \"Bản Đồ\" hiện đã bán được 5935 bản.",
-    "chunk_order_index": 298,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-73b700d0fe67c39620d25a37d1b0b299": {
-    "tokens": 19,
-    "content": "Sách \"Bản Đồ\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 299,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9fe26fb378f2fb5953ca7d37bbbfda7b": {
-    "tokens": 16,
-    "content": "Sách \"Bản Đồ\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 300,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d42ecfb4f9d9fb17d59bbde90941d469": {
-    "tokens": 21,
-    "content": "Sách \"Bản Đồ\" được sản xuất bởi Nhà Xuất Bản Lao Động.",
-    "chunk_order_index": 301,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2bbd62476b44f6bb620c4f623656c519": {
-    "tokens": 23,
-    "content": "Sách \"Bản Đồ\" được viết bởi Aleksandra Mizielińska, Daniel Mizieliński.",
-    "chunk_order_index": 302,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7bac5ad474a94640649169088985c794": {
-    "tokens": 31,
-    "content": "Sách \"Bản Đồ\" có thể mua tại https://tiki.vn/product-p50685547.html?spid=50685549.",
-    "chunk_order_index": 303,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3c03bd2b025803c95c83bb2b7b4bbaa0": {
-    "tokens": 21,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" có giá 64800 VND.",
-    "chunk_order_index": 304,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d7ccef2999d96ca45e1b3084a8f12181": {
-    "tokens": 20,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" có mức giảm giá 40%.",
-    "chunk_order_index": 305,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-965de44be5d3624adea0704944e5178e": {
-    "tokens": 22,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" hiện đã bán được 72191 bản.",
-    "chunk_order_index": 306,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3afb9e2eb308c4679a1992bd30d64556": {
-    "tokens": 24,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 307,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-5846f1af8780c1a05cf2c1b6f133a281": {
-    "tokens": 21,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 308,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7480e77641cddd30afc80c7db18b6cf9": {
-    "tokens": 26,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" được sản xuất bởi Nhà Xuất Bản Hội Nhà Văn.",
-    "chunk_order_index": 309,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-be3d3ba6da49ae4e51cbae0055ea3531": {
-    "tokens": 24,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" được viết bởi José Mauro de Vasconcelos.",
-    "chunk_order_index": 310,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3a58e572b4d7e044eb9fde7cbb959977": {
-    "tokens": 36,
-    "content": "Sách \"Cây Cam Ngọt Của Tôi\" có thể mua tại https://tiki.vn/product-p74021317.html?spid=74021318.",
-    "chunk_order_index": 311,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9bc8a48e0db295b6da874d5780fc8165": {
-    "tokens": 24,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" có giá 52930 VND.",
-    "chunk_order_index": 312,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ab35064415f78fa35b06ded71a4a3e6d": {
-    "tokens": 23,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" có mức giảm giá 33%.",
-    "chunk_order_index": 313,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-245f8cfce9bbc327b5e5c6820eef676e": {
-    "tokens": 25,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" hiện đã bán được 9842 bản.",
-    "chunk_order_index": 314,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-684ad043528739ead532854ade57c7ae": {
-    "tokens": 27,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 315,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-606a9ea47329766cfe5e66fd6a0615e5": {
-    "tokens": 25,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" được xuất bản bởi Người Trẻ Việt.",
-    "chunk_order_index": 316,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-450db237c24d9777ad389ab8a503940a": {
-    "tokens": 30,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 317,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-602e4f17cc22fc6e181cace88842c6f4": {
-    "tokens": 21,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" được viết bởi Universe.",
-    "chunk_order_index": 318,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-36fb76ddf1225a7731644c45ba7b2d75": {
-    "tokens": 39,
-    "content": "Sách \"Vị Thần Của Những Quyết Định\" có thể mua tại https://tiki.vn/product-p188940817.html?spid=188940819.",
-    "chunk_order_index": 319,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-df4064e1f74b46c0de10f7fad0007d1f": {
-    "tokens": 35,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" có giá 85760 VND.",
-    "chunk_order_index": 320,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c5002221907641cb506befe788162d1b": {
-    "tokens": 34,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" có mức giảm giá 33%.",
-    "chunk_order_index": 321,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-91735514feccfcb67b283a27b9d07b5f": {
-    "tokens": 36,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" hiện đã bán được 12937 bản.",
-    "chunk_order_index": 322,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-77a91d46f96fa947a829e7141971dbcf": {
-    "tokens": 38,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 323,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4d0c6901a5341a035ed8b45888ea3017": {
-    "tokens": 34,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" được xuất bản bởi Skybooks.",
-    "chunk_order_index": 324,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-33c202e55fcf9cf4fd419e2c4f9d743e": {
-    "tokens": 41,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 325,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-95f14d57b370e21fc66e07e0ff500f4e": {
-    "tokens": 37,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" được viết bởi Lê Bảo Ngọc.",
-    "chunk_order_index": 326,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8b59cc860f9e711552ee57953619377c": {
-    "tokens": 50,
-    "content": "Sách \"Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\" có thể mua tại https://tiki.vn/product-p189643105.html?spid=189643110.",
-    "chunk_order_index": 327,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9d1a97051e27fd1849aa7fc84240d3dc": {
-    "tokens": 31,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" có giá 50730 VND.",
-    "chunk_order_index": 328,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3dbe3d8828492d5399c335cb216c3c04": {
-    "tokens": 30,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" có mức giảm giá 43%.",
-    "chunk_order_index": 329,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3e856f448ce1b697673988edc16dce98": {
-    "tokens": 32,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" hiện đã bán được 74108 bản.",
-    "chunk_order_index": 330,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ac773d9495215f7f417357bb04d52319": {
-    "tokens": 34,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 331,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-71a466ac78961b8b60a535917b5711e4": {
-    "tokens": 30,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" được xuất bản bởi Skybooks.",
-    "chunk_order_index": 332,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7ba16c1558cad314782c6a77a1f0bd90": {
-    "tokens": 37,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 333,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8230c074cb52c466d47ef35d3757a39a": {
-    "tokens": 31,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" được viết bởi Tống Mặc.",
-    "chunk_order_index": 334,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-e0526ba6e315da956a417641c951c822": {
-    "tokens": 46,
-    "content": "Sách \"Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\" có thể mua tại https://tiki.vn/product-p26114399.html?spid=26114400.",
-    "chunk_order_index": 335,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-566cc21851893d75eced11a4aae5524a": {
-    "tokens": 34,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" có giá 110980 VND.",
-    "chunk_order_index": 336,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-11f1c99ebbc45acaa077a8c8869598d4": {
-    "tokens": 33,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" có mức giảm giá 38%.",
-    "chunk_order_index": 337,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-45a53a7f23023b3d4b5a5ba8a6338c10": {
-    "tokens": 35,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" hiện đã bán được 25756 bản.",
-    "chunk_order_index": 338,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a951cbb291f455defdeedb7fd47236ba": {
-    "tokens": 37,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 339,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c7e8a0fc532f448c6a984d6b050a897a": {
-    "tokens": 33,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" được xuất bản bởi Vibooks.",
-    "chunk_order_index": 340,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b9465a9c2e26bcdddaff274960bd00ef": {
-    "tokens": 40,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 341,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2c9d3cca46d2a49dc18d2e99a4aff39f": {
-    "tokens": 32,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" được viết bởi Cao Minh.",
-    "chunk_order_index": 342,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-f3e6d3b43f842df6c2310505bf6473e8": {
-    "tokens": 49,
-    "content": "Sách \"Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\" có thể mua tại https://tiki.vn/product-p109017985.html?spid=109017987.",
-    "chunk_order_index": 343,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-359493178b64099ed75f5324b67e0119": {
-    "tokens": 35,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" có giá 99350 VND.",
-    "chunk_order_index": 376,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-acf07ce3eaa2e955dd72908cf8a1e20c": {
-    "tokens": 34,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" có mức giảm giá 0%.",
-    "chunk_order_index": 377,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3608f1aa3b2f21e6334e0023910de813": {
-    "tokens": 35,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" hiện đã bán được 486 bản.",
-    "chunk_order_index": 378,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-12f99d43a21c69322d26fcb2a90f4114": {
-    "tokens": 38,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 379,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-f6931baa8b3f53c11b2907b1638e90ab": {
-    "tokens": 35,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 380,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4eae4873e05263fbf7696c083f7ea5a3": {
-    "tokens": 40,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" được sản xuất bởi Nhà Xuất Bản Hội Nhà Văn.",
-    "chunk_order_index": 381,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b8a49b6025ad650b128deda92f4c01da": {
-    "tokens": 36,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" được viết bởi Higashino Keigo.",
-    "chunk_order_index": 382,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3f00d86f3b68426026888c719da5a590": {
-    "tokens": 50,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" có thể mua tại https://tiki.vn/product-p3304875.html?spid=10853528.",
-    "chunk_order_index": 383,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-418d60d0e1a418991688c761da92965b": {
-    "tokens": 25,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" có giá 47400 VND.",
-    "chunk_order_index": 344,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-45fd3f2cd27616f510b1a86f5ea0c3d4": {
-    "tokens": 24,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" có mức giảm giá 40%.",
-    "chunk_order_index": 345,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-517f781e16384aa389ad10c24e127236": {
-    "tokens": 26,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" hiện đã bán được 34069 bản.",
-    "chunk_order_index": 346,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-0f59e16ce54fb983db6c78ed7f311aaf": {
-    "tokens": 28,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 347,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-83671a603455ad79f9e173bddbc9ee2e": {
-    "tokens": 25,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 348,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-167ecf6acaab89147e1a621115c67a03": {
-    "tokens": 29,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" được sản xuất bởi Nhà Xuất Bản Hà Nội.",
-    "chunk_order_index": 349,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4f84ceed74e88fafa1d1506c160ea383": {
-    "tokens": 24,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" được viết bởi Paulo Coelho.",
-    "chunk_order_index": 350,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ea32f8fef6691efb338ab4b0b4993d2f": {
-    "tokens": 40,
-    "content": "Sách \"Nhà Giả Kim (Tái Bản 2020)\" có thể mua tại https://tiki.vn/product-p52789367.html?spid=52789368.",
-    "chunk_order_index": 351,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d70a812b8ed1d823c62afca640d7b509": {
-    "tokens": 30,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" có giá 60760 VND.",
-    "chunk_order_index": 352,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-bfa70e35912576ea35140678f6d72d6b": {
-    "tokens": 29,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" có mức giảm giá 38%.",
-    "chunk_order_index": 353,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-04e4ea45e2ab3e5ce59809a929c0349e": {
-    "tokens": 31,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" hiện đã bán được 16238 bản.",
-    "chunk_order_index": 354,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2eabd92012293878825692f7c98c7cb0": {
-    "tokens": 33,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 355,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-f4520d0133c9914bc7f5b4062cbb89c3": {
-    "tokens": 29,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" được xuất bản bởi Mintbooks.",
-    "chunk_order_index": 356,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b69bd1ed6ec4ea9246adae7caa276ba3": {
-    "tokens": 34,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" được sản xuất bởi Nhà Xuất Bản Hà Nội.",
-    "chunk_order_index": 357,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-21c84d70f3b8efb79c3c2c98a7114faa": {
-    "tokens": 30,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" được viết bởi Khương Nguy.",
-    "chunk_order_index": 358,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c55f44c1888648bd47d6c1fb38699342": {
-    "tokens": 45,
-    "content": "Sách \"Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\" có thể mua tại https://tiki.vn/product-p69764541.html?spid=69764542.",
-    "chunk_order_index": 359,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-f789604cf51de719f83a4d5e790c9f80": {
-    "tokens": 15,
-    "content": "Sách \"Dear, Darling\" có giá 58960 VND.",
-    "chunk_order_index": 360,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-0161c33f241215f380ebf61b755a090a": {
-    "tokens": 14,
-    "content": "Sách \"Dear, Darling\" có mức giảm giá 33%.",
-    "chunk_order_index": 361,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-82c7fc0a78b96d1a90ecad3d8523a68c": {
-    "tokens": 16,
-    "content": "Sách \"Dear, Darling\" hiện đã bán được 6084 bản.",
-    "chunk_order_index": 362,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-18deca666cf51d5b60db88f678da74e0": {
-    "tokens": 18,
-    "content": "Sách \"Dear, Darling\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 363,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-373ce0b6d7f2dae3d29babe7f6d5a987": {
-    "tokens": 14,
-    "content": "Sách \"Dear, Darling\" được xuất bản bởi Skybooks.",
-    "chunk_order_index": 364,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7e60e8faa05e9ed300d2ab32a7de3616": {
-    "tokens": 23,
-    "content": "Sách \"Dear, Darling\" được sản xuất bởi Nhà Xuất Bản Phụ Nữ Việt Nam.",
-    "chunk_order_index": 365,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-70b19386f7d6db38fcc49f56c11ecd93": {
-    "tokens": 13,
-    "content": "Sách \"Dear, Darling\" được viết bởi Hiên.",
-    "chunk_order_index": 366,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-e60dbc6e10a7ed9950d2fac7bbf8f57c": {
-    "tokens": 30,
-    "content": "Sách \"Dear, Darling\" có thể mua tại https://tiki.vn/product-p174444163.html?spid=174444165.",
-    "chunk_order_index": 367,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a5d4fdbc28c16d870755361493452aeb": {
-    "tokens": 31,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" có giá 105000 VND.",
-    "chunk_order_index": 368,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-15cf6f290819b33dfc718bd13661fb82": {
-    "tokens": 30,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" có mức giảm giá 36%.",
-    "chunk_order_index": 369,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8e62da8a67fa74abc6978052d22a3429": {
-    "tokens": 32,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" hiện đã bán được 4088 bản.",
-    "chunk_order_index": 370,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-17cc805ff0e29438a0da4973278b34df": {
-    "tokens": 34,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 371,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-fbb5cc4f7f3152fc99c4dc324f5ce92c": {
-    "tokens": 32,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" được xuất bản bởi NXB Trẻ.",
-    "chunk_order_index": 372,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-13cd022ddbf661a0c995be3e9b28b2fa": {
-    "tokens": 32,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" được sản xuất bởi NXB Trẻ.",
-    "chunk_order_index": 373,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-0b50e5be7f79b915f0d49872eb6fb222": {
-    "tokens": 30,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" được viết bởi Delia Owens.",
-    "chunk_order_index": 374,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-5c672e9b2d024a0569932e991e2b4f17": {
-    "tokens": 46,
-    "content": "Sách \"Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\" có thể mua tại https://tiki.vn/product-p73207240.html?spid=73523598.",
-    "chunk_order_index": 375,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d49a6e0b31ad80c19906db1f86426555": {
-    "tokens": 27,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" có giá 251650 VND.",
-    "chunk_order_index": 88,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-bee807eef12fe64416c2281e40213d3a": {
-    "tokens": 26,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" có mức giảm giá 0%.",
-    "chunk_order_index": 89,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-fd742ba85f4cd8200c10bdb3835f1924": {
-    "tokens": 27,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" hiện đã bán được 77 bản.",
-    "chunk_order_index": 90,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-1f842364d4a7c66591efcebd48c7948a": {
-    "tokens": 30,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" có đánh giá trung bình 4.6 sao.",
-    "chunk_order_index": 91,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c3a1de9137c352f90e58e475c64c9417": {
-    "tokens": 28,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" được xuất bản bởi OMEGA PLUS+.",
-    "chunk_order_index": 92,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9803e1fa7cb5bedeb9625984821256b2": {
-    "tokens": 32,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" được sản xuất bởi Nhà Xuất Bản Tri Thức.",
-    "chunk_order_index": 93,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-bfcf73941c5f3a13b46bba146f6e64d6": {
-    "tokens": 28,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" được viết bởi Yuval Noah Harari.",
-    "chunk_order_index": 94,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d203ee16cf789905804385b29baf1c1a": {
-    "tokens": 42,
-    "content": "Sách \"Sapiens Lược Sử Loài Người (Tái Bản)\" có thể mua tại https://tiki.vn/product-p114578907.html?spid=120431978.",
-    "chunk_order_index": 95,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7b98a90cbb71eb8aaea5d4c46fe3757e": {
-    "tokens": 30,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" có giá 44640 VND.",
-    "chunk_order_index": 384,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8a1f4175cbc7857f10bf33f6eaeb4032": {
-    "tokens": 29,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" có mức giảm giá 38%.",
-    "chunk_order_index": 385,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-82b3015ed78f1d383848d2c9d782dabb": {
-    "tokens": 31,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" hiện đã bán được 5406 bản.",
-    "chunk_order_index": 386,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-077f95c6b4be158f20a67ec518c52eca": {
-    "tokens": 33,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 387,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-924c72516edf275f3fc4b877f1848154": {
-    "tokens": 29,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" được xuất bản bởi Skybooks.",
-    "chunk_order_index": 388,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-214bf381d6a62f07aa2e51eb67acdb12": {
-    "tokens": 34,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" được sản xuất bởi Nhà Xuất Bản Hà Nội.",
-    "chunk_order_index": 389,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d26c9753230c17649031f469fb62f487": {
-    "tokens": 28,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" được viết bởi Thought Catalog.",
-    "chunk_order_index": 390,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-1da22d8ce4684be0a0a6ebda63d716db": {
-    "tokens": 45,
-    "content": "Sách \"Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\" có thể mua tại https://tiki.vn/product-p121635154.html?spid=121635155.",
-    "chunk_order_index": 391,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8dade6634a8acc7d1a40e41f9ca060dc": {
-    "tokens": 26,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" có giá 81000 VND.",
-    "chunk_order_index": 104,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3229ef9ed78f18810e32fb1fb80f3c9b": {
-    "tokens": 25,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" có mức giảm giá 40%.",
-    "chunk_order_index": 105,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-553a784f85a69d1b7b53d6b97b406e24": {
-    "tokens": 27,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" hiện đã bán được 13608 bản.",
-    "chunk_order_index": 106,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4bb3718b26768535e7aa7b6681cdc05d": {
-    "tokens": 29,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 107,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-525e54518944e96fa94982cce5c5c3d4": {
-    "tokens": 26,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 108,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ad2db208fbc6e7b0cbf980152bfefcae": {
-    "tokens": 31,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" được sản xuất bởi Nhà Xuất Bản Hội Nhà Văn.",
-    "chunk_order_index": 109,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-44ca0da5ba8e3ec9662abac820102d20": {
-    "tokens": 25,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" được viết bởi Ocean Vuong.",
-    "chunk_order_index": 110,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ba26716f57663d033f57ef47dfccfab0": {
-    "tokens": 41,
-    "content": "Sách \"Một Thoáng Ta Rực Rỡ Ở Nhân Gian\" có thể mua tại https://tiki.vn/product-p147920903.html?spid=147920904.",
-    "chunk_order_index": 111,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ba5a794e8305b1b6c84669312efa7ffd": {
-    "tokens": 21,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" có giá 83400 VND.",
-    "chunk_order_index": 112,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-207b988a26a652e05db5520b4f4dceb8": {
-    "tokens": 20,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" có mức giảm giá 40%.",
-    "chunk_order_index": 113,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-17b912c12a6a748c90c550eb77fc305c": {
-    "tokens": 22,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" hiện đã bán được 39591 bản.",
-    "chunk_order_index": 114,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-5512bb1117e33710cbf54c12d61a8ed0": {
-    "tokens": 24,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 115,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-1fbfc942aecbf5d9b96fcdb863009476": {
-    "tokens": 21,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 116,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a5a788ddf1344d34ddf975ad6e058c7d": {
-    "tokens": 27,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 117,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-969b41028450cffdb714d7294f5e66a0": {
-    "tokens": 20,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" được viết bởi Hae Min.",
-    "chunk_order_index": 118,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-db45fb06e9a36699a65643ea943c1c79": {
-    "tokens": 36,
-    "content": "Sách \"Yêu Những Điều Không Hoàn Hảo\" có thể mua tại https://tiki.vn/product-p3954355.html?spid=3955615.",
-    "chunk_order_index": 119,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-13ff5938e32f56b6e2b5d9551fced619": {
-    "tokens": 25,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" có giá 126000 VND.",
-    "chunk_order_index": 120,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9e9ea197dd2559ed35c846213bc82f43": {
-    "tokens": 24,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" có mức giảm giá 40%.",
-    "chunk_order_index": 121,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a441b796c6d5c2df31d7424ee5234120": {
-    "tokens": 26,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" hiện đã bán được 22227 bản.",
-    "chunk_order_index": 122,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-e0091405ba5ff8ed1d81fdbc02bd48fb": {
-    "tokens": 28,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 123,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c59e69e7a28840bd4e8760cc2fa1a8c3": {
-    "tokens": 25,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 124,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3f873365ff6756c90c17556c6cd3d04c": {
-    "tokens": 30,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" được sản xuất bởi Nhà Xuất Bản Hội Nhà Văn.",
-    "chunk_order_index": 125,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-5624ecea616b5a33e71395a5247fcb72": {
-    "tokens": 23,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" được viết bởi Tim Marshall.",
-    "chunk_order_index": 126,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-27fda59bff0c1e58313a715345008425": {
-    "tokens": 40,
-    "content": "Sách \"Những Tù Nhân Của Địa Lý\" có thể mua tại https://tiki.vn/product-p73787185.html?spid=73787186.",
-    "chunk_order_index": 127,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-733257d16349b2a16b59cd44cb235e60": {
-    "tokens": 37,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" có giá 144000 VND.",
-    "chunk_order_index": 128,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-687a1ac8715d2d204377ed759e404440": {
-    "tokens": 36,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" có mức giảm giá 40%.",
-    "chunk_order_index": 129,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3d2ae727d7072aa9b228a821abce5820": {
-    "tokens": 38,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" hiện đã bán được 12918 bản.",
-    "chunk_order_index": 130,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-393794611ef820c0a845ce1f3ed09e58": {
-    "tokens": 40,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 131,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-5f7da7f8411b659f7531cf29e432c3a5": {
-    "tokens": 37,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 132,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-89287957a0294841e0d9326fa7734d66": {
-    "tokens": 42,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" được sản xuất bởi Nhà Xuất Bản Hội Nhà Văn.",
-    "chunk_order_index": 133,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c23ff26514611a620d16c6e61c049694": {
-    "tokens": 39,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" được viết bởi Đặng Hoàng Giang.",
-    "chunk_order_index": 134,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9ef6f16675d505d6e13ae7c2a576c7ff": {
-    "tokens": 52,
-    "content": "Sách \"Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\" có thể mua tại https://tiki.vn/product-p117254517.html?spid=117254521.",
-    "chunk_order_index": 135,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-fe7f08bab026521418221d04572b301f": {
-    "tokens": 34,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" có giá 129400 VND.",
-    "chunk_order_index": 136,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b765622d4143dc241bc59439f1b40e8e": {
-    "tokens": 33,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" có mức giảm giá 18%.",
-    "chunk_order_index": 137,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-803f4a717115a380a6a9474218e4ad9a": {
-    "tokens": 35,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" hiện đã bán được 35333 bản.",
-    "chunk_order_index": 138,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-536faaddcece17de0d1ae723862fd86a": {
-    "tokens": 37,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 139,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3d03c42aa0b3d90bfd8ec6992ecf071b": {
-    "tokens": 37,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" được xuất bản bởi First News - Trí Việt.",
-    "chunk_order_index": 140,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-07ab5228492450eeedd915996ef5d84a": {
-    "tokens": 41,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" được sản xuất bởi Nhà Xuất Bản Tổng hợp TP.HCM.",
-    "chunk_order_index": 141,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-88338d612094f048e9135ac0332af487": {
-    "tokens": 33,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" được viết bởi Minh Niệm.",
-    "chunk_order_index": 142,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c1ae279e3574c2d024840a3e01bd31b9": {
-    "tokens": 49,
-    "content": "Sách \"Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\" có thể mua tại https://tiki.vn/product-p42230121.html?spid=42230122.",
-    "chunk_order_index": 143,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8072fcca76740ba4c12046aa906590a1": {
-    "tokens": 24,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" có giá 59400 VND.",
-    "chunk_order_index": 144,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-93146fded96a096df0a03190c94b9f84": {
-    "tokens": 23,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" có mức giảm giá 40%.",
-    "chunk_order_index": 145,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-267e2e24ed51eeea0d47d2bd79684364": {
-    "tokens": 25,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" hiện đã bán được 30363 bản.",
-    "chunk_order_index": 146,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3b1e26655b4fa6721290946362293d01": {
-    "tokens": 27,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 147,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-e6115e16c056d5191c72961d52463859": {
-    "tokens": 25,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" được xuất bản bởi 1980 Books.",
-    "chunk_order_index": 148,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-153c20cac43a3cf8be03fd5ab18d7777": {
-    "tokens": 30,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" được sản xuất bởi Nhà Xuất Bản Phụ Nữ.",
-    "chunk_order_index": 149,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ac58f53fe627acee9c8d1e10b6b234f1": {
-    "tokens": 22,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" được viết bởi Albert Rutherford.",
-    "chunk_order_index": 150,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a6a53d181a2ace96d4671331c4722e40": {
-    "tokens": 39,
-    "content": "Sách \"Rèn Luyện Tư Duy Phản Biện\" có thể mua tại https://tiki.vn/product-p46240929.html?spid=46240930.",
-    "chunk_order_index": 151,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d7b1f9ff53aed74c1d65e71bfd3ed369": {
-    "tokens": 20,
-    "content": "Sách \"Thư Viện Nửa Đêm\" có giá 97500 VND.",
-    "chunk_order_index": 152,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-6ec40bb6bb09ed5c84f324de251f7d34": {
-    "tokens": 19,
-    "content": "Sách \"Thư Viện Nửa Đêm\" có mức giảm giá 35%.",
-    "chunk_order_index": 153,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9888be708544004fa2bc8a83b9f90705": {
-    "tokens": 21,
-    "content": "Sách \"Thư Viện Nửa Đêm\" hiện đã bán được 9949 bản.",
-    "chunk_order_index": 154,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-81c7e1f97265206d78fbef4dffdeebe7": {
-    "tokens": 23,
-    "content": "Sách \"Thư Viện Nửa Đêm\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 155,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-83f03e3cf641220265d6ad72bdb76b3e": {
-    "tokens": 20,
-    "content": "Sách \"Thư Viện Nửa Đêm\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 156,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-364dd4dac9806c5f041486e70fad166f": {
-    "tokens": 25,
-    "content": "Sách \"Thư Viện Nửa Đêm\" được sản xuất bởi Nhà Xuất Bản Hội Nhà Văn.",
-    "chunk_order_index": 157,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-6f72e6f5b90432a8d766494f132ce954": {
-    "tokens": 19,
-    "content": "Sách \"Thư Viện Nửa Đêm\" được viết bởi Matt Haig.",
-    "chunk_order_index": 158,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-48566114bbf974256d04ef69c8139a55": {
-    "tokens": 35,
-    "content": "Sách \"Thư Viện Nửa Đêm\" có thể mua tại https://tiki.vn/product-p117238177.html?spid=117238178.",
-    "chunk_order_index": 159,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-bf445167bb4282976cd644abc2486d82": {
-    "tokens": 24,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" có giá 64320 VND.",
-    "chunk_order_index": 160,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-39c57a1ca3f91135eb8ad613d9fd1975": {
-    "tokens": 23,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" có mức giảm giá 33%.",
-    "chunk_order_index": 161,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-0d2af9fc6486a6cdceef5ccd500a48ea": {
-    "tokens": 25,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" hiện đã bán được 10744 bản.",
-    "chunk_order_index": 162,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-520c6824669fac67426b93a6cbfe0c87": {
-    "tokens": 27,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 163,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4afae55a121e55b5a3e3d20ca1a5eb73": {
-    "tokens": 23,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" được xuất bản bởi Bookland.",
-    "chunk_order_index": 164,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9a15622aeb45b313e501ac7d277c7425": {
-    "tokens": 30,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 165,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-15427d6b69a4adba4f6fa238241d35c1": {
-    "tokens": 25,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" được viết bởi Tạ Quốc Kế.",
-    "chunk_order_index": 166,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-cd8cdd86f39fd2c1997c0ee36e2a668c": {
-    "tokens": 39,
-    "content": "Sách \"Điềm Tĩnh Và Nóng Giận\" có thể mua tại https://tiki.vn/product-p143217512.html?spid=143217516.",
-    "chunk_order_index": 167,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2ac0df150527daf1d0de830275776bf3": {
-    "tokens": 27,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" có giá 52080 VND.",
-    "chunk_order_index": 168,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-45b0ca6e1c0f05f7446b216fcf37dd17": {
-    "tokens": 26,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" có mức giảm giá 38%.",
-    "chunk_order_index": 169,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-00f506c09ac95ac79cec6991a98732a3": {
-    "tokens": 28,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" hiện đã bán được 11565 bản.",
-    "chunk_order_index": 170,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-71d33fc13b4ebe8d7423bc5e818b8f39": {
-    "tokens": 30,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 171,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-bead86825c3142db82f043e47fe68961": {
-    "tokens": 26,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" được xuất bản bởi Skybooks.",
-    "chunk_order_index": 172,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-855309f6cb796c4fb9177996512fbe96": {
-    "tokens": 33,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 173,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-92dac7255f2b6cf67b6062d2feec96ab": {
-    "tokens": 27,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" được viết bởi Tiểu Dã.",
-    "chunk_order_index": 174,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-899a60ca77587b90c9f4c6a779140f26": {
-    "tokens": 42,
-    "content": "Sách \"Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\" có thể mua tại https://tiki.vn/product-p72882553.html?spid=72882555.",
-    "chunk_order_index": 175,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-97d8a92ed99d162b2782ed8918af5d27": {
-    "tokens": 41,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" có giá 146700 VND.",
-    "chunk_order_index": 176,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-af8291d729e03db168c4b6610bd21c6e": {
-    "tokens": 40,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" có mức giảm giá 33%.",
-    "chunk_order_index": 177,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7dc11b5f907395a093a17d1bb330fae9": {
-    "tokens": 42,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" hiện đã bán được 10266 bản.",
-    "chunk_order_index": 178,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-eef1d851e4570c54d51db984ddbcff96": {
-    "tokens": 44,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 179,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-79910d10edae4b1055e6941bf49389fc": {
-    "tokens": 40,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" được xuất bản bởi Zenbooks.",
-    "chunk_order_index": 180,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ca9a38411e1c19da0e64f050ec84b95a": {
-    "tokens": 48,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" được sản xuất bởi Nhà Xuất Bản Đà Nẵng.",
-    "chunk_order_index": 181,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a980d62f8eefdaf99b7b525d53a692a5": {
-    "tokens": 46,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" được viết bởi Mai Lan Hương, Hà Thanh Uyên.",
-    "chunk_order_index": 182,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-60aef8bf316a6452ac5f1fd20c124564": {
-    "tokens": 56,
-    "content": "Sách \"Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\" có thể mua tại https://tiki.vn/product-p157432544.html?spid=157432545.",
-    "chunk_order_index": 183,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8af29b4caba129a5e63539fc13184f34": {
-    "tokens": 25,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" có giá 103000 VND.",
-    "chunk_order_index": 184,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-db7f38004c3eb60fa86961155f830890": {
-    "tokens": 24,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" có mức giảm giá 36%.",
-    "chunk_order_index": 185,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3a5163898638625f5aca039a2fedd7ae": {
-    "tokens": 26,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" hiện đã bán được 1495 bản.",
-    "chunk_order_index": 186,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9920b43daabc759ad073bf7165f08002": {
-    "tokens": 28,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 187,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-e285ca728e3d5da7be7a6a92ec2eed77": {
-    "tokens": 29,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" được xuất bản bởi NXB Tổng hợp TP.HCM.",
-    "chunk_order_index": 188,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-1a29d0cc82ab598480eefad0a0c22f9b": {
-    "tokens": 32,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" được sản xuất bởi Nhà Xuất Bản Tổng hợp TP.HCM.",
-    "chunk_order_index": 189,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-743d59c49cd8955062a257cca18e30b6": {
-    "tokens": 25,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" được viết bởi Nguyễn Văn Tuấn.",
-    "chunk_order_index": 190,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-0d8cdda9cde39eb6bd9e15488c25727f": {
-    "tokens": 40,
-    "content": "Sách \"Suy Nghĩ Thống Kê Trong Đời Thường\" có thể mua tại https://tiki.vn/product-p197719874.html?spid=197719875.",
-    "chunk_order_index": 191,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c8700ba80f67150849e44a4115d54f7d": {
-    "tokens": 47,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" có giá 73780 VND.",
-    "chunk_order_index": 192,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2411ac77464516629947d13f6c22939c": {
-    "tokens": 46,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" có mức giảm giá 38%.",
-    "chunk_order_index": 193,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4dcc5ac902a1e827d67928ebcf2fe26d": {
-    "tokens": 48,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" hiện đã bán được 11904 bản.",
-    "chunk_order_index": 194,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7b116737d448ad8aa567a97eded4f85c": {
-    "tokens": 50,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 195,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-f758ffb4fb24e0fdf0baa7a7b68a1a40": {
-    "tokens": 47,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" được xuất bản bởi Mood to Read.",
-    "chunk_order_index": 196,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-65682fd1ab4a703712e6d5b88c26b7ae": {
-    "tokens": 53,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" được sản xuất bởi Nhà Xuất Bản Dân Trí.",
-    "chunk_order_index": 197,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-446f18e2b5f07a3f651189e5c4cfd0ba": {
-    "tokens": 46,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" được viết bởi Yoo Eun Jung.",
-    "chunk_order_index": 198,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-86f395e0d5c5e23973f73fe0587ad35d": {
-    "tokens": 62,
-    "content": "Sách \"Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\" có thể mua tại https://tiki.vn/product-p121635152.html?spid=121635153.",
-    "chunk_order_index": 199,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ee9fe678a57317538b52864be0dad35a": {
-    "tokens": 30,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" có giá 195640 VND.",
-    "chunk_order_index": 200,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-08d62c26860fcd25ce7529328d1e68b9": {
-    "tokens": 29,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" có mức giảm giá 33%.",
-    "chunk_order_index": 201,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a866d2091e4e5a0e8773e2813971fde1": {
-    "tokens": 31,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" hiện đã bán được 31057 bản.",
-    "chunk_order_index": 202,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ec40c9ab543196da9a1df7d428feec25": {
-    "tokens": 33,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" có đánh giá trung bình 4.7 sao.",
-    "chunk_order_index": 203,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-5da1b85620b9d9ce24796f0c084ced81": {
-    "tokens": 29,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" được xuất bản bởi Skybooks.",
-    "chunk_order_index": 204,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b80f21418dbe7dcd20581c0595e831b3": {
-    "tokens": 36,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" được sản xuất bởi Nhà Xuất Bản Dân Trí.",
-    "chunk_order_index": 205,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-6f8c46ab5b57e5e5dba7235fbff7c7ed": {
-    "tokens": 31,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" được viết bởi Ngô Sa Thạch.",
-    "chunk_order_index": 206,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-91257f92fa3cdf72c2f84481f70f384b": {
-    "tokens": 45,
-    "content": "Sách \"Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\" có thể mua tại https://tiki.vn/product-p97594364.html?spid=127522207.",
-    "chunk_order_index": 207,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7c248d522fedf87872a98f16e1d75617": {
-    "tokens": 28,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" có giá 80520 VND.",
-    "chunk_order_index": 208,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-6ce7617db98dcbb050825b976ab709cb": {
-    "tokens": 27,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" có mức giảm giá 39%.",
-    "chunk_order_index": 209,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-fe0c7dbf6da2c8ac887da82cd8cc2b80": {
-    "tokens": 29,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" hiện đã bán được 5318 bản.",
-    "chunk_order_index": 210,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-f3e600814cd26d51e5525e43c0877e42": {
-    "tokens": 31,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 211,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-163e468b87648d6f089d78006ed7643f": {
-    "tokens": 27,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" được xuất bản bởi Skybooks.",
-    "chunk_order_index": 212,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-38beb74f03100f7206dc784f8d88d03f": {
-    "tokens": 34,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" được sản xuất bởi Nhà Xuất Bản Phụ Nữ.",
-    "chunk_order_index": 213,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b4f028572cc27b60627d99c7a63d72e8": {
-    "tokens": 27,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" được viết bởi Kulzsc.",
-    "chunk_order_index": 214,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a507c50dd0abf92f46a7cca61abe6752": {
-    "tokens": 43,
-    "content": "Sách \"Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\" có thể mua tại https://tiki.vn/product-p190861557.html?spid=190861559.",
-    "chunk_order_index": 215,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-41bd51ac1ab34b5567f4ae1f5ac10a87": {
-    "tokens": 23,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" có giá 173530 VND.",
-    "chunk_order_index": 216,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-24f693aa0e20afd27e16afa6610872f9": {
-    "tokens": 22,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" có mức giảm giá 33%.",
-    "chunk_order_index": 217,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7e33ed2f7d22a19582ee346a5cc4ad63": {
-    "tokens": 24,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" hiện đã bán được 2457 bản.",
-    "chunk_order_index": 218,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ff849a1144611a7cb3fa4b9291c71a2e": {
-    "tokens": 26,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 219,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-da0b47e1657540075ed784eba69c7795": {
-    "tokens": 23,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" được xuất bản bởi Usagi Novel.",
-    "chunk_order_index": 220,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9b433da789ff2100bf22d38209ec8974": {
-    "tokens": 27,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" được sản xuất bởi Nhà Xuất Bản Hà Nội.",
-    "chunk_order_index": 221,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-871d10024116ec1f775ad39f21eaf78a": {
-    "tokens": 23,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" được viết bởi J.Soori.",
-    "chunk_order_index": 222,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7835ebfd1626fb9ca7b157123d962bbe": {
-    "tokens": 38,
-    "content": "Sách \"Semantic Error – Lỗi Logic (Tập 2)\" có thể mua tại https://tiki.vn/product-p194959173.html?spid=194959175.",
-    "chunk_order_index": 223,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-f310ca7b8eada11fd15ca12cb481d0fc": {
-    "tokens": 28,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" có giá 180000 VND.",
-    "chunk_order_index": 224,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-df36448cc223de5f538c866e3cfa17e7": {
-    "tokens": 27,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" có mức giảm giá 40%.",
-    "chunk_order_index": 225,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-972d3b2383bf97fd60798fedde56e4fc": {
-    "tokens": 29,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" hiện đã bán được 15899 bản.",
-    "chunk_order_index": 226,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d0dfb369a29055f632efa6c38c789808": {
-    "tokens": 31,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 227,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-bf29fc488d77a86029de1fc2748fa93a": {
-    "tokens": 28,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 228,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b313de8fd50c710383454bd493c84061": {
-    "tokens": 34,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 229,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8f45223f2fa2acc5746dda44afc5701d": {
-    "tokens": 28,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" được viết bởi Jo Hemmings.",
-    "chunk_order_index": 230,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8515e9e312bd4c019183fed0a78ceea6": {
-    "tokens": 43,
-    "content": "Sách \"How Psychology Works - Hiểu Hết Về Tâm Lý Học\" có thể mua tại https://tiki.vn/product-p72459686.html?spid=72459687.",
-    "chunk_order_index": 231,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-69c40c4df53b3357aad3ed73937a1198": {
-    "tokens": 27,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" có giá 63700 VND.",
-    "chunk_order_index": 232,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-e12408b1d36da11438239b3f48626c67": {
-    "tokens": 26,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" có mức giảm giá 35%.",
-    "chunk_order_index": 233,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d32ee08fd7be10b4b445ff8266bf43ca": {
-    "tokens": 28,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" hiện đã bán được 21715 bản.",
-    "chunk_order_index": 234,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3a97333e0adcdffd0e9332c8302e6a1a": {
-    "tokens": 30,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 235,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9d08e0840da23c615b407b296fbf491a": {
-    "tokens": 27,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 236,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3270beb1390c2f53f417ad8875c651cd": {
-    "tokens": 32,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" được sản xuất bởi Nhà Xuất Bản Văn Học.",
-    "chunk_order_index": 237,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-72ca8952074f6e05fe2529c18f198aef": {
-    "tokens": 30,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" được viết bởi Kuroyanagi Tetsuko.",
-    "chunk_order_index": 238,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-73cbc3a399eb59cb6f7867fc823680ff": {
-    "tokens": 42,
-    "content": "Sách \"Totto - Chan Bên Cửa Sổ (Tái Bản)\" có thể mua tại https://tiki.vn/product-p8885999.html?spid=8886000.",
-    "chunk_order_index": 239,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8d3df32ba91c13168fc93ae45523ce5d": {
-    "tokens": 24,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" có giá 65400 VND.",
-    "chunk_order_index": 240,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-96d4647476a78d66ac217a2c1bebef1d": {
-    "tokens": 23,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" có mức giảm giá 40%.",
-    "chunk_order_index": 241,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7d3655b3f110df0621040c0617173c71": {
-    "tokens": 25,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" hiện đã bán được 21225 bản.",
-    "chunk_order_index": 242,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2afae49062dbe963cd53a711d2debb45": {
-    "tokens": 27,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 243,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-cd351fb456fe2af1ae3a77569f1fd87d": {
-    "tokens": 23,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" được xuất bản bởi Bloom Books.",
-    "chunk_order_index": 244,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b4aabe8e2cf02e6bbd08fcbf9d48cdfd": {
-    "tokens": 30,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 245,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-292ece24c6cead442622ff8493e785ce": {
-    "tokens": 22,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" được viết bởi Ca Tây.",
-    "chunk_order_index": 246,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-dbfc94b0b3e95524c056572743fc1286": {
-    "tokens": 39,
-    "content": "Sách \"Càng Kỷ Luật, Càng Tự Do\" có thể mua tại https://tiki.vn/product-p68585576.html?spid=68585577.",
-    "chunk_order_index": 247,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-fe40ad65d4df42ea3a290f3c422a50af": {
-    "tokens": 34,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" có giá 89900 VND.",
-    "chunk_order_index": 248,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-a829502c7c8840213602662e55563ff4": {
-    "tokens": 33,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" có mức giảm giá 38%.",
-    "chunk_order_index": 249,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-90ab5e8b9467bc58d636f45be1b17a24": {
-    "tokens": 35,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" hiện đã bán được 22215 bản.",
-    "chunk_order_index": 250,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9a868b72125fdb3923b76b87c0dee738": {
-    "tokens": 37,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 251,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8cb2faa5f5b352eaf4c56fcc11f7574b": {
-    "tokens": 33,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" được xuất bản bởi BeBooks.",
-    "chunk_order_index": 252,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-99f650fb2b3182bb836e92099c0946e0": {
-    "tokens": 39,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" được sản xuất bởi Nhà Xuất Bản Thanh Niên.",
-    "chunk_order_index": 253,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-5577ba306ac1c545d314881c36221cee": {
-    "tokens": 36,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" được viết bởi Diệp Hồng Vũ.",
-    "chunk_order_index": 254,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b14712dbb37875c54308edea5e073d2a": {
-    "tokens": 49,
-    "content": "Sách \"Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\" có thể mua tại https://tiki.vn/product-p106863963.html?spid=106863965.",
-    "chunk_order_index": 255,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3f9fd2428a1823e51bb74cf658c3054e": {
-    "tokens": 16,
-    "content": "Sách \"Xứ Cát\" có giá 149400 VND.",
-    "chunk_order_index": 256,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-403ed9e38eadae9306e6bfff2ac2aac1": {
-    "tokens": 15,
-    "content": "Sách \"Xứ Cát\" có mức giảm giá 40%.",
-    "chunk_order_index": 257,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-273b54aaed6c4e3b903259665ac4d5c4": {
-    "tokens": 17,
-    "content": "Sách \"Xứ Cát\" hiện đã bán được 7208 bản.",
-    "chunk_order_index": 258,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-22fddb16f6611439affec405ae4338f8": {
-    "tokens": 19,
-    "content": "Sách \"Xứ Cát\" có đánh giá trung bình 4.7 sao.",
-    "chunk_order_index": 259,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-1c0a5eb0962f230bf15e7702638e5c13": {
-    "tokens": 16,
-    "content": "Sách \"Xứ Cát\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 260,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ea6f6ec7f900c1d849222d1970678814": {
-    "tokens": 21,
-    "content": "Sách \"Xứ Cát\" được sản xuất bởi Nhà Xuất Bản Hội Nhà Văn.",
-    "chunk_order_index": 261,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ab87caa266213a21b7370ebcbf1068f1": {
-    "tokens": 14,
-    "content": "Sách \"Xứ Cát\" được viết bởi Frank Herbert.",
-    "chunk_order_index": 262,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9c36fca56f1b7141c5ded069f2d3ab92": {
-    "tokens": 31,
-    "content": "Sách \"Xứ Cát\" có thể mua tại https://tiki.vn/product-p145288029.html?spid=145288030.",
-    "chunk_order_index": 263,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-9b1d519abda8f04ee899d1d862f6fa05": {
-    "tokens": 29,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" có giá 56300 VND.",
-    "chunk_order_index": 264,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7c23f2b2f6d56b90d31b1366d56295df": {
-    "tokens": 28,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" có mức giảm giá 35%.",
-    "chunk_order_index": 265,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-8d9512f260389d915c3518a4ce5467e4": {
-    "tokens": 30,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" hiện đã bán được 10621 bản.",
-    "chunk_order_index": 266,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-6ceaa380a052f754aaa383c67f71b2a7": {
-    "tokens": 32,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 267,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-74a18e6775174ffef09716fe69fb491a": {
-    "tokens": 32,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" được xuất bản bởi First News - Trí Việt.",
-    "chunk_order_index": 268,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2c7eae826f9de825dbb6beec090aedb3": {
-    "tokens": 36,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" được sản xuất bởi Nhà Xuất Bản Tổng hợp TP.HCM.",
-    "chunk_order_index": 269,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-b73ffb953dc71297ab42bdd58ba4d782": {
-    "tokens": 27,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" được viết bởi Dale Carnegie.",
-    "chunk_order_index": 270,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-2209baa1107795fcf3cc51e8563ecd33": {
-    "tokens": 44,
-    "content": "Sách \"Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\" có thể mua tại https://tiki.vn/product-p111285062.html?spid=111285063.",
-    "chunk_order_index": 271,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-e7b4585af166f26dbdc19b5a3bed0d9c": {
-    "tokens": 49,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" có giá 61380 VND.",
-    "chunk_order_index": 272,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-3e271b6741688541ea6316cb3fd662cb": {
-    "tokens": 48,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" có mức giảm giá 38%.",
-    "chunk_order_index": 273,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-de3c312841dc5054c3105e7b0c699e6d": {
-    "tokens": 50,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" hiện đã bán được 12264 bản.",
-    "chunk_order_index": 274,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-7a1f36d183fea0dac5928bc9b23a432c": {
-    "tokens": 52,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" có đánh giá trung bình 5.0 sao.",
-    "chunk_order_index": 275,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-239db2cf2361a882f0f6b14ddf0535c3": {
-    "tokens": 48,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" được xuất bản bởi Peachbooks.",
-    "chunk_order_index": 276,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4861b2738b147427e6229a71a56c0e79": {
-    "tokens": 54,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" được sản xuất bởi Nhà Xuất Bản Văn Học.",
-    "chunk_order_index": 277,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-4a0d20a487c1f7117e79ced024f4db28": {
-    "tokens": 49,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" được viết bởi Bạch Tô.",
-    "chunk_order_index": 278,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-ea0aea3a7bb0ae302617b43a36633086": {
-    "tokens": 64,
-    "content": "Sách \"Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\" có thể mua tại https://tiki.vn/product-p85763211.html?spid=85763212.",
-    "chunk_order_index": 279,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-07d8bd849ed0cead2bee42db10b223fc": {
-    "tokens": 35,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" có giá 63000 VND.",
-    "chunk_order_index": 280,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-c5bf9061f2a85952714bfb22c24ce0c9": {
-    "tokens": 34,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" có mức giảm giá 40%.",
-    "chunk_order_index": 281,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-36f83298b267779777200c3b59ec7df5": {
-    "tokens": 36,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" hiện đã bán được 32248 bản.",
-    "chunk_order_index": 282,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-1e75b47e2542aeb7ec76603c16678653": {
-    "tokens": 50,
-    "content": "Sách \"Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\" có thể mua tại https://tiki.vn/product-p3304875.html?spid=3304877.",
-    "chunk_order_index": 287,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d62c490951098cced6d6b4c1850c2b84": {
-    "tokens": 35,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" có giá 54000 VND.",
-    "chunk_order_index": 288,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-cd01b7257d11a31b65f01388201eed97": {
-    "tokens": 34,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" có mức giảm giá 40%.",
-    "chunk_order_index": 289,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-02119029d35a7f0aa23d7858f220c938": {
-    "tokens": 36,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" hiện đã bán được 8692 bản.",
-    "chunk_order_index": 290,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-99ee4621e1f16331d289b2dc07ba31d3": {
-    "tokens": 38,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" có đánh giá trung bình 4.8 sao.",
-    "chunk_order_index": 291,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d51886588fecb720ab055702147e4b1e": {
-    "tokens": 35,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" được xuất bản bởi Nhã Nam.",
-    "chunk_order_index": 292,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-abd7b405c550fe621fdba6c4baf384e3": {
-    "tokens": 41,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" được sản xuất bởi Nhà Xuất Bản Thế Giới.",
-    "chunk_order_index": 293,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-d564466fc6b55969e08ac9a795056ebd": {
-    "tokens": 34,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" được viết bởi Ken Mogi.",
-    "chunk_order_index": 294,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
-  },
-  "chunk-49a028e0c7e1a79fc168b72eac3e017d": {
-    "tokens": 50,
-    "content": "Sách \"Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\" có thể mua tại https://tiki.vn/product-p10095276.html?spid=10095277.",
-    "chunk_order_index": 295,
-    "full_doc_id": "doc-b9f1eda582190e76564177563b347797"
+  "chunk-097db412673167899863c9708315f14b": {
+    "tokens": 85,
+    "content": "Book: Bản Đồ\nAuthors: Aleksandra Mizielińska, Daniel Mizieliński\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Lao Động\nPrice: 224250 VND\nDiscount: 35%\nSold Quantity: 5935\nRating: 4.8\nLink: https://tiki.vn/product-p50685547.html?spid=50685549",
+    "chunk_order_index": 37,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-137ffe2a877c5eb36875cb87df0777f3": {
+    "tokens": 86,
+    "content": "Book: Cây Cam Ngọt Của Tôi\nAuthors: José Mauro de Vasconcelos\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 64800 VND\nDiscount: 40%\nSold Quantity: 72191\nRating: 5.0\nLink: https://tiki.vn/product-p74021317.html?spid=74021318",
+    "chunk_order_index": 38,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-7403c46ba07043f297343eb43e489a6f": {
+    "tokens": 85,
+    "content": "Book: Vị Thần Của Những Quyết Định\nAuthors: Universe\nPublisher: Người Trẻ Việt\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 52930 VND\nDiscount: 33%\nSold Quantity: 9842\nRating: 4.8\nLink: https://tiki.vn/product-p188940817.html?spid=188940819",
+    "chunk_order_index": 39,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-8beb958a2b635fbb2f9348e01af8ca6a": {
+    "tokens": 99,
+    "content": "Book: Không Phải Sói Nhưng Cũng Đừng Là Cừu -Tặng kèm bookmark 2 mặt\nAuthors: Lê Bảo Ngọc\nPublisher: Skybooks\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 85760 VND\nDiscount: 33%\nSold Quantity: 12937\nRating: 4.8\nLink: https://tiki.vn/product-p189643105.html?spid=189643110",
+    "chunk_order_index": 40,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-a6d68b0dedfab4c10d65dd6d321b3b56": {
+    "tokens": 93,
+    "content": "Book: Nóng Giận Là Bản Năng , Tĩnh Lặng Là Bản Lĩnh\nAuthors: Tống Mặc\nPublisher: Skybooks\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 50730 VND\nDiscount: 43%\nSold Quantity: 74108\nRating: 4.8\nLink: https://tiki.vn/product-p26114399.html?spid=26114400",
+    "chunk_order_index": 41,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-c5bd27cfe5a16e9e233cf408ff119324": {
+    "tokens": 94,
+    "content": "Book: Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản)\nAuthors: Cao Minh\nPublisher: Vibooks\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 110980 VND\nDiscount: 38%\nSold Quantity: 25756\nRating: 4.8\nLink: https://tiki.vn/product-p109017985.html?spid=109017987",
+    "chunk_order_index": 42,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-744dac3f5fdad0de1db7486ea7451d71": {
+    "tokens": 96,
+    "content": "Book: Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\nAuthors: Higashino Keigo\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 99350 VND\nDiscount: 0%\nSold Quantity: 486\nRating: 5.0\nLink: https://tiki.vn/product-p3304875.html?spid=10853528",
+    "chunk_order_index": 47,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-a539144f78c074b0b223313ca0361d6d": {
+    "tokens": 84,
+    "content": "Book: Nhà Giả Kim (Tái Bản 2020)\nAuthors: Paulo Coelho\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hà Nội\nPrice: 47400 VND\nDiscount: 40%\nSold Quantity: 34069\nRating: 5.0\nLink: https://tiki.vn/product-p52789367.html?spid=52789368",
+    "chunk_order_index": 43,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-23193a0c82f3caa903a0d8d1c3fce27f": {
+    "tokens": 89,
+    "content": "Book: Tâm Lý Học Hành Vi (Tặng Kèm 1 Bookmark )\nAuthors: Khương Nguy\nPublisher: Mintbooks\nManufacturer: Nhà Xuất Bản Hà Nội\nPrice: 60760 VND\nDiscount: 38%\nSold Quantity: 16238\nRating: 5.0\nLink: https://tiki.vn/product-p69764541.html?spid=69764542",
+    "chunk_order_index": 44,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-f62e8a1fed30d5a7f591d8a5f7cf7365": {
+    "tokens": 77,
+    "content": "Book: Dear, Darling\nAuthors: Hiên\nPublisher: Skybooks\nManufacturer: Nhà Xuất Bản Phụ Nữ Việt Nam\nPrice: 58960 VND\nDiscount: 33%\nSold Quantity: 6084\nRating: 4.8\nLink: https://tiki.vn/product-p174444163.html?spid=174444165",
+    "chunk_order_index": 45,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-58958b3f361f334ec53a22704135ab14": {
+    "tokens": 89,
+    "content": "Book: Xa Ngoài Kia Nơi Loài Tôm Hát - Where The Crawdads Sing\nAuthors: Delia Owens\nPublisher: NXB Trẻ\nManufacturer: NXB Trẻ\nPrice: 105000 VND\nDiscount: 36%\nSold Quantity: 4088\nRating: 5.0\nLink: https://tiki.vn/product-p73207240.html?spid=73523598",
+    "chunk_order_index": 46,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-be303f23a5053b7d8b8b42fd14b2c274": {
+    "tokens": 90,
+    "content": "Book: Sapiens Lược Sử Loài Người (Tái Bản)\nAuthors: Yuval Noah Harari\nPublisher: OMEGA PLUS+\nManufacturer: Nhà Xuất Bản Tri Thức\nPrice: 251650 VND\nDiscount: 0%\nSold Quantity: 77\nRating: 4.6\nLink: https://tiki.vn/product-p114578907.html?spid=120431978",
+    "chunk_order_index": 11,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-637bc816bdcc293fcc3ad21a54f174ea": {
+    "tokens": 87,
+    "content": "Book: Điều Đẹp Nhất Có Khi Là Buông Tay (Tặng Kèm Bookmark)\nAuthors: Thought Catalog\nPublisher: Skybooks\nManufacturer: Nhà Xuất Bản Hà Nội\nPrice: 44640 VND\nDiscount: 38%\nSold Quantity: 5406\nRating: 4.8\nLink: https://tiki.vn/product-p121635154.html?spid=121635155",
+    "chunk_order_index": 48,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-e3f08adc0d02f530e3d520fe52cc5598": {
+    "tokens": 87,
+    "content": "Book: Một Thoáng Ta Rực Rỡ Ở Nhân Gian\nAuthors: Ocean Vuong\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 81000 VND\nDiscount: 40%\nSold Quantity: 13608\nRating: 4.8\nLink: https://tiki.vn/product-p147920903.html?spid=147920904",
+    "chunk_order_index": 13,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-13acc06d539d88638bddae0c9a8bb193": {
+    "tokens": 83,
+    "content": "Book: Yêu Những Điều Không Hoàn Hảo\nAuthors: Hae Min\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 83400 VND\nDiscount: 40%\nSold Quantity: 39591\nRating: 5.0\nLink: https://tiki.vn/product-p3954355.html?spid=3955615",
+    "chunk_order_index": 14,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-ec0a9acfbfc3e13e881aaa111e365385": {
+    "tokens": 84,
+    "content": "Book: Những Tù Nhân Của Địa Lý\nAuthors: Tim Marshall\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 126000 VND\nDiscount: 40%\nSold Quantity: 22227\nRating: 4.8\nLink: https://tiki.vn/product-p73787185.html?spid=73787186",
+    "chunk_order_index": 15,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-467c35cd3be5464e763a15d927298808": {
+    "tokens": 100,
+    "content": "Book: Đại Dương Đen - Những Câu Chuyện Từ Thế Giới Của Trầm Cảm\nAuthors: Đặng Hoàng Giang\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 144000 VND\nDiscount: 40%\nSold Quantity: 12918\nRating: 5.0\nLink: https://tiki.vn/product-p117254517.html?spid=117254521",
+    "chunk_order_index": 16,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-0d24301478c3762530e8499b01ea097b": {
+    "tokens": 100,
+    "content": "Book: Sách Hiểu Về Trái Tim (Tái Bản 2019) - Minh Niệm\nAuthors: Minh Niệm\nPublisher: First News - Trí Việt\nManufacturer: Nhà Xuất Bản Tổng hợp TP.HCM\nPrice: 129400 VND\nDiscount: 18%\nSold Quantity: 35333\nRating: 4.8\nLink: https://tiki.vn/product-p42230121.html?spid=42230122",
+    "chunk_order_index": 17,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-08e5f35fdd01bbcb9f822b2b2a8160a0": {
+    "tokens": 86,
+    "content": "Book: Rèn Luyện Tư Duy Phản Biện\nAuthors: Albert Rutherford\nPublisher: 1980 Books\nManufacturer: Nhà Xuất Bản Phụ Nữ\nPrice: 59400 VND\nDiscount: 40%\nSold Quantity: 30363\nRating: 4.8\nLink: https://tiki.vn/product-p46240929.html?spid=46240930",
+    "chunk_order_index": 18,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-61d020dab1e3677b4489e8cbb7c2c8c2": {
+    "tokens": 81,
+    "content": "Book: Thư Viện Nửa Đêm\nAuthors: Matt Haig\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 97500 VND\nDiscount: 35%\nSold Quantity: 9949\nRating: 5.0\nLink: https://tiki.vn/product-p117238177.html?spid=117238178",
+    "chunk_order_index": 19,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-02f9e05b95262e75e219257a60a3c3df": {
+    "tokens": 87,
+    "content": "Book: Điềm Tĩnh Và Nóng Giận\nAuthors: Tạ Quốc Kế\nPublisher: Bookland\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 64320 VND\nDiscount: 33%\nSold Quantity: 10744\nRating: 4.8\nLink: https://tiki.vn/product-p143217512.html?spid=143217516",
+    "chunk_order_index": 20,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-6d18420ed620741c8d05add855f239a9": {
+    "tokens": 88,
+    "content": "Book: Kỷ Luật Tự Giác (Tặng Kèm Bookmark )\nAuthors: Tiểu Dã\nPublisher: Skybooks\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 52080 VND\nDiscount: 38%\nSold Quantity: 11565\nRating: 4.8\nLink: https://tiki.vn/product-p72882553.html?spid=72882555",
+    "chunk_order_index": 21,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-d8b5068aea7060848d12524009b8e561": {
+    "tokens": 109,
+    "content": "Book: Giải Thích Ngữ Pháp Tiếng Anh (Với Bài Tập Và Đáp Án) (Tái Bản)\nAuthors: Mai Lan Hương, Hà Thanh Uyên\nPublisher: Zenbooks\nManufacturer: Nhà Xuất Bản Đà Nẵng\nPrice: 146700 VND\nDiscount: 33%\nSold Quantity: 10266\nRating: 5.0\nLink: https://tiki.vn/product-p157432544.html?spid=157432545",
+    "chunk_order_index": 22,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-f9e4c191cde1d70aa21525588cc8e7e8": {
+    "tokens": 93,
+    "content": "Book: Suy Nghĩ Thống Kê Trong Đời Thường\nAuthors: Nguyễn Văn Tuấn\nPublisher: NXB Tổng hợp TP.HCM\nManufacturer: Nhà Xuất Bản Tổng hợp TP.HCM\nPrice: 103000 VND\nDiscount: 36%\nSold Quantity: 1495\nRating: 5.0\nLink: https://tiki.vn/product-p197719874.html?spid=197719875",
+    "chunk_order_index": 23,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-372d00c8d5416e67e2aeffa4278df12b": {
+    "tokens": 109,
+    "content": "Book: Không Ai Có Thể Làm Bạn Tổn Thương Trừ Khi Bạn Cho Phép (Tặng Kèm 1 Bộ Bookmark Gồm 4 Cái)\nAuthors: Yoo Eun Jung\nPublisher: Mood to Read\nManufacturer: Nhà Xuất Bản Dân Trí\nPrice: 73780 VND\nDiscount: 38%\nSold Quantity: 11904\nRating: 5.0\nLink: https://tiki.vn/product-p121635152.html?spid=121635153",
+    "chunk_order_index": 24,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-93ace75372b0b76489ff6766f330539b": {
+    "tokens": 93,
+    "content": "Book: Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ\nAuthors: Ngô Sa Thạch\nPublisher: Skybooks\nManufacturer: Nhà Xuất Bản Dân Trí\nPrice: 195640 VND\nDiscount: 33%\nSold Quantity: 31057\nRating: 4.7\nLink: https://tiki.vn/product-p97594364.html?spid=127522207",
+    "chunk_order_index": 25,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-2f23f6a790138c5c395cf8b3ca5067e1": {
+    "tokens": 89,
+    "content": "Book: Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa\nAuthors: Kulzsc\nPublisher: Skybooks\nManufacturer: Nhà Xuất Bản Phụ Nữ\nPrice: 80520 VND\nDiscount: 39%\nSold Quantity: 5318\nRating: 5.0\nLink: https://tiki.vn/product-p190861557.html?spid=190861559",
+    "chunk_order_index": 26,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-b427993a6abe3ec7c8eaee9b0a21bca0": {
+    "tokens": 84,
+    "content": "Book: Semantic Error – Lỗi Logic (Tập 2)\nAuthors: J.Soori\nPublisher: Usagi Novel\nManufacturer: Nhà Xuất Bản Hà Nội\nPrice: 173530 VND\nDiscount: 33%\nSold Quantity: 2457\nRating: 4.8\nLink: https://tiki.vn/product-p194959173.html?spid=194959175",
+    "chunk_order_index": 27,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-50c7fadfe4eeb18300315de0e7e6bfc2": {
+    "tokens": 91,
+    "content": "Book: How Psychology Works - Hiểu Hết Về Tâm Lý Học\nAuthors: Jo Hemmings\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 180000 VND\nDiscount: 40%\nSold Quantity: 15899\nRating: 4.8\nLink: https://tiki.vn/product-p72459686.html?spid=72459687",
+    "chunk_order_index": 28,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-c9b02622b5dc5ee400a89ce248c3a0d5": {
+    "tokens": 92,
+    "content": "Book: Totto - Chan Bên Cửa Sổ (Tái Bản)\nAuthors: Kuroyanagi Tetsuko\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Văn Học\nPrice: 63700 VND\nDiscount: 35%\nSold Quantity: 21715\nRating: 5.0\nLink: https://tiki.vn/product-p8885999.html?spid=8886000",
+    "chunk_order_index": 29,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-a1725d1d4af2d6e316e32cb00e166218": {
+    "tokens": 84,
+    "content": "Book: Càng Kỷ Luật, Càng Tự Do\nAuthors: Ca Tây\nPublisher: Bloom Books\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 65400 VND\nDiscount: 40%\nSold Quantity: 21225\nRating: 4.8\nLink: https://tiki.vn/product-p68585576.html?spid=68585577",
+    "chunk_order_index": 30,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-611333597abb356c86c680def92573b0": {
+    "tokens": 97,
+    "content": "Book: Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội\nAuthors: Diệp Hồng Vũ\nPublisher: BeBooks\nManufacturer: Nhà Xuất Bản Thanh Niên\nPrice: 89900 VND\nDiscount: 38%\nSold Quantity: 22215\nRating: 4.8\nLink: https://tiki.vn/product-p106863963.html?spid=106863965",
+    "chunk_order_index": 31,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-38b47aef813060c3c52d1b4de009a144": {
+    "tokens": 76,
+    "content": "Book: Xứ Cát\nAuthors: Frank Herbert\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 149400 VND\nDiscount: 40%\nSold Quantity: 7208\nRating: 4.7\nLink: https://tiki.vn/product-p145288029.html?spid=145288030",
+    "chunk_order_index": 32,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-ce1c7f0fde467ac0f4234adc082652f0": {
+    "tokens": 94,
+    "content": "Book: Đắc Nhân Tâm (Bìa Mềm)(Tái Bản)\nAuthors: Dale Carnegie\nPublisher: First News - Trí Việt\nManufacturer: Nhà Xuất Bản Tổng hợp TP.HCM\nPrice: 56300 VND\nDiscount: 35%\nSold Quantity: 10621\nRating: 4.8\nLink: https://tiki.vn/product-p111285062.html?spid=111285063",
+    "chunk_order_index": 33,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-6c40584d3910a2b3f2980fbd51407bf0": {
+    "tokens": 110,
+    "content": "Book: Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)\nAuthors: Bạch Tô\nPublisher: Peachbooks\nManufacturer: Nhà Xuất Bản Văn Học\nPrice: 61380 VND\nDiscount: 38%\nSold Quantity: 12264\nRating: 5.0\nLink: https://tiki.vn/product-p85763211.html?spid=85763212",
+    "chunk_order_index": 34,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-40d4006d04d31a7da07d7b60e9f40808": {
+    "tokens": 97,
+    "content": "Book: Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA (Tái Bản)\nAuthors: Higashino Keigo\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Hội Nhà Văn\nPrice: 63000 VND\nDiscount: 40%\nSold Quantity: 32248\nRating: 5.0\nLink: https://tiki.vn/product-p3304875.html?spid=3304877",
+    "chunk_order_index": 35,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-5aa450e0c89c4625c98f6065c2467bba": {
+    "tokens": 97,
+    "content": "Book: Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\nAuthors: Ken Mogi\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 54000 VND\nDiscount: 40%\nSold Quantity: 8692\nRating: 4.8\nLink: https://tiki.vn/product-p10095276.html?spid=10095277",
+    "chunk_order_index": 36,
+    "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
   }
 }

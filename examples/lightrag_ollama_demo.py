@@ -43,6 +43,13 @@ async def initialize_rag():
         llm_model_name="gemma2:9b",
         llm_model_max_async=4,
         llm_model_max_token_size=8192,
+        # kv_storage="RedisKVStorage",
+        # vector_storage="QdrantVectorDBStorage",
+        # vector_db_storage_cls_kwargs={
+        #     "cosine_better_than_threshold": 0.3  # Your desired threshold
+        # },
+        # graph_storage="Neo4JStorage",
+        # doc_status_storage="MongoDocStatusStorage",
         llm_model_kwargs={"host": "http://localhost:11434", "options": {"num_ctx": 8192}},
         embedding_func=EmbeddingFunc(
             embedding_dim=768,
@@ -64,44 +71,43 @@ async def print_stream(stream):
     async for chunk in stream:
         print(chunk, end="", flush=True)
 
+async def delete(rag, doc_id):
+    await rag.adelete_by_doc_id(doc_id)
 
 def main():
     # Initialize RAG instance
     rag = asyncio.run(initialize_rag())
 
+
     # Insert example text
     with open("./data/tiki_books_json.txt", "r", encoding="utf-8") as f:
         rag.insert(f.read())
-    # with open("./data/books_goodreads_en.txt", "r", encoding="utf-8") as f:
-    #  rag.insert(f.read())
+        
 
-    # Perform local search
-    input = "Tư vấn Sách Cây Cam Ngọt Của Tôi"
+    input = "Tư vấn cho tôi 1 số sách được đánh giá 5 sao"
     print("\n\n🔎🔎🔎 QUERY: " + input + "\n\n")
 
     # Perform local search
     print("\n🔎 **Truy vấn mode `LOCAL`** ...")
-    response = rag.query(input, param=QueryParam(mode="local", top_k=5), system_prompt=PROMPTS["universal_rag_response"])
-    print("\n🟢 **Kết quả (mode `LOCAL`):**\n" + response)
+    response = rag.query(input, param=QueryParam(mode="local", top_k=5, stream=True), system_prompt=PROMPTS["universal_rag_response"])
+    print("\n🟢 **Kết quả (mode `LOCAL`):**\n")
 
-    # Perform global search
-    print("\n🔎 **Truy vấn mode `GLOBAL`** ...")
-    response = rag.query(input, param=QueryParam(mode="global", top_k=5), system_prompt=PROMPTS["universal_rag_response"])
-    print("\n🟢 **Kết quả (mode `GLOBAL`):**\n" + response)
+    if inspect.isasyncgen(response):
+        asyncio.run(print_stream(response))
+    else:
+        print(response)
+
 
     # Perform hybrid search
-    print("\n🔎 **Truy vấn mode `MIX`** ...")
-    response = rag.query(input, param=QueryParam(mode="mix", top_k=5), system_prompt=PROMPTS["mix_rag_response"])
-    print("\n🟢 **Kết quả (mode `MIX`):**\n" + response)
+    print("\n🔎 **Truy vấn mode `HYBRID`** ...")
+    response = rag.query(input, param=QueryParam(mode="hybrid", top_k=5, stream=True), system_prompt=PROMPTS["universal_rag_response"])
+    print("\n🟢 **Kết quả (mode `HYBRID`):**\n")
 
-    # stream response
-    resp = rag.query(input, param=QueryParam(mode="hybrid", stream=True), system_prompt=PROMPTS["universal_rag_response"])
-
-    if inspect.isasyncgen(resp):
-        asyncio.run(print_stream(resp))
+    if inspect.isasyncgen(response):
+        asyncio.run(print_stream(response))
     else:
-        print(resp)
-
+        print(response)
+    
 
 if __name__ == "__main__":
     main()

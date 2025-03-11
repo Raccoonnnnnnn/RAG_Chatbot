@@ -4,7 +4,7 @@ import pandas as pd
 # Define entities (lowercase)
 ENTITY_MAPPING = {
     "book": "Name",
-    "seller": "Link",
+    "link": "Link",
     "price": "Price (vnd)",
     "discount": "Discount (%)",
     "sold quantity": "Sold",

@@ -89,7 +89,7 @@ def main():
 
     # Perform local search
     print("\n🔎 **Truy vấn mode `LOCAL`** ...")
-    response = rag.query(input, param=QueryParam(mode="local", top_k=5, stream=True), system_prompt=PROMPTS["universal_rag_response"])
+    response = rag.query(input, param=QueryParam(mode="local", top_k=5, stream=True), system_prompt=PROMPTS["rag_response"])
     print("\n🟢 **Kết quả (mode `LOCAL`):**\n")
 
     if inspect.isasyncgen(response):
@@ -100,7 +100,7 @@ def main():
 
     # Perform hybrid search
     print("\n🔎 **Truy vấn mode `HYBRID`** ...")
-    response = rag.query(input, param=QueryParam(mode="hybrid", top_k=5, stream=True), system_prompt=PROMPTS["universal_rag_response"])
+    response = rag.query(input, param=QueryParam(mode="hybrid", top_k=5, stream=True), system_prompt=PROMPTS["rag_response"])
     print("\n🟢 **Kết quả (mode `HYBRID`):**\n")
 
     if inspect.isasyncgen(response):

@@ -12,30 +12,56 @@ PROMPTS["DEFAULT_COMPLETION_DELIMITER"] = "<|COMPLETE|>"
 
 PROMPTS["DEFAULT_ENTITY_TYPES"] = ["Book", "Author", "Publisher", "Manufacturer", "Price", "Sold Quantity", "Discount", "Rating", "Link"]
 
-PROMPTS["entity_extraction"] = """---Goal---
-Given a text document that contains information about books, identify all entities of those types from the text and all relationships among the identified entities.
-Use {language} as output language.
+PROMPTS["entity_extraction"] = """---SYSTEM ROLE---
+You are a professional book information extractor. Use only defined entities and relationships.
+
+---Goal---
+Given a text document that contains information about books, identify all entities of the specified types from the text and all relationships among the identified entities.
+Use {language} as the output language.
 
 ---Steps---
-1. Identify all entities. For each identified entity, extract the following information:
-- entity_name: Name of the entity, use same language as input text. If English, capitalized the name.
-- entity_type: One of the following types: [{entity_types}]
-- entity_description: Comprehensive description of the entity's attributes and activities
+1. Identify all entities present in the text. For each identified entity, extract the following information:
+- entity_name: Name of the entity, using the same language as the input text. If the entity name is in English, capitalize it appropriately.
+- entity_type: MUST be one of the following types: [{entity_types}]
+- entity_description: A brief description of the entity (using the same language as the input text), tailored to its role or value in the context of the book it relates to. Follow these guidelines:
+  - For 'Book': Describe it as "The book '<entity_name>', a work with specific attributes like price, sales, or cultural significance."
+  - For 'Author': Describe it as "The author '<entity_name>' who wrote the book '<related_book_name>'."
+  - For 'Publisher' or 'Manufacturer': Describe it as "The <entity_type> '<entity_name>' responsible for <publishing/manufacturing> the book '<related_book_name>'."
+  - For 'Price', 'Sold Quantity', 'Discount', 'Rating', 'Link': Describe it as "The <entity_type> of the book '<related_book_name>', set at <entity_name>." Replace <entity_name> with the actual value (e.g., '90.000 ₫', '9k', '4.8').
+  - If multiple books are present, ensure the description specifies which book the entity relates to based on the text context.
+  - Keep descriptions concise, specific, and reflective of the entity's significance in the document.Note: For entities like 'Author', if multiple are listed (e.g., "Aleksandra Mizielińska, Daniel Mizieliński"), extract each as a separate entity.
 Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>)
 
-2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are clearly related to each other based on the text.
 For each pair of related entities, extract the following information:
 - source_entity: name of the source entity, as identified in step 1
 - target_entity: name of the target entity, as identified in step 1
-- relationship_description: explanation as to why you think the source entity and the target entity are related to each other (e.g. "written by", "published by", "sold by", "of genre")
-- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity (eg 10 for direct relations like "written by", lower for indirect relations)
-- relationship_keywords: one or more high-level key words that summarize the overarching nature of the relationship, focusing on concepts or themes rather than specific details
+- relationship_description: A concise sentence (using the same language as the input text) describing the relationship, adhering to one of the following predefined descriptions and aligned with its corresponding keyword:
+  - "written by" (for Book-Author): "The book '<source_entity>' was written by '<target_entity>'."
+  - "published by" (for Book-Publisher): "The book '<source_entity>' was published by '<target_entity>'."
+  - "manufactured by" (for Book-Manufacturer): "The book '<source_entity>' was manufactured by '<target_entity>'."
+  - "has price" (for Book-Price): "The book '<source_entity>' has a price of '<target_entity>'."
+  - "has discount" (for Book-Discount): "The book '<source_entity>' has a discount of '<target_entity>'."
+  - "has sold quantity" (for Book-Sold Quantity): "The book '<source_entity>' has sold '<target_entity>' copies."
+  - "has rating" (for Book-Rating): "The book '<source_entity>' has a rating of '<target_entity>'."
+  - "has link" (for Book-Link): "The book '<source_entity>' is linked to '<target_entity>'."
+  - Ensure the sentence uses the exact entity names and reflects the keyword's meaning (e.g., 'authorship' implies creative contribution, 'publishing' implies distribution).
+- relationship_strength: Set to 10 for all relationships, as they are direct and explicitly indicated in the text
+- relationship_keywords: Use the following keywords based on the relationship_description:
+  - "authorship" for "written by"
+  - "publishing" for "published by"
+  - "manufacturing" for "manufactured by"
+  - "pricing" for "has price"
+  - "discounting" for "has discount"
+  - "sales" for "has sold quantity"
+  - "rating" for "has rating"
+  - "link" for "has link"
 Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_keywords>{tuple_delimiter}<relationship_strength>)
 
-3. Identify high-level key words that summarize the main concepts, themes, or topics of the entire text. These should capture the overarching ideas present in the document.
-Format the content-level key words as ("content_keywords"{tuple_delimiter}<high_level_keywords>)
+3. Identify high-level keywords that summarize the main concepts, themes, or topics of the entire text. These should capture the overarching ideas present in the document, such as "books", "authors", "publishing", "sales data", "ratings".
+Format the content-level keywords as ("content_keywords"{tuple_delimiter}<high_level_keywords>)
 
-4. Return output in {language} as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+4. Return the output in {language} as a single list of all the entities and relationships identified in steps 1 and 2, followed by the content keywords from step 3. Use **{record_delimiter}** as the list delimiter.
 
 5. When finished, output {completion_delimiter}
 
@@ -55,50 +81,55 @@ Output:"""
 PROMPTS["entity_extraction_examples"] = [
     """Example 1:
 
-Entity_types: [Book, Author, Publisher, Seller, Price, Rating]
+Entity_types: ["Book", "Author", "Publisher", "Manufacturer", "Price", "Sold Quantity", "Discount", "Rating", "Link"]
 Text:
-Sách "Bản Đồ" được viết bởi Aleksandra Mizielińska, Daniel Mizieliński.
-Sách "Bản Đồ" có giá 224250 VND.
-Sách "Bản Đồ" được xuất bản bởi Nhã Nam.
-Sách "Bản Đồ" có đánh giá trung bình 4.8 sao.
-Sách "Bản Đồ" cũng được bán bởi nha sach nguyet linh với giá 325000 VND.
+Book: Bản Đồ
+Authors: Aleksandra Mizielińska, Daniel Mizieliński
+Publisher: Nhã Nam
+Manufacturer: Nhà Xuất Bản Lao Động
+Price: 224250 VND
+Discount: 35%
+Sold Quantity: 5935
+Rating: 4.8
+Link: https://tiki.vn/product-p50685547.html?spid=50685549
 ################
 Output:
-("entity"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"Book"{tuple_delimiter}"Cuốn sách có tên 'Bản Đồ'")##
-("entity"{tuple_delimiter}"Aleksandra Mizielińska"{tuple_delimiter}"Author"{tuple_delimiter}"Tác giả của sách 'Bản Đồ'")##
-("entity"{tuple_delimiter}"Daniel Mizieliński"{tuple_delimiter}"Author"{tuple_delimiter}"Tác giả của sách 'Bản Đồ'")##
-("entity"{tuple_delimiter}"Nhã Nam"{tuple_delimiter}"Publisher"{tuple_delimiter}"Nhà xuất bản của sách 'Bản Đồ'")##
-("entity"{tuple_delimiter}"224250 VND"{tuple_delimiter}"Price"{tuple_delimiter}"Giá chính của sách 'Bản Đồ'")##
-("entity"{tuple_delimiter}"4.8 sao"{tuple_delimiter}"Rating"{tuple_delimiter}"Đánh giá trung bình của sách 'Bản Đồ'")##
-("entity"{tuple_delimiter}"nha sach nguyet linh"{tuple_delimiter}"Seller"{tuple_delimiter}"Nhà bán sách 'Bản Đồ'")##
-("entity"{tuple_delimiter}"325000 VND"{tuple_delimiter}"Price"{tuple_delimiter}"Giá của sách 'Bản Đồ' tại nha sach nguyet linh")##
-("relationship"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"Aleksandra Mizielińska"{tuple_delimiter}"Sách 'Bản Đồ' được viết bởi Aleksandra Mizielińska"{tuple_delimiter}"tác giả"{tuple_delimiter}10)##
-("relationship"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"Daniel Mizieliński"{tuple_delimiter}"Sách 'Bản Đồ' được viết bởi Daniel Mizieliński"{tuple_delimiter}"tác giả"{tuple_delimiter}10)##
-("relationship"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"Nhã Nam"{tuple_delimiter}"Sách 'Bản Đồ' được xuất bản bởi Nhã Nam"{tuple_delimiter}"xuất bản"{tuple_delimiter}10)##
-("relationship"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"224250 VND"{tuple_delimiter}"Sách 'Bản Đồ' có giá chính 224250 VND"{tuple_delimiter}"giá cả"{tuple_delimiter}10)##
-("relationship"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"4.8 sao"{tuple_delimiter}"Sách 'Bản Đồ' có đánh giá trung bình 4.8 sao"{tuple_delimiter}"đánh giá"{tuple_delimiter}10)##
-("relationship"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"nha sach nguyet linh"{tuple_delimiter}"Sách 'Bản Đồ' được bán bởi nha sach nguyet linh"{tuple_delimiter}"bán hàng"{tuple_delimiter}8)##
-("relationship"{tuple_delimiter}"Bản Đồ"{tuple_delimiter}"325000 VND"{tuple_delimiter}"Sách 'Bản Đồ' có giá 325000 VND tại nha sach nguyet linh"{tuple_delimiter}"giá cả"{tuple_delimiter}8)##
-("relationship"{tuple_delimiter}"325000 VND"{tuple_delimiter}"nha sach nguyet linh"{tuple_delimiter}"Giá 325000 VND được cung cấp bởi nha sach nguyet linh"{tuple_delimiter}"bán hàng"{tuple_delimiter}10)##
-("content_keywords"{tuple_delimiter}"bán sách, giá sách, đánh giá sách")<|COMPLETE|>
+("entity"<|>Bản Đồ<|>Book<|>Bản Đồ is a book detailed with specific attributes like price, discount, and rating, indicating its commercial and literary significance.)##
+("entity"<|>Aleksandra Mizielińska<|>Author<|>Aleksandra Mizielińska is an author contributing to the creation of the book 'Bản Đồ'.)##
+("entity"<|>Daniel Mizieliński<|>Author<|>Daniel Mizieliński is an author contributing to the creation of the book 'Bản Đồ'.)##
+("entity"<|>Nhã Nam<|>Publisher<|>Nhã Nam is the publisher responsible for the distribution of 'Bản Đồ'.)##
+("entity"<|>224250 VND<|>Price<|>224250 VND is the listed price of the book 'Bản Đồ'.)##
+("relationship"<|>Bản Đồ<|>Aleksandra Mizielińska<|>The book 'Bản Đồ' was written by Aleksandra Mizielińska, establishing her as a key contributor.<|>authorship<|>10)##
+("relationship"<|>Bản Đồ<|>Daniel Mizieliński<|>The book 'Bản Đồ' was written by Daniel Mizieliński, establishing him as a key contributor.<|>authorship<|>10)##
+("relationship"<|>Bản Đồ<|>Nhã Nam<|>The book 'Bản Đồ' is published by Nhã Nam, indicating their role in its availability.<|>publishing<|>10)##
+("relationship"<|>Bản Đồ<|>224250 VND<|>The book 'Bản Đồ' has a price of 224250 VND, reflecting its commercial value.<|>pricing<|>10)##
+("content_keywords"<|>books, authorship, publishing, pricing)<|COMPLETE|>
 #############################""",
     """Example 2:
 
-Entity_types: [person, technology, mission, organization, location]
+Entity_types: ["Book", "Author", "Publisher", "Manufacturer", "Price", "Sold Quantity", "Discount", "Rating", "Link"]
 Text:
-They were no longer mere operatives; they had become guardians of a threshold, keepers of a message from a realm beyond stars and stripes. This elevation in their mission could not be shackled by regulations and established protocols—it demanded a new perspective, a new resolve.
-
-Tension threaded through the dialogue of beeps and static as communications with Washington buzzed in the background. The team stood, a portentous air enveloping them. It was clear that the decisions they made in the ensuing hours could redefine humanity's place in the cosmos or condemn them to ignorance and potential peril.
-
-Their connection to the stars solidified, the group moved to address the crystallizing warning, shifting from passive recipients to active participants. Mercer's latter instincts gained precedence— the team's mandate had evolved, no longer solely to observe and report but to interact and prepare. A metamorphosis had begun, and Operation: Dulce hummed with the newfound frequency of their daring, a tone set not by the earthly
+Book: Cây Cam Ngọt Của Tôi
+Authors: José Mauro de Vasconcelos
+Publisher: Nhã Nam
+Manufacturer: Nhà Xuất Bản Hội Nhà Văn
+Price: 64800 VND
+Discount: 40%
+Sold Quantity: 72191
+Rating: 5.0
+Link: https://tiki.vn/product-p74021317.html?spid=74021318
 #############
 Output:
-("entity"{tuple_delimiter}"Washington"{tuple_delimiter}"location"{tuple_delimiter}"Washington is a location where communications are being received, indicating its importance in the decision-making process."){record_delimiter}
-("entity"{tuple_delimiter}"Operation: Dulce"{tuple_delimiter}"mission"{tuple_delimiter}"Operation: Dulce is described as a mission that has evolved to interact and prepare, indicating a significant shift in objectives and activities."){record_delimiter}
-("entity"{tuple_delimiter}"The team"{tuple_delimiter}"organization"{tuple_delimiter}"The team is portrayed as a group of individuals who have transitioned from passive observers to active participants in a mission, showing a dynamic change in their role."){record_delimiter}
-("relationship"{tuple_delimiter}"The team"{tuple_delimiter}"Washington"{tuple_delimiter}"The team receives communications from Washington, which influences their decision-making process."{tuple_delimiter}"decision-making, external influence"{tuple_delimiter}7){record_delimiter}
-("relationship"{tuple_delimiter}"The team"{tuple_delimiter}"Operation: Dulce"{tuple_delimiter}"The team is directly involved in Operation: Dulce, executing its evolved objectives and activities."{tuple_delimiter}"mission evolution, active participation"{tuple_delimiter}9){record_delimiter}
-("content_keywords"{tuple_delimiter}"mission evolution, decision-making, active participation, cosmic significance"){completion_delimiter}
+("entity"<|>Cây Cam Ngọt Của Tôi<|>Book<|>Cây Cam Ngọt Của Tôi is a book with notable sales, discount, and rating, highlighting its popularity and market success.)##
+("entity"<|>José Mauro de Vasconcelos<|>Author<|>José Mauro de Vasconcelos is the author who wrote 'Cây Cam Ngọt Của Tôi'.)##
+("entity"<|>Nhã Nam<|>Publisher<|>Nhã Nam is the publisher responsible for bringing 'Cây Cam Ngọt Của Tôi' to the market.)##
+("entity"<|>72191<|>Sold Quantity<|>72191 is the number of copies sold of 'Cây Cam Ngọt Của Tôi', indicating its high demand.)##
+("entity"<|>5.0<|>Rating<|>5.0 is the rating of 'Cây Cam Ngọt Của Tôi', reflecting its critical acclaim.)##
+("relationship"<|>Cây Cam Ngọt Của Tôi<|>José Mauro de Vasconcelos<|>The book 'Cây Cam Ngọt Của Tôi' was written by José Mauro de Vasconcelos, marking his creative contribution.<|>authorship<|>10)##
+("relationship"<|>Cây Cam Ngọt Của Tôi<|>Nhã Nam<|>The book 'Cây Cam Ngọt Của Tôi' is published by Nhã Nam, showing their role in its distribution.<|>publishing<|>10)##
+("relationship"<|>Cây Cam Ngọt Của Tôi<|>72191<|>The book 'Cây Cam Ngọt Của Tôi' has sold 72191 copies, demonstrating its market performance.<|>sales<|>10)##
+("relationship"<|>Cây Cam Ngọt Của Tôi<|>5.0<|>The book 'Cây Cam Ngọt Của Tôi' has a rating of 5.0, indicating its high quality and reception.<|>rating<|>10)##
+("content_keywords"<|>books, authorship, publishing, sales, ratings)<|COMPLETE|>
 #############################""",
     """Example 3:
 
@@ -160,51 +191,24 @@ PROMPTS["fail_response"] = (
     "Sorry, I'm not able to provide an answer to that question.[no-context]"
 )
 
-PROMPTS["rag_response"] = """---Role---
-
-You are a helpful assistant responding to user query about Knowledge Base provided below.
-
-
----Goal---
-
-Generate a concise response based on Knowledge Base and follow Response Rules, considering both the conversation history and the current query. Summarize all information in the provided Knowledge Base, and incorporating general knowledge relevant to the Knowledge Base. Do not include information not provided by Knowledge Base.
-
-When handling relationships with timestamps:
-1. Each relationship has a "created_at" timestamp indicating when we acquired this knowledge
-2. When encountering conflicting relationships, consider both the semantic content and the timestamp
-3. Don't automatically prefer the most recently created relationships - use judgment based on the context
-4. For time-specific queries, prioritize temporal information in the content before considering creation timestamps
-
----Conversation History---
-{history}
-
----Knowledge Base---
-{context_data}
-
----Response Rules---
-
-- Target format and length: {response_type}
-- Use markdown formatting with appropriate section headings
-- Please respond in the same language as the user's question.
-- Ensure the response maintains continuity with the conversation history.
-- If you don't know the answer, just say so.
-- Do not make anything up. Do not include information not provided by the Knowledge Base."""
-
 PROMPTS["keywords_extraction"] = """---Role---
 
-You are a helpful assistant tasked with identifying both high-level and low-level keywords in the user's query and conversation history.
+You are a helpful assistant tasked with identifying both high-level and low-level keywords in the user's query and conversation history, with a focus on book-related data.
 
 ---Goal---
 
-Given the query and conversation history, list both high-level and low-level keywords. High-level keywords focus on overarching concepts or themes, while low-level keywords focus on specific entities, details, or concrete terms.
+Given the query and conversation history, list both high-level and low-level keywords. High-level keywords focus on overarching concepts or themes (e.g., publishing, authorship, sales), while low-level keywords focus on specific entities, details, or concrete terms (e.g., book titles, author names, prices).
 
 ---Instructions---
 
-- Consider both the current query and relevant conversation history when extracting keywords
-- Output the keywords in JSON format
-- The JSON should have two keys:
-  - "high_level_keywords" for overarching concepts or themes
-  - "low_level_keywords" for specific entities or details
+- Analyze both the current query and relevant conversation history to extract keywords.
+- Prioritize keywords related to books, such as titles, authors, publishers, prices, discounts, sales quantities, ratings, and links.
+- High-level keywords should reflect broad themes or concepts present in the text (e.g., 'publishing', 'authorship', 'market success').
+- Low-level keywords should include specific names, values, or details mentioned (e.g., 'Bản Đồ', '90.000 ₫', 'Nhã Nam').
+- Output the keywords in JSON format with two keys:
+  - "high_level_keywords": an array of overarching concepts or themes
+  - "low_level_keywords": an array of specific entities or details
+- Ensure the keywords are in human-readable text (not unicode characters) and match the language of the query.
 
 ######################
 ---Examples---
@@ -227,15 +231,33 @@ Output:
 PROMPTS["keywords_extraction_examples"] = [
     """Example 1:
 
-Query: "How does international trade influence global economic stability?"
+Query: "Giá của sách Bản Đồ là bao nhiêu?"
 ################
 Output:
 {
-  "high_level_keywords": ["International trade", "Global economic stability", "Economic impact"],
-  "low_level_keywords": ["Trade agreements", "Tariffs", "Currency exchange", "Imports", "Exports"]
+  "high_level_keywords": ["Books", "Pricing"],
+  "low_level_keywords": ["Bản Đồ"]
 }
 #############################""",
     """Example 2:
+Current Query: "Sách Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật phổ biến như thế nào?"
+################
+Output:
+{
+  "high_level_keywords": ["Books", "Popularity"],
+  "low_level_keywords": ["Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật"]
+}
+#############################""",
+    """Example 3:
+Current Query: "Who wrote Cây Cam Ngọt Của Tôi?"
+################
+Output:
+{
+  "high_level_keywords": ["Books", "Authorship"],
+  "low_level_keywords": ["Cây Cam Ngọt Của Tôi"]
+}
+#############################""",
+    """Example 4:
 
 Query: "What are the environmental consequences of deforestation on biodiversity?"
 ################
@@ -245,7 +267,7 @@ Output:
   "low_level_keywords": ["Species extinction", "Habitat destruction", "Carbon emissions", "Rainforest", "Ecosystem"]
 }
 #############################""",
-    """Example 3:
+    """Example 5:
 
 Query: "What is the role of education in reducing poverty?"
 ################
@@ -349,9 +371,9 @@ When handling information with timestamps:
 - If you don't know the answer, just say so. Do not make anything up.
 - Do not include information not provided by the Data Sources."""
 
-PROMPTS["universal_rag_response"] = """---Role---
+PROMPTS["rag_response"] = """---Role---
 
-Bạn là một trợ lý thông minh chuyên tư vấn về sách trên sàn thương mại điện tử, giúp người dùng tìm kiếm, so sánh và lựa chọn sách phù hợp với nhu cầu của họ.
+Bạn là một trợ lý thông minh chuyên hỗ trợ người dùng về sách trên các sàn thương mại điện tử, giúp tìm kiếm, so sánh và chọn sách phù hợp với nhu cầu của họ.
 
 ---Goal---
 
@@ -372,14 +394,13 @@ Khi xử lý thông tin có timestamp:
 ---Response Rules---
 
 - Target format and length: {response_type}
-- Sử dụng định dạng markdown với các tiêu đề phù hợp để cấu trúc câu trả lời.
-- Trả lời bằng ngôn ngữ của câu hỏi người dùng (tiếng Việt hoặc tiếng Anh).
-- Đảm bảo câu trả lời liền mạch với lịch sử hội thoại.
-- Nếu không tìm thấy câu trả lời, hãy nói: "Xin lỗi, tôi không tìm thấy thông tin này trong dữ liệu."
-- Không tự ý bịa đặt hoặc thêm thông tin ngoài dữ liệu KG và DC.
+- Trả lời bằng ngôn ngữ của câu hỏi (tiếng Việt hoặc tiếng Anh) và giữ giọng điệu tự nhiên, dễ hiểu.
+- Đảm bảo câu trả lời liền mạch với lịch sử hội thoại (nếu có).
+- Nếu không tìm thấy câu trả lời, hãy nói: "Xin lỗi, tôi không tìm được thông tin về câu hỏi này."
+- Không tự ý bịa đặt hoặc thêm thông tin ngoài dữ liệu Knowledge Base.
 - Đối với truy vấn về sách cụ thể, cung cấp:  
-  - Tiêu đề sách, tác giả, nhà xuất bản, thể loại.  
+  - Tiêu đề sách, tác giả, nhà xuất bản và các thông tin cần thiết khác.  
   - Giá cả, giảm giá (nếu có), số lượng đã bán, đánh giá.  
-  - Nhà bán và link mua (nếu có).  
-- Đối với truy vấn chung (thể loại, gợi ý), đề xuất 3-5 sách kèm thông tin cơ bản.
-- Nếu có nhiều nguồn dữ liệu, ưu tiên thông tin từ KG khi rõ ràng, bổ sung từ DC nếu cần thiết."""
+  - Nơi bán và link mua (nếu có).  
+- Đối với truy vấn chung (thể loại, gợi ý), đề xuất 3-5 sách kèm thông tin cơ bản như tên, tác giả, giá và nơi bánên.
+- Nếu thông tin đến từ nhiều nguồn, tôi sẽ ưu tiên dữ liệu rõ ràng và bổ sung thêm chi tiết nếu cần."""

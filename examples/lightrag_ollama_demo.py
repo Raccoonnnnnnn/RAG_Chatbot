@@ -80,11 +80,11 @@ def main():
 
 
     # Insert example text
-    with open("./data/tiki_books_json.txt", "r", encoding="utf-8") as f:
-        rag.insert(f.read())
+#    with open("./data/tiki_books_json.txt", "r", encoding="utf-8") as f:
+#        rag.insert(f.read())
         
 
-    input = "Tư vấn cho tôi 1 số sách được đánh giá 5 sao"
+    input = "Hi, chào bạn"
     print("\n\n🔎🔎🔎 QUERY: " + input + "\n\n")
 
     # Perform local search

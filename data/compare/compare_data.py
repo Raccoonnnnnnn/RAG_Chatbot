@@ -13,9 +13,14 @@ def detect_changes(old_file, new_file):
     df_old = df_old.drop_duplicates(subset=[key_column]).set_index(key_column)
     df_new = df_new.drop_duplicates(subset=[key_column]).set_index(key_column)
 
-    # Tìm các hàng có thay đổi dữ liệu
+    # Tìm sách mới được thêm
+    added_books = df_new.loc[~df_new.index.isin(df_old.index)].copy()
+    added_books["Trạng thái"] = "Mới thêm"
+
+    # Tìm sách có thay đổi dữ liệu
     common_keys = df_old.index.intersection(df_new.index)
     changed_rows = []
+    changed_books_details = []
 
     for key in common_keys:
         old_row = df_old.loc[key]
@@ -31,32 +36,66 @@ def detect_changes(old_file, new_file):
                 changes[col] = f"{old_value} → {new_value}"  # Giá trị cũ -> Giá trị mới
 
         if changes:
-            changed_rows.append({'Name': key, 'Changes': changes})
+            changed_rows.append({'Name': key, 'Thay đổi': changes, 'Trạng thái': 'Thay đổi thông tin'})
+            book_details = new_row.to_dict()
+            book_details['Name'] = key  # Đảm bảo cột 'Name' có trong dữ liệu chi tiết
+            changed_books_details.append(book_details)
 
-    # Chuyển danh sách các thay đổi thành DataFrame
+    # Chuyển danh sách thay đổi thành DataFrame
     changed_df = pd.DataFrame(changed_rows)
 
-    # In kết quả
-    print(f"\n📌 Số lượng sách thay đổi thông tin: {len(changed_df)}")
+    # Gộp sách mới và sách thay đổi vào một file duy nhất
+    all_updates = pd.concat([added_books.reset_index(), changed_df], ignore_index=True)
+
+    # Lấy toàn bộ dữ liệu chi tiết của sách mới và sách có thay đổi từ file mới
+    full_details_df = pd.DataFrame(changed_books_details)
+
+    # Sắp xếp lại để "Name" là cột đầu tiên
+    if not full_details_df.empty:
+        cols = ['Name'] + [col for col in full_details_df.columns if col != 'Name']
+        full_details_df = full_details_df[cols]
+
+    # In kết quả tổng hợp
+    print(f"\n📌 Tổng số sách mới thêm: {len(added_books)}")
+    print(f"📌 Tổng số sách có thay đổi thông tin: {len(changed_df)}")
 
     # Hiển thị bảng trên terminal
-    if not changed_df.empty:
+    if not changed_df.empty or not added_books.empty:
         table_data = []
-        for row in changed_rows:
-            table_data.append([row["Name"], "\n".join([f"{k}: {v}" for k, v in row["Changes"].items()])])
+        for _, row in all_updates.iterrows():
+            name = row["Name"]
+            status = row["Trạng thái"]
+            changes = row["Thay đổi"] if "Thay đổi" in row else "N/A"
 
-        headers = ["Tên Sách", "Thay Đổi"]
+            table_data.append([name, status, changes])
+
+        headers = ["Tên Sách", "Trạng Thái", "Chi Tiết Thay Đổi"]
         print(tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
 
     # Xuất dữ liệu ra file Excel
-    with pd.ExcelWriter("./data/changes_report.xlsx") as writer:
-        if not changed_df.empty:
-            changed_df.to_excel(writer, sheet_name="Changed Books", index=False)
+    output_file_summary = "books_update_report.xlsx"
+    output_file_details = "books_full_details.xlsx"
 
-    return changed_df
+    with pd.ExcelWriter(output_file_summary) as writer:
+        all_updates.to_excel(writer, sheet_name="Books Update", index=False)
+
+    with pd.ExcelWriter(output_file_details) as writer:
+        full_details_df.to_excel(writer, sheet_name="Books Details", index=False)
+
+    print(f"\n✅ Báo cáo tổng hợp đã được lưu vào '{output_file_summary}'")
+    print(f"✅ Báo cáo chi tiết đã được lưu vào '{output_file_details}'")
+
+    return all_updates, full_details_df
 
 # Sử dụng hàm
-old_file_path = "./data/tiki_books_vn.xlsx"
-new_file_path = "./data/tiki_books_vn_new.xlsx"
+old_file_path = "tiki_books_vn.xlsx"
+new_file_path = "tiki_books_vn_generated.xlsx"
 
-changed = detect_changes(old_file_path, new_file_path)
+updates, full_details = detect_changes(old_file_path, new_file_path)
+
+# Hiển thị dữ liệu trực quan hơn
+print("\n📌 Tóm tắt các cập nhật:")
+print(updates if not updates.empty else "Không có sách mới hoặc thay đổi")
+
+print("\n📌 Chi tiết sách mới hoặc thay đổi:")
+print(full_details if not full_details.empty else "Không có sách mới hoặc thay đổi")

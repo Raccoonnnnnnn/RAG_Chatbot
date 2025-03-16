@@ -1,0 +1,132 @@
+import os
+from datetime import datetime, timedelta
+from crawl_tiki_data.get_books import crawl_books
+from compare_data.compare_data import detect_changes
+from preprocess_data.process_tiki_books import process_books_to_texts
+import httpx
+import logging
+from dotenv import load_dotenv
+
+# Load environment variables from .env file in project root
+load_dotenv()
+
+# Configuration from environment variables
+CRAWL_DIR = os.getenv("CRAWL_DIR", "data/crawl_tiki_data")
+COMPARE_DIR = os.getenv("COMPARE_DIR", "data/compare")
+DAYS_TO_KEEP = int(os.getenv("DAYS_TO_KEEP", 7))
+INSERT_BATCH_API = os.getenv("INSERT_BATCH_API", "http://localhost:8000/insert_batch")
+LOG_FILE = os.getenv("LOG_FILE", "data/update_data.log")
+LOG_FILE_MODE = os.getenv("LOG_FILE_MODE", "a")
+
+# Configure logging to append with timestamp
+logging.basicConfig(
+    filename=LOG_FILE,
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filemode=LOG_FILE_MODE
+)
+
+def get_latest_file(directory, prefix, extension=".csv", exclude_file=None):
+    """Find the most recent file in the directory based on timestamp, excluding a specified file."""
+    files = [f for f in os.listdir(directory) if f.startswith(prefix) and f.endswith(extension)]
+    if exclude_file:
+        files = [f for f in files if os.path.join(directory, f) != exclude_file]
+    
+    if not files:
+        logging.info(f"No valid files found in {directory} with prefix {prefix} after exclusion")
+        return None
+    
+    valid_files = []
+    for f in files:
+        try:
+            parts = f.split('_')
+            if len(parts) < 3:
+                logging.warning(f"Skipping file with invalid format: {f}")
+                continue
+            timestamp_str = f"{parts[-2]}_{parts[-1].replace(extension, '')}"
+            datetime.strptime(timestamp_str, "%Y-%m-%d_%H-%M-%S")
+            valid_files.append(f)
+        except ValueError:
+            logging.warning(f"Skipping file with invalid timestamp: {f}")
+            continue
+    
+    if not valid_files:
+        logging.info(f"No valid files found in {directory} with prefix {prefix} after validation")
+        return None
+    
+    latest_file = max(valid_files, key=lambda f: datetime.strptime(f"{f.split('_')[-2]}_{f.split('_')[-1].replace(extension, '')}", "%Y-%m-%d_%H-%M-%S"))
+    logging.info(f"Latest file found: {latest_file}")
+    return os.path.join(directory, latest_file)
+
+def cleanup_old_files(directory, days_to_keep=DAYS_TO_KEEP):
+    """Delete files older than the specified number of days."""
+    now = datetime.now()
+    for filename in os.listdir(directory):
+        file_path = os.path.join(directory, filename)
+        if not filename.endswith('.csv'):
+            continue
+        try:
+            parts = filename.split('_')
+            if len(parts) < 3:
+                logging.warning(f"Skipping cleanup of invalid file: {filename}")
+                continue
+            timestamp_str = f"{parts[-2]}_{parts[-1].replace('.csv', '')}"
+            file_date = datetime.strptime(timestamp_str, "%Y-%m-%d_%H-%M-%S")
+            if (now - file_date).days > days_to_keep:
+                os.remove(file_path)
+                logging.info(f"Deleted old file: {file_path}")
+        except (ValueError, IndexError):
+            logging.warning(f"Skipping cleanup of invalid file: {filename}")
+            continue
+
+def main():
+    """Run the data update process with flexible trigger frequency."""
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    new_file = os.path.join(CRAWL_DIR, f"books_data_{timestamp}.csv")
+    changes_file = os.path.join(COMPARE_DIR, f"changes_{timestamp}.csv")
+
+    # Step 1: Crawl new data
+    try:
+        logging.info("START crawling data...")
+        crawl_books(new_file)
+        logging.info(f"END crawling data, output: {new_file}")
+    except Exception as e:
+        logging.error(f"Crawl failed: {e}")
+        return
+
+    # Step 2: Find the most recent old file for comparison, excluding the new file
+    logging.info(f"Scanning directory: {CRAWL_DIR} for files with prefix: books_data")
+    old_file = get_latest_file(CRAWL_DIR, "books_data", exclude_file=new_file)
+    if old_file:
+        try:
+            logging.info("START comparing data...")
+            detect_changes(old_file, new_file, changes_file)
+            logging.info(f"END comparing data, output: {changes_file}")
+        except Exception as e:
+            logging.error(f"Comparison failed: {e}")
+            return
+
+        # Step 3: Process data into texts and ids
+        texts, ids = process_books_to_texts(changes_file)
+
+        # Step 4: Send data to API
+        try:
+            with httpx.Client() as client:
+                logging.info("START inserting data into LightRAG...")
+                response = client.post(
+                    INSERT_BATCH_API,
+                    json={"texts": texts, "ids": ids}
+                )
+                response.raise_for_status()
+                logging.info(f"END inserting {len(texts)} books into LightRAG")
+        except Exception as e:
+            logging.error(f"Insert failed: {e}")
+    else:
+        logging.info("No previous file found for comparison, skipping update.")
+
+    # Clean up old files
+    cleanup_old_files(CRAWL_DIR, DAYS_TO_KEEP)
+    cleanup_old_files(COMPARE_DIR, DAYS_TO_KEEP)
+
+if __name__ == "__main__":
+    main()

@@ -220,5 +220,35 @@
     "content": "Book: Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật\nAuthors: Ken Mogi\nPublisher: Nhã Nam\nManufacturer: Nhà Xuất Bản Thế Giới\nPrice: 54000 VND\nDiscount: 40%\nSold Quantity: 8692\nRating: 4.8\nLink: https://tiki.vn/product-p10095276.html?spid=10095277",
     "chunk_order_index": 36,
     "full_doc_id": "doc-7fe04af91a8bd1a6ced377bd74068975"
+  },
+  "chunk-c7d44a02a2f048d0c9a3f39980510d08": {
+    "tokens": 182,
+    "content": "Book Name: Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền\nLink: https://tiki.vn/product-p275861063.html?spid=275861064\nCurrent Price: 151164 VND\nOriginal Price: 180000 VND\nDiscount: 16%\nRating: 5.0 sao\nSold Quantity: 55\nAuthors: Henry David Thoreau\nSeller Name: Gooda Official\nManufacturer: Nhà Xuất Bản Tri Thức\nCategory: Du ký\nDescription: “Walden” là một hồi tưởng đầy chiêm nghiệm suy tư về quãng đời “hai năm hai tháng hai ngày” sống một mình trong một mảnh đất rừng bên cạnh đầm Walden, “Giọt nước của Trời”, “đáng yêu hơn kim cương” tr...",
+    "chunk_order_index": 0,
+    "full_doc_id": "275861063"
+  },
+  "chunk-2c6cd43fee341ca85d7eb5c3a21b4e86": {
+    "tokens": 172,
+    "content": "Book Name: Đừng Chết Ở Ả Rập Xê Út\nLink: https://tiki.vn/product-p26412706.html?spid=26412707\nCurrent Price: 70000 VND\nOriginal Price: 99000 VND\nDiscount: 29%\nRating: 4.8 sao\nSold Quantity: 931\nAuthors: Nghiêm Hương\nSeller Name: Tiki Trading\nManufacturer: Nhà Xuất Bản Thế Giới\nCategory: Root\nDescription: Cuốn sách là tự truyện của một người phụ nữ đi xuất khẩu lao động tại Ả Rập Xê Út với mong muốn đổi đời với lời hứa hẹn từ trung tâm. Chỉ đến khi đặt chân đến đất nước Ả Rập cô mới nhận ra mình bị lừa...",
+    "chunk_order_index": 0,
+    "full_doc_id": "26412706"
+  },
+  "chunk-70e3e8158167e2b14e76b9a1518c0a9b": {
+    "tokens": 186,
+    "content": "Book Name: 1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\nLink: https://tiki.vn/product-p204317934.html?spid=226923791\nCurrent Price: 275975 VND\nOriginal Price: 290500 VND\nDiscount: 5%\nRating: 5.0 sao\nSold Quantity: 25\nAuthors: Trần Đặng Đăng Khoa\nSeller Name: AHABOOKS\nManufacturer: NXB Trẻ\nCategory: Du ký\nDescription: Trần Đặng Đăng Khoa bắt đầu hành trình vạn dặm vòng quanh thế giới từ ngày 01/06/2017 tại cửa khẩu Mộc Bài (Tây Ninh). Với chiếc xe 100cc mang biển số Việt Nam, trong hành trình kéo dài 1.111 ngày, an...",
+    "chunk_order_index": 0,
+    "full_doc_id": "204317934"
+  },
+  "chunk-017198a72fcf2368a663b75dcb5792b9": {
+    "tokens": 6,
+    "content": "Document 1 ôsosos",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc_1"
+  },
+  "chunk-32d98c069cacc805422c30098b324831": {
+    "tokens": 6,
+    "content": "Document 2 íisisis",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc_2"
   }
 }

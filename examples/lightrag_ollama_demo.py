@@ -80,34 +80,30 @@ def main():
 
 
     # Insert example text
-#    with open("./data/tiki_books_json.txt", "r", encoding="utf-8") as f:
-#        rag.insert(f.read())
-        
+    with open("./data/tiki_books_json.txt", "r", encoding="utf-8") as f:
+        rag.insert(f.read())
 
-    input = "Hi, chào bạn"
+#     asyncio.run(delete(rag, "doc-335dfab7253e1b8353e15ffe41213896"))
+
+    
+    input = "Tư vấn sách cây cam ngọt của tôi"
     print("\n\n🔎🔎🔎 QUERY: " + input + "\n\n")
 
     # Perform local search
     print("\n🔎 **Truy vấn mode `LOCAL`** ...")
-    response = rag.query(input, param=QueryParam(mode="local", top_k=5, stream=True), system_prompt=PROMPTS["rag_response"])
-    print("\n🟢 **Kết quả (mode `LOCAL`):**\n")
-
-    if inspect.isasyncgen(response):
-        asyncio.run(print_stream(response))
-    else:
-        print(response)
+    response = rag.query(input, param=QueryParam(mode="local", top_k=5), system_prompt=PROMPTS["rag_response"])
+    print("\n🟢 **Kết quả (mode `LOCAL`):**\n" + response)
 
 
     # Perform hybrid search
     print("\n🔎 **Truy vấn mode `HYBRID`** ...")
-    response = rag.query(input, param=QueryParam(mode="hybrid", top_k=5, stream=True), system_prompt=PROMPTS["rag_response"])
-    print("\n🟢 **Kết quả (mode `HYBRID`):**\n")
+    response = rag.query(input, param=QueryParam(mode="hybrid", top_k=5), system_prompt=PROMPTS["rag_response"])
+    print("\n🟢 **Kết quả (mode `HYBRID`):**\n" + response)
 
-    if inspect.isasyncgen(response):
-        asyncio.run(print_stream(response))
-    else:
-        print(response)
-    
+    # if inspect.isasyncgen(response):
+    #     asyncio.run(print_stream(response))
+    # else:
+    #     print(response)
 
 if __name__ == "__main__":
     main()

@@ -123,6 +123,7 @@ nano examples/lightrag_ollama_demo.py
 ### 8.2. Cài Đặt Phụ Thuộc & Chạy Demo Lần Đầu (Insert Data)
 ```bash
 pip install scipy==1.12.0
+pip install nest_asyncio
 python3 examples/lightrag_ollama_demo.py
 ```
 

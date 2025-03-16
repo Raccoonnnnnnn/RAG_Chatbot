@@ -603,6 +603,7 @@ async def kg_query(
     hashing_kv: BaseKVStorage | None = None,
     system_prompt: str | None = None,
 ) -> str | AsyncIterator[str]:
+    start_time = time.time()
     # Handle cache
     use_model_func = global_config["llm_model_func"]
     args_hash = compute_args_hash(query_param.mode, query, cache_type="query")
@@ -650,6 +651,9 @@ async def kg_query(
         text_chunks_db,
         query_param,
     )
+    print("\n\n-----KG Context-----\n" + context)
+    end_time = time.time()
+    print(f"\n\n⏳ Thời gian query KG -> context: {(end_time - start_time):.4f} s")
 
     if query_param.only_need_context:
         return context
@@ -706,6 +710,9 @@ async def kg_query(
             cache_type="query",
         ),
     )
+    
+    end_time = time.time()
+    print(f"\n\n⏳ Thời gian query KG -> response: {(end_time - start_time):.4f} s")
     return response
 
 
@@ -816,6 +823,7 @@ async def mix_kg_vector_query(
     hashing_kv: BaseKVStorage | None = None,
     system_prompt: str | None = None,
 ) -> str | AsyncIterator[str]:
+    start_time = time.time()
     """
     Hybrid retrieval implementation combining knowledge graph and vector search.
 
@@ -843,6 +851,7 @@ async def mix_kg_vector_query(
     # 2. Execute knowledge graph and vector searches in parallel
     async def get_kg_context():
         try:
+            start_time = time.perf_counter()
             # Extract keywords using extract_keywords_only function which already supports conversation history
             hl_keywords, ll_keywords = await extract_keywords_only(
                 query, query_param, global_config, hashing_kv
@@ -876,7 +885,9 @@ async def mix_kg_vector_query(
                 text_chunks_db,
                 query_param,
             )
-
+            
+            end_time = time.perf_counter()
+            print(f"\n\n⏳ Thời gian get_kg_context: {(end_time - start_time):.4f} s")
             return context
 
         except Exception as e:
@@ -884,6 +895,7 @@ async def mix_kg_vector_query(
             return None
 
     async def get_vector_context():
+        start_time = time.time()
         # Consider conversation history in vector search
         augmented_query = query
         if history_context:
@@ -932,11 +944,28 @@ async def mix_kg_vector_query(
             logger.debug(
                 f"Truncate chunks from {len(chunks)} to {len(formatted_chunks)} (max tokens:{query_param.max_token_for_text_unit})"
             )
+            
+            end_time = time.time()
+            print(f"\n\n⏳ Thời gian get_vector_context: {(end_time - start_time):.4f} s")
+            
             return "\n--New Chunk--\n".join(formatted_chunks)
         except Exception as e:
             logger.error(f"Error in get_vector_context: {e}")
             return None
 
+    print(f"""\n\n
+    -----KG Context-----
+    ```csv
+    {kg_context}
+    ```
+    -----Vector Context-----
+    ```csv
+    {vector_context}
+    ```
+    """.strip())
+    end_time = time.time()
+    print(f"\n\n⏳ Thời gian mix_kg_vector_query -> context: {(end_time - start_time):.4f} s")
+    
     # 3. Execute both retrievals in parallel
     kg_context, vector_context = await asyncio.gather(
         get_kg_context(), get_vector_context()
@@ -1004,6 +1033,9 @@ async def mix_kg_vector_query(
                 cache_type="query",
             ),
         )
+        
+    end_time = time.time()
+    print(f"\n\n⏳ Thời gian mix_kg_vector_query -> response: {(end_time - start_time):.4f} s")
 
     return response
 
@@ -1096,6 +1128,7 @@ async def _get_node_data(
     text_chunks_db: BaseKVStorage,
     query_param: QueryParam,
 ):
+    start_time = time.perf_counter()
     # get similar entities
     logger.info(
         f"Query nodes: {query}, top_k: {query_param.top_k}, cosine: {entities_vdb.cosine_better_than_threshold}"
@@ -1206,6 +1239,9 @@ async def _get_node_data(
     for i, t in enumerate(use_text_units):
         text_units_section_list.append([i, t["content"]])
     text_units_context = list_of_list_to_csv(text_units_section_list)
+    
+    end_time = time.perf_counter()
+    print(f"\n\n⏳ Thời gian get_node_data: {(end_time - start_time):.4f} s")
     return entities_context, relations_context, text_units_context
 
 
@@ -1593,6 +1629,7 @@ async def naive_query(
     system_prompt: str | None = None,
 ) -> str | AsyncIterator[str]:
     # Handle cache
+    start_time = time.perf_counter()
     use_model_func = global_config["llm_model_func"]
     args_hash = compute_args_hash(query_param.mode, query, cache_type="query")
     cached_response, quantized, min_val, max_val = await handle_cache(
@@ -1632,7 +1669,16 @@ async def naive_query(
     )
 
     section = "\n--New Chunk--\n".join([c["content"] for c in maybe_trun_chunks])
-
+    end_time = time.perf_counter()
+    print(f"\n\n⏳ Thời gian query vdb_chunks: {(end_time - start_time):.4f} s")
+    
+    print(f"""\n\n
+    -----Chunks-----
+    ```csv
+    {section}
+    ```
+    """.strip())
+    
     if query_param.only_need_context:
         return section
 
@@ -1688,6 +1734,8 @@ async def naive_query(
         ),
     )
 
+    end_time = time.perf_counter()
+    print(f"\n\n⏳ Thời gian naive_query -> response: {(end_time - start_time):.4f} s")
     return response
 
 

@@ -4,6 +4,7 @@ import asyncio
 import configparser
 import os
 import warnings
+import time
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from functools import partial
@@ -585,7 +586,11 @@ class LightRAG:
             split_by_character is None, this parameter is ignored.
             ids: list of unique document IDs, if not provided, MD5 hash IDs will be generated
         """
+        start_time = time.perf_counter()
         await self.apipeline_enqueue_documents(input, ids)
+        end_time = time.perf_counter()
+        print(f"\n\n⏳ Thời gian khởi tạo status cho document: {(end_time - start_time):.4f} s")
+        
         await self.apipeline_process_enqueue_documents(
             split_by_character, split_by_character_only
         )
@@ -857,6 +862,9 @@ class LightRAG:
                         # 4. iterate over batch
                         for doc_id_processing_status in docs_batch:
                             doc_id, status_doc = doc_id_processing_status
+                            
+                            start_time = time.time()
+                            
                             # Generate chunks from document
                             chunks: dict[str, Any] = {
                                 compute_mdhash_id(dp["content"], prefix="chunk-"): {
@@ -924,11 +932,16 @@ class LightRAG:
                                         }
                                     }
                                 )
+                                
+                                end_time = time.time()
+                                print(f"Processed document {doc_id} in {(end_time - start_time):.4f} seconds")
                             except Exception as e:
                                 # Log error and update pipeline status
+                                end_time = time.time()
                                 error_msg = (
                                     f"Failed to process document {doc_id}: {str(e)}"
                                 )
+                                print(f"Failed to process document {doc_id} in {(end_time - start_time):.4f} seconds: {str(e)}")
                                 logger.error(error_msg)
                                 pipeline_status["latest_message"] = error_msg
                                 pipeline_status["history_messages"].append(error_msg)
@@ -1008,6 +1021,7 @@ class LightRAG:
                 pipeline_status["history_messages"].append(log_message)
 
     async def _process_entity_relation_graph(self, chunk: dict[str, Any]) -> None:
+        start_time = time.perf_counter()
         try:
             await extract_entities(
                 chunk,
@@ -1020,6 +1034,8 @@ class LightRAG:
         except Exception as e:
             logger.error("Failed to extract entities and relationships")
             raise e
+        end_time = time.perf_counter()
+        print(f"\n\n⏳ Thời gian extract entity và relation for chunk: {(end_time - start_time):.4f} s")
 
     async def _insert_done(self) -> None:
         tasks = [
@@ -1220,7 +1236,7 @@ class LightRAG:
         system_prompt: str | None = None,
     ) -> str | Iterator[str]:
         """
-        Perform a sync query.
+        Perform a sync query and measure execution time.
 
         Args:
             query (str): The query to be executed.
@@ -1228,11 +1244,18 @@ class LightRAG:
             prompt (Optional[str]): Custom prompts for fine-tuned control over the system's behavior. Defaults to None, which uses PROMPTS["rag_response"].
 
         Returns:
-            str: The result of the query execution.
+            str | Iterator[str]: The result of the query execution.
         """
         loop = always_get_an_event_loop()
+        
+        start_time = time.perf_counter()  # Bắt đầu đo thời gian
+        result = loop.run_until_complete(self.aquery(query, param, system_prompt))  # Thực thi query
+        end_time = time.perf_counter()
+        
+        execution_time = end_time - start_time  # Tính tổng thời gian chạy
+        print(f"⏳ Thời gian thực thi query: {execution_time:.4f} giây")  # In kết quả
 
-        return loop.run_until_complete(self.aquery(query, param, system_prompt))  # type: ignore
+        return result
 
     async def aquery(
         self,

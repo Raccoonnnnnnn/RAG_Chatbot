@@ -10,7 +10,7 @@ PROMPTS["DEFAULT_TUPLE_DELIMITER"] = "<|>"
 PROMPTS["DEFAULT_RECORD_DELIMITER"] = "##"
 PROMPTS["DEFAULT_COMPLETION_DELIMITER"] = "<|COMPLETE|>"
 
-PROMPTS["DEFAULT_ENTITY_TYPES"] = ["Book", "Author", "Publisher", "Manufacturer", "Price", "Sold Quantity", "Discount", "Rating", "Link"]
+PROMPTS["DEFAULT_ENTITY_TYPES"] = ["Book Name", "Author", "Seller Name", "Manufacturer", "Current Price", "Original Price", "Discount", "Sold Quantity", "Rating", "Category", "Link", "Description"]
 
 PROMPTS["entity_extraction"] = """---SYSTEM ROLE---
 You are a professional book information extractor. Use only defined entities and relationships.
@@ -24,12 +24,17 @@ Use {language} as the output language.
 - entity_name: Name of the entity, using the same language as the input text. If the entity name is in English, capitalize it appropriately.
 - entity_type: MUST be one of the following types: [{entity_types}]
 - entity_description: A brief description of the entity (using the same language as the input text), tailored to its role or value in the context of the book it relates to. Follow these guidelines:
-  - For 'Book': Describe it as "The book '<entity_name>', a work with specific attributes like price, sales, or cultural significance."
-  - For 'Author': Describe it as "The author '<entity_name>' who wrote the book '<related_book_name>'."
-  - For 'Publisher' or 'Manufacturer': Describe it as "The <entity_type> '<entity_name>' responsible for <publishing/manufacturing> the book '<related_book_name>'."
-  - For 'Price', 'Sold Quantity', 'Discount', 'Rating', 'Link': Describe it as "The <entity_type> of the book '<related_book_name>', set at <entity_name>." Replace <entity_name> with the actual value (e.g., '90.000 ₫', '9k', '4.8').
-  - If multiple books are present, ensure the description specifies which book the entity relates to based on the text context.
-  - Keep descriptions concise, specific, and reflective of the entity's significance in the document.Note: For entities like 'Author', if multiple are listed (e.g., "Aleksandra Mizielińska, Daniel Mizieliński"), extract each as a separate entity.
+  - For 'Book Name': "The book '<entity_name>', a published work categorized under '<category>' with specific attributes like price, sales, and rating."
+  - For 'Author': "The author '<entity_name>' who wrote the book '<related_book_name>'."
+  - For 'Seller Name': "The seller '<entity_name>' offering the book '<related_book_name>' for purchase."
+  - For 'Manufacturer': "The manufacturer '<entity_name>' responsible for publishing the book '<related_book_name>'."
+  - For 'Current Price', 'Original Price', 'Discount', 'Sold Quantity', 'Rating', 'Link': "The <entity_type> of the book '<related_book_name>', set at <entity_name>."
+  - For 'Category': "The book '<related_book_name>' belongs to the '<entity_name>' genre."
+  - For 'Description': "Summary of the book '<related_book_name>': <entity_name>."
+  
+  If multiple books are present, ensure the description specifies which book the entity relates to based on the text context.
+  Keep descriptions concise, specific, and reflective of the entity's significance in the document.Note: For entities like 'Author', if multiple are listed (e.g., "Aleksandra Mizielińska, Daniel Mizieliński"), extract each as a separate entity.
+  
 Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>)
 
 2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are clearly related to each other based on the text.
@@ -37,25 +42,31 @@ For each pair of related entities, extract the following information:
 - source_entity: name of the source entity, as identified in step 1
 - target_entity: name of the target entity, as identified in step 1
 - relationship_description: A concise sentence (using the same language as the input text) describing the relationship, adhering to one of the following predefined descriptions and aligned with its corresponding keyword:
-  - "written by" (for Book-Author): "The book '<source_entity>' was written by '<target_entity>'."
-  - "published by" (for Book-Publisher): "The book '<source_entity>' was published by '<target_entity>'."
-  - "manufactured by" (for Book-Manufacturer): "The book '<source_entity>' was manufactured by '<target_entity>'."
-  - "has price" (for Book-Price): "The book '<source_entity>' has a price of '<target_entity>'."
-  - "has discount" (for Book-Discount): "The book '<source_entity>' has a discount of '<target_entity>'."
-  - "has sold quantity" (for Book-Sold Quantity): "The book '<source_entity>' has sold '<target_entity>' copies."
-  - "has rating" (for Book-Rating): "The book '<source_entity>' has a rating of '<target_entity>'."
-  - "has link" (for Book-Link): "The book '<source_entity>' is linked to '<target_entity>'."
-  - Ensure the sentence uses the exact entity names and reflects the keyword's meaning (e.g., 'authorship' implies creative contribution, 'publishing' implies distribution).
+  - "written by" (for Book Name - Author): "The book '<source_entity>' was written by '<target_entity>'."
+  - "sold by" (for Book Name - Seller Name): "The book '<source_entity>' is sold by '<target_entity>'."
+  - "published by" (for Book Name - Manufacturer): "The book '<source_entity>' was published by '<target_entity>'."
+  - "has price" (for Book Name - Current Price): "The book '<source_entity>' is currently priced at '<target_entity>'."
+  - "originally priced" (for Book Name - Original Price): "The book '<source_entity>' originally cost '<target_entity>'."
+  - "has discount" (for Book Name - Discount): "The book '<source_entity>' is available at a '<target_entity>' discount."
+  - "has sold quantity" (for Book Name - Sold Quantity): "The book '<source_entity>' has sold '<target_entity>' copies."
+  - "has rating" (for Book Name - Rating): "The book '<source_entity>' has a rating of '<target_entity>'."
+  - "belongs to category" (for Book Name - Category): "The book '<source_entity>' falls under the '<target_entity>' genre."
+  - "has link" (for Book Name - Link): "The book '<source_entity>' is available at '<target_entity>'."
+  - "has description" (for Book Name - Description): "The book '<source_entity>' summary: '<target_entity>'."
+  Ensure the sentence uses the exact entity names and reflects the keyword's meaning (e.g., 'authorship' implies creative contribution, 'publishing' implies distribution).
+  
 - relationship_strength: Set to 10 for all relationships, as they are direct and explicitly indicated in the text
 - relationship_keywords: Use the following keywords based on the relationship_description:
   - "authorship" for "written by"
+  - "sales" for "sold by"
   - "publishing" for "published by"
-  - "manufacturing" for "manufactured by"
   - "pricing" for "has price"
   - "discounting" for "has discount"
   - "sales" for "has sold quantity"
   - "rating" for "has rating"
+  - "category" for "belongs to category"
   - "link" for "has link"
+  - "description" for "has description"
 Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_keywords>{tuple_delimiter}<relationship_strength>)
 
 3. Identify high-level keywords that summarize the main concepts, themes, or topics of the entire text. These should capture the overarching ideas present in the document, such as "books", "authors", "publishing", "sales data", "ratings".
@@ -81,55 +92,60 @@ Output:"""
 PROMPTS["entity_extraction_examples"] = [
     """Example 1:
 
-Entity_types: ["Book", "Author", "Publisher", "Manufacturer", "Price", "Sold Quantity", "Discount", "Rating", "Link"]
+Entity_types: ["Book Name", "Author", "Seller Name", "Manufacturer", "Current Price", "Original Price", "Discount", "Sold Quantity", "Rating", "Category", "Link", "Description"]
 Text:
-Book: Bản Đồ
-Authors: Aleksandra Mizielińska, Daniel Mizieliński
-Publisher: Nhã Nam
-Manufacturer: Nhà Xuất Bản Lao Động
-Price: 224250 VND
-Discount: 35%
-Sold Quantity: 5935
-Rating: 4.8
-Link: https://tiki.vn/product-p50685547.html?spid=50685549
+Book Name: Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)
+Authors: Nguyễn Hữu Sơn, Nhiều tác giả
+Seller Name: Nhà Xuất Bản Trẻ
+Manufacturer: NXB Trẻ
+Current Price: 712000 VND
+Original Price: 890000 VND
+Discount: 20%
+Sold Quantity: 1
+Rating: 4.0 sao
+Category: Du ký
+Description: Những đóng góp của Tạp chí Nam Phong (1917 - 1934) trong việc xây dựng một nền quốc văn mới, phổ biến học thuật, giới thiệu những tư tưởng triết học, khoa học, văn chương, lịch sử… của cả Á và Âu.
+Link: https://tiki.vn/product-p274468056.html?spid=274540893
 ################
 Output:
-("entity"<|>Bản Đồ<|>Book<|>Bản Đồ is a book detailed with specific attributes like price, discount, and rating, indicating its commercial and literary significance.)##
-("entity"<|>Aleksandra Mizielińska<|>Author<|>Aleksandra Mizielińska is an author contributing to the creation of the book 'Bản Đồ'.)##
-("entity"<|>Daniel Mizieliński<|>Author<|>Daniel Mizieliński is an author contributing to the creation of the book 'Bản Đồ'.)##
-("entity"<|>Nhã Nam<|>Publisher<|>Nhã Nam is the publisher responsible for the distribution of 'Bản Đồ'.)##
-("entity"<|>224250 VND<|>Price<|>224250 VND is the listed price of the book 'Bản Đồ'.)##
-("relationship"<|>Bản Đồ<|>Aleksandra Mizielińska<|>The book 'Bản Đồ' was written by Aleksandra Mizielińska, establishing her as a key contributor.<|>authorship<|>10)##
-("relationship"<|>Bản Đồ<|>Daniel Mizieliński<|>The book 'Bản Đồ' was written by Daniel Mizieliński, establishing him as a key contributor.<|>authorship<|>10)##
-("relationship"<|>Bản Đồ<|>Nhã Nam<|>The book 'Bản Đồ' is published by Nhã Nam, indicating their role in its availability.<|>publishing<|>10)##
-("relationship"<|>Bản Đồ<|>224250 VND<|>The book 'Bản Đồ' has a price of 224250 VND, reflecting its commercial value.<|>pricing<|>10)##
-("content_keywords"<|>books, authorship, publishing, pricing)<|COMPLETE|>
+("entity"<|>Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)<|>Book Name<|>The book 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)' explores the contributions of Nam Phong magazine in Vietnamese literary and academic development.)##
+("entity"<|>Nguyễn Hữu Sơn<|>Author<|>Nguyễn Hữu Sơn is an author who contributed to the book 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)'.)##
+("entity"<|>Nhà Xuất Bản Trẻ<|>Seller Name<|>Nhà Xuất Bản Trẻ is the seller responsible for distributing 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)'.)##
+("entity"<|>712000 VND<|>Current Price<|>The book 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)' is currently priced at 712000 VND.)##
+("entity"<|>20%<|>Discount<|>The book 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)' is available at a 20% discount.)##
+("relationship"<|>Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)<|>Nguyễn Hữu Sơn<|>The book 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)' was written by Nguyễn Hữu Sơn.<|>authorship<|>10)##
+("relationship"<|>Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)<|>Nhà Xuất Bản Trẻ<|>The book 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)' is sold by Nhà Xuất Bản Trẻ.<|>selling<|>10)##
+("relationship"<|>Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)<|>712000 VND<|>The book 'Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)' has a current price of 712000 VND.<|>pricing<|>10)##
+("content_keywords"<|>books, literature, history, academic research)<|COMPLETE|>
 #############################""",
     """Example 2:
 
-Entity_types: ["Book", "Author", "Publisher", "Manufacturer", "Price", "Sold Quantity", "Discount", "Rating", "Link"]
+Entity_types: ["Book Name", "Author", "Seller Name", "Manufacturer", "Current Price", "Original Price", "Discount", "Sold Quantity", "Rating", "Category", "Link", "Description"]
 Text:
-Book: Cây Cam Ngọt Của Tôi
-Authors: José Mauro de Vasconcelos
-Publisher: Nhã Nam
-Manufacturer: Nhà Xuất Bản Hội Nhà Văn
-Price: 64800 VND
-Discount: 40%
-Sold Quantity: 72191
-Rating: 5.0
-Link: https://tiki.vn/product-p74021317.html?spid=74021318
+Book Name: Vạn Dặm Đường Từ Một Bước Chân
+Authors: Mavis ViVu Ký
+Seller Name: Tiki Trading
+Manufacturer: Nhà Xuất Bản Phụ Nữ Việt Nam
+Current Price: 114000 VND
+Original Price: 159000 VND
+Discount: 28%
+Sold Quantity: 56
+Rating: 5.0 sao
+Category: Du ký
+Description: “Vạn dặm đường từ một bước chân” là hành trình của Mavis Vi Vu Ký khám phá 63 tỉnh thành Việt Nam trong 6 năm. Bạn có thể tìm thấy trong 248 trang sách một Mavis ngây ngô, háo hức trước những điều mới...
+Link: https://tiki.vn/product-p273842947.html?spid=273842948
 #############
 Output:
-("entity"<|>Cây Cam Ngọt Của Tôi<|>Book<|>Cây Cam Ngọt Của Tôi is a book with notable sales, discount, and rating, highlighting its popularity and market success.)##
-("entity"<|>José Mauro de Vasconcelos<|>Author<|>José Mauro de Vasconcelos is the author who wrote 'Cây Cam Ngọt Của Tôi'.)##
-("entity"<|>Nhã Nam<|>Publisher<|>Nhã Nam is the publisher responsible for bringing 'Cây Cam Ngọt Của Tôi' to the market.)##
-("entity"<|>72191<|>Sold Quantity<|>72191 is the number of copies sold of 'Cây Cam Ngọt Của Tôi', indicating its high demand.)##
-("entity"<|>5.0<|>Rating<|>5.0 is the rating of 'Cây Cam Ngọt Của Tôi', reflecting its critical acclaim.)##
-("relationship"<|>Cây Cam Ngọt Của Tôi<|>José Mauro de Vasconcelos<|>The book 'Cây Cam Ngọt Của Tôi' was written by José Mauro de Vasconcelos, marking his creative contribution.<|>authorship<|>10)##
-("relationship"<|>Cây Cam Ngọt Của Tôi<|>Nhã Nam<|>The book 'Cây Cam Ngọt Của Tôi' is published by Nhã Nam, showing their role in its distribution.<|>publishing<|>10)##
-("relationship"<|>Cây Cam Ngọt Của Tôi<|>72191<|>The book 'Cây Cam Ngọt Của Tôi' has sold 72191 copies, demonstrating its market performance.<|>sales<|>10)##
-("relationship"<|>Cây Cam Ngọt Của Tôi<|>5.0<|>The book 'Cây Cam Ngọt Của Tôi' has a rating of 5.0, indicating its high quality and reception.<|>rating<|>10)##
-("content_keywords"<|>books, authorship, publishing, sales, ratings)<|COMPLETE|>
+("entity"<|>Vạn Dặm Đường Từ Một Bước Chân<|>Book Name<|>'Vạn Dặm Đường Từ Một Bước Chân' is a travel book detailing the author's journey across Vietnam, reflecting personal and cultural exploration.)##
+("entity"<|>Mavis ViVu Ký<|>Author<|>Mavis ViVu Ký is the author of 'Vạn Dặm Đường Từ Một Bước Chân'.)##
+("entity"<|>Tiki Trading<|>Seller Name<|>Tiki Trading is the seller responsible for distributing 'Vạn Dặm Đường Từ Một Bước Chân'.)##
+("entity"<|>Nhà Xuất Bản Phụ Nữ Việt Nam<|>Manufacturer<|>Nhà Xuất Bản Phụ Nữ Việt Nam is the manufacturer responsible for printing 'Vạn Dặm Đường Từ Một Bước Chân'.)##
+("entity"<|>114000 VND<|>Current Price<|>'Vạn Dặm Đường Từ Một Bước Chân' is currently available for 114000 VND.)##
+("entity"<|>5.0 sao<|>Rating<|>'Vạn Dặm Đường Từ Một Bước Chân' has received a 5.0-star rating, reflecting its popularity and positive reception.)##
+("relationship"<|>Vạn Dặm Đường Từ Một Bước Chân<|>Mavis ViVu Ký<|>The book 'Vạn Dặm Đường Từ Một Bước Chân' was written by Mavis ViVu Ký.<|>authorship<|>10)##
+("relationship"<|>Vạn Dặm Đường Từ Một Bước Chân<|>Tiki Trading<|>The book 'Vạn Dặm Đường Từ Một Bước Chân' is sold by Tiki Trading.<|>selling<|>10)##
+("relationship"<|>Vạn Dặm Đường Từ Một Bước Chân<|>5.0 sao<|>The book 'Vạn Dặm Đường Từ Một Bước Chân' has received a rating of 5.0 stars.<|>rating<|>10)##
+("content_keywords"<|>books, travel, exploration, adventure)<|COMPLETE|>
 #############################""",
     """Example 3:
 

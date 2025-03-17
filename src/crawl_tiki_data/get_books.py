@@ -3,6 +3,7 @@ import json
 import httpx
 import pandas as pd
 import time
+import random
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -24,8 +25,17 @@ def crawl_books(output_file):
         all_categories = json.load(f)
 
     BOOKS_PER_CAT = max(1, BOOKS_CRAWL_LIMIT // NUM_CATEGORIES)
+    # User-Agent List for rotation
+    USER_AGENTS = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36",
+    ]
+
     HEADERS = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        "User-Agent": random.choice(USER_AGENTS),
+        "Referer": "https://tiki.vn/",
+        "Accept": "application/json, text/plain, */*"
     }
 
     def url_category_generator(page_path, cat_id, page):
@@ -101,24 +111,29 @@ def crawl_books(output_file):
                 }
                 books_list.append(info_book)
             page += 1
-            time.sleep(3)
+            time.sleep(5)
         return books_list
 
     all_books = []
     books_needed = BOOKS_CRAWL_LIMIT
+    category_index = 0
+
     with httpx.Client() as client:
-        for category in all_categories[:NUM_CATEGORIES]:
-            if books_needed <= 0:
-                break
+        while books_needed > 0 and category_index < len(all_categories):
+            category = all_categories[category_index]
             num_books_per_cat = min(BOOKS_PER_CAT, books_needed)
             books = list_books_in_cat(category, num_books_per_cat, client)
             all_books.extend(books)
-            books_needed -= len(books)
-            print(f"✅ {category['display_value']} - Collected {len(books)} books")
-    
+            books_collected = len(books)
+            books_needed -= books_collected
+            print(f"✅ {category['display_value']} - Collected {books_collected} books (Remaining: {books_needed})")
+            category_index += 1
+
     if books_needed > 0:
-        print(f"⚠️ Not enough books ({BOOKS_CRAWL_LIMIT}), collected {len(all_books)}.")
-    
+        print(f"⚠️ Exhausted all categories. Not enough books ({BOOKS_CRAWL_LIMIT}), collected {len(all_books)}.")
+    else:
+        print(f"✅ Successfully collected {len(all_books)} books as requested ({BOOKS_CRAWL_LIMIT}).")
+
     df = pd.DataFrame(all_books)
     df.to_csv(output_file, index=False)
     print(f"✅ Total books: {len(all_books)} saved to {output_file}")

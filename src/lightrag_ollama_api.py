@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration from environment variables
-INSERT_BATCH_SIZE = int(os.getenv("INSERT_BATCH_SIZE", 10))
+INSERT_BATCH_SIZE = int(os.getenv("INSERT_BATCH_SIZE", 20))
 DEFAULT_QUERY_MODE = os.getenv("DEFAULT_QUERY_MODE", "local")
 TOP_K = int(os.getenv("TOP_K", 5))
 

@@ -1,5 +1,6 @@
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
+import time
 from crawl_tiki_data.get_books import crawl_books
 from compare_data.compare_data import detect_changes
 from preprocess_data.process_tiki_books import process_books_to_texts
@@ -79,6 +80,24 @@ def cleanup_old_files(directory, days_to_keep=DAYS_TO_KEEP):
             logging.warning(f"Skipping cleanup of invalid file: {filename}")
             continue
 
+def process_and_insert(file_path):
+    """Process a file and insert its data into LightRAG."""
+    try:
+        start_time = time.time()
+        texts, ids = process_books_to_texts(file_path)
+        with httpx.Client() as client:
+            logging.info(f"START inserting data from {file_path} into LightRAG...")
+            response = client.post(
+                INSERT_BATCH_API,
+                json={"texts": texts, "ids": ids}
+            )
+            response.raise_for_status()
+            end_time = time.time()
+            logging.info(f"\n\nTotal insert data time: {end_time - start_time:.2f} seconds")
+            logging.info(f"END inserting {len(texts)} books into LightRAG")
+    except Exception as e:
+        logging.error(f"Insert failed for {file_path}: {e}")
+
 def main():
     """Run the data update process with flexible trigger frequency."""
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -88,7 +107,10 @@ def main():
     # Step 1: Crawl new data
     try:
         logging.info("START crawling data...")
+        start_time = time.time()
         crawl_books(new_file)
+        end_time = time.time()
+        logging.info(f"\n\nCrawling time: {end_time - start_time:.2f} seconds")
         logging.info(f"END crawling data, output: {new_file}")
     except Exception as e:
         logging.error(f"Crawl failed: {e}")
@@ -98,31 +120,22 @@ def main():
     logging.info(f"Scanning directory: {CRAWL_DIR} for files with prefix: books_data")
     old_file = get_latest_file(CRAWL_DIR, "books_data", exclude_file=new_file)
     if old_file:
+        # If there's an old file, compare and insert changes
         try:
             logging.info("START comparing data...")
+            start_time = time.time()
             detect_changes(old_file, new_file, changes_file)
+            end_time = time.time()
+            logging.info(f"\n\nComparison time: {end_time - start_time:.2f} seconds")
             logging.info(f"END comparing data, output: {changes_file}")
+            process_and_insert(changes_file)
         except Exception as e:
             logging.error(f"Comparison failed: {e}")
             return
-
-        # Step 3: Process data into texts and ids
-        texts, ids = process_books_to_texts(changes_file)
-
-        # Step 4: Send data to API
-        try:
-            with httpx.Client() as client:
-                logging.info("START inserting data into LightRAG...")
-                response = client.post(
-                    INSERT_BATCH_API,
-                    json={"texts": texts, "ids": ids}
-                )
-                response.raise_for_status()
-                logging.info(f"END inserting {len(texts)} books into LightRAG")
-        except Exception as e:
-            logging.error(f"Insert failed: {e}")
     else:
-        logging.info("No previous file found for comparison, skipping update.")
+        # If no old file (first crawl), insert the new file directly
+        logging.info("No previous file found, inserting initial crawl data...")
+        process_and_insert(new_file)
 
     # Clean up old files
     cleanup_old_files(CRAWL_DIR, DAYS_TO_KEEP)

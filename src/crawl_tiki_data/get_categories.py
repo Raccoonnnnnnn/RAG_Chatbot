@@ -8,7 +8,7 @@ import time
 start_time = time.perf_counter()
 
 # --- Config ---
-SAVE_PATH = "./data/crawl_tiki_data"
+SAVE_PATH = "./src/crawl_tiki_data"
 CATEGORIES_FILE = f"{SAVE_PATH}/categories.json"
 CATEGORY_LIMIT = 50  # Limit per category type (Vietnamese & English)
 
@@ -77,10 +77,10 @@ def fetch_categories(main_category, main_cat_id):
 
 # --- Fetch categories for both Vietnamese & English books ---
 categories_vn = fetch_categories("sach-truyen-tieng-viet", "316")
-categories_en = fetch_categories("sach-tieng-anh", "320")
+# categories_en = fetch_categories("sach-tieng-anh", "320")
 
 # --- Combine and save to JSON ---
-all_categories = categories_vn + categories_en
+all_categories = categories_vn  # + categories_en
 with open(CATEGORIES_FILE, "w", encoding="utf-8") as f:
     json.dump(all_categories, f, ensure_ascii=False, indent=4)
 

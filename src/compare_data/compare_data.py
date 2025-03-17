@@ -20,24 +20,25 @@ def detect_changes(old_file, new_file, output_file):
                       for col in df_old.columns 
                       if old_row[col] != new_row[col]}
             changed_details[id] = changes
-            
-    table_data = []
-    for id in added_ids:
-        name = df_new.loc[id, 'name']
-        table_data.append([id, name, 'Added', 'N/A'])
-    for id in changed_ids:
-        name = df_new.loc[id, 'name']
-        changes_str = ', '.join([f"{col}: {changed_details[id][col]}" 
-                               for col in changed_details[id]])
-        table_data.append([id, name, 'Changed', changes_str])
         
     print(f"\n📌 Total new books added: {len(added_ids)}")
     print(f"📌 Total books with changed information: {len(changed_ids)}")
     
-    if table_data:
-        print(tabulate(table_data, headers=["ID", "Name", "Status", "Change Details"], tablefmt="fancy_grid"))
-    else:
-        print("No new or changed books")
+    # Display the changes in console
+    # table_data = []
+    # for id in added_ids:
+    #     name = df_new.loc[id, 'name']
+    #     table_data.append([id, name, 'Added', 'N/A'])
+    # for id in changed_ids:
+    #     name = df_new.loc[id, 'name']
+    #     changes_str = ', '.join([f"{col}: {changed_details[id][col]}" 
+    #                            for col in changed_details[id]])
+    #     table_data.append([id, name, 'Changed', changes_str])
+    
+    # if table_data:
+    #     print(tabulate(table_data, headers=["ID", "Name", "Status", "Change Details"], tablefmt="fancy_grid"))
+    # else:
+    #     print("No new or changed books")
         
     all_updated_books = df_new.loc[added_ids.union(changed_ids)]
     all_updated_books.reset_index().to_csv(output_file, index=False)

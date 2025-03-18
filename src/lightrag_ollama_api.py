@@ -10,6 +10,8 @@ from lightrag.kg.shared_storage import initialize_pipeline_status
 from lightrag.operate import chunking_by_token_size
 from lightrag.prompt import PROMPTS
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -20,6 +22,14 @@ DEFAULT_QUERY_MODE = os.getenv("DEFAULT_QUERY_MODE", "local")
 TOP_K = int(os.getenv("TOP_K", 5))
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Accept all domains
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, DELETE,...)
+    allow_headers=["*"],  # Allow all headers
+)
 
 WORKING_DIR = "./dickens_ollama"
 logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
@@ -127,12 +137,19 @@ async def delete_document(request: DeleteRequest):
 async def query_rag(request: QueryRequest):
     if rag is None:
         raise HTTPException(status_code=500, detail="LightRAG is not initialized")
-
-    response = await rag.aquery(
-        request.query,
-        param=QueryParam(mode=request.mode, top_k=request.top_k),
-        system_prompt=PROMPTS["rag_response"]
-    )
+    
+    if request.mode == "" or request.mode == None:
+        response = await rag.aquery(
+            request.query,
+            param=QueryParam(top_k=request.top_k),
+            system_prompt=PROMPTS["rag_response"]
+        )
+    else:
+        response = await rag.aquery(
+            request.query,
+            param=QueryParam(mode=request.mode, top_k=request.top_k),
+            system_prompt=PROMPTS["rag_response"]
+        )
     return {"query": request.query, "response": response}
 
 

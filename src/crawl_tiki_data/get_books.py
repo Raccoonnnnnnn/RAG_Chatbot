@@ -141,7 +141,7 @@ def crawl_books(output_file):
     end_time = time.perf_counter()
     print("\n🕷️ END crawling books from Tiki...\n\n")
     print(f"⏳ Running time: {(end_time - start_time) / 60:.4f} minutes\n")
-    return output_file
+    return output_file, len(all_books)
 
 if __name__ == "__main__":
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

@@ -1,6 +1,11 @@
 window.onbeforeunload = function() {
-    console.log("Page is about to refresh");
-    return "Do you want to leave this page?";
+    const userInput = document.getElementById("userInput").value.trim();
+    const hasMessages = document.getElementById("messages").children.length > 0;
+    if (userInput !== "" || hasMessages) {
+        console.log("Page is about to refresh");
+        return "Do you want to leave this page? Your chat history may be lost.";
+    }
+    return null;
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -40,40 +45,82 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".chat-container").prepend(newChatButton);
     }
 
-    function sendMessage() {
+    async function sendMessage() {
         const messageText = userInput.value.trim();
         if (messageText === "") return;
-
-        appendMessage(messageText, "message user-message");
-
-        // Loại bỏ delay, phản hồi ngay lập tức
-        appendMessage("Chatbot: This is a simulated response!", "message bot-message");
-
+    
         userInput.value = "";
+    
+        appendMessage(messageText, "message user-message");
+        const botPlaceholder = appendMessage("Waiting...", "message bot-message");
+    
+        const modeSelect = document.getElementById("modeSelect");
+        const selectedMode = modeSelect.value;
+    
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+    
+        const raw = JSON.stringify({
+            query: messageText,
+            mode: selectedMode,
+            top_k: 5
+        });
+    
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+    
+        try {
+            const startTime = performance.now();
+    
+            const response = await fetch("http://localhost:8000/query", requestOptions);
+            const result = await response.json();
+    
+            const endTime = performance.now();
+            const responseTime = ((endTime - startTime) / 1000).toFixed(2);
+    
+            if (response.ok) {
+                botPlaceholder.innerHTML = marked.parse(result.response);
+                const timeElement = document.createElement("small");
+                timeElement.style.display = "block";
+                timeElement.style.fontSize = "12px";
+                timeElement.style.color = "#a0a0a0";
+                timeElement.textContent = `Response time: ${responseTime}s`;
+                botPlaceholder.appendChild(timeElement);
+            } else {
+                botPlaceholder.textContent = `Error: ${result.detail?.[0]?.msg || "Unable to get response from API"}`;
+            }
+        } catch (error) {
+            botPlaceholder.textContent = "Error connecting to API!";
+            console.error(error);
+        }
+    
         saveChatHistory();
     }
 
     function appendMessage(text, className) {
         const messageDiv = document.createElement("div");
         className.split(" ").forEach(cls => messageDiv.classList.add(cls));
-        messageDiv.textContent = text;
+        // messageDiv.textContent = text;
+        messageDiv.innerHTML = marked.parse(text);
         messages.appendChild(messageDiv);
     
-        // Kiểm tra nếu user đang ở cuối, thì auto-scroll
-        const isAtBottom = messages.scrollHeight - messages.clientHeight <= messages.scrollTop + 10;
-        if (isAtBottom) {
-            messageDiv.scrollIntoView({ behavior: "smooth", block: "end" });
-            window.scrollTo({
-                        top: document.body.scrollHeight,
-                        behavior: "smooth"
-                    });
-        }
+        messageDiv.scrollIntoView({ behavior: "smooth", block: "end" });
+        window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+
+        return messageDiv; 
     }
     
     function saveChatHistory() {
         try {
             const chatMessages = Array.from(messages.children).map(msg => ({
-                text: msg.textContent,
+                text: msg.innerHTML,
                 class: msg.className
             }));
             localStorage.setItem("chatHistory", JSON.stringify(chatMessages));
@@ -90,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 chatMessages.forEach(msg => {
                     const messageDiv = document.createElement("div");
                     msg.class.split(" ").forEach(cls => messageDiv.classList.add(cls));
-                    messageDiv.textContent = msg.text;
+                    messageDiv.innerHTML = msg.text;
                     messages.appendChild(messageDiv);
                 });
             }

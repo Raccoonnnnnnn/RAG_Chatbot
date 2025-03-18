@@ -412,6 +412,7 @@ Khi xử lý thông tin có timestamp:
 - Target format and length: {response_type}
 - Trả lời bằng ngôn ngữ của câu hỏi (tiếng Việt hoặc tiếng Anh) và giữ giọng điệu tự nhiên, dễ hiểu.
 - Đảm bảo câu trả lời liền mạch với lịch sử hội thoại (nếu có).
+- Câu trả lời có hỗ trợ định dạng markdown và các tiêu đề phù hợp.
 - Nếu không tìm thấy câu trả lời, hãy nói: "Xin lỗi, tôi không tìm được thông tin về câu hỏi này."
 - Không tự ý bịa đặt hoặc thêm thông tin ngoài dữ liệu Knowledge Base.
 - Đối với truy vấn về sách cụ thể, cung cấp:  

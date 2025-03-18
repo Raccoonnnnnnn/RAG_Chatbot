@@ -86,7 +86,7 @@ def process_and_insert(file_path):
         start_time = time.time()
         texts, ids = process_books_to_texts(file_path)
         with httpx.Client() as client:
-            logging.info(f"START inserting data from {file_path} into LightRAG...")
+            logging.info(f"\n\nSTART inserting data from {file_path} into LightRAG...")
             response = client.post(
                 INSERT_BATCH_API,
                 json={"texts": texts, "ids": ids}
@@ -108,9 +108,9 @@ def main():
     try:
         logging.info("START crawling data...")
         start_time = time.time()
-        crawl_books(new_file)
+        _, num_books_collected = crawl_books(new_file)
         end_time = time.time()
-        logging.info(f"\n\nCrawling time: {end_time - start_time:.2f} seconds")
+        logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
         logging.info(f"END crawling data, output: {new_file}")
     except Exception as e:
         logging.error(f"Crawl failed: {e}")
@@ -122,7 +122,7 @@ def main():
     if old_file:
         # If there's an old file, compare and insert changes
         try:
-            logging.info("START comparing data...")
+            logging.info("\n\nSTART comparing data...")
             start_time = time.time()
             detect_changes(old_file, new_file, changes_file)
             end_time = time.time()

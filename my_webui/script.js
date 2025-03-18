@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const startTime = performance.now();
     
-            const response = await fetch("http://localhost:8000/query", requestOptions);
+            const response = await fetch("http://192.168.2.89:8000/query", requestOptions);
             const result = await response.json();
     
             const endTime = performance.now();

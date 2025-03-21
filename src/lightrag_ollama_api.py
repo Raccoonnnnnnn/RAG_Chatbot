@@ -21,11 +21,28 @@ INSERT_BATCH_SIZE = int(os.getenv("INSERT_BATCH_SIZE", 20))
 DEFAULT_QUERY_MODE = os.getenv("DEFAULT_QUERY_MODE", "local")
 TOP_K = int(os.getenv("TOP_K", 5))
 
+
+LOG_FILE = "./logs/api_logs.log"
+
+logging.basicConfig(
+    filename=LOG_FILE,
+    level=logging.INFO, 
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Format log
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s", "%Y-%m-%d %H:%M:%S")
+console_handler.setFormatter(formatter)
+logging.getLogger().addHandler(console_handler)
+
+
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Accept all domains
+    allow_origins=["https://light-9owiez7ox-stavidphans-projects.vercel.app/"],  # Accept all domains
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, DELETE,...)
     allow_headers=["*"],  # Allow all headers
@@ -113,14 +130,17 @@ async def insert_documents_batch(texts: list[str], ids: list[str]):
     for doc_id in ids:
         try:
             await rag.adelete_by_doc_id(doc_id)
-            logging.info(f"Deleted existing document with ID: {doc_id}")
+            # logging.info(f"Deleted existing document with ID: {doc_id}")
         except Exception as e:
             # Ignore if the document doesn't exist or deletion fails
-            logging.warning(f"Failed to delete document ID {doc_id}: {e}")
+            # logging.warning(f"Failed to delete document ID {doc_id}: {e}")
             continue
     
     # Step 2: Insert batch of new documents
+    logging.info(f"START inserting {len(texts)} documents")
     await rag.ainsert(texts, ids=ids)
+    logging.info(f"END inserting {len(texts)} documents")
+
     return {"message": f"✅ Inserted {len(texts)} documents after deleting existing ones!"}
 
 # API delete document from LightRAG

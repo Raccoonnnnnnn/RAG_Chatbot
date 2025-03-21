@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import re
+import logging
 from typing import Any, AsyncIterator
 from collections import Counter, defaultdict
 
@@ -651,9 +652,9 @@ async def kg_query(
         text_chunks_db,
         query_param,
     )
-    print("\n\n-----KG Context-----\n" + context)
+    logging.info("\n\n-----KG Context-----\n" + context)
     end_time = time.time()
-    print(f"\n\n⏳ Thời gian query KG -> context: {(end_time - start_time):.4f} s")
+    logging.info(f"\n\n⏳ Time for KG_QUERY -> context: {(end_time - start_time):.4f} s")
 
     if query_param.only_need_context:
         return context
@@ -712,7 +713,7 @@ async def kg_query(
     )
     
     end_time = time.time()
-    print(f"\n\n⏳ Thời gian query KG -> response: {(end_time - start_time):.4f} s")
+    logging.info(f"\n\n⏳ Time for KG_QUERY -> response: {(end_time - start_time):.4f} s")
     return response
 
 
@@ -887,7 +888,7 @@ async def mix_kg_vector_query(
             )
             
             end_time = time.perf_counter()
-            print(f"\n\n⏳ Thời gian get_kg_context: {(end_time - start_time):.4f} s")
+            logging.info(f"\n\n⏳ Time to get_kg_context: {(end_time - start_time):.4f} s")
             return context
 
         except Exception as e:
@@ -946,14 +947,19 @@ async def mix_kg_vector_query(
             )
             
             end_time = time.time()
-            print(f"\n\n⏳ Thời gian get_vector_context: {(end_time - start_time):.4f} s")
+            logging.info(f"\n\n⏳ Time to get_vector_context: {(end_time - start_time):.4f} s")
             
             return "\n--New Chunk--\n".join(formatted_chunks)
         except Exception as e:
             logger.error(f"Error in get_vector_context: {e}")
             return None
+    
+    # 3. Execute both retrievals in parallel
+    kg_context, vector_context = await asyncio.gather(
+        get_kg_context(), get_vector_context()
+    )
 
-    print(f"""\n\n
+    logging.info(f"""\n\n
     -----KG Context-----
     ```csv
     {kg_context}
@@ -964,12 +970,7 @@ async def mix_kg_vector_query(
     ```
     """.strip())
     end_time = time.time()
-    print(f"\n\n⏳ Thời gian mix_kg_vector_query -> context: {(end_time - start_time):.4f} s")
-    
-    # 3. Execute both retrievals in parallel
-    kg_context, vector_context = await asyncio.gather(
-        get_kg_context(), get_vector_context()
-    )
+    logging.info(f"\n\n⏳ Time for mix_kg_vector_query -> context: {(end_time - start_time):.4f} s")
 
     # 4. Merge contexts
     if kg_context is None and vector_context is None:
@@ -1035,7 +1036,7 @@ async def mix_kg_vector_query(
         )
         
     end_time = time.time()
-    print(f"\n\n⏳ Thời gian mix_kg_vector_query -> response: {(end_time - start_time):.4f} s")
+    logging.info(f"\n\n⏳ Time for mix_kg_vector_query -> response: {(end_time - start_time):.4f} s")
 
     return response
 
@@ -1241,7 +1242,7 @@ async def _get_node_data(
     text_units_context = list_of_list_to_csv(text_units_section_list)
     
     end_time = time.perf_counter()
-    print(f"\n\n⏳ Thời gian get_node_data: {(end_time - start_time):.4f} s")
+    logging.info(f"\n\n⏳ Time for get_node_data: {(end_time - start_time):.4f} s")
     return entities_context, relations_context, text_units_context
 
 
@@ -1385,6 +1386,7 @@ async def _get_edge_data(
     text_chunks_db: BaseKVStorage,
     query_param: QueryParam,
 ):
+    start_time = time.time()
     logger.info(
         f"Query edges: {keywords}, top_k: {query_param.top_k}, cosine: {relationships_vdb.cosine_better_than_threshold}"
     )
@@ -1489,6 +1491,9 @@ async def _get_edge_data(
     for i, t in enumerate(use_text_units):
         text_units_section_list.append([i, t["content"]])
     text_units_context = list_of_list_to_csv(text_units_section_list)
+
+    end_time = time.time()
+    logging.info(f"\n\n⏳ Time for get_edge_data: {(end_time - start_time):.4f} s")
     return entities_context, relations_context, text_units_context
 
 
@@ -1670,9 +1675,9 @@ async def naive_query(
 
     section = "\n--New Chunk--\n".join([c["content"] for c in maybe_trun_chunks])
     end_time = time.perf_counter()
-    print(f"\n\n⏳ Thời gian query vdb_chunks: {(end_time - start_time):.4f} s")
+    logging.info(f"\n\n⏳ Time for NAIVE_QUERY: {(end_time - start_time):.4f} s")
     
-    print(f"""\n\n
+    logging.info(f"""\n\n
     -----Chunks-----
     ```csv
     {section}

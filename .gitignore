@@ -8,11 +8,11 @@ __pycache__/
 *.ini
 
 # Virtual Environment
-.venv/
-env/
-venv/
-*.env*
-.env_example
+# .venv/
+# env/
+# venv/
+# *.env*
+# .env_example
 
 # Build / Distribution
 dist/
@@ -20,10 +20,10 @@ build/
 site/
 
 # Logs / Reports
-*.log
+# *.log
 *.logfire
 *.coverage/
-log/
+# log/
 
 # Caches
 .cache/

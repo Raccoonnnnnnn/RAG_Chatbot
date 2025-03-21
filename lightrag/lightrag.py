@@ -54,6 +54,11 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv(override=True)
 
+import logging
+
+
+
+
 # TODO: TO REMOVE @Yannick
 config = configparser.ConfigParser()
 config.read("config.ini", "utf-8")
@@ -589,7 +594,7 @@ class LightRAG:
         start_time = time.perf_counter()
         await self.apipeline_enqueue_documents(input, ids)
         end_time = time.perf_counter()
-        print(f"\n\n⏳ Thời gian khởi tạo status cho document: {(end_time - start_time):.4f} s")
+        logging.info(f"\n\n⏳ Document status initialization time: {(end_time - start_time):.4f} s")
         
         await self.apipeline_process_enqueue_documents(
             split_by_character, split_by_character_only
@@ -934,14 +939,14 @@ class LightRAG:
                                 )
                                 
                                 end_time = time.time()
-                                print(f"Processed document {doc_id} in {(end_time - start_time):.4f} seconds")
+                                logging.info(f"Processed document {doc_id} in {(end_time - start_time):.4f} seconds")
                             except Exception as e:
                                 # Log error and update pipeline status
                                 end_time = time.time()
                                 error_msg = (
                                     f"Failed to process document {doc_id}: {str(e)}"
                                 )
-                                print(f"Failed to process document {doc_id} in {(end_time - start_time):.4f} seconds: {str(e)}")
+                                logging.info(f"Failed to process document {doc_id} in {(end_time - start_time):.4f} seconds: {str(e)}")
                                 logger.error(error_msg)
                                 pipeline_status["latest_message"] = error_msg
                                 pipeline_status["history_messages"].append(error_msg)
@@ -975,6 +980,7 @@ class LightRAG:
                             f"Completed batch {batch_idx + 1} of {len(docs_batches)}."
                         )
                         logger.info(log_message)
+                        logging.info(log_message)
                         pipeline_status["latest_message"] = log_message
                         pipeline_status["history_messages"].append(log_message)
 
@@ -1035,7 +1041,7 @@ class LightRAG:
             logger.error("Failed to extract entities and relationships")
             raise e
         end_time = time.perf_counter()
-        print(f"\n\n⏳ Thời gian extract entity và relation for chunk: {(end_time - start_time):.4f} s")
+        logging.info(f"\n\n⏳ Time to extract entity and relation for chunk: {(end_time - start_time):.4f} s")
 
     async def _insert_done(self) -> None:
         tasks = [
@@ -1055,6 +1061,7 @@ class LightRAG:
 
         log_message = "All Insert done"
         logger.info(log_message)
+        logging.info(log_message)
 
         # 获取 pipeline_status 并更新 latest_message 和 history_messages
         from lightrag.kg.shared_storage import get_namespace_data
@@ -1253,7 +1260,7 @@ class LightRAG:
         end_time = time.perf_counter()
         
         execution_time = end_time - start_time  # Tính tổng thời gian chạy
-        print(f"⏳ Thời gian thực thi query: {execution_time:.4f} giây")  # In kết quả
+        logging.info(f"⏳ Query execution time: {execution_time:.4f} giây")  # In kết quả
 
         return result
 

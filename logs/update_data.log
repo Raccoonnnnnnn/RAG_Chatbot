@@ -1,0 +1,9 @@
+2025-03-19 21:35:00,776 - INFO - Scanning directory: data/crawl_tiki_data for files with prefix: books_data
+2025-03-19 21:35:00,776 - INFO - No valid files found in data/crawl_tiki_data with prefix books_data after exclusion
+2025-03-19 21:35:00,776 - INFO - No previous file found, inserting initial crawl data...
+2025-03-19 21:35:00,975 - INFO - 
+
+START inserting data from data/crawl_tiki_data/2001_VN_33min.csv into LightRAG...
+2025-03-19 21:35:05,996 - ERROR - Insert failed for data/crawl_tiki_data/2001_VN_33min.csv: timed out
+2025-03-19 21:35:05,999 - WARNING - Skipping cleanup of invalid file: 3000_VN_64min.csv
+2025-03-19 21:35:05,999 - WARNING - Skipping cleanup of invalid file: 2001_VN_33min.csv

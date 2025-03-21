@@ -42,7 +42,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://light-9owiez7ox-stavidphans-projects.vercel.app/"],  # Accept all domains
+    allow_origins=["*"],  # Accept all domains
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, DELETE,...)
     allow_headers=["*"],  # Allow all headers

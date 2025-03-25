@@ -60,10 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
     
+        // Collect conversation history
+        const conversationHistory = Array.from(messages.children).map(msg => {
+            const role = msg.classList.contains("user-message") ? "user" : "assistant";
+            return { role, content: msg.textContent.trim() };
+        });
+    
         const raw = JSON.stringify({
             query: messageText,
             mode: selectedMode,
-            top_k: 5
+            top_k: 5,
+            conversation_history: conversationHistory
         });
     
         const requestOptions = {

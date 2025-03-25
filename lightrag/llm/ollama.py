@@ -31,7 +31,11 @@ from lightrag.api import __api_version__
 
 import numpy as np
 from typing import Union
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+LLM_RESPONSE_MODEL_NAME = os.getenv("LLM_RESPONSE_MODEL_NAME", "gemma2:9b")
 
 @retry(
     stop=stop_after_attempt(3),
@@ -95,7 +99,8 @@ async def ollama_model_complete(
     keyword_extraction = kwargs.pop("keyword_extraction", None)
     if keyword_extraction:
         kwargs["format"] = "json"
-    model_name = kwargs["hashing_kv"].global_config["llm_model_name"]
+    # model_name = kwargs["hashing_kv"].global_config["llm_model_name"]
+    model_name = LLM_RESPONSE_MODEL_NAME
     return await _ollama_model_if_cache(
         model_name,
         prompt,

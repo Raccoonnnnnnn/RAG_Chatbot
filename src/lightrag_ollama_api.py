@@ -19,6 +19,8 @@ load_dotenv()
 # Configuration from environment variables
 INSERT_BATCH_SIZE = int(os.getenv("INSERT_BATCH_SIZE", 20))
 DEFAULT_QUERY_MODE = os.getenv("DEFAULT_QUERY_MODE", "local")
+LLM_MODEL_NAME = os.getenv("LLM_MODEL_NAME", "gemma2:9b")
+EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
 TOP_K = int(os.getenv("TOP_K", 5))
 
 
@@ -81,6 +83,7 @@ class QueryRequest(BaseModel):
     query: str
     mode: str = DEFAULT_QUERY_MODE
     top_k: int = TOP_K
+    conversation_history: list[dict[str, str]] = []
 
 # init RAG instance
 rag = None
@@ -90,7 +93,7 @@ async def initialize_rag():
     rag = LightRAG(
         working_dir=WORKING_DIR,
         llm_model_func=ollama_model_complete,
-        llm_model_name="gemma2:9b",
+        llm_model_name=LLM_MODEL_NAME,
         llm_model_max_async=4,
         llm_model_max_token_size=8192,
         llm_model_kwargs={"host": "http://localhost:11434", "options": {"num_ctx": 8192}},
@@ -98,7 +101,7 @@ async def initialize_rag():
             embedding_dim=768,
             max_token_size=8192,
             func=lambda texts: ollama_embed(
-                texts, embed_model="nomic-embed-text", host="http://localhost:11434"
+                texts, embed_model=EMBED_MODEL, host="http://localhost:11434"
             ),
         ),
         chunking_func=custom_chunking_wrapper,
@@ -107,7 +110,7 @@ async def initialize_rag():
 
     await rag.initialize_storages()
     await initialize_pipeline_status()
-    logging.info("✅ LightRAG is ready!")
+    logging.info("✅ LightRAG is ready with: " + LLM_MODEL_NAME)
 
 # API insert document to LightRAG
 @app.post("/insert")
@@ -120,7 +123,7 @@ async def insert_document(request: InsertRequest):
 
 # API to insert batch of documents with IDs
 @app.post("/insert_batch")
-async def insert_documents_batch(texts: list[str], ids: list[str]):
+async def insert_documents_batch(texts: list[str], ids: list[str] | None = None):
     if rag is None:
         raise HTTPException(status_code=500, detail="LightRAG is not initialized")
     if len(texts) != len(ids):
@@ -161,13 +164,22 @@ async def query_rag(request: QueryRequest):
     if request.mode == "" or request.mode == None:
         response = await rag.aquery(
             request.query,
-            param=QueryParam(top_k=request.top_k),
+            param=QueryParam(
+                top_k=request.top_k,
+                conversation_history=request.conversation_history,
+                history_turns=3
+            ),
             system_prompt=PROMPTS["rag_response"]
         )
     else:
         response = await rag.aquery(
             request.query,
-            param=QueryParam(mode=request.mode, top_k=request.top_k),
+            param=QueryParam(
+                mode=request.mode, 
+                top_k=request.top_k, 
+                conversation_history=request.conversation_history, 
+                history_turns=3
+            ),
             system_prompt=PROMPTS["rag_response"]
         )
     return {"query": request.query, "response": response}

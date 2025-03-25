@@ -21,3 +21,4 @@ fastapi
 uvicorn
 tabulate
 httpx
+pandas

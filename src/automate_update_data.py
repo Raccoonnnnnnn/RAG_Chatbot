@@ -102,24 +102,24 @@ def main():
     """Run the data update process with flexible trigger frequency."""
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     new_file = os.path.join(CRAWL_DIR, f"books_data_{timestamp}.csv")
-    new_file = os.path.join(CRAWL_DIR, f"2001_VN_33min.csv")
+    # new_file = os.path.join(CRAWL_DIR, f"3000_VN_64min.csv")
     changes_file = os.path.join(COMPARE_DIR, f"changes_{timestamp}.csv")
 
     os.makedirs(CRAWL_DIR, exist_ok=True)
     os.makedirs(COMPARE_DIR, exist_ok=True)
     os.makedirs("logs", exist_ok=True)
-    
+
     # Step 1: Crawl new data
-    # try:
-    #     logging.info("START crawling data...")
-    #     start_time = time.time()
-    #     _, num_books_collected = crawl_books(new_file)
-    #     end_time = time.time()
-    #     logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
-    #     logging.info(f"END crawling data, output: {new_file}")
-    # except Exception as e:
-    #     logging.error(f"Crawl failed: {e}")
-    #     return
+    try:
+        logging.info("START crawling data...")
+        start_time = time.time()
+        _, num_books_collected = crawl_books(new_file)
+        end_time = time.time()
+        logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
+        logging.info(f"END crawling data, output: {new_file}")
+    except Exception as e:
+        logging.error(f"Crawl failed: {e}")
+        return
 
     # Step 2: Find the most recent old file for comparison, excluding the new file
     logging.info(f"Scanning directory: {CRAWL_DIR} for files with prefix: books_data")
@@ -141,8 +141,6 @@ def main():
         # If no old file (first crawl), insert the new file directly
         logging.info("No previous file found, inserting initial crawl data...")
         process_and_insert(new_file)
-    # 
-    # process_and_insert(os.path("2001_VN_33min.csv"))
 
     # Clean up old files
     cleanup_old_files(CRAWL_DIR, DAYS_TO_KEEP)

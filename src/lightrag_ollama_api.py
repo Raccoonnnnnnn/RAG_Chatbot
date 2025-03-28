@@ -11,6 +11,9 @@ from lightrag.operate import chunking_by_token_size
 from lightrag.prompt import PROMPTS
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+import pandas as pd
+from preprocess_data.insert_custom_kg import create_custom_kg_for_batch
 
 
 # Load environment variables from .env file
@@ -120,6 +123,34 @@ async def insert_document(request: InsertRequest):
     
     await rag.ainsert(request.content)
     return {"message": "✅ Document inserted!"}
+
+@app.post("/insert_custom_kg")
+async def insert_books(path: str, batch_size: int = 100):
+    try:
+        # Tạo các batch custom_kg
+        custom_kgs, df = create_custom_kg_for_batch(path, batch_size=batch_size)
+        total_batches = len(custom_kgs)
+        
+        # Insert từng batch vào LightRAG
+        for idx, custom_kg in enumerate(custom_kgs):
+            try:
+                await rag.ainsert_custom_kg(custom_kg, full_doc_id=f"batch-{idx}")
+                logging.info(f"Successfully inserted batch {idx + 1}/{total_batches}")
+            except Exception as e:
+                logging.error(f"Failed to insert batch {idx + 1}: {str(e)}")
+                raise HTTPException(status_code=500, detail=f"Error inserting batch {idx + 1}: {str(e)}")
+
+        return JSONResponse(
+            status_code=200,
+            content={"message": f"Successfully inserted {len(df)} books in {total_batches} batches"}
+        )
+
+    except pd.errors.EmptyDataError:
+        raise HTTPException(status_code=400, detail="CSV file is empty or invalid")
+    except Exception as e:
+        logging.error(f"Error processing file: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
+    
 
 # API to insert batch of documents with IDs
 @app.post("/insert_batch")

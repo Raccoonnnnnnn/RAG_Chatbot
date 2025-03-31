@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 200;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow scrolling on the entire page */
+}
+
+.messages-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 0;
+    padding-top: 0; /* Added padding-top to avoid overlap with logo */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px; /* Space for input area */
+}
+
+.messages {
+    width: 100%;
+    position: static;
+}
+
+.messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+    border: 1px solid #1a1a1a;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.messages::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, #1a1a1a);
+    pointer-events: none;
+}
+
+.messages div {
+    margin: 5px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #e0e0e0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 200;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.messages div.user-message {
+    background-color: #3a3a3a;
+    min-width: 50px;
+    max-width: 80%;
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+}
+
+.messages div.bot-message {
+    /* background-color: transparent; */
+    border: none;
+}
+
+.messages div.bot-message a {
+    color: #1E90FF;
+    text-decoration: underline;
+}
+
+.messages div.bot-message a:hover {
+    color: #63B8FF;
+}
+
+/* Add a background overlay for the area beneath the input box */
+.input-background-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px; /* Slightly taller than input-area to provide visual padding */
+    background-color: #1a1a1a; /* Match body background color */
+    z-index: 90; /* Lower than input-area (100) but higher than content */
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 17px;
+    margin-top: 20px;
+    flex-shrink: 0;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    height: 60px;
+    z-index: 100;
+    gap: 10px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+/* Style cho dropdown */
+.mode-dropdown {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    outline: none;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    text-align: left;
+}
+
+/* Xóa phần focus để tránh nhảy chữ */
+.mode-dropdown:focus {
+    /* Bỏ direction: rtl */
+    outline: none; /* Giữ focus không có viền mặc định */
+}
+
+/* Style cho option */
+.mode-dropdown option {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    text-align: left; /* Đảm bảo option căn trái */
+}
+
+/* Hover effect cho dropdown */
+.mode-dropdown:hover {
+    background-color: #444;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    font-family: "Roboto", Arial, sans-serif;
+    max-width: 100%;
+}
+
+#userInput::placeholder {
+    color: #a0a0a0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 200;
+    line-height: 1.4;
+}
+
+#sendButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sendButton svg {
+    transition: transform 0.2s;
+}
+
+#sendButton:hover svg {
+    transform: translateX(5px);
+}
+
+.new-chat-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #e0e0e0;
+    font-family: "Inter", Arial, sans-serif;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.new-chat-button .new-chat-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.new-chat-button .new-chat-text {
+    display: none;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.new-chat-button:hover {
+    border-radius: 20px;
+    width: 120px;
+    background-color: #3a3a3a;
+}
+
+.new-chat-button:hover .new-chat-text {
+    display: inline;
+}
+
+/* Logo Styles */
+.logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 110; /* Higher than input-area and new-chat-button */
+    padding: 8px 12px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+}
+
+.book-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #e0e0e0;
+}
+

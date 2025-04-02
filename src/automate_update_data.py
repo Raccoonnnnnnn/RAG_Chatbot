@@ -87,9 +87,13 @@ def process_and_insert(file_path):
         texts, ids = process_books_to_texts(file_path)
         with httpx.Client() as client:
             logging.info(f"\n\nSTART inserting data from {file_path} into LightRAG...")
+            # response = client.post(
+            #     INSERT_BATCH_API,
+            #     json={"texts": texts, "ids": ids}
+            # )
             response = client.post(
                 INSERT_BATCH_API,
-                json={"texts": texts, "ids": ids}
+                json={"path": file_path}
             )
             response.raise_for_status()
             end_time = time.time()
@@ -102,7 +106,7 @@ def main():
     """Run the data update process with flexible trigger frequency."""
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     new_file = os.path.join(CRAWL_DIR, f"books_data_{timestamp}.csv")
-    # new_file = os.path.join(CRAWL_DIR, f"3000_VN_64min.csv")
+    new_file = os.path.join(CRAWL_DIR, f"2001_VN_33min.csv")
     changes_file = os.path.join(COMPARE_DIR, f"changes_{timestamp}.csv")
 
     os.makedirs(CRAWL_DIR, exist_ok=True)
@@ -110,16 +114,16 @@ def main():
     os.makedirs("logs", exist_ok=True)
 
     # Step 1: Crawl new data
-    try:
-        logging.info("START crawling data...")
-        start_time = time.time()
-        _, num_books_collected = crawl_books(new_file)
-        end_time = time.time()
-        logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
-        logging.info(f"END crawling data, output: {new_file}")
-    except Exception as e:
-        logging.error(f"Crawl failed: {e}")
-        return
+    # try:
+    #     logging.info("START crawling data...")
+    #     start_time = time.time()
+    #     _, num_books_collected = crawl_books(new_file)
+    #     end_time = time.time()
+    #     logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
+    #     logging.info(f"END crawling data, output: {new_file}")
+    # except Exception as e:
+    #     logging.error(f"Crawl failed: {e}")
+    #     return
 
     # Step 2: Find the most recent old file for comparison, excluding the new file
     logging.info(f"Scanning directory: {CRAWL_DIR} for files with prefix: books_data")

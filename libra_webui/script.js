@@ -65,12 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const role = msg.classList.contains("user-message") ? "user" : "assistant";
             return { role, content: msg.textContent.trim() };
         });
+
+        const is_think = true
     
         const raw = JSON.stringify({
             query: messageText,
             mode: selectedMode,
-            top_k: 5,
-            conversation_history: conversationHistory
+            conversation_history: conversationHistory,
+            is_think: is_think
         });
     
         const requestOptions = {

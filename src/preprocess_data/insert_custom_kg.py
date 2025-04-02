@@ -21,24 +21,33 @@ def create_custom_kg_for_batch(csv_file, batch_size: int = 100) -> list[Dict[str
 
         for index, row in batch_df.iterrows():
             book_data = row.to_dict()
-            # Chuyển tất cả giá trị thành chuỗi và xử lý NaN
+            # Convert all values to strings and handle NaN
             book_data = {k: str(v) if pd.notna(v) else "" for k, v in book_data.items()}
             source_id = f"book-{book_data['id']}"
             book_name = book_data["name"]
 
-            # Tạo nội dung chunk (giữ nguyên như trước)
+            # Create chunk content (keep as before)
             chunk_content = (
-                f"{book_name} is a book written by {book_data['authors']} "
-                f"published by {book_data['manufacturer']} under category {book_data['category']}. "
-                f"It has a price of {book_data['current_price']} VND with a discount of {book_data['discount_rate']}%. "
-                f"{book_data['short_description']}"
+                f"Title: {book_data['name']}\n"
+                f"Author: {book_data['authors']}\n"
+                f"Publisher: {book_data['manufacturer']}\n"
+                f"Category: {book_data['category']}\n"
+                f"Seller: {book_data['seller_name']}\n"
+                f"Link: {book_data['link']}\n"
+                f"Current Price: {book_data['current_price']} VND\n"
+                f"Original Price: {book_data['original_price']} VND\n"
+                f"Discount Rate: {book_data['discount_rate']}%\n"
+                f"Rating: {book_data['rating_average']} stars\n"
+                f"Quantity Sold: {book_data['quantity_sold']}\n"
+                f"Description: {book_data['short_description']}"
             )
+
             custom_kg["chunks"].append({
                 "content": chunk_content,
                 "source_id": source_id
             })
 
-            # Tạo entities cho mỗi cột
+            # Create entities for each column
             entities = [
                 {
                     "entity_name": book_name,
@@ -115,7 +124,7 @@ def create_custom_kg_for_batch(csv_file, batch_size: int = 100) -> list[Dict[str
             ]
             custom_kg["entities"].extend(entities)
 
-            # Tạo relationships giữa Book Name và các entity khác
+            # Create relationships between Book Name and other entities
             relationships = [
                 {
                     "src_id": book_name,
@@ -211,21 +220,3 @@ def create_custom_kg_for_batch(csv_file, batch_size: int = 100) -> list[Dict[str
         custom_kgs.append(custom_kg)
     
     return custom_kgs, df
-
-# # Đọc dữ liệu từ CSV (giả lập 3000 sách)
-# csv_data = """
-# id,name,link,current_price,original_price,discount_rate,rating_average,quantity_sold,authors,seller_name,category,manufacturer,short_description
-# 275861063,Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền,https://tiki.vn/product-p275861063.html?spid=275861064,151164,180000,16,5.0,55,Henry David Thoreau,Gooda Official,Du ký,Nhà Xuất Bản Tri Thức,"“Walden” là một hồi tưởng đầy chiêm nghiệm suy tư về quãng đời “hai năm hai tháng hai ngày” sống một mình trong một mảnh đất rừng bên cạnh đầm Walden, “Giọt nước của Trời”, “đáng yêu hơn kim cương” tr..."
-# """
-# df = pd.read_csv(pd.compat.StringIO(csv_data))
-# # Giả lập 3000 sách bằng cách nhân bản dữ liệu (trong thực tế, bạn sẽ dùng file CSV thật)
-# df = pd.concat([df] * 3000, ignore_index=True)
-
-# # Tạo các batch custom_kg
-# batch_size = 100  # Có thể điều chỉnh: 50, 200, 500 tùy hệ thống
-# custom_kgs = create_custom_kg_for_batch(df, batch_size=batch_size)
-
-# # Gọi insert_custom_kg cho từng batch
-# for idx, custom_kg in enumerate(custom_kgs):
-#     rag.insert_custom_kg(custom_kg, full_doc_id=f"batch-{idx}")
-#     print(f"Inserted batch {idx + 1}/{len(custom_kgs)}")

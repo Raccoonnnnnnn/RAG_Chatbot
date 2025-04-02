@@ -1203,6 +1203,7 @@ async def _get_node_data(
                 created_at,
             ]
         )
+    entites_section_list[1:] = sorted(entites_section_list[1:], key=lambda x: x[4], reverse=True)[:query_param.top_k] 
     entities_context = list_of_list_to_csv(entites_section_list)
 
     relations_section_list = [
@@ -1234,11 +1235,13 @@ async def _get_node_data(
                 created_at,
             ]
         )
+    relations_section_list[1:] = sorted(relations_section_list[1:], key=lambda x: (x[6], x[5]), reverse=True)[:query_param.top_k] 
     relations_context = list_of_list_to_csv(relations_section_list)
 
     text_units_section_list = [["id", "content"]]
     for i, t in enumerate(use_text_units):
         text_units_section_list.append([i, t["content"]])
+    text_units_section_list[1:] = text_units_section_list[1:query_param.top_k + 1] 
     text_units_context = list_of_list_to_csv(text_units_section_list)
     
     end_time = time.perf_counter()
@@ -1467,6 +1470,7 @@ async def _get_edge_data(
                 created_at,
             ]
         )
+    relations_section_list[1:] = sorted(relations_section_list[1:], key=lambda x: (x[6], x[5]), reverse=True)[:query_param.top_k] 
     relations_context = list_of_list_to_csv(relations_section_list)
 
     entites_section_list = [["id", "entity", "type", "description", "rank"]]
@@ -1485,11 +1489,13 @@ async def _get_edge_data(
                 created_at,
             ]
         )
+    entites_section_list[1:] = sorted(entites_section_list[1:], key=lambda x: x[4], reverse=True)[:query_param.top_k] 
     entities_context = list_of_list_to_csv(entites_section_list)
 
     text_units_section_list = [["id", "content"]]
     for i, t in enumerate(use_text_units):
         text_units_section_list.append([i, t["content"]])
+    text_units_section_list[1:] = text_units_section_list[1:query_param.top_k + 1] 
     text_units_context = list_of_list_to_csv(text_units_section_list)
 
     end_time = time.time()

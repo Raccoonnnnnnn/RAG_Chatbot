@@ -76,18 +76,6 @@ def custom_chunking_wrapper(
         tiktoken_model="gpt-4o" 
     )
 
-class InsertRequest(BaseModel):
-    content: str
-
-class DeleteRequest(BaseModel):
-    doc_id: str
-
-class QueryRequest(BaseModel):
-    query: str
-    mode: str = DEFAULT_QUERY_MODE
-    top_k: int = TOP_K
-    conversation_history: list[dict[str, str]] = []
-
 # init RAG instance
 rag = None
 
@@ -115,6 +103,23 @@ async def initialize_rag():
     await initialize_pipeline_status()
     logging.info("✅ LightRAG is ready with: " + LLM_MODEL_NAME)
 
+
+class InsertRequest(BaseModel):
+    content: str
+
+class InsertCustomtRequest(BaseModel):
+    path: str
+    batch_size: int = 100
+
+class DeleteRequest(BaseModel):
+    doc_id: str
+
+class QueryRequest(BaseModel):
+    query: str
+    mode: str = DEFAULT_QUERY_MODE
+    conversation_history: list[dict[str, str]] = []
+    is_think: bool = False
+
 # API insert document to LightRAG
 @app.post("/insert")
 async def insert_document(request: InsertRequest):
@@ -125,13 +130,13 @@ async def insert_document(request: InsertRequest):
     return {"message": "✅ Document inserted!"}
 
 @app.post("/insert_custom_kg")
-async def insert_books(path: str, batch_size: int = 100):
+async def insert_books(request: InsertCustomtRequest):
     try:
-        # Tạo các batch custom_kg
-        custom_kgs, df = create_custom_kg_for_batch(path, batch_size=batch_size)
+        # Create custom_kg batches
+        custom_kgs, df = create_custom_kg_for_batch(request.path, batch_size=request.batch_size)
         total_batches = len(custom_kgs)
         
-        # Insert từng batch vào LightRAG
+        # Insert each batch into LightRAG
         for idx, custom_kg in enumerate(custom_kgs):
             try:
                 await rag.ainsert_custom_kg(custom_kg, full_doc_id=f"batch-{idx}")
@@ -177,6 +182,7 @@ async def insert_documents_batch(texts: list[str], ids: list[str] | None = None)
 
     return {"message": f"✅ Inserted {len(texts)} documents after deleting existing ones!"}
 
+
 # API delete document from LightRAG
 @app.delete("/delete")
 async def delete_document(request: DeleteRequest):
@@ -186,32 +192,33 @@ async def delete_document(request: DeleteRequest):
     await rag.adelete_by_doc_id(request.doc_id)
     return {"message": "✅ Document deleted!"}
 
+
 # API query from LightRAG
 @app.post("/query")
 async def query_rag(request: QueryRequest):
     if rag is None:
         raise HTTPException(status_code=500, detail="LightRAG is not initialized")
-    
+
     if request.mode == "" or request.mode == None:
         response = await rag.aquery(
             request.query,
             param=QueryParam(
-                top_k=request.top_k,
+                top_k=TOP_K,
                 conversation_history=request.conversation_history,
                 history_turns=3
             ),
-            system_prompt=PROMPTS["rag_response"]
+            system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
         )
     else:
         response = await rag.aquery(
             request.query,
             param=QueryParam(
                 mode=request.mode, 
-                top_k=request.top_k, 
+                top_k=TOP_K, 
                 conversation_history=request.conversation_history, 
                 history_turns=3
             ),
-            system_prompt=PROMPTS["rag_response"]
+            system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
         )
     return {"query": request.query, "response": response}
 

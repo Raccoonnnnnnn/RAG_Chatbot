@@ -1061,7 +1061,6 @@ class LightRAG:
 
         log_message = "All Insert done"
         logger.info(log_message)
-        logging.info(log_message)
 
         # 获取 pipeline_status 并更新 latest_message 和 history_messages
         from lightrag.kg.shared_storage import get_namespace_data
@@ -1080,6 +1079,13 @@ class LightRAG:
         self, custom_kg: dict[str, Any], full_doc_id: str = None
     ) -> None:
         update_storage = False
+
+        source_ids = {chunk["source_id"] for chunk in custom_kg.get("chunks", [])}
+        try:
+            await asyncio.gather(*(self.adelete_by_doc_id(source_id) for source_id in source_ids))
+        except Exception as e:
+            raise Exception(f"Failed to delete documents for source_ids: {str(e)}")
+        
         try:
             # Insert chunks into vector storage
             all_chunks_data: dict[str, dict[str, str]] = {}
@@ -1596,12 +1602,12 @@ class LightRAG:
         """
         try:
             # 1. Get the document status and related data
-            doc_status = await self.doc_status.get_by_id(doc_id)
-            if not doc_status:
-                logger.warning(f"Document {doc_id} not found")
-                return
+            # doc_status = await self.doc_status.get_by_id(doc_id)
+            # if not doc_status:
+            #     logger.warning(f"Document {doc_id} not found")
+            #     return
 
-            logger.debug(f"Starting deletion for document {doc_id}")
+            logging.info(f"Starting deletion for document {doc_id}")
 
             # 2. Get all chunks related to this document
             # Find all chunks where full_doc_id equals the current doc_id

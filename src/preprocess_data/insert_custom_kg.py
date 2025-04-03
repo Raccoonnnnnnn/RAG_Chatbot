@@ -28,7 +28,7 @@ def create_custom_kg_for_batch(csv_file, batch_size: int = 100) -> list[Dict[str
 
             # Create chunk content (keep as before)
             chunk_content = (
-                f"Title: {book_data['name']}\n"
+                f"Book Name: {book_data['name']}\n"
                 f"Author: {book_data['authors']}\n"
                 f"Publisher: {book_data['manufacturer']}\n"
                 f"Category: {book_data['category']}\n"

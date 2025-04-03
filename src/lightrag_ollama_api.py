@@ -139,7 +139,7 @@ async def insert_books(request: InsertCustomtRequest):
         # Insert each batch into LightRAG
         for idx, custom_kg in enumerate(custom_kgs):
             try:
-                await rag.ainsert_custom_kg(custom_kg, full_doc_id=f"batch-{idx}")
+                await rag.ainsert_custom_kg(custom_kg)
                 logging.info(f"Successfully inserted batch {idx + 1}/{total_batches}")
             except Exception as e:
                 logging.error(f"Failed to insert batch {idx + 1}: {str(e)}")

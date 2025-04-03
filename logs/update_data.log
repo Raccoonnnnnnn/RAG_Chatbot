@@ -1,9 +1,14 @@
-2025-04-01 16:20:10,428 - INFO - Scanning directory: data/crawl_tiki_data for files with prefix: books_data
-2025-04-01 16:20:10,428 - INFO - No valid files found in data/crawl_tiki_data with prefix books_data after exclusion
-2025-04-01 16:20:10,428 - INFO - No previous file found, inserting initial crawl data...
-2025-04-01 16:20:10,898 - INFO - 
+2025-04-03 14:16:02,269 - INFO - Scanning directory: data/crawl_tiki_data for files with prefix: books_data
+2025-04-03 14:16:02,269 - INFO - Latest file found: books_data_2025-04-01_14-30-45.csv
+2025-04-03 14:16:02,269 - INFO - 
 
-START inserting data from data/crawl_tiki_data/2001_VN_33min.csv into LightRAG...
-2025-04-01 16:20:15,905 - ERROR - Insert failed for data/crawl_tiki_data/2001_VN_33min.csv: timed out
-2025-04-01 16:20:15,908 - WARNING - Skipping cleanup of invalid file: 3000_VN_64min.csv
-2025-04-01 16:20:15,908 - WARNING - Skipping cleanup of invalid file: 2001_VN_33min.csv
+START comparing data...
+2025-04-03 14:16:02,505 - INFO - 
+
+Comparison time: 0.24 seconds
+2025-04-03 14:16:02,505 - INFO - END comparing data, output: data/compare_data/changes_2025-04-03_14-16-02.csv
+2025-04-03 14:16:02,578 - INFO - 
+
+START inserting data from data/compare_data/changes_2025-04-03_14-16-02.csv into LightRAG...
+2025-04-03 14:16:07,585 - ERROR - Insert failed for data/compare_data/changes_2025-04-03_14-16-02.csv: timed out
+2025-04-03 14:16:07,586 - WARNING - Skipping cleanup of invalid file: 3000_VN_64min.csv

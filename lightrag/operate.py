@@ -652,14 +652,14 @@ async def kg_query(
         text_chunks_db,
         query_param,
     )
-    logging.info("\n\n-----KG Context-----\n" + context)
+    logging.info(f"\n\n-----KG Context-----\n{context}")
     end_time = time.time()
     logging.info(f"\n\n⏳ Time for KG_QUERY -> context: {(end_time - start_time):.4f} s")
 
     if query_param.only_need_context:
         return context
-    if context is None:
-        return PROMPTS["fail_response"]
+    # if context is None:
+    #     return PROMPTS["fail_response"]
 
     # Process conversation history
     history_context = ""
@@ -668,18 +668,27 @@ async def kg_query(
             query_param.conversation_history, query_param.history_turns
         )
 
-    sys_prompt_temp = system_prompt if system_prompt else PROMPTS["rag_response"]
-    sys_prompt = sys_prompt_temp.format(
-        context_data=context,
-        response_type=query_param.response_type,
-        history=history_context,
-    )
+    if context is None:
+        sys_prompt_temp = PROMPTS["no_context_response"]
+    
+        sys_prompt = sys_prompt_temp.format(
+            response_type=query_param.response_type,
+            history=history_context,
+        )
+    else:
+        sys_prompt_temp = system_prompt if system_prompt else PROMPTS["rag_response"]
+        
+        sys_prompt = sys_prompt_temp.format(
+            context_data=context,
+            response_type=query_param.response_type,
+            history=history_context,
+        )
 
-    if query_param.only_need_prompt:
-        return sys_prompt
+    # if query_param.only_need_prompt:
+    #     return sys_prompt
 
-    len_of_prompts = len(encode_string_by_tiktoken(query + sys_prompt))
-    logger.debug(f"[kg_query]Prompt Tokens: {len_of_prompts}")
+    # len_of_prompts = len(encode_string_by_tiktoken(query + sys_prompt))
+    # logger.debug(f"[kg_query]Prompt Tokens: {len_of_prompts}")
 
     response = await use_model_func(
         query,

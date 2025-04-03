@@ -17,7 +17,7 @@ COMPARE_DIR = os.getenv("COMPARE_DIR", "data/compare")
 DAYS_TO_KEEP = int(os.getenv("DAYS_TO_KEEP", 7))
 INSERT_BATCH_API = os.getenv("INSERT_BATCH_API", "http://localhost:8000/insert_batch")
 LOG_FILE = os.getenv("LOG_FILE", "data/update_data.log")
-LOG_FILE_MODE = os.getenv("LOG_FILE_MODE", "a")
+LOG_FILE_MODE = os.getenv("LOG_FILE_MODE", "w")
 
 # Configure logging to append with timestamp
 logging.basicConfig(

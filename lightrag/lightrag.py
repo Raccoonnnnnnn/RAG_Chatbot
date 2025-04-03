@@ -1081,8 +1081,13 @@ class LightRAG:
         update_storage = False
 
         source_ids = {chunk["source_id"] for chunk in custom_kg.get("chunks", [])}
+        # try:
+        #     await asyncio.gather(*(self.adelete_by_doc_id(source_id) for source_id in source_ids))
+        # except Exception as e:
+        #     raise Exception(f"Failed to delete documents for source_ids: {str(e)}")
         try:
-            await asyncio.gather(*(self.adelete_by_doc_id(source_id) for source_id in source_ids))
+            for source_id in source_ids:
+                await self.adelete_by_doc_id(source_id)
         except Exception as e:
             raise Exception(f"Failed to delete documents for source_ids: {str(e)}")
         

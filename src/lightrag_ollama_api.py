@@ -25,6 +25,7 @@ DEFAULT_QUERY_MODE = os.getenv("DEFAULT_QUERY_MODE", "local")
 LLM_MODEL_NAME = os.getenv("LLM_MODEL_NAME", "gemma2:9b")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
 TOP_K = int(os.getenv("TOP_K", 5))
+LOG_FILE_MODE = os.getenv("LOG_FILE_MODE", "a")
 
 
 LOG_FILE = "./logs/api_logs.log"
@@ -33,7 +34,8 @@ logging.basicConfig(
     filename=LOG_FILE,
     level=logging.INFO, 
     format="%(asctime)s - %(levelname)s - %(message)s",  # Format log
-    datefmt="%Y-%m-%d %H:%M:%S"
+    datefmt="%Y-%m-%d %H:%M:%S",
+    filemode=LOG_FILE_MODE
 )
 
 console_handler = logging.StreamHandler()
@@ -85,6 +87,7 @@ async def initialize_rag():
         working_dir=WORKING_DIR,
         llm_model_func=ollama_model_complete,
         llm_model_name=LLM_MODEL_NAME,
+        enable_llm_cache=False,
         llm_model_max_async=4,
         llm_model_max_token_size=8192,
         llm_model_kwargs={"host": "http://localhost:11434", "options": {"num_ctx": 8192}},

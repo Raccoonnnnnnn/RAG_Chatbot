@@ -1,9 +1,0 @@
-2025-03-19 20:54:36,278 - INFO - Scanning directory: data/crawl_tiki_data for files with prefix: books_data
-2025-03-19 20:54:36,278 - INFO - No valid files found in data/crawl_tiki_data with prefix books_data after exclusion
-2025-03-19 20:54:36,278 - INFO - No previous file found, inserting initial crawl data...
-2025-03-19 20:54:36,470 - INFO - 
-
-START inserting data from data/crawl_tiki_data/2001_VN_33min.csv into LightRAG...
-2025-03-19 20:54:36,486 - ERROR - Insert failed for data/crawl_tiki_data/2001_VN_33min.csv: [Errno 111] Connection refused
-2025-03-19 20:54:36,488 - WARNING - Skipping cleanup of invalid file: 3000_VN_64min.csv
-2025-03-19 20:54:36,488 - WARNING - Skipping cleanup of invalid file: 2001_VN_33min.csv

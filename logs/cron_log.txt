@@ -5,9 +5,9 @@
 
 
 📌 Total new books added: 0
-📌 Total books with changed information: 1
+📌 Total books with changed information: 3
 
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-32-01.csv'
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-16-01.csv'
 
 🕷️ END compare data
 
@@ -16,7 +16,7 @@
 
 🕷️ START process books to texts...
 
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-32-01.csv
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-16-01.csv
 
 🕷️ END process books to texts
 
@@ -30,68 +30,18 @@
 
 
 📌 Total new books added: 0
-📌 Total books with changed information: 1
+📌 Total books with changed information: 3
 
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-34-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.40 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-34-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0001 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 1
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-36-02.csv'
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-18-02.csv'
 
 🕷️ END compare data
 
 
-⏱️ Execution time: 0.44 seconds
+⏱️ Execution time: 0.24 seconds
 
 🕷️ START process books to texts...
 
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-36-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0001 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 1
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-38-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.26 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-38-02.csv
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-18-02.csv
 
 🕷️ END process books to texts
 
@@ -105,9 +55,84 @@
 
 
 📌 Total new books added: 0
-📌 Total books with changed information: 1
+📌 Total books with changed information: 3
 
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-40-01.csv'
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-20-02.csv'
+
+🕷️ END compare data
+
+
+⏱️ Execution time: 0.24 seconds
+
+🕷️ START process books to texts...
+
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-20-02.csv
+
+🕷️ END process books to texts
+
+
+⏳ Running time: 0.0000 minutes
+
+
+
+
+🕷️ START compare data...
+
+
+📌 Total new books added: 0
+📌 Total books with changed information: 3
+
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-22-01.csv'
+
+🕷️ END compare data
+
+
+⏱️ Execution time: 0.24 seconds
+
+🕷️ START process books to texts...
+
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-22-01.csv
+
+🕷️ END process books to texts
+
+
+⏳ Running time: 0.0000 minutes
+
+
+
+
+🕷️ START compare data...
+
+
+📌 Total new books added: 0
+📌 Total books with changed information: 3
+
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-24-01.csv'
+
+🕷️ END compare data
+
+
+⏱️ Execution time: 0.24 seconds
+
+🕷️ START process books to texts...
+
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-24-01.csv
+
+🕷️ END process books to texts
+
+
+⏳ Running time: 0.0000 minutes
+
+
+
+
+🕷️ START compare data...
+
+
+📌 Total new books added: 0
+📌 Total books with changed information: 3
+
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-26-01.csv'
 
 🕷️ END compare data
 
@@ -116,7 +141,7 @@
 
 🕷️ START process books to texts...
 
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-40-01.csv
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-26-01.csv
 
 🕷️ END process books to texts
 
@@ -130,134 +155,9 @@
 
 
 📌 Total new books added: 0
-📌 Total books with changed information: 1
+📌 Total books with changed information: 3
 
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-42-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-42-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 1
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-44-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-44-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 1
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-46-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-46-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 1
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-48-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-48-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 1
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-50-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-50-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 1
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-52-02.csv'
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-28-01.csv'
 
 🕷️ END compare data
 
@@ -266,7 +166,7 @@
 
 🕷️ START process books to texts...
 
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-52-02.csv
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-28-01.csv
 
 🕷️ END process books to texts
 
@@ -280,9 +180,9 @@
 
 
 📌 Total new books added: 0
-📌 Total books with changed information: 1
+📌 Total books with changed information: 3
 
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-54-02.csv'
+✅ Book update report saved to 'data/compare_data/changes_2025-04-03_17-30-02.csv'
 
 🕷️ END compare data
 
@@ -291,282 +191,7 @@
 
 🕷️ START process books to texts...
 
-✅ Processed 1 books from data/compare_data/changes_2025-04-03_13-54-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-56-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_13-56-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_13-58-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_13-58-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-00-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.25 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-00-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-02-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-02-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-04-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-04-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-06-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-06-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-08-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-08-02.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-10-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-10-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-12-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-12-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-14-01.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-14-01.csv
-
-🕷️ END process books to texts
-
-
-⏳ Running time: 0.0000 minutes
-
-
-
-
-🕷️ START compare data...
-
-
-📌 Total new books added: 0
-📌 Total books with changed information: 2
-
-✅ Book update report saved to 'data/compare_data/changes_2025-04-03_14-16-02.csv'
-
-🕷️ END compare data
-
-
-⏱️ Execution time: 0.24 seconds
-
-🕷️ START process books to texts...
-
-✅ Processed 2 books from data/compare_data/changes_2025-04-03_14-16-02.csv
+✅ Processed 3 books from data/compare_data/changes_2025-04-03_17-30-02.csv
 
 🕷️ END process books to texts
 

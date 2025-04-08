@@ -19,6 +19,7 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
     ]
 
     results = []
+    successful_count = 0
 
     for idx, query in enumerate(queries, start=1):
         payload = {
@@ -33,11 +34,15 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
             response.raise_for_status()
             api_result = response.json()
 
-            # Extract content from: response['result']['response']
-            # answer_text = api_result.get("response", "")
-
             results.append(api_result)
+            successful_count += 1
             print(f"✓ Received response for question {idx}")
+
+            # Save every 10 successful responses
+            if successful_count % 10 == 0:
+                with open(result1_file, "w", encoding="utf-8") as out_f:
+                    json.dump(results, out_f, ensure_ascii=False, indent=4)
+                print(f"💾 Auto-saved after {successful_count} successful responses")
 
         except requests.exceptions.RequestException as e:
             print(f"✗ Error on request {idx}: {e}")
@@ -45,7 +50,7 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
 
         time.sleep(0.5)  # Optional: delay between requests
 
-    # Write results to JSON file
+    # Final save to ensure all data is written
     with open(result1_file, "w", encoding="utf-8") as out_f:
         json.dump(results, out_f, ensure_ascii=False, indent=4)
 

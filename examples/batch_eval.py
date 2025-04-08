@@ -8,18 +8,23 @@ from openai import OpenAI
 def batch_eval(query_file, result1_file, result2_file, output_file_path):
     client = OpenAI()
 
-    with open(query_file, "r") as f:
-        data = f.read()
+    # Read the list of questions from the file
+    with open(query_file, "r", encoding="utf-8") as f:
+        lines = f.readlines()
 
-    queries = re.findall(r"- Question \d+: (.+)", data)
+    # Regex to extract the question content and remove quotes if present
+    queries = [
+        re.findall(r"Question \d+: (.+)", line.strip())[0].replace('"', '')
+        for line in lines if line.strip()
+    ]
 
     with open(result1_file, "r") as f:
         answers1 = json.load(f)
-    answers1 = [i["result"] for i in answers1]
+    answers1 = [i["response"] for i in answers1]
 
     with open(result2_file, "r") as f:
         answers2 = json.load(f)
-    answers2 = [i["result"] for i in answers2]
+    answers2 = [i["response"] for i in answers2]
 
     requests = []
     for i, (query, answer1, answer2) in enumerate(zip(queries, answers1, answers2)):

@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     result = openai_complete_if_cache(model="gpt-4o-mini", prompt=prompt)
 
-    file_path = "./queries.txt"
+    file_path = "./data/queries.txt"
     with open(file_path, "w") as file:
         file.write(result)
 

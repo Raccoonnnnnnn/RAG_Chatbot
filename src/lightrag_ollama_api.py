@@ -133,7 +133,7 @@ async def insert_document(request: InsertRequest):
     return {"message": "✅ Document inserted!"}
 
 @app.post("/insert_custom_kg")
-async def insert_books(request: InsertCustomtRequest):
+async def insert_custom_kg(request: InsertCustomtRequest):
     try:
         # Create custom_kg batches
         custom_kgs, df = create_custom_kg_for_batch(request.path, batch_size=request.batch_size)
@@ -148,6 +148,8 @@ async def insert_books(request: InsertCustomtRequest):
                 logging.error(f"Failed to insert batch {idx + 1}: {str(e)}")
                 raise HTTPException(status_code=500, detail=f"Error inserting batch {idx + 1}: {str(e)}")
 
+        await rag.aclear_cache()
+        
         return JSONResponse(
             status_code=200,
             content={"message": f"Successfully inserted {len(df)} books in {total_batches} batches"}

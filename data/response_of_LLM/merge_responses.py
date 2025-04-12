@@ -4,7 +4,7 @@ import json
 with open('./data/response_of_LLM/125_responses_tikiAI.json', 'r', encoding='utf-8') as f1:
     libra_data = json.load(f1)
 
-with open('./data/response_of_LLM/125_responses_libraAI.json', 'r', encoding='utf-8') as f2:
+with open('./data/response_of_LLM/125_responses_libraAI_qwen2_topk5.json', 'r', encoding='utf-8') as f2:
     tiki_data = json.load(f2)
 
 # Gộp dữ liệu theo chỉ số (giả định 2 file có cùng thứ tự câu hỏi)

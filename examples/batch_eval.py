@@ -1,13 +1,10 @@
+import asyncio
 import re
 import json
 import jsonlines
+from lightrag.llm.ollama import ollama_model_complete
 
-from openai import OpenAI
-
-
-def batch_eval(query_file, result1_file, result2_file, output_file_path):
-    client = OpenAI()
-
+async def batch_eval_ollama(query_file, result1_file, result2_file, output_file_path):
     # Read the list of questions from the file
     with open(query_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -26,7 +23,8 @@ def batch_eval(query_file, result1_file, result2_file, output_file_path):
         answers2 = json.load(f)
     answers2 = [i["response"] for i in answers2]
 
-    requests = []
+    output = []
+    
     for i, (query, answer1, answer2) in enumerate(zip(queries, answers1, answers2)):
         sys_prompt = """
         ---Role---
@@ -73,41 +71,33 @@ def batch_eval(query_file, result1_file, result2_file, output_file_path):
         }}
         """
 
-        request_data = {
-            "custom_id": f"request-{i+1}",
-            "method": "POST",
-            "url": "/v1/chat/completions",
-            "body": {
-                "model": "gpt-4o-mini",
-                "messages": [
-                    {"role": "system", "content": sys_prompt},
-                    {"role": "user", "content": prompt},
-                ],
-            },
-        }
+        print(f"Processing Question {i+1}/{len(queries)}")
+        
+        try:
+            result = await ollama_model_complete(
+                prompt=prompt,
+                system_prompt=sys_prompt,
+                stream=False,
+                format="json"
+            )
+            output.append(json.loads(result))
+        except Exception as e:
+            print(f"❌ Error on Question {i}: {e}")
+            output.append({"error": str(e)})
 
-        requests.append(request_data)
+        # Ghi sau mỗi 10 dòng
+        if i % 10 == 0 or i == len(queries):
+            with open(output_file_path, "a", encoding="utf-8") as f:
+                for entry in output:
+                    f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+            output = []  # reset buffer
 
-    with jsonlines.open(output_file_path, mode="w") as writer:
-        for request in requests:
-            writer.write(request)
-
-    print(f"Batch API requests written to {output_file_path}")
-
-    batch_input_file = client.files.create(
-        file=open(output_file_path, "rb"), purpose="batch"
-    )
-    batch_input_file_id = batch_input_file.id
-
-    batch = client.batches.create(
-        input_file_id=batch_input_file_id,
-        endpoint="/v1/chat/completions",
-        completion_window="24h",
-        metadata={"description": "nightly eval job"},
-    )
-
-    print(f"Batch {batch.id} has been created.")
+    print(f"✅ Finished evaluating {len(queries)} questions.")
 
 
 if __name__ == "__main__":
-    batch_eval()
+    query_file = "./data/questions/125_questions_for_compare.txt"
+    result1_file = "./data/response_of_LLM/125_responses_tikiAI.json"
+    result2_file = "./data/response_of_LLM/125_responses_libraAI.json"
+    output_file_path = "./data/response_of_LLM/125_responses_eval_qwen2_revert.jsonl"
+    asyncio.run(batch_eval_ollama(query_file, result1_file, result2_file, output_file_path))

@@ -110,7 +110,7 @@ def query_api_and_save(questions_file: str, output_file: str) -> None:
         response_text = get_complete_response(q)
         final_content = extract_second_last_content(response_text)
         
-        results.append({"question": q, "answer": final_content})
+        results.append({"question": q, "response": final_content})
         print("\n" + "=" * 50)
 
         # Auto-save sau mỗi 10 câu hỏi

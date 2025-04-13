@@ -7,12 +7,13 @@ import re
 def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
     url = "http://localhost:8000/query"
     headers = {"Content-Type": "application/json"}
+    log_file = "./data/eval/topk15/time_responses_topk15.log"
 
     # Read the list of questions from the file
     with open(query_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
-    # Regex to extract the question content and remove quotes if present
+    # Extract questions
     queries = [
         re.findall(r"Question \d+: (.+)", line.strip())[0].replace('"', '')
         for line in lines if line.strip()
@@ -20,6 +21,10 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
 
     results = []
     successful_count = 0
+
+    # Clear or create timing log file
+    with open(log_file, "w", encoding="utf-8") as log_f:
+        log_f.write("QuestionIdx\tElapsedTime(s)\tQuery\n")
 
     for idx, query in enumerate(queries, start=1):
         payload = {
@@ -29,14 +34,21 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
         }
 
         print(f"Sending request {idx}: {query}")
+        start_time = time.time()
+
         try:
             response = requests.post(url, headers=headers, data=json.dumps(payload))
             response.raise_for_status()
-            api_result = response.json()
+            elapsed_time = round(time.time() - start_time, 3)
 
+            api_result = response.json()
             results.append(api_result)
             successful_count += 1
-            print(f"✓ Received response for question {idx}")
+            print(f"✓ Received response for question {idx} in {elapsed_time} seconds")
+
+            # Append response time to log
+            with open(log_file, "a", encoding="utf-8") as log_f:
+                log_f.write(f"{idx}\t{elapsed_time}\t{query}\n")
 
             # Save every 10 successful responses
             if successful_count % 10 == 0:
@@ -45,22 +57,25 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
                 print(f"💾 Auto-saved after {successful_count} successful responses")
 
         except requests.exceptions.RequestException as e:
+            elapsed_time = round(time.time() - start_time, 3)
             print(f"✗ Error on request {idx}: {e}")
             results.append({"result": f"ERROR: {str(e)}"})
 
+            with open(log_file, "a", encoding="utf-8") as log_f:
+                log_f.write(f"{idx}\tERROR\t{query}\n")
+
         time.sleep(0.5)  # Optional: delay between requests
 
-    # Final save to ensure all data is written
+    # Final save
     with open(result1_file, "w", encoding="utf-8") as out_f:
         json.dump(results, out_f, ensure_ascii=False, indent=4)
 
     print(f"\n✅ All responses saved to {result1_file}")
+    print(f"🕒 Timing log saved to {log_file}")
 
 
 if __name__ == "__main__":
     query_api_and_save(
-        query_file="./data/questions/125_questions_for_compare.txt",        
-        result1_file="./data/response_of_LLM/125_responses_libraAI.json"
-        # query_file="./data/questions/45_questions_for_accuracy.txt",        
-        # result1_file="./data/response_of_LLM/45_responses_libraAI.json"
+        query_file="./data/questions/125_questions_for_compare.txt",
+        result1_file="./data/eval/topk15/125_responses_libraAI_topk15.json"
     )

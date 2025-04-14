@@ -4,10 +4,9 @@ import time
 import re
 
 
-def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
+def query_api_and_save(query_file, result1_file, log_file, mode="hybrid"):
     url = "http://localhost:8000/query"
     headers = {"Content-Type": "application/json"}
-    log_file = "./data/eval/topk15/time_responses_topk15.log"
 
     # Read the list of questions from the file
     with open(query_file, "r", encoding="utf-8") as f:
@@ -29,8 +28,7 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
     for idx, query in enumerate(queries, start=1):
         payload = {
             "query": query,
-            "mode": mode,
-            "top_k": top_k
+            "mode": mode
         }
 
         print(f"Sending request {idx}: {query}")
@@ -77,5 +75,6 @@ def query_api_and_save(query_file, result1_file, mode="hybrid", top_k=5):
 if __name__ == "__main__":
     query_api_and_save(
         query_file="./data/questions/125_questions_for_compare.txt",
-        result1_file="./data/eval/topk15/125_responses_libraAI_topk15.json"
+        result1_file="./data/eval2/topk2/125_responses_libraAI_topk2.json",
+        log_file = "./data/eval2/topk2/time_responses_topk2.log"
     )

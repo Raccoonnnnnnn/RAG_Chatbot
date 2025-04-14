@@ -1,0 +1,126 @@
+QuestionIdx	ElapsedTime(s)	Query
+1	9.795	Sách du ký nào hiện đang có giá dưới 100,000 VND?
+2	7.729	Cuốn 'Đừng Chết Ở Ả Rập Xê Út' hiện giá bao nhiêu và có giảm giá không?
+3	13.592	Trong các sách du ký dưới 100,000 VND, cuốn nào có số lượng bán cao nhất?
+4	13.361	So sánh giá hiện tại và mức giảm giá của 'Đi Bộ Xuyên Việt Với Cây Đàn Guitar' với 'Cô Đơn Trên Everest'.
+5	11.317	Có cuốn du ký nào dưới 100,000 VND của Nhà Xuất Bản Thế Giới với rating trên 4.5 không?
+6	10.914	Sách nào trong danh sách đang giảm giá trên 50%?
+7	8.072	Cuốn 'Trên Đỉnh Namsan Ngắm Mặt Trời' có mức giảm giá bao nhiêu?
+8	9.478	Trong các sách giảm giá trên 40%, cuốn nào có đánh giá trung bình cao nhất?
+9	21.024	So sánh mức giảm giá của 3 cuốn du ký bán chạy nhất trong danh sách.
+10	8.954	Cuốn sách giảm giá mạnh nhất của tác giả Di Li là gì và giá hiện tại bao nhiêu?
+11	8.266	Có bao nhiêu sách du ký của Nhà Xuất Bản Trẻ dưới 150,000 VND?
+12	9.867	Cuốn 'Vạn Dặm Đường Từ Một Bước Chân' của Nhà Xuất Bản Phụ Nữ Việt Nam giá bao nhiêu?
+13	12.816	Nhà Xuất Bản Thế Giới có sách du ký nào dưới 100,000 VND với rating 5.0 không?
+14	12.546	So sánh giá và số lượng bán của các sách du ký từ Nhà Xuất Bản Lao Động và Nhà Xuất Bản Trẻ.
+15	11.838	Cuốn sách rẻ nhất của Nhà Xuất Bản Dân Trí hiện nay là gì và có giảm giá không?
+16	10.918	Cuốn du ký nào có đánh giá trung bình 5.0 và giá dưới 120,000 VND?
+17	11.592	Cuốn 'Walden Một Mình Sống Trong Rừng' có đánh giá bao nhiêu?
+18	8.904	Trong các sách rating 5.0, cuốn nào có giá thấp nhất?
+19	18.291	So sánh số lượng bán của 3 cuốn du ký có rating 5.0 cao nhất.
+20	10.843	Cuốn sách giá dưới 150,000 VND nào của tác giả Ryszard Kapuściński có rating cao nhất?
+21	13.39	Cuốn du ký nào bán được trên 500 cuốn và giá dưới 150,000 VND?
+22	6.622	Cuốn 'Thế Giới Rộng Lớn Đừng Đi Một Mình' đã bán được bao nhiêu cuốn?
+23	11.721	Trong các sách du ký bán trên 200 cuốn, cuốn nào rẻ nhất?
+24	21.118	So sánh giá và rating của 3 cuốn du ký bán chạy nhất.
+25	10.969	Cuốn sách dưới 100,000 VND nào của Nhà Xuất Bản Lao Động bán được nhiều nhất?
+26	10.12	Cuốn sách nào của Henry David Thoreau có trong danh sách?
+27	12.854	Cuốn 'Gỗ mun' của Ryszard Kapuściński nói về gì?
+28	8.466	Tác giả nào có nhiều sách du ký nhất trong danh sách này?
+29	15.624	So sánh rating và giá của các sách du ký của Di Li.
+30	10.491	Cuốn sách nào của Nguyễn Tường Bách có số lượng bán cao nhất và giá hiện tại là bao nhiêu?
+31	17.628	Có cuốn sách du ký nào nói về Tây Tạng không?
+32	8.093	Cuốn 'Con Đường Tơ Lụa' mô tả những địa điểm nào?
+33	12.397	Sách du ký nào về Ấn Độ có rating cao nhất?
+34	15.997	So sánh nội dung và giá của các sách về châu Âu trong danh sách.
+35	20.909	Cuốn sách nào về Việt Nam dưới 150,000 VND có đánh giá 5.0?
+36	12.167	Cuốn 'Cô Đơn Trên Everest' có phong cách viết như thế nào?
+37	15.526	Có sách du ký nào được viết dưới dạng tự truyện không?
+38	22.211	Sách du ký nào có phong cách kể chuyện hài hước và giá dưới 120,000 VND?
+39	19.597	So sánh phong cách viết của 'Du Ký Phan Quang' và 'Mùi Hương Trầm'.
+40	17.279	Cuốn sách nào của tác giả Việt Nam có phong cách chiêm nghiệm sâu sắc nhất?
+41	10.356	Cuốn 'Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử' tái bản năm nào?
+42	7.429	Có sách du ký nào tái bản trong năm 2023 không?
+43	13.948	Sách tái bản nào có số lượng bán cao nhất?
+44	19.099	So sánh giá và rating của các sách du ký tái bản trong danh sách.
+45	16.038	Cuốn sách tái bản nào của Nhà Xuất Bản Trẻ dưới 150,000 VND đáng đọc nhất?
+46	9.226	Cuốn 'Cơm nhà xứ Quảng' tặng kèm gì?
+47	18.098	Có sách du ký nào tặng kèm bookmark không?
+48	14.112	Sách nào có quà tặng kèm và giá dưới 130,000 VND?
+49	14.752	So sánh giá và nội dung của các sách du ký có quà tặng kèm.
+50	8.38	Cuốn sách nào của Lý Thành Cơ có quà tặng kèm và rating bao nhiêu?
+51	11.856	Cuốn 'Con Đường Tơ Lụa' nói về những tuyến đường nào?
+52	14.768	Có sách nào đề cập đến hành trình từ Ấn Độ sang châu Âu không?
+53	12.58	Sách du ký nào về các tuyến đường cổ có số lượng bán cao nhất?
+54	12.374	So sánh nội dung của 'Con Đường Tơ Lụa' và 'Đạp Xe Vì Tình Từ Ấn Sang Âu'.
+55	11.722	Cuốn sách nào về tuyến đường lịch sử dưới 150,000 VND có rating 5.0?
+56	9.462	Cuốn 'Vòng Quanh Châu Á' nói về những nền văn hóa nào?
+57	19.936	Có sách du ký nào về văn hóa Việt Nam từ trước 1975 không?
+58	16.219	Sách nào về văn hóa châu Á có đánh giá cao nhất và giá dưới 200,000 VND?
+59	13.222	So sánh nội dung của 'Du Ký Việt Nam trên Nam Phong tạp chí' và 'Đà Lạt, một thời hương xa'.
+60	9.275	Cuốn sách nào của tác giả Việt Nam viết về văn hóa châu Á bán chạy nhất?
+61	8.136	Cuốn 'Du Ký Phan Quang - Tiếc Nuối Hoa Hồng' được viết bởi ai?
+62	11.718	Có sách du ký nào của nhà báo Lưu Đình Triều không?
+63	11.254	Sách du ký nào của nhà báo có số lượng bán cao nhất?
+64	23.714	So sánh phong cách viết của Phan Quang và Nguyễn Phương Mai trong du ký.
+65	13.96	Cuốn sách nào của nhà báo dưới 150,000 VND có rating trên 4.5?
+66	12.112	Cuốn 'Tinh Hoa Du Ký Trên Tri Tân Tạp Chí' có nội dung gì?
+67	12.277	Có sách du ký nào đề cập đến tư tưởng triết học không?
+68	18.152	Sách du ký nào có giá trị học thuật cao nhất dựa trên rating và số lượng bán?
+69	21.336	So sánh mức độ học thuật của 'Du Ký Việt Nam trên Nam Phong tạp chí' và 'Mùi Hương Trầm'.
+70	14.219	Cuốn sách nào dưới 200,000 VND của Nhà Xuất Bản Thanh Niên có giá trị nghiên cứu cao?
+71	12.019	Cuốn '1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng' kể về trải nghiệm gì?
+72	18.769	Có sách nào viết về hành trình đi bộ xuyên Việt không?
+73	10.259	Sách du ký nào về trải nghiệm cá nhân có rating cao nhất?
+74	15.237	So sánh trải nghiệm trong 'Đi Bộ Xuyên Việt Với Cây Đàn Guitar' và 'Thế Giới Rộng Lớn Đừng Đi Một Mình'.
+75	10.832	Cuốn sách nào về trải nghiệm cá nhân dưới 150,000 VND bán chạy nhất?
+76	10.159	Cuốn 'Cô Đơn Trên Everest' kể về hành trình gì?
+77	14.436	Có sách nào nói về hành trình đạp xe vòng quanh thế giới không?
+78	9.142	Sách du ký nào về hành trình mạo hiểm có số lượng bán cao nhất?
+79	22.985	So sánh độ kịch tính của 'Đạp Xe Vì Tình Từ Ấn Sang Âu' và '1111 - Nhật Ký Sáu Vạn Dặm'.
+80	11.048	Cuốn sách nào về hành trình mạo hiểm của tác giả Việt Nam có rating 5.0?
+81	8.333	Cuốn 'Từ Rừng Thẳm Amazon Đến Quê Hương Bolero' nói về khu vực nào?
+82	18.959	Có sách du ký nào về Himalaya không?
+83	16.313	Sách nào về vùng đất hoang dã có đánh giá trung bình cao nhất?
+84	24.716	So sánh nội dung của 'HIMALAYA – Hành Trình Chạm Đến Trán Trời' và 'Tây Tạng Huyền Bí'.
+85	20.449	Cuốn sách nào về vùng đất hoang dã dưới 200,000 VND bán chạy nhất?
+86	10.112	Cuốn 'Đi Bộ Xuyên Việt Với Cây Đàn Guitar' kể về phương tiện gì?
+87	12.755	Có sách nào nói về hành trình bằng xe đạp không?
+88	11.377	Sách du ký nào về phương tiện độc đáo có số lượng bán cao nhất?
+89	23.353	So sánh trải nghiệm trong 'Đạp Xe Vì Tình Từ Ấn Sang Âu' và 'Đi Thật Xa Trên Một Chiếc Camper'.
+90	11.127	Cuốn sách nào về phương tiện độc đáo dưới 150,000 VND có rating trên 4.5?
+91	7.951	Cuốn 'Đừng Chết Ở Ả Rập Xê Út' kể về thử thách gì?
+92	18.931	Có sách nào viết về hành trình một mình qua sa mạc không?
+93	13.557	Sách nào về hành trình thử thách cá nhân có rating cao nhất?
+94	25.94	So sánh thử thách trong 'Walden Một Mình Sống Trong Rừng' và 'Cô Đơn Trên Everest'.
+95	16.058	Cuốn sách nào về hành trình thử thách dưới 120,000 VND bán được trên 300 cuốn?
+96	8.954	Cuốn sách nào của Trần Đặng Đăng Khoa có trong danh sách?
+97	8.053	Tác giả Di Li có sách nào về hành trình mạo hiểm không?
+98	10.936	Tác giả phiêu lưu nào có sách bán chạy nhất trong danh sách?
+99	18.939	So sánh nội dung và rating của các sách phiêu lưu của Nguyễn Tập và Lý Thành Cơ.
+100	10.513	Cuốn sách nào của Ryszard Kapuściński về phiêu lưu có giá dưới 150,000 VND?
+101	13.93	Cuốn 'Lãnh Đạo Tỉnh Thức' nói về điều gì?
+102	12.183	Có sách nào về lãnh đạo không dùng quyền lực không?
+103	11.244	Sách lãnh đạo nào có rating cao nhất và giá dưới 150,000 VND?
+104	23.832	So sánh nội dung của 'Lãnh Đạo Phục Vụ' và 'Lãnh Đạo Chuyển Hóa'.
+105	12.7	Cuốn sách nào của PACE Books về lãnh đạo bán chạy nhất?
+106	9.452	Cuốn 'Quản Trị Nhân Sự Đúng' có nội dung gì?
+107	17.583	Có sách nào về quản trị KPI không?
+108	10.126	Sách quản trị nhân sự nào có số lượng bán cao nhất?
+109	26.078	So sánh giá và nội dung của 'Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp' và 'Quản Trị KPI'.
+110	16.965	Cuốn sách nào về nhân sự dưới 150,000 VND của Nhà Xuất Bản Công Thương đáng đọc?
+111	8.511	Cuốn 'Digital Transformation - Chuyển Đổi Số' nói về gì?
+112	11.136	Có sách nào về chuyển đổi số giá dưới 150,000 VND không?
+113	11.109	Sách về chuyển đổi số nào có đánh giá trung bình cao nhất?
+114	25.352	So sánh nội dung của 'Chuyển Đổi Số' và 'Đổi Mới Từ Cốt Lõi'.
+115	10.687	Cuốn sách nào về chuyển đổi số của PACE Books có số lượng bán trên 300 cuốn?
+116	17.428	Cuốn sách nào của John C. Maxwell có trong danh sách?
+117	10.956	Tác giả Phan Văn Trường có sách nào về quản trị không?
+118	9.219	Tác giả quản trị nào có sách bán chạy nhất trong danh sách?
+119	21.289	So sánh rating và giá của các sách của Robert S. Kaplan và David Parmenter.
+120	10.37	Cuốn sách nào của Michael Bunting dưới 150,000 VND có rating 5.0?
+121	8.633	Cuốn 'The Culture Code' nói về điều gì?
+122	16.505	Có sách nào về xây dựng văn hóa doanh nghiệp không?
+123	15.018	Sách về văn hóa doanh nghiệp nào có số lượng bán cao nhất?
+124	32.634	So sánh nội dung của 'Lãnh Đạo Và Văn Hóa Doanh Nghiệp' và '7 Bước Xây Dựng Văn Hóa Doanh Nghiệp'.
+125	14.419	Cuốn sách nào về văn hóa doanh nghiệp dưới 150,000 VND của Nhà Xuất Bản Thế Giới đáng đọc?

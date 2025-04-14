@@ -1,15 +1,18 @@
-import asyncio
 import re
 import json
 import jsonlines
-from lightrag.llm.ollama import ollama_model_complete
 
-async def batch_eval_ollama(query_file, result1_file, result2_file, output_file_path):
-    # Read the list of questions from the file
+from openai import OpenAI
+
+
+client = OpenAI(api_key="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")
+
+
+def batch_eval(query_file, result1_file, result2_file, output_file_path):
+
     with open(query_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
-    # Regex to extract the question content and remove quotes if present
     queries = [
         re.findall(r"Question \d+: (.+)", line.strip())[0].replace('"', '')
         for line in lines if line.strip()
@@ -23,8 +26,7 @@ async def batch_eval_ollama(query_file, result1_file, result2_file, output_file_
         answers2 = json.load(f)
     answers2 = [i["response"] for i in answers2]
 
-    output = []
-    
+    requests = []
     for i, (query, answer1, answer2) in enumerate(zip(queries, answers1, answers2)):
         sys_prompt = """
         ---Role---
@@ -38,7 +40,7 @@ async def batch_eval_ollama(query_file, result1_file, result2_file, output_file_
         - **Diversity**: How varied and rich is the answer in providing different perspectives and insights on the question?
         - **Empowerment**: How well does the answer help the reader understand and make informed judgments about the topic?
 
-        For each criterion, choose the better answer (either Answer 1 or Answer 2) and explain why. Then, select an overall winner based on these three categories.
+        For each criterion, choose the better answer ("Answer 1" or "Answer 2") and provide a concise explanation (1-2 sentences). Then, select an overall winner based on these three criteria, summarizing why it excels.
 
         Here is the question:
         {query}
@@ -51,53 +53,75 @@ async def batch_eval_ollama(query_file, result1_file, result2_file, output_file_
         **Answer 2:**
         {answer2}
 
-        Evaluate both answers using the three criteria listed above and provide detailed explanations for each criterion.
-
-        Output your evaluation in the following JSON format:
+        Output your evaluation as a valid JSON object with the following structure:
 
         {{
             "Comprehensiveness": {{
-                "Winner": "[Answer 1 or Answer 2]",
-                "Explanation": "[Provide explanation here]"
+                "Winner": "Answer 1 or Answer 2",
+                "Explanation": "Explain why this answer is better for comprehensiveness."
+            }},
+            "Diversity": {{
+                "Winner": "Answer 1 or Answer 2",
+                "Explanation": "Explain why this answer is better for diversity."
             }},
             "Empowerment": {{
-                "Winner": "[Answer 1 or Answer 2]",
-                "Explanation": "[Provide explanation here]"
+                "Winner": "Answer 1 or Answer 2",
+                "Explanation": "Explain why this answer is better for empowerment."
             }},
             "Overall Winner": {{
-                "Winner": "[Answer 1 or Answer 2]",
-                "Explanation": "[Summarize why this answer is the overall winner based on the three criteria]"
+                "Winner": "Answer 1 or Answer 2",
+                "Explanation": "Summarize why this answer is the overall winner based on the three criteria."
             }}
         }}
+
+        **Important Instructions**:
+        - The output must be a **valid JSON object** with all braces (`{{` and `}}`) properly closed.
+        - Do not include markdown (```json```), extra newlines, spaces, or any text outside the JSON object.
+        - Ensure "Winner" is exactly "Answer 1" or "Answer 2" (no other values).
+        - Keep explanations concise (2-3 sentences) to avoid exceeding token limits.
+        - If the token limit is reached, prioritize completing the JSON structure (especially closing all braces) over adding more explanation.
+        - Double-check that the JSON includes all four keys: "Comprehensiveness", "Diversity", "Empowerment", and "Overall Winner".
         """
 
-        print(f"Processing Question {i+1}/{len(queries)}")
-        
-        try:
-            result = await ollama_model_complete(
-                prompt=prompt,
-                system_prompt=sys_prompt,
-                stream=False,
-                format="json"
-            )
-            output.append(json.loads(result))
-        except Exception as e:
-            print(f"❌ Error on Question {i}: {e}")
-            output.append({"error": str(e)})
+        request_data = {
+            "custom_id": f"request-{i+1}",
+            "method": "POST",
+            "url": "/v1/chat/completions",
+            "body": {
+                "model": "gpt-4o-mini",
+                "messages": [
+                    {"role": "system", "content": sys_prompt},
+                    {"role": "user", "content": prompt},
+                ],
+            },
+        }
 
-        # Ghi sau mỗi 10 dòng
-        if i % 10 == 0 or i == len(queries):
-            with open(output_file_path, "a", encoding="utf-8") as f:
-                for entry in output:
-                    f.write(json.dumps(entry, ensure_ascii=False) + "\n")
-            output = []  # reset buffer
+        requests.append(request_data)
 
-    print(f"✅ Finished evaluating {len(queries)} questions.")
+    with jsonlines.open(output_file_path, mode="w") as writer:
+        for request in requests:
+            writer.write(request)
+
+    print(f"Batch API requests written to {output_file_path}")
+
+    batch_input_file = client.files.create(
+        file=open(output_file_path, "rb"), purpose="batch"
+    )
+    batch_input_file_id = batch_input_file.id
+
+    batch = client.batches.create(
+        input_file_id=batch_input_file_id,
+        endpoint="/v1/chat/completions",
+        completion_window="24h",
+        metadata={"description": "nightly eval job"},
+    )
+
+    print(f"Batch {batch.id} has been created.")
 
 
 if __name__ == "__main__":
     query_file = "./data/questions/125_questions_for_compare.txt"
-    result1_file = "./data/response_of_LLM/125_responses_tikiAI.json"
-    result2_file = "./data/response_of_LLM/125_responses_libraAI.json"
-    output_file_path = "./data/response_of_LLM/125_responses_eval_qwen2_revert.jsonl"
-    asyncio.run(batch_eval_ollama(query_file, result1_file, result2_file, output_file_path))
+    result1_file = "./data/eval/topk7/125_responses_libraAI_topk7.json"
+    result2_file = "./data/response_of_LLM/125_responses_tikiAI.json"
+    output_file_path = "./data/eval/topk7/batch_eval_topk7.jsonl"
+    batch_eval(query_file, result1_file, result2_file, output_file_path)

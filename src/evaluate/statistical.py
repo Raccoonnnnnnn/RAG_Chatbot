@@ -43,6 +43,6 @@ def analyze_results(file_path):
         for answer, count in winners.items():
             print(f"   - {answer}: {count} times")
 
-# 👉 Chạy script này với đường dẫn tới file JSONL
+
 if __name__ == "__main__":
     analyze_results("./data/response_of_LLM/125_responses_eval_qwen2_revert.jsonl")

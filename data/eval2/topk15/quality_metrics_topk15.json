@@ -1,0 +1,20 @@
+{
+  "topk15": {
+    "Comprehensiveness": [
+      77.6,
+      22.4
+    ],
+    "Diversity": [
+      68.0,
+      32.0
+    ],
+    "Empowerment": [
+      71.2,
+      28.8
+    ],
+    "Overall Winner": [
+      74.4,
+      25.6
+    ]
+  }
+}

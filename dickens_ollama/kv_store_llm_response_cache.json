@@ -1,0 +1,940 @@
+{
+  "hybrid": {
+    "b552984b35a20ad868e898e5625d60cc": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Philosophy\", \"Travel writing\"], \"low_level_keywords\": [\"du k\\u00fd\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Dựa trên mô tả ngắn, sách du ký nào có phong cách viết mang tính triết lý sâu sắc nhất?"
+    },
+    "46832e88e010e30349e26386155ee8c9": {
+      "return": "Rất khó phân định một tác phẩm du ký có phong cách \"triết lý sâu sắc\" nhất. Phong cách và ý nghĩa khác nhau sẽ khiến cho từng người đọc nhận thấy điều gì đó riêng biệt. Tuy nhiên, dựa trên mô tả ngắn, sách \"Cô Đơn Trên Everest (Du Ký)\" của Di Li có thể được xem như một lựa chọn phù hợp. \n\nĐây là vì tác phẩm này được viết theo thể loại du ký nhưng mang tính triết lý sâu sắc. Câu chuyện chia sẻ về những chuyến đi du lịch cùng với những suy tư, kiến thức về cuộc sống, và những mốc thời gian. Nói cách khác, sách \"Cô Đơn Trên Everest (Du Ký)\" có thể giúp bạn hiểu rõ hơn về bản thân và cuộc sống xung quanh mình thông qua một lens du ký. \n\n\n  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Dựa trên mô tả ngắn, sách du ký nào có phong cách viết mang tính triết lý sâu sắc nhất?"
+    },
+    "1b83b34e3a19c85478fe4e1927ce11bb": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Prices\"], \"low_level_keywords\": [\"du k\\u00fd\", \"100,000 VND\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "\"Sách du ký nào hiện đang có giá dưới 100,000 VND?\""
+    },
+    "35711dc6dc71bad1f9a8c810bea757ae": {
+      "return": "Có một số sách du ký được bán với giá dưới 100,000 VND:\n\n* **Tây Du Ký Trọn Bộ 4 Tập:**  Giá: 288,200 VND. Bạn có thể mua sách này trên Tiki với link: https://tiki.vn/product-p51574033.html?spid=51574034\n\n* **Dự Án Kỳ Lân:**  Giá: 168,000 VND. Bạn có thể mua sách này trên Tiki với link: https://tiki.vn/product-p85396173.html?spid=85396174\n\n\nLần lượt tìm hiểu các tác phẩm về du ký để chọn lựa phù hợp! \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "\"Sách du ký nào hiện đang có giá dưới 100,000 VND?\""
+    },
+    "2c453a4b964d2bf603105f50789753e1": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Prices\", \"Sales\"], \"low_level_keywords\": [\"\\u0110\\u1eebng Ch\\u1ebft \\u1ede \\u1ea2 R\\u1eadp X\\u00ea \\u00dat\", \"Harga\", \"Diskon\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "\"Cuốn 'Đừng Chết Ở Ả Rập Xê Út' hiện giá bao nhiêu và có giảm giá không?\""
+    },
+    "69cc62f33c95d9224ff85b2699fdd0fd": {
+      "return": "\"Cuốn sách 'Đừng Chết Ở Ả Rập Xê Út' hiện có giá là 70000 VND.  Tuy nhiên, bạn có thể tìm thấy mức giảm giá với \"**Discount Rate: 29%**\", giúp giảm chi phí xuống còn **53000 VND**.  Bạn có thể mua sách này tại Tiki Trading: [Link mua]\".  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "\"Cuốn 'Đừng Chết Ở Ả Rập Xê Út' hiện giá bao nhiêu và có giảm giá không?\""
+    },
+    "a89d4dc9925e96c27449b44d2770430c": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Sales\", \"Price Range\"], \"low_level_keywords\": [\"du k\\u00fd\", \"s\\u00e1ch du k\\u00fd\", \"100.000 VND\", \"s\\u1ed1 l\\u01b0\\u1ee3ng b\\u00e1n cao nh\\u1ea5t\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "\"Trong các sách du ký dưới 100,000 VND, cuốn nào có số lượng bán cao nhất?\""
+    },
+    "ccff60ada2fe52ca85f1c4ab18eb5bf9": {
+      "return": "Để trả lời câu hỏi này, ta sẽ dựa vào thông tin trong Knowledge Base về sách du lịch. Dựa trên dữ liệu này, cuốn \"Đam Mê - Bí Quyết Tạo Thành Công (Tái Bản 2019)\" là một trong những cuốn sách du ký được bán nhiều nhất với lượng đã bán đạt 793 bản. \n\nTuy nhiên, để đảm bảo cho sự chính xác và toàn vẹn của thông tin, bạn cần xem xét thêm các yếu tố khác như danh mục \"Sách du lịch\" hoặc \"Du lịch\".  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "\"Trong các sách du ký dưới 100,000 VND, cuốn nào có số lượng bán cao nhất?\""
+    },
+    "532f9ee765a9d3a314d90fcfc671bf09": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Price\", \"Sale\"], \"low_level_keywords\": [\"du k\\u00fd\", \"S\\u00e1ch du k\\u00fd\", \"100.000 VND\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách du ký nào hiện đang có giá dưới 100,000 VND?"
+    },
+    "c605b571d383a9809b14f77c2b1593c5": {
+      "return": "Dưới đây là một số gợi ý sách du ký với giá dưới 100,000 VND:\n\n* **Vàng Son Một Thuở Ba Tư - Tập Du Ký**:  Giá: 90,000 VND. Nơi bán: [Link đến trang mua]\n* **1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng**:  Giá: 275,975 VND. Nơi bán: [Link đến trang mua]\n\n\nThông tin thêm về sách:\n* \"Vàng Son Một Thuở Ba Tư - Tập Du Ký\" là một cuốn du ký thú vị với những câu chuyện đầy cảm hứng của người bạn.\n*  \"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\" mang đến cho bạn những trải nghiệm độc đáo trong hành trình khám phá thế giới. \n\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách du ký nào hiện đang có giá dưới 100,000 VND?"
+    },
+    "92a375c1d816ae360971addc6eeec7c0": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Pricing\", \"Sale\"], \"low_level_keywords\": [\"\\u0110\\u1eebng Ch\\u1ebft \\u1ede \\u1ea2 R\\u1eadp X\\u00ea \\u00dat\", \"price\", \"discount\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn 'Đừng Chết Ở Ả Rập Xê Út' hiện giá bao nhiêu và có giảm giá không?"
+    },
+    "af3095d306de69f415d660ba5e7cdbb8": {
+      "return": "Sách \"Đừng Chết Ở Ả Rập Xê Út\" hiện đang được bán với giá là 70.000 VND.  \n\nCó, sách này được giảm giá 29%. Bạn có thể mua sách này tại Tiki Trading với link: https://tiki.vn/product-p26412706.html?spid=26412707 \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn 'Đừng Chết Ở Ả Rập Xê Út' hiện giá bao nhiêu và có giảm giá không?"
+    },
+    "bd3b9ef9c11aa998b908628ffaa2c973": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Sales ranking\"], \"low_level_keywords\": [\"du k\\u00fd\", \"s\\u00e1ch du k\\u00fd\", \"100,000 VND\", \"s\\u1ed1 l\\u01b0\\u1ee3ng b\\u00e1n cao nh\\u1ea5t\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Trong các sách du ký dưới 100,000 VND, cuốn nào có số lượng bán cao nhất?"
+    },
+    "e3695953094d5ddf6cebc1128eea5c74": {
+      "return": "Để trả lời câu hỏi về sách du ký có giá thấp nhất, bạn có thể tham khảo bảng thông tin sau:\n\n**Sách du ký (Giá <= 100.000 VND)** \n\n* **Dịch Hạch:** 81.915 VND -  Đã bán hơn 3761 bản\n* **Brand Marketing:** 151.000 VND -  Có số lượng bán hàng tương đối cao, thông tin cụ thể không được cung cấp. \n\n**Ghi chú:**\n\n* Số lượng bán sách là một yếu tố quan trọng để đánh giá mức độ phổ biến của một cuốn sách. \n* Tùy vào nhu cầu và sở thích cá nhân mà bạn có thể chọn lựa sách phù hợp.  \n\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Trong các sách du ký dưới 100,000 VND, cuốn nào có số lượng bán cao nhất?"
+    },
+    "755bcc6a884a20df02acfba3e70ac82f": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Authorship\", \"Publishers\"], \"low_level_keywords\": [\"Walden M\\u1ed9t M\\u00ecnh S\\u1ed1ng Trong R\\u1eebng\", \"\\u1ea4n B\\u1ea3n B\\u1ecf T\\u00fai\", \"B\\u1ea3n Quy\\u1ec1n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Ai là tác giả của cuốn sách Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền?"
+    },
+    "0d233db137b916b9329e6cdad264fdda": {
+      "return": "Tác giả của cuốn sách \"Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền\" là Henry David Thoreau. \n\n\n**Thông tin chi tiết về cuốn sách:**\n\n* **Tên sách:** Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền\n* **Tác giả:** Henry David Thoreau\n* **Nhà xuất bản:** Nhà Xuất Bản Tri Thức\n* **Giá:** 151164 VND \n* **Đánh giá:** 5.0 stars\n* **Link mua sách:** https://tiki.vn/product-p275861063.html?spid=275861064\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Ai là tác giả của cuốn sách Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền?"
+    },
+    "4eb1d838375dc2a713b142c31f847912": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Authors\"], \"low_level_keywords\": [\"Du h\\u00e0nh c\\u00f9ng Herodotus v\\u00e0 G\\u1ed7 mun\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Tác giả nào đã viết cuốn Du hành cùng Herodotus và Gỗ mun?"
+    },
+    "9d2c118fdcb129babed2e1d465c1573f": {
+      "return": "Cuốn sách \"Du hành cùng Herodotus\" được viết bởi Ryszard Kapuściński, còn \"Gỗ Mun\" do tác giả **Minh Thuần** viết. \n\n\nLet me know if you have any other questions!  😊 \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Tác giả nào đã viết cuốn Du hành cùng Herodotus và Gỗ mun?"
+    },
+    "c15f64a3a414c3db689d0e0ecfac841b": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Authorship\"], \"low_level_keywords\": [\"V\\u1ea1n D\\u1eb7m \\u0110\\u01b0\\u1eddng T\\u1eeb M\\u1ed9t B\\u01b0\\u1edbc Ch\\u00e2n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Vạn Dặm Đường Từ Một Bước Chân được viết bởi ai?"
+    },
+    "f5b903963ee80b7693fc5de51f901802": {
+      "return": "Cuốn sách \"Vạn Dặm Đường Từ Một Bước Chân\" được viết bởi nhà văn Mavis ViVu Ký. \n\n\nHere's some more information about the book:\n\n* **Author:** Mavis ViVu Ký\n* **Publisher:** Nhà Xuất Bản Phụ Nữ Việt Nam\n* **Category:** Du ký\n* **Link to purchase:**  https://tiki.vn/product-p273842947.html?spid=273842948 \n\n\n\nLet me know if you have any other questions about this book! \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Vạn Dặm Đường Từ Một Bước Chân được viết bởi ai?"
+    },
+    "cb6361cff89b65a20c5156c9c4dc3f6f": {
+      "return": "{\"high_level_keywords\": [\"Authors\", \"Book\"], \"low_level_keywords\": [\"C\\u00f4 \\u0110\\u01a1n Tr\\u00ean Everest\", \"Du K\\u00fd\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Tác giả của Cô Đơn Trên Everest (Du Ký) là ai?"
+    },
+    "6a09c03e0adfa607aa0a3d6c4a63ccf9": {
+      "return": "Tác giả của \"Cô Đơn Trên Everest (Du Ký)\" là Di Li. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Tác giả của Cô Đơn Trên Everest (Du Ký) là ai?"
+    },
+    "3c70c11faeac2cccec6045672aca94c1": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Authorship\"], \"low_level_keywords\": [\"Con \\u0110\\u01b0\\u1eddng T\\u01a1 L\\u1ee5a\", \"V\\u1ea1n D\\u1eb7m Xa T\\u1eeb Pakistan T\\u1edbi T\\u00e2y An\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Ai là người viết cuốn Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An?"
+    },
+    "7ec5359b2ad9b95d2c01c24c19e60849": {
+      "return": "Cuốn sách \"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\" được viết bởi **Trần Hồng Ngọc**. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Ai là người viết cuốn Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An?"
+    },
+    "34cecc46ae66d06d8d0563affd4037c4": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Prices\"], \"low_level_keywords\": [\"Walden M\\u1ed9t M\\u00ecnh S\\u1ed1ng Trong R\\u1eebng (\\u1ea4n B\\u1ea3n B\\u1ecf T\\u00fai)\", \"B\\u1ea3n Quy\\u1ec1n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền là bao nhiêu?"
+    },
+    "d8bd2a954b0caeb35d2f544e51fe76f7": {
+      "return": "Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền hiện có giá **151164 VND**. \n\nBạn có muốn xem thêm thông tin khác về cuốn sách này không?  \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền là bao nhiêu?"
+    },
+    "bd1bc0876a881e7648c6b6e0ce4c2961": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Discounts\", \"Sales\"], \"low_level_keywords\": [\"Cu\\u1ed1n Du K\\u00fd Vi\\u1ec7t Nam tr\\u00ean Nam Phong t\\u1ea1p ch\\u00ed\", \"H\\u1ed9p 2 cu\\u1ed1n\", \"m\\u1ee9c gi\\u1ea3m gi\\u00e1\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn) có mức giảm giá bao nhiêu phần trăm?"
+    },
+    "b52b0ae34c632220aa9597aabc2aa3a6": {
+      "return": "Cần phải xem vào trang web của Tiki để biết thông tin chi tiết về sách \"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\".  \n\nMặc dù tôi không thể cung cấp dữ liệu cụ thể như mức giảm giá, nhưng có thể bạn có thể tìm thấy thông tin này trên trang web.\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn) có mức giảm giá bao nhiêu phần trăm?"
+    },
+    "d069244d8802976aeca446c0856d3279": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Pricing\"], \"low_level_keywords\": [\"V\\u1ea1n D\\u1eb7m \\u0110\\u01b0\\u1eddng T\\u1eeb M\\u1ed9t B\\u01b0\\u1edbc Ch\\u00e2n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá gốc của Vạn Dặm Đường Từ Một Bước Chân là bao nhiêu VND?"
+    },
+    "0afa33502ed1134d46630394d1f58138": {
+      "return": "Giá gốc của Vạn Dặm Đường Từ Một Bước Chân là 159000 VND. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá gốc của Vạn Dặm Đường Từ Một Bước Chân là bao nhiêu VND?"
+    },
+    "89c8347bd14af42e666d423d50285c1f": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Pricing\", \"Cost\"], \"low_level_keywords\": [\"Cu\\u1ed1n Du h\\u00e0nh c\\u00f9ng Herodotus\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Du hành cùng Herodotus có giá hiện tại là bao nhiêu so với giá gốc?"
+    },
+    "34bb6a464a2b3798ed1510ce2fddf086": {
+      "return": "Cuốn \"Du hành cùng Herodotus\" hiện có giá bán là 90450 VND. \n\nGiá gốc của cuốn sách này là 135000 VND, đây là mức giảm 33%. \n\n\nYou can find this book on Tiki at: https://tiki.vn/product-p210277405.html?spid=210277409  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Du hành cùng Herodotus có giá hiện tại là bao nhiêu so với giá gốc?"
+    },
+    "f13e769c02803f782addc0f250d4f27b": {
+      "return": "{\"high_level_keywords\": [\"Sales\", \"Discounts\", \"Price\"], \"low_level_keywords\": [\"Con \\u0110\\u01b0\\u1eddng T\\u01a1 L\\u1ee5a\", \"V\\u1ea1n D\\u1eb7m Xa T\\u1eeb Pakistan\", \"T\\u1edbi T\\u00e2y An\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Mức giảm giá của Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An là bao nhiêu?"
+    },
+    "d1eab7e9c020747d7c47e87276c4b2d9": {
+      "return": "Mức giảm giá của  \"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\" là 30%. \n\nGiá hiện tại của cuốn sách này là 90400 VND. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Mức giảm giá của Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An là bao nhiêu?"
+    },
+    "6cfbced2f495441a077cf2a105a2819d": {
+      "return": "{\"high_level_keywords\": [\"Book sales\", \"Publishing\"], \"low_level_keywords\": [\"Walden M\\u1ed9t M\\u00ecnh S\\u1ed1ng Trong R\\u1eebng (\\u1ea4n B\\u1ea3n B\\u1ecf T\\u00fai)\", \"B\\u1ea3n Quy\\u1ec1n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền đã bán được bao nhiêu bản?"
+    },
+    "0c53e57287655a9fbd6e01e2a0b25609": {
+      "return": "Cuốn \"Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền\" đã bán được **55 bản**. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền đã bán được bao nhiêu bản?"
+    },
+    "031fdfaa1545ef24a5f6583d8c555416": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Sales\", \"Number of copies sold\"], \"low_level_keywords\": [\"Du h\\u00e0nh c\\u00f9ng Herodotus\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Số lượng bản bán ra của Du hành cùng Herodotus là bao nhiêu?"
+    },
+    "1e6d4651f4909e50d292ac6cd4e16cbc": {
+      "return": "Du hành cùng Herodotus đã được bán hết **157** bản. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Số lượng bản bán ra của Du hành cùng Herodotus là bao nhiêu?"
+    },
+    "b1ebcdfe5abdc351871fbfd064109603": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Sales\", \"Quantity\"], \"low_level_keywords\": [\"V\\u1ea1n D\\u1eb7m \\u0110\\u01b0\\u1eddng T\\u1eeb M\\u1ed9t B\\u01b0\\u1edbc Ch\\u00e2n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Vạn Dặm Đường Từ Một Bước Chân đã bán được bao nhiêu cuốn?"
+    },
+    "f01a0080ca6c238260adccb393307e31": {
+      "return": "Cuốn sách \"Vạn Dặm Đường Từ Một Bước Chân\" đã bán được  **56 cuốn**. \n\nNgoài ra, bạn có thể tìm thấy thêm thông tin về sách này trên Tiki: https://tiki.vn/product-p273842947.html?spid=273842948\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Vạn Dặm Đường Từ Một Bước Chân đã bán được bao nhiêu cuốn?"
+    },
+    "b99b9936869b32288b849323d5279571": {
+      "return": "{\"high_level_keywords\": [\"Sales\", \"Book Quantity\"], \"low_level_keywords\": [\"C\\u00f4 \\u0110\\u01a1n Tr\\u00ean Everest (Du K\\u00fd)\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Có bao nhiêu bản của Cô Đơn Trên Everest (Du Ký) đã được bán ra?"
+    },
+    "06758972f5214b5c6345e7a8acf6ed47": {
+      "return": "Hiện tại, đã có  **412 bản** của \"Cô Đơn Trên Everest (Du ký)\" được bán ra. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Có bao nhiêu bản của Cô Đơn Trên Everest (Du Ký) đã được bán ra?"
+    },
+    "a196c18f310560ba7f6883b40fbd21e4": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Sales\"], \"low_level_keywords\": [\"Con \\u0110\\u01b0\\u1eddng T\\u01a1 L\\u1ee5a\", \"V\\u1ea1n D\\u1eb7m Xa T\\u1eeb Pakistan\", \"T\\u1edbi T\\u00e2y An\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An có số lượng bán là bao nhiêu?"
+    },
+    "c83764d99acbb44f1ba1fc3d472a94ca": {
+      "return": "Cuốn \"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\" đã được bán tổng cộng **290** bản. \n\n\nBạn muốn biết thêm thông tin về cuốn sách này, hãy cho tôi biết! \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An có số lượng bán là bao nhiêu?"
+    },
+    "ff801b68a0226734a7ce3926cdb04fda": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Pricing\"], \"low_level_keywords\": [\"T\\u00e2y T\\u1ea1ng Huy\\u1ec1n B\\u00ed & Ngh\\u1ec7 Thu\\u1eadt Sinh T\\u1eed\", \"(T\\u00e1i B\\u1ea3n 2020)\", \"Gi\\u00e1\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020) là bao nhiêu?"
+    },
+    "095fe82be021090e6ee3e4b5bcccf1ec": {
+      "return": "Hiện giá của \"Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)\" trên Tiki Trading là **118800 VND**.  \n\nNgoài ra, bạn có thể tìm hiểu thêm thông tin về sách này ở đây: [https://tiki.vn/product-p53545646.html?spid=53545647](https://tiki.vn/product-p53545646.html?spid=53545647) \n\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020) là bao nhiêu?"
+    },
+    "e7c65b8fde317d095c6568482340165d": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Pricing\"], \"low_level_keywords\": [\"\\u0110\\u1eebng Ch\\u1ebft \\u1ede \\u1ea2 R\\u1eadp X\\u00ea \\u00dat\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đừng Chết Ở Ả Rập Xê Út có giá gốc là bao nhiêu VND?"
+    },
+    "3a612a8d99700ca0f9dc438de1cac78a": {
+      "return": "The book 'Đừng Chết Ở Ả Rập Xê Út' has an original price of 99000 VND.  \n\nHere's some additional information about the book:\n\n* **Current Price:** 70000 VND \n* **Discount Rate:** 29% \n* **Seller:** Tiki Trading \n* **Link to purchase:** https://tiki.vn/product-p26412706.html?spid=26412707\n\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đừng Chết Ở Ả Rập Xê Út có giá gốc là bao nhiêu VND?"
+    },
+    "c53aa42d69e116be61c01c71baa61cab": {
+      "return": "{\"high_level_keywords\": [\"Book pricing\", \"Discounts\"], \"low_level_keywords\": [\" Th\\u1ebf Gi\\u1edbi R\\u1ed9ng L\\u1edbn \\u0110\\u1eebng \\u0110i M\\u1ed9t M\\u00ecnh\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Thế Giới Rộng Lớn Đừng Đi Một Mình thấp hơn bao nhiêu so với giá gốc?"
+    },
+    "d39c56d4d89964bc3da7c13530a3925f": {
+      "return": "Hiện giá của Thế Giới Rộng Lớn Đừng Đi Một Mình là 107100 VND, giảm từ giá gốc 119000 VND.  Nghĩa là bạn đang nhận được 119000 VND - 107100 VND = 11900 VND giảm giá. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Thế Giới Rộng Lớn Đừng Đi Một Mình thấp hơn bao nhiêu so với giá gốc?"
+    },
+    "c0e46479363bd025b423dd7326077a3c": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Discounts\", \"Prices\"], \"low_level_keywords\": [\"\\u0110i Th\\u1eadt Xa Tr\\u00ean M\\u1ed9t Chi\\u1ebfc Camper\", \"gi\\u1ea3m gi\\u00e1\", \"ph\\u1ea7n tr\\u0103m\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đi Thật Xa Trên Một Chiếc Camper có mức giảm giá bao nhiêu phần trăm?"
+    },
+    "f776830800fec1099fb8aaa31e35eed2": {
+      "return": "Cảm ơn bạn!\n\nCuốn sách \"Đi Thật Xa Trên Một Chiếc Camper\" hiện đang có mức giảm giá **36%**. \n\nBạn có muốn biết thêm thông tin về cuốn sách này, chẳng hạn như:\n* Giá bán (tiền)\n* Số lượng đã bán\n* Đánh giá của khách hàng  \n\nHoặc bạn muốn biết thêm về những tác phẩm khác có thể bạn sẽ thích! 😉  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đi Thật Xa Trên Một Chiếc Camper có mức giảm giá bao nhiêu phần trăm?"
+    },
+    "77fb03857d69e359f8f1be6ebe33b779": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Pricing\"], \"low_level_keywords\": [\"M\\u00f9i H\\u01b0\\u01a1ng Tr\\u1ea7m\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Mùi Hương Trầm là bao nhiêu?"
+    },
+    "09ac60af2730db4ad27fa33c2b3f7c95": {
+      "return": "Mùi Hương Trầm hiện đang có giá **174000 VND**. \n\nBạn mua được sách này trên Tiki với mức giá này, kèm theo  [link](https://tiki.vn/product-p3767321.html?spid=3767323)\n \nSách có rating 4.8 sao và đã bán được hơn 585 bản. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Giá hiện tại của Mùi Hương Trầm là bao nhiêu?"
+    },
+    "d86097245433891b2c7214b60db484d8": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\", \"Sales\"], \"low_level_keywords\": [\"T\\u00e2y T\\u1ea1ng Huy\\u1ec1n B\\u00ed & Ngh\\u1ec7 Thu\\u1eadt Sinh T\\u1eed\", \"T\\u00e1i B\\u1ea3n 2020\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Điểm đánh giá trung bình của Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020) là bao nhiêu?"
+    },
+    "f8d92c935b9b7cb89b3dcc85d7c30c56": {
+      "return": "Điểm đánh giá trung bình của Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020) là 4.7 sao.  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Điểm đánh giá trung bình của Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020) là bao nhiêu?"
+    },
+    "de4182a3384bc816eb207c9c4896661c": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Ratings\"], \"low_level_keywords\": [\"\\u0110\\u1eebng Ch\\u1ebft \\u1ede \\u1ea2 R\\u1eadp X\\u00ea \\u00dat\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đừng Chết Ở Ả Rập Xê Út có rating trung bình là bao nhiêu?"
+    },
+    "46337051152f7494f2e28a9c8cfc570d": {
+      "return": "Tài liệu cho thấy cuốn sách \"Đừng Chết Ở Ả Rập Xê Út\"  có rating trung bình là **4.8** sao. 📚 \n\nBạn có muốn biết thêm thông tin về sách này, chẳng hạn như giá, nơi bán, đánh giá? \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đừng Chết Ở Ả Rập Xê Út có rating trung bình là bao nhiêu?"
+    },
+    "0a9111e85ac12f94f2ff0d0335738d1f": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\"], \"low_level_keywords\": [\" Th\\u1ebf Gi\\u1edbi R\\u1ed9ng L\\u1edbn \\u0110\\u1eebng \\u0110i M\\u1ed9t M\\u00ecnh\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Thế Giới Rộng Lớn Đừng Đi Một Mình được đánh giá bao nhiêu điểm trung bình?"
+    },
+    "ca94b15ce5667215a0b046f5522eeab1": {
+      "return": "\"Thế Giới Rộng Lớn Đừng Đi Một Mình\" đã nhận được 4.3 điểm trên average từ người dùng, dựa trên dữ liệu trong Knowledge Base.\n\nBạn có muốn xem thêm thông tin về \"Thế Giới Rộng Lớn Đừng Đi Một Mình\"  không? \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Thế Giới Rộng Lớn Đừng Đi Một Mình được đánh giá bao nhiêu điểm trung bình?"
+    },
+    "124819537ecc6f2e7bcb268dfb6b0b7a": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Rating\"], \"low_level_keywords\": [\"\\u0110i Th\\u1eadt Xa Tr\\u00ean M\\u1ed9t Chi\\u1ebfc Camper\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Rating trung bình của Đi Thật Xa Trên Một Chiếc Camper là bao nhiêu?"
+    },
+    "4e5c47a9d4a45409d8da0f51ee0feee9": {
+      "return": "Tựa sách \"Đi Thật Xa Trên Một Chiếc Camper\" đạt điểm đánh giá 4.8 trên nền tảng Tiki. \n\nBạn muốn biết thêm thông tin về bộ sách này, hãy xem xét các chi tiết sau:\n\n* **Giá:** 110000 VND (nếu có)\n* **Giảm giá:** 36%\n* **Số lượng bán ra:** 105\n* **Đánh giá:**  4.8/5 sao\n\n\nBạn có muốn xem thêm thông tin về tác giả, nhà xuất bản hoặc địa điểm mua sách? \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Rating trung bình của Đi Thật Xa Trên Một Chiếc Camper là bao nhiêu?"
+    },
+    "04f0089603fc4530b9c478bfeaabed4b": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\", \"Rating\"], \"low_level_keywords\": [\"M\\u00f9i H\\u01b0\\u01a1ng Tr\\u1ea7m\", \" \\u0111i\\u1ec3m \\u0111\\u00e1nh gi\\u00e1 trung b\\u00ecnh\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Mùi Hương Trầm có điểm đánh giá trung bình là bao nhiêu?"
+    },
+    "6c2faed4879812553ba1cbe7c7825ac8": {
+      "return": "Cuốn \"Mùi Hương Trầm\" có điểm đánh giá trung bình **4.8** sao. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Mùi Hương Trầm có điểm đánh giá trung bình là bao nhiêu?"
+    },
+    "6fd73cbd619ab37b1a520131d72f74ff": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Publishing\"], \"low_level_keywords\": [\"T\\u00e2y T\\u1ea1ng Huy\\u1ec1n B\\u00ed & Ngh\\u1ec7 Thu\\u1eadt Sinh T\\u1eed\", \"Nh\\u00e0 xu\\u1ea5t b\\u1ea3n\", \"T\\u00e1i B\\u1ea3n 2020\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nhà xuất bản nào phát hành Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)?"
+    },
+    "852c4964c482936308d443d25fa278c8": {
+      "return": "Nhà xuất bản  **Nhà Xuất Bản Thế Giới** là nhà xuất bản phát hành sách \"Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)\". \n \nBạn có muốn biết thêm thông tin về sách này không? \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nhà xuất bản nào phát hành Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)?"
+    },
+    "35c5b3bde35c9bcbbf90a7bad676151d": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Publishing\"], \"low_level_keywords\": [\"Cu\\u1ed1n \\u0110\\u1eebng Ch\\u1ebft \\u1ede \\u1ea2 R\\u1eadp X\\u00ea \\u00dat\", \"Nh\\u00e0 xu\\u1ea5t b\\u1ea3n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đừng Chết Ở Ả Rập Xê Út được xuất bản bởi nhà xuất bản nào?"
+    },
+    "9e1c5c87e812adda139f4f777702782b": {
+      "return": "\"Cuốn sách là tự truyện của một người phụ nữ đi xuất khẩu lao động tại Ả Rập Xê Út với mong muốn đổi đời với lời hứa hẹn từ trung tâm. Chỉ đến khi đặt chân đến đất nước Ả Rập cô mới nhận ra mình bị lừa...\" - Cuốn sách \"Đừng Chết Ở Ả Rập Xê Út\" được xuất bản bởi nhà xuất bản **Nhà Xuất Bản Thế Giới**. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Đừng Chết Ở Ả Rập Xê Út được xuất bản bởi nhà xuất bản nào?"
+    },
+    "80d149db2d90371189da880912e98299": {
+      "return": "{\"high_level_keywords\": [\"Publishers\", \"Authoring\"], \"low_level_keywords\": [\"Th\\u1ebf Gi\\u1edbi R\\u1ed9ng L\\u1edbn \\u0110\\u1eebng \\u0110i M\\u1ed9t M\\u00ecnh\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nhà xuất bản của Thế Giới Rộng Lớn Đừng Đi Một Mình là gì?"
+    },
+    "6c7cff06aa6a90154692f62177a75a6e": {
+      "return": "Nhà xuất bản Thế Giới Rộng Lớn Đừng Đi Một Mình là Nhà Xuất Bản Phụ Nữ Việt Nam. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nhà xuất bản của Thế Giới Rộng Lớn Đừng Đi Một Mình là gì?"
+    },
+    "8eddaca56eb63670f966aa9a149cc6a1": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Publishing\"], \"low_level_keywords\": [\"\\u0110i Th\\u1eadt Xa Tr\\u00ean M\\u1ed9t Chi\\u1ebfc Camper\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Đi Thật Xa Trên Một Chiếc Camper được phát hành bởi nhà xuất bản nào?"
+    },
+    "a2833e731e66de6963f5638226fc7ffd": {
+      "return": "\"Đi Thật Xa Trên Một Chiếc Camper\" được phát hành bởi Nhà xuất bản Phụ Nữ. \n\n\n**Thông tin bổ sung:**\n\n* **Giá:** 110000 VND\n* **Lưu ý:**  Bạn có thể mua sách này trên Tiki: https://tiki.vn/product-p33765288.html?spid=33765289 \n* **Đánh giá:** 4.8 sao\n* **Số lượng đã bán:** 105 \n\n\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Đi Thật Xa Trên Một Chiếc Camper được phát hành bởi nhà xuất bản nào?"
+    },
+    "cf2aa642133ff0fb9ff2294a366d14cc": {
+      "return": "{\"high_level_keywords\": [\"Publishing\", \"Authors\"], \"low_level_keywords\": [\"Nh\\u00e0 xu\\u1ea5t b\\u1ea3n M\\u00f9i H\\u01b0\\u01a1ng Tr\\u1ea7m\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nhà xuất bản của Mùi Hương Trầm là ai?"
+    },
+    "f093591d9004810df26b355b32d17da2": {
+      "return": "Nhà xuất bản của cuốn sách \"Mùi Hương Trầm\" là Nhà Xuất Bản Lao Động. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nhà xuất bản của Mùi Hương Trầm là ai?"
+    },
+    "013037e6451ee745ae3f7aa92c638709": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\"], \"low_level_keywords\": [\"1111 - Nh\\u1eadt K\\u00fd S\\u00e1u V\\u1ea1n D\\u1eb7m Tr\\u00ean Y\\u00ean Xe C\\u00e0 T\\u00e0ng\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Điểm đánh giá trung bình của 1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng là bao nhiêu?"
+    },
+    "dd5f7e09e4a8bf1ce8e3cfdea5b680c2": {
+      "return": "Điểm đánh giá trung bình của  1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng là **5.0** sao. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Điểm đánh giá trung bình của 1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng là bao nhiêu?"
+    },
+    "bf2953b4f5eaeabc0aef91bcc0e9ebb1": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\"], \"low_level_keywords\": [\"Cu\\u1ed1n Ng\\u00f3n Tay M\\u00ecnh C\\u00f2n Th\\u01a1m M\\u00f9i O\\u1ea3i H\\u01b0\\u01a1ng (T\\u00e1i B\\u1ea3n C\\u00f3 C\\u1eadp Nh\\u1eadt Ch\\u1ec9nh S\\u1eeda)\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa) có rating bao nhiêu?"
+    },
+    "22f865b285efb786477d3ae1bdd8eb79": {
+      "return": "\"Cuốn 'Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa)' được đánh giá là 5.0 sao trên Tiki Trading.\"\n\n\n \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa) có rating bao nhiêu?"
+    },
+    "4ca99fbf6906b0917df488c5f675e4df": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\", \"Ratings\"], \"low_level_keywords\": [\"S\\u1ef1 Th\\u1eadt Ta N\\u1eafm Gi\\u1eef\", \"One-Act Play\", \"United States\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Rating trung bình của Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ là bao nhiêu?"
+    },
+    "dea2f1c74abbb51ca39b2287498f97a7": {
+      "return": "Tựa sách \"Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ\" được đánh giá 4.7 sao trên average. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Rating trung bình của Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ là bao nhiêu?"
+    },
+    "85a5fc88dae8f0f8053d9eb1e16e694d": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\", \"Ratings\"], \"low_level_keywords\": [\"Tinh Hoa Du K\\u00fd Tr\\u00ean Tri T\\u00e2n T\\u1ea1p Ch\\u00ed\", \"1941-1945\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945) được đánh giá bao nhiêu điểm trung bình?"
+    },
+    "1d355b1ed5fee378c06a65a326f0ed7e": {
+      "return": "The book \"Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945)\" has a rating of **5.0 stars** on Tiki platform. \n\nThis means readers generally enjoy the book with high satisfaction, giving it an overall positive review.  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945) được đánh giá bao nhiêu điểm trung bình?"
+    },
+    "1dcc85e374c6c488ac541c672f2369f7": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Reviews\", \"Ratings\"], \"low_level_keywords\": [\"X\\u00e1ch Ba L\\u00f4 L\\u00ean V\\u00e0 \\u0110i\", \"T\\u1eadp 1: Ch\\u00e2u \\u00c1 L\\u00e0 Nh\\u00e0\", \"T\\u00e1i B\\u1ea3n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản) có rating là bao nhiêu?"
+    },
+    "67bab0a778f4c77d627973862dfdcd14": {
+      "return": "Cuốn sách \"Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản)\" được đánh giá **4.8 trên 5 sao** bởi người đọc.  \n\n\nBạn muốn tìm hiểu thêm về cuốn sách này? \n\n* Giá cả: 90400 VND\n* Nơi bán: Tiki Trading \n* Link mua: https://tiki.vn/product-p387725.html?spid=88100   \n  \nBạn có muốn xem thông tin thêm về cuốn sách này không? ",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản) có rating là bao nhiêu?"
+    },
+    "fa7e6cf2127274203dcc97ace51969af": {
+      "return": "{\"high_level_keywords\": [\"Sales\", \"Book sales\", \"Quantity\"], \"low_level_keywords\": [\"1111 - Nh\\u1eadt K\\u00fd S\\u00e1u V\\u1ea1n D\\u1eb7m Tr\\u00ean Y\\u00ean Xe C\\u00e0 T\\u00e0ng\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Số lượng bản bán ra của 1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng là bao nhiêu?"
+    },
+    "0264e9c9a36d525aead7e2205f6b4dd4": {
+      "return": "\"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\" đã bán được **25** bản. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Số lượng bản bán ra của 1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng là bao nhiêu?"
+    },
+    "f4310bade8c0174c3472d2cec08c0970": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Sales\", \"Popularity\"], \"low_level_keywords\": [\"Cu\\u1ed1n Ng\\u00f3n Tay M\\u00ecnh C\\u00f2n Th\\u01a1m M\\u00f9i O\\u1ea3i H\\u01b0\\u01a1ng\", \"T\\u00e1i B\\u1ea3n C\\u00f3 C\\u1eadp Nh\\u1eadt Ch\\u1ec9nh S\\u1eeda\", \"b\\u1ea3n\", \"b\\u00e1n \\u0111\\u01b0\\u1ee3c\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa) đã bán được bao nhiêu bản?"
+    },
+    "117f9ae4f5970dc7c791fc86ae2d8a7a": {
+      "return": "Câu trả lời: Cuốn sách \"Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa)\" đã bán được **416** bản. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa) đã bán được bao nhiêu bản?"
+    },
+    "046f60b0f15c8dd5b23286a057fb38db": {
+      "return": "{\"high_level_keywords\": [\"Book sales\", \"Popularity\"], \"low_level_keywords\": [\"S\\u1ef1 Th\\u1eadt Ta N\\u1eafm Gi\\u1eef - M\\u1ed9t H\\u00e0nh Tr\\u00ecnh Xuy\\u00ean N\\u01b0\\u1edbc M\\u1ef9\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ có bao nhiêu bản đã được bán?"
+    },
+    "520eed56fb21302bd4b288fea87bc890": {
+      "return": "\"Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ\" đã được bán tổng cộng **104** bản. \n\n\nBạn muốn tìm hiểu thêm về cuốn sách này, hãy xem thông tin chi tiết như:\n\n*  **Giá:** 117000 VND\n*  **Giảm giá:** 21% \n*  **Tác giả:** Kamala Harris\n*  **Nhà xuất bản:** Nhà Xuất Bản Dân Trí\n*  **Link mua:** https://tiki.vn/product-p109982962.html?spid=109982963 \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ có bao nhiêu bản đã được bán?"
+    },
+    "e0dd35eee1e94341a18d417b097204b9": {
+      "return": "{\"high_level_keywords\": [\"Book Sales\", \"Publishing\"], \"low_level_keywords\": [\"Tinh Hoa Du K\\u00fd Tr\\u00ean Tri T\\u00e2n T\\u1ea1p Ch\\u00ed (1941-1945)\", \"Quantity sold\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Số lượng bán của Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945) là bao nhiêu?"
+    },
+    "7a02580e24285b7e6e56a5ab29beb11c": {
+      "return": "Thông tin về số lượng bán sách 'Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945)' cho thấy số lượng đã bán là **58**. \n  \nBạn có muốn biết thêm bất cứ thông tin nào khác về sách này không? 📚 \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Số lượng bán của Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945) là bao nhiêu?"
+    },
+    "6f9b680fc588840382fa6fb8070a8b5b": {
+      "return": "{\"high_level_keywords\": [\"Book sales\", \"Distribution\"], \"low_level_keywords\": [\"X\\u00e1ch Ba L\\u00f4 L\\u00ean V\\u00e0 \\u0110i\", \"T\\u1eadp 1\", \"Ch\\u00e2u \\u00c1 L\\u00e0 Nh\\u00e0\", \"Re-Edition\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản) đã bán được bao nhiêu bản?"
+    },
+    "4bfb427009ad6d84930eedc7a776b6c8": {
+      "return": "Câu trả lời:  Cuốn sách \"Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản)\" đã bán được **1861** bản.  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cuốn Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản) đã bán được bao nhiêu bản?"
+    },
+    "2fbd26b679ff3a9a3827f988f17a01eb": {
+      "return": "{\"high_level_keywords\": [\"Book Summaries\", \"Novels\", \"Japanese Literature\"], \"low_level_keywords\": [\"1111\", \"Nh\\u1eadt K\\u00fd S\\u00e1u V\\u1ea1n D\\u1eb7m Tr\\u00ean Y\\u00ean Xe C\\u00e0 T\\u00e0ng\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Mô tả ngắn của 1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng nói về điều gì?"
+    },
+    "74beed2da5d84a9efddac88de33d6f07": {
+      "return": "\"1111 - Nhật ký Sáu vạn dặm trên Yên xe Cà Tàng\" kể về hành trình xuyên việt của tác giả Trần Đặng Đăng Khoa, một người Việt Nam, từ ngày 01/06/2017.  Với chiếc xe 100cc mang biển số Việt Nam, ông bắt đầu hành trình vạn dặm vòng quanh thế giới trong 1.111 ngày.  Hành trình đầy thử thách và kỳ diệu này đã ghi lại những câu chuyện thú vị, mang tính lãng mạn và ý nghĩa về cuộc sống.  \n\n\n**Thông tin bổ sung:**\n- **Tác giả**: Trần Đặng Đăng Khoa\n- **Nhà xuất bản**: NXB Trẻ \n- **Tiêu đề chính**: 1111 - Nhật ký Sáu vạn dặm trên Yên xe Cà Tàng.\n- **Giá**:  275975 VND (nếu có)\n- **Số lượng đã bán:** 25\n- **Nơi bán**: [Link mua sách]\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Mô tả ngắn của 1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng nói về điều gì?"
+    },
+    "a7098749035ade4eee40ecdcf40408dd": {
+      "return": "{\"high_level_keywords\": [\"Book Description\", \"Content\", \"Re-issue\", \"Short Synopsis\"], \"low_level_keywords\": [\"Ng\\u00f3n Tay M\\u00ecnh C\\u00f2n Th\\u01a1m M\\u00f9i O\\u1ea3i H\\u01b0\\u01a1ng\", \"T\\u00e1i B\\u1ea3n C\\u00f3 C\\u1eadp Nh\\u1eadt Ch\\u1ec9nh S\\u1eeda\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nội dung chính trong phần mô tả ngắn của Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa) là gì?"
+    },
+    "b29175876861fee7b21d6301fd4bef26": {
+      "return": "\"Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa)\"  là một bộ sách về du ký của tác giả, kể về những kinh nghiệm học tập, làm việc, đi hội nghị và tranh thủ du lịch ở nhiều vùng đất, trải nghiệm văn hóa và đời sống. Nội dung bao gồm:\n\n* **Du ký châu Âu:** Tác giả đã du học ở Anh Quốc từ năm 2004 - 2005.\n* **Kinh nghiệm học tập:** Nền tảng cho tác giả phát triển tư duy, kỹ năng ứng xử và cách thức vận hành công việc trong môi trường quốc tế.\n* **Tìm hiểu văn hóa & đời sống:** Tác giả đã có cơ hội trải nghiệm văn hóa và đời sống khác nhau ở nhiều vùng đất, thu nhận kiến thức phong phú.\n\n \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Nội dung chính trong phần mô tả ngắn của Ngón Tay Mình Còn Thơm Mùi Oải Hương (Tái Bản Có Cập Nhật Chỉnh Sửa) là gì?"
+    },
+    "c70618b7ddf8a2d7d996349e43c20f95": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Travel memoir\"], \"low_level_keywords\": [\"S\\u1ef1 Th\\u1eadt Ta N\\u1eafm Gi\\u1eef\", \"H\\u00e0nh Tr\\u00ecnh Xuy\\u00ean N\\u01b0\\u1edbc M\\u1ef9\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ được mô tả ngắn gọn như thế nào?"
+    },
+    "1ad3a2082052817a4f4bc96904b6c957": {
+      "return": "\"Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ\" là một cuốn sách du ký do Kamala Harris viết.  Tác phẩm này được xuất bản bởi Nhà Xuất Bản Dân Trí và có thể mua ở Tiki Trading. \n\nCuốn sách được cho là được viết bởi một nhà lãnh đạo chính trị quyền lực bậc nhất Hoa Kỳ, nhưng không gây ngợp trong những vấn đề chính trị khô khan. Như tác giả khẳng định, cuốn sách này không phải là cương.\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ được mô tả ngắn gọn như thế nào?"
+    },
+    "88e1da91eac917a7f89deda5b9b89e78": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Historical Fiction\", \"Descriptions\", \"Author Details\"], \"low_level_keywords\": [\"Tinh Hoa Du K\\u00fd Tr\\u00ean Tri T\\u00e2n T\\u1ea1p Ch\\u00ed\", \"1941-1945\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Phần mô tả ngắn của Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945) đề cập đến điều gì?"
+    },
+    "db3cedd61f359f467f0c603ac076ac76": {
+      "return": "Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945) là một cuốn sách về du lịch, địa phương học, nhân học, và khoa học xã hội.  Cuốn sách cung cấp tư liệu cho người yêu văn hóa, văn học, các ngành du lịch, địa phương học, nhân học và liên ngành khoa học xã hội … Tạp chí Tri Tân là Tuần báo do Nguyễn Tường Phượng làm chủ bút. \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Phần mô tả ngắn của Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945) đề cập đến điều gì?"
+    },
+    "09c5538542ce78145928307d62dc8235": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"Series\", \"Description\", \"Content\"], \"low_level_keywords\": [\"X\\u00e1ch Ba L\\u00f4 L\\u00ean V\\u00e0 \\u0110i\", \"T\\u1eadp 1\", \"Ch\\u00e2u \\u00c1 L\\u00e0 Nh\\u00e0\", \"T\\u00e1i B\\u1ea3n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Mô tả ngắn của Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản) nói về gì?"
+    },
+    "0467ff792baaf322fa2bf0c83af0999b": {
+      "return": "Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản) kể câu chuyện của \"Bước chân của Huyền khởi\" cho trào lưu mới trong giới trẻ Việt: Khát khao vươn ra thế giới, đi và trải nghiệm.  Bạn sẽ được tìm hiểu về hành trình khám phá của những người trẻ khi họ dấn thân vào cuộc sống đầy thử thách. \n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Mô tả ngắn của Xách Ba Lô Lên Và Đi - Tập 1: Châu Á Là Nhà. Đừng Khóc! (Tái Bản) nói về gì?"
+    }
+  }
+}

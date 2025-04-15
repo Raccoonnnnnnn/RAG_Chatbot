@@ -5,7 +5,7 @@ import jsonlines
 from openai import OpenAI
 
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="skFCXdcA")
 
 
 def batch_eval(query_file, result1_file, result2_file, output_file_path):
@@ -120,8 +120,9 @@ def batch_eval(query_file, result1_file, result2_file, output_file_path):
 
 
 if __name__ == "__main__":
+    top_k = 15
     query_file = "./data/questions/125_questions_for_compare.txt"
-    result1_file = "./data/eval/topk7/125_responses_libraAI_topk7.json"
+    result1_file = f"./data/eval2/topk{top_k}/125_responses_libraAI_topk{top_k}.json"
     result2_file = "./data/response_of_LLM/125_responses_tikiAI.json"
-    output_file_path = "./data/eval/topk7/batch_eval_topk7.jsonl"
+    output_file_path = f"./data/eval2/topk{top_k}/batch_eval_topk{top_k}.jsonl"
     batch_eval(query_file, result1_file, result2_file, output_file_path)

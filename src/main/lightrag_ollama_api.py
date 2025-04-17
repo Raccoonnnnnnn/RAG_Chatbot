@@ -204,27 +204,17 @@ async def query_rag(request: QueryRequest):
     if rag is None:
         raise HTTPException(status_code=500, detail="LightRAG is not initialized")
 
-    if request.mode == "" or request.mode == None:
-        response = await rag.aquery(
-            request.query,
-            param=QueryParam(
-                top_k=TOP_K,
-                conversation_history=request.conversation_history,
-                history_turns=3
-            ),
-            system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
-        )
-    else:
-        response = await rag.aquery(
-            request.query,
-            param=QueryParam(
-                mode=request.mode, 
-                top_k=TOP_K, 
-                conversation_history=request.conversation_history, 
-                history_turns=3
-            ),
-            system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
-        )
+    response = await rag.aquery(
+        request.query,
+        param=QueryParam(
+            mode=request.mode, 
+            top_k=TOP_K, 
+            conversation_history=request.conversation_history, 
+            history_turns=3
+        ),
+        system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
+    )
+    
     return {"query": request.query, "response": response}
 
 

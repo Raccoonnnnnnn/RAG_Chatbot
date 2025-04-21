@@ -73,8 +73,11 @@ def query_api_and_save(query_file, result1_file, log_file, mode="hybrid"):
 
 
 if __name__ == "__main__":
-    query_api_and_save(
-        query_file="./data/questions/125_questions_for_compare.txt",
-        result1_file="./data/eval2/topk2/125_responses_libraAI_topk2.json",
-        log_file = "./data/eval2/topk2/time_responses_topk2.log"
-    )
+    EVAL_DIR = "eval3"
+    topk_arr = [2, 5, 7, 10, 15]
+    for top_k in topk_arr:
+        query_api_and_save(
+            query_file="./data/questions/125_questions_for_compare.txt",
+            result1_file="./data/{EVAL_DIR}/topk{top_k}/125_responses_libraAI_topk{top_k}.json",
+            log_file="./data/{EVAL_DIR}/topk{top_k}/time_responses_topk{top_k}.log"
+        )

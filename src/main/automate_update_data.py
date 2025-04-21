@@ -106,7 +106,7 @@ def main():
     """Run the data update process with flexible trigger frequency."""
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     new_file = os.path.join(CRAWL_DIR, f"books_data_{timestamp}.csv")
-    new_file = os.path.join(CRAWL_DIR, f"books_data_2025-04-02_14-30-45.csv")
+    new_file = os.path.join(CRAWL_DIR, f"books_data_2025-04-17_14-30-45.csv")
     changes_file = os.path.join(COMPARE_DIR, f"changes_{timestamp}.csv")
 
     os.makedirs(CRAWL_DIR, exist_ok=True)

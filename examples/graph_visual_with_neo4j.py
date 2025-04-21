@@ -12,6 +12,10 @@ BATCH_SIZE_EDGES = 100
 NEO4J_URI = "neo4j+s://9bbf16c8.databases.neo4j.io"
 NEO4J_USERNAME = "neo4j"
 NEO4J_PASSWORD = "_VL9DMBHJ5WxZ4Fgg9Rhgib7MdDQCkU8bKxWtYI3ciU"
+# NEO4J_PASSWORD="SYf_9XJE6LZop92weKDXuq_T04Qzg5IVLprFR9PUzcs"       # Free instance Clone 01
+# NEO4J_PASSWORD = "Fg-Q5nrrqzh8Lfdz0grHDJctbkalQPvxl7YE4aNCObI"       # Instance01
+# NEO4J_PASSWORD = "_VL9DMBHJ5WxZ4Fgg9Rhgib7MdDQCkU8bKxWtYI3ciU" #free instance
+
 
 
 def convert_xml_to_json(xml_path, output_path):

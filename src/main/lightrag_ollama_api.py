@@ -90,7 +90,7 @@ async def initialize_rag():
         enable_llm_cache=False,
         llm_model_max_async=4,
         llm_model_max_token_size=8192,
-        llm_model_kwargs={"host": "http://localhost:11434", "options": {"num_ctx": 8192}},
+        llm_model_kwargs={"host": "http://localhost:11434", "options": {"num_ctx": 32768}},
         embedding_func=EmbeddingFunc(
             embedding_dim=768,
             max_token_size=8192,

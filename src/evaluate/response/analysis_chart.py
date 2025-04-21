@@ -84,6 +84,7 @@ for k in TOPK_VALUES:
     avg_score = round(np.mean(answer1_scores), 2)
     avg_quality_scores.append(avg_score)
 
+# -------------------------------------- FIGURE 1 -------------------------------
 # Create a dual-axis plot for visualization
 fig, ax1 = plt.subplots(figsize=(10, 6), dpi=100)
 
@@ -137,6 +138,45 @@ edit_chart_pkl(fig)
 with open(f'./data/{EVAL_DIR}/enhanced_response_analysis.pkl', 'wb') as f:
     pickle.dump(fig, f)
 plt.close()
+
+# -------------------------------------- FIGURE 2 -------------------------------
+
+fig2, ax = plt.subplots(figsize=(10, 6), dpi=100)
+
+# Define colors for each criterion
+colors = ['#1e88e5', '#e53935', '#43a047', '#fb8c00']
+criteria = ['Comprehensiveness', 'Diversity', 'Empowerment', 'Overall Winner']
+labels = ['Comprehensiveness', 'Diversity', 'Empowerment', 'Overall']
+
+# Plot each criterion
+for i, criterion in enumerate(criteria):
+    scores = [quality_metrics[f'topk{k}'][criterion][0] for k in TOPK_VALUES]
+    ax.plot(TOPK_VALUES, scores, '-o', color=colors[i], markersize=5, linewidth=1.5, 
+            alpha=0.85, label=labels[i])
+    
+    # Add annotations for key points
+    for x, y in zip(TOPK_VALUES, scores):
+        ax.annotate(f'{y:.2f}', (x, y), xytext=(0, 8), textcoords='offset points', 
+                    fontsize=9, color=colors[i], ha='center', va='bottom',
+                    bbox=dict(boxstyle='round,pad=0.2', fc='white', alpha=0.8))
+
+# Customize the plot
+ax.set_xlabel('Giá trị top-k', fontsize=12)
+ax.set_ylabel('Chất lượng phản hồi(%)', fontsize=12)
+ax.set_title('Ảnh hưởng của top_k tới chất lượng phản hồi theo bốn tiêu chí', fontsize=14, pad=10)
+ax.legend(loc='best', fontsize=10)
+ax.grid(True, linestyle='--', alpha=0.3, color='gray')
+ax.set_ylim(min(min([quality_metrics[f'topk{k}'][c][0] for k in TOPK_VALUES for c in criteria]) - 3, 0),
+            max(max([quality_metrics[f'topk{k}'][c][0] for k in TOPK_VALUES for c in criteria]) + 3, 100))
+plt.tight_layout()
+
+# Save the new plot
+# edit_chart_pkl(fig2)
+plt.savefig(f'./data/eval2/enhanced_response_analysis_highres_2.png', dpi=300, bbox_inches='tight')
+with open(f'./data/{EVAL_DIR}/criteria_quality_analysis.pkl', 'wb') as f:
+    pickle.dump(fig2, f)
+    
+    
 
 # Calculate correlation between response time and quality
 valid_indices = [i for i in range(len(mean_response_times)) if not np.isnan(mean_response_times[i])]

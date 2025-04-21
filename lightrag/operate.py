@@ -1164,6 +1164,7 @@ async def _get_node_data(
         for k, n, d in zip(results, node_datas, node_degrees)
         if n is not None
     ]  # what is this text_chunks_db doing.  dont remember it in airvx.  check the diagram.
+    logging.info(f"\n\n-----Embed_entities-----\n{node_datas}")
     # get entitytext chunk
     use_text_units, use_relations = await asyncio.gather(
         _find_most_related_text_unit_from_entities(
@@ -1430,6 +1431,7 @@ async def _get_edge_data(
         for k, v, d in zip(results, edge_datas, edge_degree)
         if v is not None
     ]
+    logging.info(f"\n\n-----Embed_relationship-----\n{edge_datas}")
     edge_datas = sorted(
         edge_datas, key=lambda x: (x["rank"], x["weight"]), reverse=True
     )

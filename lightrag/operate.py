@@ -660,14 +660,14 @@ async def kg_query(
     logging.info(f"\n\n⏳ Time for KG_QUERY -> context: {(end_time - start_time):.4f} s")
 
 
-    log_path = f"./data/eval3/topk{query_param.top_k}/time_query_context_topk{query_param.top_k}.log"
 
-    # custom_logger = get_logger(log_path)
+    log_path = f"./data/eval4/{query_param.mode}/time_query_context_topk{query_param.top_k}.log"
     elapsed_time = round(time.time() - start_time, 3)
-    # custom_logger.info(f"{elapsed_time}\t{query}\n")
 
     with open(log_path, "a", encoding="utf-8") as log_f:
         log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
+
+
 
     if query_param.only_need_context:
         return context
@@ -1663,7 +1663,7 @@ async def naive_query(
     system_prompt: str | None = None,
 ) -> str | AsyncIterator[str]:
     # Handle cache
-    start_time = time.perf_counter()
+    start_time = time.time()
     use_model_func = global_config["llm_model_func"]
     args_hash = compute_args_hash(query_param.mode, query, cache_type="query")
     cached_response, quantized, min_val, max_val = await handle_cache(
@@ -1673,6 +1673,16 @@ async def naive_query(
         return cached_response
 
     results = await chunks_vdb.query(query, top_k=query_param.top_k)
+
+    ### log time query vector db
+    log_path = f"./data/eval4/{query_param.mode}/time_query_context_topk{query_param.top_k}.log"
+    elapsed_time = round(time.time() - start_time, 3)
+
+    with open(log_path, "a", encoding="utf-8") as log_f:
+        log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
+
+
+
     if not len(results):
         return PROMPTS["fail_response"]
 
@@ -1725,7 +1735,7 @@ async def naive_query(
 
     sys_prompt_temp = system_prompt if system_prompt else PROMPTS["naive_rag_response"]
     sys_prompt = sys_prompt_temp.format(
-        content_data=section,
+        context_data=section,
         response_type=query_param.response_type,
         history=history_context,
     )
@@ -1768,7 +1778,7 @@ async def naive_query(
         ),
     )
 
-    end_time = time.perf_counter()
+    end_time = time.time()
     print(f"\n\n⏳ Thời gian naive_query -> response: {(end_time - start_time):.4f} s")
     return response
 

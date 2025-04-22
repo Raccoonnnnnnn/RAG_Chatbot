@@ -122,6 +122,7 @@ class QueryRequest(BaseModel):
     mode: str = DEFAULT_QUERY_MODE
     conversation_history: list[dict[str, str]] = []
     is_think: bool = False
+    top_k: int = TOP_K
 
 # API insert document to LightRAG
 @app.post("/insert")
@@ -208,11 +209,12 @@ async def query_rag(request: QueryRequest):
         request.query,
         param=QueryParam(
             mode=request.mode, 
-            top_k=TOP_K, 
+            top_k=request.top_k, 
             conversation_history=request.conversation_history, 
             history_turns=3
         ),
-        system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
+        # system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
+        system_prompt=PROMPTS["think_response"]
     )
     
     return {"query": request.query, "response": response}

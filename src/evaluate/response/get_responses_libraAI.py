@@ -2,9 +2,10 @@ import requests
 import json
 import time
 import re
+import os
 
 
-def query_api_and_save(query_file, result1_file, log_file, mode="hybrid"):
+def query_api_and_save(query_file, result1_file, log_file, top_k, mode="hybrid"):
     url = "http://localhost:8000/query"
     headers = {"Content-Type": "application/json"}
 
@@ -28,7 +29,8 @@ def query_api_and_save(query_file, result1_file, log_file, mode="hybrid"):
     for idx, query in enumerate(queries, start=1):
         payload = {
             "query": query,
-            "mode": mode
+            "mode": mode,
+            "top_k": top_k
         }
 
         print(f"Sending request {idx}: {query}")
@@ -74,10 +76,14 @@ def query_api_and_save(query_file, result1_file, log_file, mode="hybrid"):
 
 if __name__ == "__main__":
     EVAL_DIR = "eval3"
-    topk_arr = [2, 5, 7, 10, 15]
-    for top_k in topk_arr:
+    topk_arr = [4]
+    for top_k in range(6, 31, 2):
+    # for top_k in topk_arr:
+        topk_eval_dir = f"./data/{EVAL_DIR}/topk{top_k}"
+        os.makedirs(topk_eval_dir, exist_ok=True)
         query_api_and_save(
             query_file="./data/questions/125_questions_for_compare.txt",
-            result1_file="./data/{EVAL_DIR}/topk{top_k}/125_responses_libraAI_topk{top_k}.json",
-            log_file="./data/{EVAL_DIR}/topk{top_k}/time_responses_topk{top_k}.log"
+            result1_file=f"{topk_eval_dir}/125_responses_libraAI_topk{top_k}.json",
+            log_file=f"{topk_eval_dir}/time_responses_topk{top_k}.log",
+            top_k=top_k
         )

@@ -41,6 +41,9 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv(override=True)
 
+from logs.logger_config import get_logger
+
+
 
 def chunking_by_token_size(
     content: str,
@@ -656,6 +659,16 @@ async def kg_query(
     end_time = time.time()
     logging.info(f"\n\n⏳ Time for KG_QUERY -> context: {(end_time - start_time):.4f} s")
 
+
+    log_path = f"./data/eval3/topk{query_param.top_k}/time_query_context_topk{query_param.top_k}.log"
+
+    # custom_logger = get_logger(log_path)
+    elapsed_time = round(time.time() - start_time, 3)
+    # custom_logger.info(f"{elapsed_time}\t{query}\n")
+
+    with open(log_path, "a", encoding="utf-8") as log_f:
+        log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
+
     if query_param.only_need_context:
         return context
     # if context is None:
@@ -1127,7 +1140,7 @@ async def _build_query_context(
     ```csv
     {text_units_context}
     ```
-    """.strip()
+    """.strip().replace("UNKNOWN", "")
     return result
 
 
@@ -1164,7 +1177,6 @@ async def _get_node_data(
         for k, n, d in zip(results, node_datas, node_degrees)
         if n is not None
     ]  # what is this text_chunks_db doing.  dont remember it in airvx.  check the diagram.
-    logging.info(f"\n\n-----Embed_entities-----\n{node_datas}")
     # get entitytext chunk
     use_text_units, use_relations = await asyncio.gather(
         _find_most_related_text_unit_from_entities(
@@ -1213,7 +1225,7 @@ async def _get_node_data(
                 created_at,
             ]
         )
-    entites_section_list[1:] = sorted(entites_section_list[1:], key=lambda x: x[4], reverse=True)[:query_param.top_k] 
+    # entites_section_list[1:] = sorted(entites_section_list[1:], key=lambda x: x[4], reverse=True)[:query_param.top_k] 
     entities_context = list_of_list_to_csv(entites_section_list)
 
     relations_section_list = [
@@ -1245,13 +1257,13 @@ async def _get_node_data(
                 created_at,
             ]
         )
-    relations_section_list[1:] = sorted(relations_section_list[1:], key=lambda x: (x[6], x[5]), reverse=True)[:query_param.top_k] 
+    # relations_section_list[1:] = sorted(relations_section_list[1:], key=lambda x: (x[6], x[5]), reverse=True)[:query_param.top_k] 
     relations_context = list_of_list_to_csv(relations_section_list)
 
     text_units_section_list = [["id", "content"]]
     for i, t in enumerate(use_text_units):
         text_units_section_list.append([i, t["content"]])
-    text_units_section_list[1:] = text_units_section_list[1:query_param.top_k + 1] 
+    # text_units_section_list[1:] = text_units_section_list[1:query_param.top_k + 1] 
     text_units_context = list_of_list_to_csv(text_units_section_list)
     
     end_time = time.perf_counter()
@@ -1431,7 +1443,7 @@ async def _get_edge_data(
         for k, v, d in zip(results, edge_datas, edge_degree)
         if v is not None
     ]
-    logging.info(f"\n\n-----Embed_relationship-----\n{edge_datas}")
+    # logging.info(f"\n\n-----Embed_relationship-----\n{edge_datas}")
     edge_datas = sorted(
         edge_datas, key=lambda x: (x["rank"], x["weight"]), reverse=True
     )
@@ -1481,7 +1493,7 @@ async def _get_edge_data(
                 created_at,
             ]
         )
-    relations_section_list[1:] = sorted(relations_section_list[1:], key=lambda x: (x[6], x[5]), reverse=True)[:query_param.top_k] 
+    # relations_section_list[1:] = sorted(relations_section_list[1:], key=lambda x: (x[6], x[5]), reverse=True)[:query_param.top_k] 
     relations_context = list_of_list_to_csv(relations_section_list)
 
     entites_section_list = [["id", "entity", "type", "description", "rank"]]
@@ -1500,13 +1512,13 @@ async def _get_edge_data(
                 created_at,
             ]
         )
-    entites_section_list[1:] = sorted(entites_section_list[1:], key=lambda x: x[4], reverse=True)[:query_param.top_k] 
+    # entites_section_list[1:] = sorted(entites_section_list[1:], key=lambda x: x[4], reverse=True)[:query_param.top_k] 
     entities_context = list_of_list_to_csv(entites_section_list)
 
     text_units_section_list = [["id", "content"]]
     for i, t in enumerate(use_text_units):
         text_units_section_list.append([i, t["content"]])
-    text_units_section_list[1:] = text_units_section_list[1:query_param.top_k + 1] 
+    # text_units_section_list[1:] = text_units_section_list[1:query_param.top_k + 1] 
     text_units_context = list_of_list_to_csv(text_units_section_list)
 
     end_time = time.time()

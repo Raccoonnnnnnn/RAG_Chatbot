@@ -72,7 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
             query: messageText,
             mode: selectedMode,
             conversation_history: conversationHistory,
-            is_think: is_think
+            is_think: is_think,
+            top_k: 5
+
         });
     
         const requestOptions = {

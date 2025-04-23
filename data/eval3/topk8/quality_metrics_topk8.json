@@ -1,0 +1,20 @@
+{
+  "topk8": {
+    "Comprehensiveness": [
+      87.9,
+      12.1
+    ],
+    "Diversity": [
+      58.87,
+      41.13
+    ],
+    "Empowerment": [
+      81.45,
+      18.55
+    ],
+    "Overall Winner": [
+      83.06,
+      16.94
+    ]
+  }
+}

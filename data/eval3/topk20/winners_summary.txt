@@ -1,0 +1,20 @@
+Total requests: 125
+Valid requests (including fixed): 125
+Fixed JSONs: 15
+Failed parses (could not be fixed): 0
+
+Comprehensiveness:
+  Answer 1: 116 times (92.80%)
+  Answer 2: 9 times (7.20%)
+
+Diversity:
+  Answer 1: 91 times (72.80%)
+  Answer 2: 34 times (27.20%)
+
+Empowerment:
+  Answer 1: 105 times (84.00%)
+  Answer 2: 20 times (16.00%)
+
+Overall Winner:
+  Answer 1: 111 times (88.80%)
+  Answer 2: 14 times (11.20%)

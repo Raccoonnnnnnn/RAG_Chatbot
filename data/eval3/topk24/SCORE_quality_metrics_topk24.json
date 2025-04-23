@@ -1,0 +1,24 @@
+{
+  "topk24": {
+    "Comprehensiveness": {
+      "Mean": 7.95,
+      "Std": 1.5
+    },
+    "Diversity": {
+      "Mean": 4.78,
+      "Std": 1.47
+    },
+    "Empowerment": {
+      "Mean": 7.15,
+      "Std": 1.04
+    },
+    "Relevance": {
+      "Mean": 8.6,
+      "Std": 1.99
+    },
+    "Overall Score": {
+      "Mean": 6.86,
+      "Std": 1.14
+    }
+  }
+}

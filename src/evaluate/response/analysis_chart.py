@@ -5,11 +5,11 @@ from scipy.stats import pearsonr
 import os
 import json
 import pickle
-from data.eval2.edit_chart_with_pkl import edit_chart_pkl
+from data.eval3.edit_chart_with_pkl3 import edit_chart_pkl3
 
 # Configuration
-EVAL_DIR = "eval2"  # Change to "eval" or other directory as needed
-TOPK_VALUES = [2, 5, 7, 10, 15]
+EVAL_DIR = "eval3"
+TOPK_VALUES = [k for k in range(2, 31, 2)]
 
 # Generate file paths dynamically
 LOG_FILES = [f"data/{EVAL_DIR}/topk{k}/time_responses_topk{k}.log" for k in TOPK_VALUES]
@@ -134,7 +134,7 @@ plt.tight_layout()
 # plt.savefig(f'./data/{EVAL_DIR}/enhanced_response_analysis.png', bbox_inches='tight')
 # plt.savefig(f'./data/{EVAL_DIR}/enhanced_response_analysis.pdf', bbox_inches='tight')
 
-edit_chart_pkl(fig)
+edit_chart_pkl3(fig)
 with open(f'./data/{EVAL_DIR}/enhanced_response_analysis.pkl', 'wb') as f:
     pickle.dump(fig, f)
 plt.close()
@@ -172,7 +172,7 @@ plt.tight_layout()
 
 # Save the new plot
 # edit_chart_pkl(fig2)
-plt.savefig(f'./data/eval2/enhanced_response_analysis_highres_2.png', dpi=300, bbox_inches='tight')
+plt.savefig(f'./data/eval3/enhanced_response_analysis_highres_2.png', dpi=300, bbox_inches='tight')
 with open(f'./data/{EVAL_DIR}/criteria_quality_analysis.pkl', 'wb') as f:
     pickle.dump(fig2, f)
     

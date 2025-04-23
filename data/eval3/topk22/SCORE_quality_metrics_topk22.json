@@ -1,0 +1,24 @@
+{
+  "topk22": {
+    "Comprehensiveness": {
+      "Mean": 7.81,
+      "Std": 1.38
+    },
+    "Diversity": {
+      "Mean": 4.62,
+      "Std": 1.53
+    },
+    "Empowerment": {
+      "Mean": 7.05,
+      "Std": 1.12
+    },
+    "Relevance": {
+      "Mean": 8.27,
+      "Std": 2.16
+    },
+    "Overall Score": {
+      "Mean": 6.71,
+      "Std": 1.12
+    }
+  }
+}

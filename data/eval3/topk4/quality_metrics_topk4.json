@@ -1,0 +1,20 @@
+{
+  "topk4": {
+    "Comprehensiveness": [
+      81.6,
+      18.4
+    ],
+    "Diversity": [
+      64.0,
+      36.0
+    ],
+    "Empowerment": [
+      76.0,
+      24.0
+    ],
+    "Overall Winner": [
+      78.4,
+      21.6
+    ]
+  }
+}

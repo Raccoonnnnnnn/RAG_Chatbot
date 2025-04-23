@@ -165,9 +165,9 @@ def analyze_winners(data, output_dir, top_k):
 
 
 EVAL_DIR = "eval3"
-topk_arr = [2, 5, 7, 10, 15]
-
-for top_k in topk_arr:
+topk_arr = [2]
+for top_k in range(2, 31, 2):
+# for top_k in topk_arr:
     file_path = f"./data/{EVAL_DIR}/topk{top_k}/batch_output_topk{top_k}.jsonl"
     output_dir = f"./data/{EVAL_DIR}/topk{top_k}"
 

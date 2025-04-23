@@ -121,9 +121,9 @@ def batch_eval(query_file, result1_file, result2_file, output_file_path):
 
 if __name__ == "__main__":
     EVAL_DIR = "eval3"
-    topk_arr = [2, 5, 7, 10, 15]
-
-    for top_k in topk_arr:
+    topk_arr = [2]
+    for top_k in range(4, 31, 2):
+    # for top_k in topk_arr:
         query_file = "./data/questions/125_questions_for_compare.txt"
         result1_file = f"./data/{EVAL_DIR}/topk{top_k}/125_responses_libraAI_topk{top_k}.json"
         result2_file = "./data/response_of_LLM/125_responses_tikiAI.json"

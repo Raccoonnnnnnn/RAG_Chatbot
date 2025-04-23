@@ -1,0 +1,24 @@
+{
+  "global": {
+    "Comprehensiveness": {
+      "Mean": 7.76,
+      "Std": 2.35
+    },
+    "Diversity": {
+      "Mean": 5.36,
+      "Std": 1.72
+    },
+    "Empowerment": {
+      "Mean": 7.44,
+      "Std": 1.58
+    },
+    "Relevance": {
+      "Mean": 7.93,
+      "Std": 2.55
+    },
+    "Overall Score": {
+      "Mean": 6.92,
+      "Std": 1.64
+    }
+  }
+}

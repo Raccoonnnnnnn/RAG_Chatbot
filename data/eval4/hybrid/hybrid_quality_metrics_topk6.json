@@ -1,0 +1,24 @@
+{
+  "hybrid": {
+    "Comprehensiveness": {
+      "Mean": 9.26,
+      "Std": 1.6
+    },
+    "Diversity": {
+      "Mean": 5.95,
+      "Std": 1.4
+    },
+    "Empowerment": {
+      "Mean": 8.44,
+      "Std": 1.18
+    },
+    "Relevance": {
+      "Mean": 9.72,
+      "Std": 2.13
+    },
+    "Overall Score": {
+      "Mean": 8.05,
+      "Std": 1.21
+    }
+  }
+}

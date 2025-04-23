@@ -1,0 +1,24 @@
+{
+  "naive": {
+    "Comprehensiveness": {
+      "Mean": 7.18,
+      "Std": 2.4
+    },
+    "Diversity": {
+      "Mean": 5.26,
+      "Std": 1.49
+    },
+    "Empowerment": {
+      "Mean": 7.2,
+      "Std": 1.46
+    },
+    "Relevance": {
+      "Mean": 7.36,
+      "Std": 2.43
+    },
+    "Overall Score": {
+      "Mean": 6.6,
+      "Std": 1.59
+    }
+  }
+}

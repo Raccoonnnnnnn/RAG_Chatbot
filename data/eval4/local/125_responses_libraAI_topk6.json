@@ -404,7 +404,8 @@
         "response": "Cuốn \"Lãnh Đạo Tỉnh Thức (The Mindful Leader)\" của Michael Bunting, xuất bản bởi Nhà Xuất Bản Tổng hợp TP.HCM, tập trung vào việc trở thành một nhà lãnh đạo doanh nghiệp thành công đồng thời là con người hiểu biết và đầy lòng trắc ẩn. Cuốn sách này cho thấy rằng chúng ta thực sự có thể cân bằng giữa thành công chuyên môn và đời sống tinh thần. \n\nMột số thông tin chi tiết về cuốn sách:\n- **Nội dung**: Cuốn sách này đưa ra các chiến lược để trở thành một nhà lãnh đạo tỉnh thức, kết hợp yếu tố trí tuệ phương Đông với quản lý doanh nghiệp hiện đại.\n- **Nhà xuất bản**: Nhà Xuất Bản Tổng hợp TP.HCM\n- **Tác giả**: Michael Bunting\n- **Giá bán**: 108,000 VND (giảm từ 135,000 VND)\n- **Đánh giá trung bình**: 5.0 sao\n- **Số lượng đã bán**: 888 bản\n- **Nơi bán**: Tiki Trading\n\nĐây là một lựa chọn lý tưởng cho những người muốn phát triển kỹ năng lãnh đạo và đồng thời cải thiện đời sống tinh thần của mình."
     },
     {
-        "result": "ERROR: 500 Server Error: Internal Server Error for url: http://localhost:8000/query"
+        "result": "ERROR: 500 Server Error: Internal Server Error for url: http://localhost:8000/query",
+        "response": "Xin lỗi, có vẻ như đã xảy ra lỗi khi tôi cố gắng truy cập dữ liệu từ máy chủ. Vui lòng thử lại sau hoặc kiểm tra kết nối của bạn. Nếu bạn cần thông tin cụ thể nào đó, hãy cho tôi biết và tôi sẽ cố gắng hỗ trợ bạn tốt nhất có thể."
     },
     {
         "query": "Sách lãnh đạo nào có rating cao nhất và giá dưới 150,000 VND?",
@@ -447,7 +448,8 @@
         "response": "Dựa trên dữ liệu mới nhất, tôi chưa tìm thấy sách có chủ đề về chuyển đổi số với mức giá dưới 150,000 VND. Thông tin này dựa trên các cuộc trò chuyện trước vì không có dữ liệu mới.\n\nTuy nhiên, bạn vẫn có thể kiểm tra trực tiếp trên các sàn thương mại điện tử như Tiki, Shopee để tìm sách phù hợp hơn với yêu cầu của mình. Một số gợi ý khác mà bạn có thể tham khảo bao gồm:\n\n1. **Sách quản trị kinh doanh**: Đôi khi sẽ có những quyển sách về chuyển đổi số trong lĩnh vực này.\n2. **Sách kỹ năng mềm**: Có nhiều cuốn hướng dẫn cách ứng dụng công nghệ vào hoạt động của doanh nghiệp, thường nằm trong khoảng giá 150,000 VND trở lên.\n\nNếu bạn cung cấp thêm thông tin hoặc thay đổi tiêu chí, tôi sẽ có thể hỗ trợ tốt hơn!"
     },
     {
-        "result": "ERROR: 500 Server Error: Internal Server Error for url: http://localhost:8000/query"
+        "result": "ERROR: 500 Server Error: Internal Server Error for url: http://localhost:8000/query",
+        "response": "Xin lỗi, nhưng có vẻ như đã xảy ra lỗi trong quá trình xử lý yêu cầu của bạn. Vui lòng thử lại sau hoặc cung cấp thêm thông tin để tôi có thể hỗ trợ bạn tốt hơn."
     },
     {
         "query": "So sánh nội dung của 'Chuyển Đổi Số' và 'Đổi Mới Từ Cốt Lõi'.",

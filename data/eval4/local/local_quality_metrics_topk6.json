@@ -1,0 +1,24 @@
+{
+  "local": {
+    "Comprehensiveness": {
+      "Mean": 8.77,
+      "Std": 1.91
+    },
+    "Diversity": {
+      "Mean": 5.77,
+      "Std": 1.54
+    },
+    "Empowerment": {
+      "Mean": 8.09,
+      "Std": 1.4
+    },
+    "Relevance": {
+      "Mean": 8.89,
+      "Std": 2.53
+    },
+    "Overall Score": {
+      "Mean": 7.65,
+      "Std": 1.47
+    }
+  }
+}

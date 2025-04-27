@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import pandas as pd
 from src.preprocess_data.insert_custom_kg import create_custom_kg_for_batch
-from get_conversation_history import get_conversation_history
+from get_conversation_history import is_cache_file_empty
 
 
 # Load environment variables from .env file
@@ -121,7 +121,10 @@ class DeleteRequest(BaseModel):
 class QueryRequest(BaseModel):
     query: str
     mode: str = DEFAULT_QUERY_MODE
+    conversation_history: list[dict[str, str]] = []
     top_k: int = TOP_K
+    
+is_just_updated_KG = False
 
 # API insert document to LightRAG
 @app.post("/insert")
@@ -149,6 +152,7 @@ async def insert_custom_kg(request: InsertCustomtRequest):
                 raise HTTPException(status_code=500, detail=f"Error inserting batch {idx + 1}: {str(e)}")
 
         await rag.aclear_cache()
+        is_just_updated_KG = True
         
         return JSONResponse(
             status_code=200,
@@ -204,12 +208,18 @@ async def query_rag(request: QueryRequest):
     if rag is None:
         raise HTTPException(status_code=500, detail="LightRAG is not initialized")
 
+    # cache file empty <=> just updated KG
+    if is_just_updated_KG:
+        request.conversation_history = []
+        is_just_updated_KG = False
+        
     response = await rag.aquery(
         request.query,
         param=QueryParam(
             mode=request.mode, 
             top_k=request.top_k, 
-            conversation_history=get_conversation_history(WORKING_DIR, mode=request.mode, history_turns=3), 
+            conversation_history=request.conversation_history, 
+            history_turns=3 
         ),
         system_prompt=PROMPTS["think_response"]
     )

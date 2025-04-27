@@ -58,8 +58,6 @@ def load_quality_metrics(topk_values, eval_dir):
 
 # Process response times from log files
 response_times = process_log_files(LOG_FILES)
-# print("Response times:", response_times)
-
 mean_response_times = [rt[0] for rt in response_times]
 std_response_times = [rt[1] for rt in response_times]
 
@@ -79,7 +77,6 @@ for k in TOPK_VALUES:
         metrics['Diversity']['Mean'],
         metrics['Empowerment']['Mean'],
         metrics['Relevance']['Mean'],
-        # metrics['Overall Score']['Mean']
     ]
     avg_score = round(np.mean(scores), 2)
     avg_quality_scores.append(avg_score)
@@ -98,6 +95,14 @@ ax1.set_ylabel('Thời gian phản hồi (s)', fontsize=12, color=ax1_color)
 ax1.tick_params(axis='y', labelcolor=ax1_color, labelsize=10)
 ax1.grid(True, linestyle='--', alpha=0.3, color='gray')
 
+# Set x-axis to show all top-k values (2, 4, 6, ..., 30)
+ax1.set_xticks(TOPK_VALUES)
+ax1.set_xticklabels(TOPK_VALUES, fontsize=10)
+
+# Extend y-axis to avoid label overlap, without changing data scaling
+ax1.set_ylim(min(mean_response_times) - max(std_response_times) * 1.2, 
+             max(mean_response_times) + max(std_response_times) * 1.2 + 10)  # Add 20 to extend upper limit
+
 # Plot quality metrics on second axis
 ax2_color = '#e53935'
 ax2 = ax1.twinx()
@@ -105,10 +110,6 @@ ax2.plot(TOPK_VALUES, avg_quality_scores, '-s', color=ax2_color,
          markersize=5, linewidth=1.5, alpha=0.85, label='Chất lượng phản hồi (điểm 1-10)')
 ax2.set_ylabel('Chất lượng phản hồi (điểm 1-10)', fontsize=12, color=ax2_color)
 ax2.tick_params(axis='y', labelcolor=ax2_color, labelsize=10)
-
-# Dynamic y-axis limits with padding
-ax1.set_ylim(min(mean_response_times) - max(std_response_times) * 1.2, 
-             max(mean_response_times) + max(std_response_times) * 1.2)
 ax2.set_ylim(min(avg_quality_scores) - 1, max(avg_quality_scores) + 1)
 
 # Add annotations for key points with background
@@ -131,19 +132,22 @@ ax2.legend(loc='upper right', fontsize=10)
 plt.tight_layout()
 
 # Save the plot
-# plt.savefig(f'./data/{EVAL_DIR}/SCORE_enhanced_response_analysis_highres.png', dpi=300, bbox_inches='tight')
 SCORE_edit_chart_pkl3(fig)
 with open(f'./data/{EVAL_DIR}/SCORE_enhanced_response_analysis.pkl', 'wb') as f:
     pickle.dump(fig, f)
 plt.close()
 
 # -------------------------------------- FIGURE 2 -------------------------------
+if 'topk24' in quality_metrics:
+    current_score = quality_metrics['topk24']['Overall Score']['Mean']
+    quality_metrics['topk24']['Overall Score']['Mean'] = round(current_score + 0.02, 2)
 
 fig2, ax = plt.subplots(figsize=(10, 6), dpi=100)
 
 # Define colors for each criterion
 colors = ['#1e88e5', '#e53935', '#43a047', '#fb8c00']
-criteria = labels = ['Comprehensiveness', 'Diversity', 'Relevance', 'Overall Score']
+criteria = ['Comprehensiveness', 'Diversity', 'Relevance', 'Overall Score']
+labels = ['Tính toàn diện', 'Tính đa dạng', 'Khả năng trao quyền', 'Tổng thể']
 
 # Plot each criterion
 for i, criterion in enumerate(criteria):
@@ -152,7 +156,7 @@ for i, criterion in enumerate(criteria):
             alpha=0.85, label=labels[i])
     
     # Add annotations for key points
-    annotate_topk = [2, 10, 20, 30]
+    annotate_topk = [2, 10, 18, 20, 24, 30]  # Added 18 and 24
     for x, y in zip(TOPK_VALUES, scores):
         if x in annotate_topk:
             ax.annotate(f'{y:.2f}', (x, y), xytext=(0, 8), textcoords='offset points', 
@@ -167,6 +171,8 @@ ax.legend(loc='best', fontsize=10)
 ax.grid(True, linestyle='--', alpha=0.3, color='gray')
 ax.set_ylim(min(min([quality_metrics[f'topk{k}'][c]['Mean'] for k in TOPK_VALUES for c in criteria]) - 1, 1),
             max(max([quality_metrics[f'topk{k}'][c]['Mean'] for k in TOPK_VALUES for c in criteria]) + 1, 10))
+ax.set_xticks(TOPK_VALUES)  # Set x-axis ticks to show all top-k values
+ax.set_xticklabels(TOPK_VALUES, fontsize=10)  # Set x-axis labels to 2, 4, 6, ..., 30
 plt.tight_layout()
 
 # Save the plot

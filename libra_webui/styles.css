@@ -12,14 +12,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Allow scrolling on the entire page */
+    overflow-y: auto;
 }
 
 .messages-wrapper {
     width: 100%;
     min-height: 100vh;
-    padding-bottom: 0;
-    padding-top: 0; /* Added padding-top to avoid overlap with logo */
+    padding-bottom: 80px;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
 }
@@ -32,12 +32,13 @@ body {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    padding-bottom: 80px; /* Space for input area */
 }
 
 .messages {
     width: 100%;
+    flex-grow: 1;
     position: static;
+    padding-bottom: 20px;
 }
 
 .messages::-webkit-scrollbar {
@@ -62,7 +63,7 @@ body {
 .messages::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 80px;
     left: 0;
     width: 100%;
     height: 50px;
@@ -93,7 +94,6 @@ body {
 }
 
 .messages div.bot-message {
-    /* background-color: transparent; */
     border: none;
 }
 
@@ -106,24 +106,24 @@ body {
     color: #63B8FF;
 }
 
-/* Add a background overlay for the area beneath the input box */
 .input-background-overlay {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 90px; /* Slightly taller than input-area to provide visual padding */
-    background-color: #1a1a1a; /* Match body background color */
-    z-index: 90; /* Lower than input-area (100) but higher than content */
+    height: 80px;
+    background-color: #1a1a1a;
+    z-index: 90;
 }
 
 .input-area {
     display: flex;
-    align-items: center;
-    padding: 10px;
+    flex-direction: column;
+    gap: 6px;
+    padding: 2px 8px 8px 8px;
     background-color: #2a2a2a;
-    border-radius: 17px;
-    margin-top: 20px;
+    border-radius: 25px;
+    border: 0.1px solid #686666;
     flex-shrink: 0;
     position: fixed;
     bottom: 20px;
@@ -131,61 +131,93 @@ body {
     transform: translateX(-50%);
     width: 100%;
     max-width: 800px;
-    height: 60px;
     z-index: 100;
-    gap: 10px; /* Thêm khoảng cách giữa các phần tử */
 }
 
-/* Style cho dropdown */
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .mode-dropdown {
-    padding: 10px;
-    border: none;
+    padding: 8px;
+    border: 1px solid #686666;
     border-radius: 10px;
-    background-color: #3a3a3a;
+    background-color: #2d2c2c;
     color: #e0e0e0;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Roboto", Arial, sans-serif;
     outline: none;
     cursor: pointer;
-    width: 90px;
-    height: 40px;
+    width: 80px;
+    height: 36px;
     appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 16px;
+    background-position: right 8px center;
+    background-size: 14px;
     text-align: left;
 }
 
-/* Xóa phần focus để tránh nhảy chữ */
-.mode-dropdown:focus {
-    /* Bỏ direction: rtl */
-    outline: none; /* Giữ focus không có viền mặc định */
+.model-dropdown {
+    padding: 8px;
+    border: 1px solid #686666;
+    border-radius: 10px;
+    background-color: #2d2c2c;
+    color: #e0e0e0;
+    font-size: 14px;
+    font-family: "Roboto", Arial, sans-serif;
+    outline: none;
+    cursor: pointer;
+    width: 120px;
+    height: 36px;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px;
+    text-align: left;
 }
 
-/* Style cho option */
-.mode-dropdown option {
+.mode-dropdown:focus,
+.model-dropdown:focus {
+    outline: none;
+}
+
+.mode-dropdown option,
+.model-dropdown option {
     background-color: #2a2a2a;
     color: #e0e0e0;
-    text-align: left; /* Đảm bảo option căn trái */
+    text-align: left;
 }
 
-/* Hover effect cho dropdown */
-.mode-dropdown:hover {
+.mode-dropdown:hover,
+.model-dropdown:hover {
     background-color: #444;
 }
 
 #userInput {
     flex: 1;
-    padding: 12px 15px;
+    padding: 20px 15px 0px 15px;
     border: none;
-    border-radius: 15px;
-    background-color: #3a3a3a;
+    background-color: transparent;
     color: #e0e0e0;
     font-size: 16px;
     outline: none;
     font-family: "Roboto", Arial, sans-serif;
-    max-width: 100%;
+    border-radius: 0;
+    resize: none;
+    min-height: 30px; 
+    height: auto;
+    line-height: 1.4;
+    overflow: hidden;
 }
 
 #userInput::placeholder {
@@ -203,6 +235,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
 }
 
 #sendButton svg {
@@ -253,14 +288,13 @@ body {
     display: inline;
 }
 
-/* Logo Styles */
 .logo-container {
     position: fixed;
     top: 20px;
     left: 20px;
     display: flex;
     align-items: center;
-    z-index: 110; /* Higher than input-area and new-chat-button */
+    z-index: 110;
     padding: 8px 12px;
     background-color: #2a2a2a;
     border-radius: 10px;
@@ -278,4 +312,3 @@ body {
     font-size: 18px;
     color: #e0e0e0;
 }
-

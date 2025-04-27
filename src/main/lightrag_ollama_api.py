@@ -14,6 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import pandas as pd
 from src.preprocess_data.insert_custom_kg import create_custom_kg_for_batch
+from get_conversation_history import get_conversation_history
 
 
 # Load environment variables from .env file
@@ -120,8 +121,6 @@ class DeleteRequest(BaseModel):
 class QueryRequest(BaseModel):
     query: str
     mode: str = DEFAULT_QUERY_MODE
-    conversation_history: list[dict[str, str]] = []
-    is_think: bool = False
     top_k: int = TOP_K
 
 # API insert document to LightRAG
@@ -210,10 +209,8 @@ async def query_rag(request: QueryRequest):
         param=QueryParam(
             mode=request.mode, 
             top_k=request.top_k, 
-            conversation_history=request.conversation_history, 
-            history_turns=3
+            conversation_history=get_conversation_history(WORKING_DIR, mode=request.mode, history_turns=3), 
         ),
-        # system_prompt=PROMPTS["rag_response"] if not request.is_think else PROMPTS["think_response"]
         system_prompt=PROMPTS["think_response"]
     )
     

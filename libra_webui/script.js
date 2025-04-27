@@ -18,6 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    // auto adjust height of textarea
+    userInput.addEventListener("input", function () {
+        if (this.value.trim() !== "") { // Only adjust when there is content
+            this.style.height = "auto";
+            this.style.height = this.scrollHeight + "px";
+        }
+    });
+
     loadChatHistory();
 
     sendButton.addEventListener("click", function (e) {
@@ -56,6 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
         const modeSelect = document.getElementById("modeSelect");
         const selectedMode = modeSelect.value;
+
+        // const modelSelect = document.getElementById("modelSelect");
+        // const selectedModel = modelSelect.value;
     
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -66,15 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return { role, content: msg.textContent.trim() };
         });
 
-        const is_think = true
-    
         const raw = JSON.stringify({
             query: messageText,
-            mode: selectedMode,
-            conversation_history: conversationHistory,
-            is_think: is_think,
-            top_k: 5
-
+            mode: selectedMode
+            // model: selectedModel,
         });
     
         const requestOptions = {
@@ -107,6 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             botPlaceholder.textContent = "Error connecting to API!";
             console.error(error);
+        } finally {
+            userInput.style.height = "40px";
         }
     
         saveChatHistory();
@@ -115,15 +123,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function appendMessage(text, className) {
         const messageDiv = document.createElement("div");
         className.split(" ").forEach(cls => messageDiv.classList.add(cls));
-        // messageDiv.textContent = text;
         messageDiv.innerHTML = marked.parse(text);
         messages.appendChild(messageDiv);
     
         messageDiv.scrollIntoView({ behavior: "smooth", block: "end" });
         window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: "smooth"
-                });
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
 
         return messageDiv; 
     }

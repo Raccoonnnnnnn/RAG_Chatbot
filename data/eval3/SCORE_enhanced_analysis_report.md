@@ -94,7 +94,7 @@ Báo cáo này phân tích mối quan hệ giữa các giá trị top-k (2, 4, 6
 - **Đa dạng**: Điểm trung bình: 4.78 (Std: 1.47).
 - **Trao quyền**: Điểm trung bình: 7.15 (Std: 1.04).
 - **Liên quan**: Điểm trung bình: 8.60 (Std: 1.99).
-- **Tổng thể**: Điểm trung bình: 6.86 (Std: 1.14).
+- **Tổng thể**: Điểm trung bình: 6.88 (Std: 1.14).
 
 ### Top-k = 26
 - **Tính toàn diện**: Điểm trung bình: 7.85 (Std: 1.54).

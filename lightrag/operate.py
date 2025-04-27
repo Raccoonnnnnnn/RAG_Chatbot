@@ -661,11 +661,11 @@ async def kg_query(
 
 
 
-    log_path = f"./data/eval4/{query_param.mode}/time_query_context_topk{query_param.top_k}.log"
-    elapsed_time = round(time.time() - start_time, 3)
+    # log_path = f"./data/eval4/{query_param.mode}/time_query_context_topk{query_param.top_k}.log"
+    # elapsed_time = round(time.time() - start_time, 3)
 
-    with open(log_path, "a", encoding="utf-8") as log_f:
-        log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
+    # with open(log_path, "a", encoding="utf-8") as log_f:
+    #     log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
 
 
 

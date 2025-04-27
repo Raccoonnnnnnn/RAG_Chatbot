@@ -17,19 +17,19 @@ def SCORE_edit_chart_pkl3(fig):
     for annotation in ax1.texts:
         if annotation.get_text() == "10.8":
             x, y = annotation.get_position()
-            annotation.set_position((x, y - 30))  
+            annotation.set_position((x, y - 40))  
         if annotation.get_text() == "15.7":
             x, y = annotation.get_position()
-            annotation.set_position((x, y - 30))  
+            annotation.set_position((x, y - 25))  
         if annotation.get_text() == "16.7":
             x, y = annotation.get_position()
-            annotation.set_position((x, y - 30))  
+            annotation.set_position((x, y - 25))  
         if annotation.get_text() == "19.6":
             x, y = annotation.get_position()
-            annotation.set_position((x, y - 30))  
+            annotation.set_position((x, y - 25))  
         if annotation.get_text() == "22.5":
             x, y = annotation.get_position()
-            annotation.set_position((x, y - 30))  
+            annotation.set_position((x, y - 28))  
         if annotation.get_text() == "25.8":
             x, y = annotation.get_position()
             annotation.set_position((x, y - 30))  
@@ -47,10 +47,10 @@ def SCORE_edit_chart_pkl3(fig):
             annotation.set_position((x, y - 30)) 
         if annotation.get_text() == "47.9":
             x, y = annotation.get_position()
-            annotation.set_position((x, y + 5)) 
+            annotation.set_position((x, y - 30)) 
         if annotation.get_text() == "51.7":
             x, y = annotation.get_position()
-            annotation.set_position((x, y + 5)) 
+            annotation.set_position((x, y - 30)) 
         if annotation.get_text() == "54.9":
             x, y = annotation.get_position()
             annotation.set_position((x, y + 5)) 
@@ -100,14 +100,28 @@ def SCORE_edit_chart_pkl3(fig):
         if annotation.get_text() == "7.08":
             x, y = annotation.get_position()
             annotation.set_position((x, y + 40))
-            
-    for annotation in ax2.texts:
-        if annotation.get_text() == "7.00":
+        if annotation.get_text() == "6.94":
             x, y = annotation.get_position()
             annotation.set_position((x, y + 40))
         if annotation.get_text() == "7.12":
             x, y = annotation.get_position()
             annotation.set_position((x, y + 40))
+        if annotation.get_text() == "7.05":
+            x, y = annotation.get_position()
+            annotation.set_position((x, y - 5))
+            
+    for annotation in ax2.texts:
+        if annotation.get_text() == "7.00":
+            x, y = annotation.get_position()
+            annotation.set_position((x, y + 40))
+            break
+    i = 0
+    for annotation in ax2.texts:
+        if annotation.get_text() == "7.00":
+            i += 1
+        if annotation.get_text() == "7.00" and i == 2:
+            x, y = annotation.get_position()
+            annotation.set_position((x, y + 5))
             break
         
 

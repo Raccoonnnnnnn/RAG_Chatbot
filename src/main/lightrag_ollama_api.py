@@ -14,8 +14,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import pandas as pd
 from src.preprocess_data.insert_custom_kg import create_custom_kg_for_batch
-from get_conversation_history import is_cache_file_empty
-
 
 # Load environment variables from .env file
 load_dotenv()

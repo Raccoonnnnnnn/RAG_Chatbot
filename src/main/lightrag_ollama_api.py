@@ -135,6 +135,8 @@ async def insert_document(request: InsertRequest):
 
 @app.post("/insert_custom_kg")
 async def insert_custom_kg(request: InsertCustomtRequest):
+    global is_just_updated_KG
+
     try:
         # Create custom_kg batches
         custom_kgs, df = create_custom_kg_for_batch(request.path, batch_size=request.batch_size)
@@ -203,6 +205,8 @@ async def delete_document(request: DeleteRequest):
 # API query from LightRAG
 @app.post("/query")
 async def query_rag(request: QueryRequest):
+    global is_just_updated_KG
+    
     if rag is None:
         raise HTTPException(status_code=500, detail="LightRAG is not initialized")
 

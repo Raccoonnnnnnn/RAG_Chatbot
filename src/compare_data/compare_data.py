@@ -2,7 +2,7 @@ import pandas as pd
 from tabulate import tabulate
 import time
 
-def detect_changes(old_file, new_file, output_file):
+def detect_changes(old_file, new_file):
     print("\n\n\n🕷️ START compare data...\n")
     start_time = time.time()
     df_old = pd.read_csv(old_file).drop_duplicates(subset=['id']).set_index('id')
@@ -24,6 +24,10 @@ def detect_changes(old_file, new_file, output_file):
     print(f"\n📌 Total new books added: {len(added_ids)}")
     print(f"📌 Total books with changed information: {len(changed_ids)}")
     
+    if not added_ids.any() and not changed_ids:
+        print("\n⚡ No new or changed books detected. Skipping save.\n")
+        return None
+    
     # Display the changes in console
     # table_data = []
     # for id in added_ids:
@@ -41,13 +45,15 @@ def detect_changes(old_file, new_file, output_file):
     #     print("No new or changed books")
         
     all_updated_books = df_new.loc[added_ids.union(changed_ids)]
-    all_updated_books.reset_index().to_csv(output_file, index=False)
-    print(f"\n✅ Book update report saved to '{output_file}'")
-    
+    temp_output = "temp_changes.csv"
+    all_updated_books.reset_index().to_csv(temp_output, index=False)
+
+    print("\n✅ Temp change report generated.\n")
     end_time = time.time()
-    print("\n🕷️ END compare data\n\n")
+    print("🕷️ END compare data\n")
     print(f"⏱️ Execution time: {(end_time - start_time):.2f} seconds\n")
-    return output_file
+
+    return temp_output 
 
 if __name__ == "__main__":
     detect_changes("./data/compare/books_data_old.csv", 

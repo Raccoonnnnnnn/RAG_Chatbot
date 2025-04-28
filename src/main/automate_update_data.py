@@ -7,6 +7,7 @@ from src.preprocess_data.process_tiki_books import process_books_to_texts
 import httpx
 import logging
 from dotenv import load_dotenv
+from difflib import unified_diff
 
 # Load environment variables from .env file in project root
 load_dotenv()
@@ -86,7 +87,7 @@ def process_and_insert(file_path):
         start_time = time.time()
         texts, ids = process_books_to_texts(file_path)
         with httpx.Client() as client:
-            logging.info(f"\n\nSTART inserting data from {file_path} into LightRAG...")
+            logging.info(f"START inserting data from {file_path} into LightRAG...")
             # response = client.post(
             #     INSERT_BATCH_API,
             #     json={"texts": texts, "ids": ids}
@@ -98,15 +99,16 @@ def process_and_insert(file_path):
             response.raise_for_status()
             end_time = time.time()
             logging.info(f"\n\nTotal insert data time: {end_time - start_time:.2f} seconds")
-            logging.info(f"END inserting {len(texts)} books into LightRAG")
+            logging.info(f"END inserting {len(texts)} books into LightRAG\n")
     except Exception as e:
         logging.error(f"Insert failed for {file_path}: {e}")
 
 def main():
+    logging.info(f"\n\nSTART crontab...")
     """Run the data update process with flexible trigger frequency."""
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     new_file = os.path.join(CRAWL_DIR, f"books_data_{timestamp}.csv")
-    new_file = os.path.join(CRAWL_DIR, f"books_data_2025-04-17_14-30-45.csv")
+    new_file = os.path.join(CRAWL_DIR, f"books_data_2025-04-28_14-30-45.csv")
     changes_file = os.path.join(COMPARE_DIR, f"changes_{timestamp}.csv")
 
     os.makedirs(CRAWL_DIR, exist_ok=True)
@@ -120,7 +122,7 @@ def main():
     #     _, num_books_collected = crawl_books(new_file)
     #     end_time = time.time()
     #     logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
-    #     logging.info(f"END crawling data, output: {new_file}")
+    #     logging.info(f"END crawling data, output: {new_file}\n")
     # except Exception as e:
     #     logging.error(f"Crawl failed: {e}")
     #     return
@@ -131,13 +133,36 @@ def main():
     if old_file:
         # If there's an old file, compare and insert changes
         try:
-            logging.info("\n\nSTART comparing data...")
+            logging.info("START comparing data...")
             start_time = time.time()
-            detect_changes(old_file, new_file, changes_file)
-            end_time = time.time()
-            logging.info(f"\n\nComparison time: {end_time - start_time:.2f} seconds")
-            logging.info(f"END comparing data, output: {changes_file}")
-            process_and_insert(changes_file)
+            temp_changes_file = detect_changes(old_file, new_file)
+            logging.info(f"Comparison time: {time.time() - start_time:.2f} seconds")
+            
+            # if changes data today not differrent with changes data yesterday => don't save change files
+            if temp_changes_file:
+                latest_change_file = get_latest_file(COMPARE_DIR, "changes")
+
+                should_save = True
+                if latest_change_file:
+                    with open(temp_changes_file, 'r', encoding='utf-8') as f1, open(latest_change_file, 'r', encoding='utf-8') as f2:
+                        diff = list(unified_diff(
+                            f1.readlines(), 
+                            f2.readlines()
+                        ))
+                        if not diff:
+                            logging.info("Detected changes are same as latest changes. Skip saving and inserting.")
+                            should_save = False
+
+                if should_save:
+                    os.replace(temp_changes_file, changes_file)
+                    logging.info(f"END comparing data | New changes detected and saved to {changes_file}")
+                    process_and_insert(changes_file)
+                else:
+                    os.remove(temp_changes_file)
+            else:
+                logging.info("No new or changed books. Nothing to insert.")
+            
+            logging.info(f"END comparing data.\n\n\n")
         except Exception as e:
             logging.error(f"Comparison failed: {e}")
             return

@@ -1674,12 +1674,14 @@ async def naive_query(
 
     results = await chunks_vdb.query(query, top_k=query_param.top_k)
 
-    ### log time query vector db
-    log_path = f"./data/eval4/{query_param.mode}/time_query_context_topk{query_param.top_k}.log"
-    elapsed_time = round(time.time() - start_time, 3)
 
-    with open(log_path, "a", encoding="utf-8") as log_f:
-        log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
+
+    ### log time query vector db
+    # log_path = f"./data/eval4/{query_param.mode}/time_query_context_topk{query_param.top_k}.log"
+    # elapsed_time = round(time.time() - start_time, 3)
+
+    # with open(log_path, "a", encoding="utf-8") as log_f:
+    #     log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
 
 
 

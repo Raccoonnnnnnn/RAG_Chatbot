@@ -83,21 +83,27 @@ for k in TOPK_VALUES:
 
 # -------------------------------------- FIGURE 1 -------------------------------
 # Create a dual-axis plot for visualization
-fig, ax1 = plt.subplots(figsize=(10, 6), dpi=100)
+fig, ax1 = plt.subplots(figsize=(12, 6), dpi=100)
+
+fontsize_label = 16
+fontsize_title = 18
+fontsize_annotation = 14
+ticksize = 14
 
 # Plot response time with error bars
 ax1_color = '#1e88e5'
 ax1.errorbar(TOPK_VALUES, mean_response_times, yerr=std_response_times, fmt='-o', 
              color=ax1_color, ecolor='#aec7e8', markersize=5, linewidth=1.5, 
              capsize=4, alpha=0.85, label='Thời gian phản hồi trung bình (s)')
-ax1.set_xlabel('Giá trị top-k', fontsize=12)
-ax1.set_ylabel('Thời gian phản hồi (s)', fontsize=12, color=ax1_color)
-ax1.tick_params(axis='y', labelcolor=ax1_color, labelsize=10)
+ax1.set_xlabel('Giá trị top-k', fontsize=fontsize_label, labelpad=12)
+ax1.set_ylabel('Thời gian phản hồi (s)', fontsize=fontsize_label, color=ax1_color, labelpad=15)
+
+ax1.tick_params(axis='y', labelcolor=ax1_color, labelsize=ticksize)
 ax1.grid(True, linestyle='--', alpha=0.3, color='gray')
 
 # Set x-axis to show all top-k values (2, 4, 6, ..., 30)
 ax1.set_xticks(TOPK_VALUES)
-ax1.set_xticklabels(TOPK_VALUES, fontsize=10)
+ax1.set_xticklabels(TOPK_VALUES, fontsize=ticksize)
 
 # Extend y-axis to avoid label overlap, without changing data scaling
 ax1.set_ylim(min(mean_response_times) - max(std_response_times) * 1.2, 
@@ -108,32 +114,35 @@ ax2_color = '#e53935'
 ax2 = ax1.twinx()
 ax2.plot(TOPK_VALUES, avg_quality_scores, '-s', color=ax2_color, 
          markersize=5, linewidth=1.5, alpha=0.85, label='Chất lượng phản hồi (điểm 1-10)')
-ax2.set_ylabel('Chất lượng phản hồi (điểm 1-10)', fontsize=12, color=ax2_color)
-ax2.tick_params(axis='y', labelcolor=ax2_color, labelsize=10)
+ax2.set_ylabel('Chất lượng phản hồi (điểm 1-10)', fontsize=fontsize_label, color=ax2_color, labelpad=15)
+ax2.tick_params(axis='y', labelcolor=ax2_color, labelsize=ticksize)
 ax2.set_ylim(min(avg_quality_scores) - 1, max(avg_quality_scores) + 1)
 
 # Add annotations for key points with background
+
 for x, y in zip(TOPK_VALUES, mean_response_times):
     if not np.isnan(y):
         ax1.annotate(f'{y:.1f}', (x, y), xytext=(0, 8), textcoords='offset points', 
-                     fontsize=9, color=ax1_color, ha='center', va='bottom',
-                     bbox=dict(boxstyle='round,pad=0.2', fc='white', alpha=0.8))
+                     fontsize=fontsize_annotation, color=ax1_color, ha='center', va='bottom'
+                    #  ,bbox=dict(boxstyle='round,pad=0.2', fc='white', alpha=0.8)
+                     )
 for x, y in zip(TOPK_VALUES, avg_quality_scores):
     ax2.annotate(f'{y:.2f}', (x, y), xytext=(0, -18), textcoords='offset points', 
-                 fontsize=9, color=ax2_color, ha='center', va='top',
-                 bbox=dict(boxstyle='round,pad=0.2', fc='white', alpha=0.8))
+                 fontsize=fontsize_annotation, color=ax2_color, ha='center', va='top'
+                #  ,bbox=dict(boxstyle='round,pad=0.2', fc='white', alpha=0.8)
+                 )
 
 # Add title and legend
-plt.title('Ảnh hưởng của top_k tới chất lượng và thời gian phản hồi của chatbot', fontsize=14, pad=10)
-ax1.legend(loc='upper left', fontsize=10)
-ax2.legend(loc='upper right', fontsize=10)
+plt.title('Ảnh hưởng của top_k tới chất lượng và thời gian phản hồi của chatbot', fontsize=16, pad=15)
+ax1.legend(loc='upper left', fontsize=14)
+ax2.legend(loc='upper right', fontsize=14)
 
 # Adjust layout
 plt.tight_layout()
 
 # Save the plot
 SCORE_edit_chart_pkl3(fig)
-with open(f'./data/{EVAL_DIR}/SCORE_enhanced_response_analysis.pkl', 'wb') as f:
+with open(f'./data/{EVAL_DIR}/SCORE_topk_affect.pkl', 'wb') as f:
     pickle.dump(fig, f)
 plt.close()
 
@@ -142,7 +151,8 @@ if 'topk24' in quality_metrics:
     current_score = quality_metrics['topk24']['Overall Score']['Mean']
     quality_metrics['topk24']['Overall Score']['Mean'] = round(current_score + 0.02, 2)
 
-fig2, ax = plt.subplots(figsize=(10, 6), dpi=100)
+fig2, ax = plt.subplots(figsize=(11, 7), dpi=100)
+ax.tick_params(axis='both', labelsize=ticksize)
 
 # Define colors for each criterion
 colors = ['#1e88e5', '#e53935', '#43a047', '#fb8c00']
@@ -159,25 +169,24 @@ for i, criterion in enumerate(criteria):
     annotate_topk = [2, 10, 18, 20, 24, 30]  # Added 18 and 24
     for x, y in zip(TOPK_VALUES, scores):
         if x in annotate_topk:
-            ax.annotate(f'{y:.2f}', (x, y), xytext=(0, 8), textcoords='offset points', 
-                        fontsize=9, color=colors[i], ha='center', va='bottom',
-                        bbox=dict(boxstyle='round,pad=0.2', fc='white', alpha=0.8))
+            ax.annotate(f'{y:.2f}', (x, y), xytext=(0, 6), textcoords='offset points', 
+                        fontsize=fontsize_annotation, color=colors[i], ha='center', va='bottom')
 
 # Customize the plot
-ax.set_xlabel('Giá trị top-k', fontsize=12)
-ax.set_ylabel('Chất lượng phản hồi (điểm 1-10)', fontsize=12)
-ax.set_title('Ảnh hưởng của top_k tới chất lượng phản hồi theo bốn tiêu chí', fontsize=14, pad=10)
-ax.legend(loc='best', fontsize=10)
+ax.set_xlabel('Giá trị top-k', fontsize=fontsize_label, labelpad=12)
+ax.set_ylabel('Chất lượng phản hồi (điểm 1-10)', fontsize=fontsize_label, labelpad=15)
+ax.set_title('Ảnh hưởng của top_k tới chất lượng phản hồi theo bốn tiêu chí', fontsize=fontsize_title, pad=15)
+ax.legend(loc='best', fontsize=ticksize)
 ax.grid(True, linestyle='--', alpha=0.3, color='gray')
 ax.set_ylim(min(min([quality_metrics[f'topk{k}'][c]['Mean'] for k in TOPK_VALUES for c in criteria]) - 1, 1),
             max(max([quality_metrics[f'topk{k}'][c]['Mean'] for k in TOPK_VALUES for c in criteria]) + 1, 10))
 ax.set_xticks(TOPK_VALUES)  # Set x-axis ticks to show all top-k values
-ax.set_xticklabels(TOPK_VALUES, fontsize=10)  # Set x-axis labels to 2, 4, 6, ..., 30
+ax.set_xticklabels(TOPK_VALUES, fontsize=ticksize)  # Set x-axis labels to 2, 4, 6, ..., 30
 plt.tight_layout()
 
 # Save the plot
-plt.savefig(f'./data/{EVAL_DIR}/SCORE_enhanced_response_analysis_highres_2.png', dpi=300, bbox_inches='tight')
-with open(f'./data/{EVAL_DIR}/SCORE_criteria_quality_analysis.pkl', 'wb') as f:
+plt.savefig(f'./data/{EVAL_DIR}/SCORE_topk_affect_2.png', dpi=500, bbox_inches='tight')
+with open(f'./data/{EVAL_DIR}/SCORE_topk_affect_2.pkl', 'wb') as f:
     pickle.dump(fig2, f)
 plt.close()
 
@@ -230,5 +239,5 @@ summary += f"""
 - **Thu thập dữ liệu**: Đảm bảo tất cả file log và JSON được tạo và chứa dữ liệu hợp lệ.
 - **Tối ưu hóa**: Khám phá xử lý song song hoặc lưu trữ đệm để giảm thời gian phản hồi cho top-k cao hơn.
 """
-with open(f'./data/{EVAL_DIR}/SCORE_enhanced_analysis_report.md', 'w', encoding='utf-8') as f:
+with open(f'./data/{EVAL_DIR}/SCORE_topk_affect.md', 'w', encoding='utf-8') as f:
     f.write(summary)

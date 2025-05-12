@@ -20,7 +20,7 @@ def SCORE_edit_chart_pkl3(fig):
             annotation.set_position((x, y - 40))  
         if annotation.get_text() == "15.7":
             x, y = annotation.get_position()
-            annotation.set_position((x, y - 25))  
+            annotation.set_position((x, y - 28))  
         if annotation.get_text() == "16.7":
             x, y = annotation.get_position()
             annotation.set_position((x, y - 25))  
@@ -127,7 +127,7 @@ def SCORE_edit_chart_pkl3(fig):
 
 
 
-    plt.savefig(f'./data/eval3/SCORE_enhanced_response_analysis_highres.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'./data/eval3/SCORE_topk_affect.png', dpi=500, bbox_inches='tight')
     # with open('./data/eval2/enhanced_response_analysis_adjusted.pkl', 'wb') as f:
     #     pickle.dump(fig, f)
 

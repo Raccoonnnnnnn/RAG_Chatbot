@@ -13,8 +13,13 @@ files = [
     'data/eval4/naive/time_query_context_topk6.log'
 ]
 
+fontsize_label = 16
+fontsize_title = 20
+fontsize_annotation = 14
+ticksize = 14
+
 # Tên các chế độ tương ứng
-modes = ['Global', 'Hybrid', 'Local', 'Naive']
+modes = ['Local', 'Global', 'Hybrid', 'Naive']
 
 # Ánh xạ chế độ sang màu (dùng cho các biểu đồ khác nếu cần)
 mode_colors = {
@@ -47,13 +52,13 @@ barplot = sns.barplot(x='Mode', y='mean', hue='Mode', data=stats, palette=palett
 plt.errorbar(x=stats['Mode'], y=stats['mean'], yerr=stats['std'], fmt='none', c='black', capsize=5)
 for index, row in stats.iterrows():
     barplot.text(index, row['mean'] + 0.02, f"{row['mean']:.3f}", 
-                 ha='center', va='bottom', fontsize=10)
+                 ha='center', va='bottom', fontsize=14)
 plt.title('Thời gian phản hồi trung bình của các chế độ truy vấn (top_k=6)')
 plt.xlabel('Chế độ truy vấn')
 plt.ylabel('Thời gian trung bình (giây)')
 plt.tight_layout()
 plt.savefig('./data/eval4/response_time_comparison.png', dpi=300)
-plt.show()
+# plt.show()
 
 # Hàm đọc quality metrics
 def load_quality_metrics(modes, eval_dir='eval4', topk=6):
@@ -68,8 +73,8 @@ def load_quality_metrics(modes, eval_dir='eval4', topk=6):
                     'Mode': mode,
                     'Comprehensiveness': mode_metrics.get('Comprehensiveness', {}).get('Mean', 0.0),
                     'Diversity': mode_metrics.get('Diversity', {}).get('Mean', 0.0),
-                    # 'Empowerment': mode_metrics.get('Empowerment', {}).get('Mean', 0.0),
-                    'Relevance': mode_metrics.get('Relevance', {}).get('Mean', 0.0),
+                    'Empowerment': mode_metrics.get('Empowerment', {}).get('Mean', 0.0),
+                    # 'Relevance': mode_metrics.get('Relevance', {}).get('Mean', 0.0),
                     'Overall Score': mode_metrics.get('Overall Score', {}).get('Mean', 0.0)
                 })
         else:
@@ -91,26 +96,50 @@ print(quality_df)
 
 # Vẽ biểu đồ cột so sánh chất lượng
 plt.figure(figsize=(12, 6))
+criterion_labels = {
+    'Comprehensiveness': 'Tính toàn diện',
+    'Diversity': 'Tính đa dạng',
+    'Empowerment': 'Khả năng trao quyền',
+    'Overall Score': 'Tổng thể'
+}
 quality_melted = quality_df.melt(id_vars='Mode', 
                                  value_vars=['Comprehensiveness', 'Diversity', 
-                                            #  'Empowerment', 
-                                             'Relevance', 'Overall Score'],
+                                             'Empowerment', 'Overall Score'],
                                  var_name='Criterion', value_name='Score')
+quality_melted['Criterion'] = quality_melted['Criterion'].map(criterion_labels)
 
 # Custom palette: mỗi Mode có 1 màu duy nhất
 custom_palette = [mode_colors[mode] for mode in quality_df['Mode']]
 
-plt.figure(figsize=(12, 6))
-sns.barplot(x='Mode', y='Score', hue='Criterion', data=quality_melted, palette='tab10')
-for p in plt.gca().patches:
+
+# -------------------quality_comparison---------------
+plt.figure(figsize=(12, 8))
+bar_ax = sns.barplot(x='Mode', y='Score', hue='Criterion', data=quality_melted, palette='tab10')
+
+# Thêm giá trị lên cột
+for p in bar_ax.patches:
     height = p.get_height()
     if height > 0:
-        plt.gca().text(p.get_x() + p.get_width()/2, height + 0.1, f'{height:.2f}', 
-                       ha='center', va='bottom', fontsize=8)
-plt.title('So sánh chất lượng phản hồi giữa các chế độ truy vấn (top_k=6)')
-plt.xlabel('Chế độ truy vấn')
-plt.ylabel('Điểm trung bình')
-plt.legend(title='Tiêu chí', bbox_to_anchor=(1.05, 1), loc='upper left')
+        bar_ax.text(p.get_x() + p.get_width()/2, height + 0.1, f'{height:.2f}', 
+                    ha='center', va='bottom', fontsize=fontsize_annotation)
+
+# Thiết lập cỡ chữ cho các thành phần
+plt.title('So sánh chất lượng phản hồi giữa các chế độ truy vấn (top_k=6)', fontsize=fontsize_title, pad=15)
+plt.xlabel('Chế độ truy vấn', fontsize=fontsize_label, labelpad=10)
+plt.ylabel('Điểm trung bình', fontsize=fontsize_label, labelpad=10)
+plt.ylim(0, 11)
+bar_ax.tick_params(axis='both', labelsize=ticksize)
+
+# Legend bên trong góc trên bên phải
+plt.legend(
+    title='Tiêu chí',
+    loc='upper right',
+    bbox_to_anchor=(1, 1),  # Dịch nhẹ vào bên trong
+    fontsize=fontsize_label - 2,
+    title_fontsize=fontsize_label,
+    frameon=True  # Cho khung trắng nếu muốn tách rõ
+)
+
 plt.tight_layout()
 plt.savefig('./data/eval4/quality_comparison.png', dpi=300)
 plt.show()
@@ -159,4 +188,4 @@ ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
 
 plt.tight_layout()
 plt.savefig('./data/eval4/time_quality_dual_bar.png', dpi=300)
-plt.show()
+# plt.show()

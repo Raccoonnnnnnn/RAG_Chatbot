@@ -299,6 +299,18 @@ def encode_string_by_tiktoken(content: str, model_name: str = "gpt-4o"):
     tokens = ENCODER.encode(content)
     return tokens
 
+def count_token_of_text(text: str | list[str], model_name: str = "gpt-4o") -> int:
+    """Count number of tokens in a string or list of strings using tiktoken"""
+    global ENCODER
+    if ENCODER is None:
+        ENCODER = tiktoken.encoding_for_model(model_name)
+    
+    if isinstance(text, str):
+        return len(ENCODER.encode(text))
+    elif isinstance(text, list):
+        return sum(len(ENCODER.encode(t)) for t in text)
+    else:
+        raise TypeError("Input must be a string or list of strings.")
 
 def decode_tokens_by_tiktoken(tokens: list[int], model_name: str = "gpt-4o"):
     global ENCODER

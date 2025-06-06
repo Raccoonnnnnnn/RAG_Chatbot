@@ -4,6 +4,7 @@ from typing import Any, final
 from dataclasses import dataclass
 import numpy as np
 import time
+import base64
 
 from lightrag.utils import (
     logger,
@@ -141,6 +142,40 @@ class NanoVectorDBStorage(BaseVectorStorage):
             for dp in results
         ]
         return results
+    
+    async def get_vector_by_id(self, id: str) -> np.ndarray | None:
+        storage = await self.client_storage
+        data = storage["data"]
+        matrix_base64 = storage.get("matrix")
+        dim = storage["embedding_dim"]
+
+        # Kiểm tra an toàn
+        if matrix_base64 is None or len(data) == 0 or not isinstance(matrix_base64, (str, bytes)):
+            logger.error("[get_vector_by_id] Invalid matrix or empty data")
+            return None
+
+        try:
+            matrix_bytes = base64.b64decode(matrix_base64)
+            total_floats = len(matrix_bytes) // 4
+            expected_floats = len(data) * dim
+
+            if total_floats < expected_floats:
+                logger.error(f"[get_vector_by_id] Matrix size mismatch: expected {expected_floats}, got {total_floats}")
+                return None
+
+            matrix = np.frombuffer(matrix_bytes, dtype=np.float32)
+            matrix = matrix[:len(data) * dim].reshape((len(data), dim))
+
+            for i, record in enumerate(data):
+                if record["__id__"] == id:
+                    return matrix[i]
+
+            logger.warning(f"[get_vector_by_id] ID {id} not found in vector DB")
+            return None
+
+        except Exception as e:
+            logger.exception(f"[get_vector_by_id] Failed to extract vector: {e}")
+            return None
 
     @property
     async def client_storage(self):

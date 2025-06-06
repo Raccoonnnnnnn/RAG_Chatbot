@@ -26,6 +26,7 @@ from .utils import (
     statistic_data,
     get_conversation_turns,
     verbose_debug,
+    count_token_of_text,
 )
 from .base import (
     BaseGraphStorage,
@@ -621,6 +622,7 @@ async def kg_query(
     hl_keywords, ll_keywords = await extract_keywords_only(
         query, query_param, global_config, hashing_kv
     )
+    logging.info(f"ll: {ll_keywords}, hl: {hl_keywords} ")
 
     logger.debug(f"High-level keywords: {hl_keywords}")
     logger.debug(f"Low-level  keywords: {ll_keywords}")
@@ -659,13 +661,17 @@ async def kg_query(
     end_time = time.time()
     logging.info(f"\n\n⏳ Time for KG_QUERY -> context: {(end_time - start_time):.4f} s")
 
+    
+
+    log_path = f"./data/eval5/topk6_old/time_query_context_topk{query_param.top_k}.log"
+    elapsed_time = round(time.time() - start_time, 3)
+    with open(log_path, "a", encoding="utf-8") as log_f:
+        log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
 
 
-    # log_path = f"./data/eval4/{query_param.mode}/time_query_context_topk{query_param.top_k}.log"
-    # elapsed_time = round(time.time() - start_time, 3)
-
-    # with open(log_path, "a", encoding="utf-8") as log_f:
-    #     log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
+    log_path = f"./data/eval5/topk6_old/number_token_context_topk{query_param.top_k}.log"
+    with open(log_path, "a", encoding="utf-8") as log_f:
+        log_f.write(f"{1}\t{count_token_of_text(context)}\t{query}\n")
 
 
 
@@ -1089,40 +1095,49 @@ async def _build_query_context(
             query_param,
         )
     else:  # hybrid mode
-        ll_data, hl_data = await asyncio.gather(
-            _get_node_data(
-                ll_keywords,
-                knowledge_graph_inst,
-                entities_vdb,
-                text_chunks_db,
-                query_param,
-            ),
-            _get_edge_data(
-                hl_keywords,
-                knowledge_graph_inst,
-                relationships_vdb,
-                text_chunks_db,
-                query_param,
-            ),
+        entities_context, relations_context, text_units_context = await _get_node_data(
+            ll_keywords,
+            # hl_keywords,
+            knowledge_graph_inst,
+            entities_vdb,
+            # relationships_vdb,
+            text_chunks_db,
+            query_param,
         )
+        # ll_data, hl_data = await asyncio.gather(
+        #     _get_node_data(
+        #         ll_keywords,
+        #         knowledge_graph_inst,
+        #         entities_vdb,
+        #         text_chunks_db,
+        #         query_param,
+        #     ),
+        #     _get_edge_data(
+        #         hl_keywords,
+        #         knowledge_graph_inst,
+        #         relationships_vdb,
+        #         text_chunks_db,
+        #         query_param,
+        #     ),
+        # )
 
-        (
-            ll_entities_context,
-            ll_relations_context,
-            ll_text_units_context,
-        ) = ll_data
+        # (
+        #     ll_entities_context,
+        #     ll_relations_context,
+        #     ll_text_units_context,
+        # ) = ll_data
 
-        (
-            hl_entities_context,
-            hl_relations_context,
-            hl_text_units_context,
-        ) = hl_data
+        # (
+        #     hl_entities_context,
+        #     hl_relations_context,
+        #     hl_text_units_context,
+        # ) = hl_data
 
-        entities_context, relations_context, text_units_context = combine_contexts(
-            [hl_entities_context, ll_entities_context],
-            [hl_relations_context, ll_relations_context],
-            [hl_text_units_context, ll_text_units_context],
-        )
+        # entities_context, relations_context, text_units_context = combine_contexts(
+        #     [hl_entities_context, ll_entities_context],
+        #     [hl_relations_context, ll_relations_context],
+        #     [hl_text_units_context, ll_text_units_context],
+        # )
     # not necessary to use LLM to generate a response
     if not entities_context.strip() and not relations_context.strip():
         return None
@@ -1135,10 +1150,6 @@ async def _build_query_context(
     -----Relationships-----
     ```csv
     {relations_context}
-    ```
-    -----Sources-----
-    ```csv
-    {text_units_context}
     ```
     """.strip().replace("UNKNOWN", "")
     return result
@@ -1270,6 +1281,325 @@ async def _get_node_data(
     logging.info(f"\n\n⏳ Time for get_node_data: {(end_time - start_time):.4f} s")
     return entities_context, relations_context, text_units_context
 
+async def _get_node_data_new(
+    query: str,
+    hl_keywords: str,
+    knowledge_graph_inst: BaseGraphStorage,
+    entities_vdb: BaseVectorStorage,
+    text_chunks_db: BaseKVStorage,
+    query_param: QueryParam,
+):
+    start_time = time.perf_counter()
+    # get similar entities
+    logger.info(
+        f"Query nodes: {query}, top_k: {query_param.top_k}, cosine: {entities_vdb.cosine_better_than_threshold}"
+    )
+    results = await entities_vdb.query(query, top_k=query_param.top_k)
+    if not len(results):
+        return "", "", ""
+    # get entity information
+    node_datas, node_degrees = await asyncio.gather(
+        asyncio.gather(
+            *[knowledge_graph_inst.get_node(r["entity_name"]) for r in results]
+        ),
+        asyncio.gather(
+            *[knowledge_graph_inst.node_degree(r["entity_name"]) for r in results]
+        ),
+    )
+
+    if not all([n is not None for n in node_datas]):
+        logger.warning("Some nodes are missing, maybe the storage is damaged")
+
+    node_datas = [
+        {**n, "entity_name": k["entity_name"], "rank": d}
+        for k, n, d in zip(results, node_datas, node_degrees)
+        if n is not None
+    ]  # what is this text_chunks_db doing.  dont remember it in airvx.  check the diagram.
+    # get entitytext chunk
+    use_text_units, use_relations = await asyncio.gather(
+        _find_most_related_text_unit_from_entities(
+            node_datas, query_param, text_chunks_db, knowledge_graph_inst
+        ),
+        _find_most_related_edges_from_entities_new(
+            node_datas, hl_keywords, query_param, knowledge_graph_inst
+        ),
+    )
+
+    logging.info(f"use-realtion: {use_relations}")
+
+    len_node_datas = len(node_datas)
+    node_datas = truncate_list_by_token_size(
+        node_datas,
+        key=lambda x: x["description"] if x["description"] is not None else "",
+        max_token_size=query_param.max_token_for_local_context,
+    )
+    logger.debug(
+        f"Truncate entities from {len_node_datas} to {len(node_datas)} (max tokens:{query_param.max_token_for_local_context})"
+    )
+
+    logger.info(
+        f"Local query uses {len(node_datas)} entites, {len(use_relations)} relations, {len(use_text_units)} chunks"
+    )
+
+    # build prompt
+    entites_section_list = [
+        [
+            "id",
+            "entity",
+            "type",
+            "description",
+            "rank" "created_at",
+        ]
+    ]
+    for i, n in enumerate(node_datas):
+        created_at = n.get("created_at", "UNKNOWN")
+        if isinstance(created_at, (int, float)):
+            created_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(created_at))
+        entites_section_list.append(
+            [
+                i,
+                n["entity_name"],
+                n.get("entity_type", "UNKNOWN"),
+                n.get("description", "UNKNOWN"),
+                n["rank"],
+                created_at,
+            ]
+        )
+    # entites_section_list[1:] = sorted(entites_section_list[1:], key=lambda x: x[4], reverse=True)[:query_param.top_k] 
+    entities_context = list_of_list_to_csv(entites_section_list)
+
+    relations_section_list = [
+        [
+            "id",
+            "source",
+            "target",
+            "description",
+            "keywords",
+            "weight",
+            "rank",
+            "created_at",
+        ]
+    ]
+    for i, e in enumerate(use_relations):
+        created_at = e.get("created_at", "UNKNOWN")
+        # Convert timestamp to readable format
+        if isinstance(created_at, (int, float)):
+            created_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(created_at))
+        relations_section_list.append(
+            [
+                i,
+                e["src_tgt"][0],
+                e["src_tgt"][1],
+                e["description"],
+                e["keywords"],
+                e["weight"],
+                e["rank"],
+                created_at,
+            ]
+        )
+    # relations_section_list[1:] = sorted(relations_section_list[1:], key=lambda x: (x[6], x[5]), reverse=True)[:query_param.top_k] 
+    relations_context = list_of_list_to_csv(relations_section_list)
+
+    text_units_section_list = [["id", "content"]]
+    for i, t in enumerate(use_text_units):
+        text_units_section_list.append([i, t["content"]])
+    # text_units_section_list[1:] = text_units_section_list[1:query_param.top_k + 1] 
+    text_units_context = list_of_list_to_csv(text_units_section_list)
+    
+    end_time = time.perf_counter()
+    logging.info(f"\n\n⏳ Time for get_node_data: {(end_time - start_time):.4f} s")
+    return entities_context, relations_context, text_units_context
+
+async def _get_node_data_new1(
+    ll_keywords: str,
+    hl_keywords: str,
+    knowledge_graph_inst: BaseGraphStorage,
+    entities_vdb: BaseVectorStorage,
+    relationships_vdb: BaseVectorStorage,
+    text_chunks_db: BaseKVStorage,
+    query_param: QueryParam,
+):
+    start_time = time.perf_counter()
+
+    # Step 1: Truy vấn thực thể liên quan từ vector DB
+    logger.info(f"Query nodes: {ll_keywords}, top_k: {query_param.top_k}")
+    entity_results = await entities_vdb.query(ll_keywords, top_k=query_param.top_k)
+    if not entity_results:
+        return "", "", ""
+
+    # Step 2: Lấy thông tin các thực thể từ đồ thị
+    node_datas, node_degrees = await asyncio.gather(
+        asyncio.gather(
+            *[knowledge_graph_inst.get_node(r["entity_name"]) for r in entity_results]
+        ),
+        asyncio.gather(
+            *[knowledge_graph_inst.node_degree(r["entity_name"]) for r in entity_results]
+        ),
+    )
+    node_datas = [
+        {**n, "entity_name": k["entity_name"], "rank": d}
+        for k, n, d in zip(entity_results, node_datas, node_degrees)
+        if n is not None
+    ]
+    if not node_datas:
+        return "", "", ""
+
+    # Step 3: Lấy top-k quan hệ từ hl_keywords để đối chiếu cho từng thực thể
+    rel_y_candidates = await relationships_vdb.query(hl_keywords, top_k=query_param.top_k)
+    logging.info(f"rel-vector: {rel_y_candidates}")
+    use_relations = []
+    for ent in node_datas:
+        ent_id = ent["entity_name"]
+        related_rels = [
+            r for r in rel_y_candidates
+            if r.get("src_id") == ent_id or r.get("tgt_id") == ent_id
+        ]
+        if related_rels:
+            top_r = sorted(related_rels, key=lambda x: x.get("rank", 0), reverse=True)[0]
+            use_relations.append(top_r)
+
+    # Step 4: Lấy text units liên quan từ các thực thể
+    use_text_units = await _find_most_related_text_unit_from_entities(
+        node_datas, query_param, text_chunks_db, knowledge_graph_inst
+    )
+
+    # Step 5: Rút gọn context nếu cần
+    node_datas = truncate_list_by_token_size(
+        node_datas,
+        key=lambda x: x["description"] or "",
+        max_token_size=query_param.max_token_for_local_context,
+    )
+
+    # Step 6: Build context đầu ra (CSV sections)
+    entities_context = list_of_list_to_csv(
+        [["id", "entity", "type", "description", "rank", "created_at"]] +
+        [[
+            i,
+            n["entity_name"],
+            n.get("entity_type", "UNKNOWN"),
+            n.get("description", "UNKNOWN"),
+            n["rank"],
+            time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(n.get("created_at", 0)))
+            if isinstance(n.get("created_at", 0), (int, float)) else "UNKNOWN"
+        ] for i, n in enumerate(node_datas)]
+    )
+
+    relations_context = list_of_list_to_csv(
+        [["id", "source", "target", "description", "keywords", "weight", "rank", "created_at"]] +
+        [[
+            i,
+            r.get("src_id", ""),
+            r.get("tgt_id", ""),
+            r.get("description", ""),
+            r.get("keywords", ""),
+            r.get("weight", 0),
+            r.get("rank", 0),
+            time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(r.get("created_at", 0)))
+            if isinstance(r.get("created_at", 0), (int, float)) else "UNKNOWN"
+        ] for i, r in enumerate(use_relations)]
+    )
+
+    text_units_context = list_of_list_to_csv(
+        [["id", "content"]] +
+        [[i, t["content"]] for i, t in enumerate(use_text_units)]
+    )
+
+    end_time = time.perf_counter()
+    logger.info(f"⏳ Time for get_node_data: {(end_time - start_time):.4f} s")
+
+    return entities_context, relations_context, text_units_context
+
+async def _find_most_related_edges_from_entities_new(
+    node_datas: list[dict],
+    hl_keywords: list[str],
+    query_param: QueryParam,
+    knowledge_graph_inst: BaseGraphStorage,
+) -> list[dict]:
+    # Truy xuất tất cả cạnh liên quan đến các thực thể
+    all_related_edges = await asyncio.gather(
+        *[knowledge_graph_inst.get_node_edges(dp["entity_name"]) for dp in node_datas]
+    )
+    all_edges = []
+    seen = set()
+    for this_edges in all_related_edges:
+        for e in this_edges:
+            sorted_edge = tuple(sorted(e))
+            if sorted_edge not in seen:
+                seen.add(sorted_edge)
+                all_edges.append(sorted_edge)
+
+    # Lấy thông tin các cạnh
+    all_edges_pack, all_edges_degree = await asyncio.gather(
+        asyncio.gather(*[knowledge_graph_inst.get_edge(e[0], e[1]) for e in all_edges]),
+        asyncio.gather(
+            *[knowledge_graph_inst.edge_degree(e[0], e[1]) for e in all_edges]
+        ),
+    )
+    all_edges_data = [
+        {"src_tgt": k, "rank": d, **v}
+        for k, v, d in zip(all_edges, all_edges_pack, all_edges_degree)
+        if v is not None
+    ]
+
+    # Lọc lại chỉ giữ các cạnh có từ khóa khớp với bất kỳ hl_keyword nào
+    hl_keywords_lower = [kw.strip().lower() for kw in hl_keywords.split(",")]
+    logging.info(f"\nhl_keywords: {hl_keywords}")
+    logging.info(f"\nall_edges_data: {all_edges_data}")
+
+    filtered_edges = [
+        edge for edge in all_edges_data
+        if any(kw == edge["keywords"].lower() for kw in hl_keywords_lower)
+    ]
+    logging.info(f"\nfiltered_edges: {filtered_edges}")
+    # Sắp xếp và cắt bớt theo số token
+    filtered_edges = sorted(
+        filtered_edges, key=lambda x: (x["rank"], x["weight"]), reverse=True
+    )
+    filtered_edges = truncate_list_by_token_size(
+        filtered_edges,
+        key=lambda x: x.get("description", ""),
+        max_token_size=query_param.max_token_for_global_context,
+    )
+
+    logger.debug(
+        f"Filtered and truncated relations from {len(all_edges_data)} to {len(filtered_edges)} (max tokens:{query_param.max_token_for_global_context})"
+    )
+    return filtered_edges
+
+
+
+from sklearn.metrics.pairwise import cosine_similarity
+
+async def find_best_relation_by_description_embedding(
+    use_relations: list[dict],
+    rel_y_description: str,
+    relationships_vdb: BaseVectorStorage,
+) -> list[dict]:
+    if not use_relations or not rel_y_description:
+        return use_relations
+
+    # Tạo vector cho rel-Y
+    rel_y_vector = (await relationships_vdb.embedding_func([rel_y_description]))[0]
+
+    # Lấy mô tả các rel-X
+    rel_x_descriptions = [rel["description"] for rel in use_relations]
+
+    # Nhúng toàn bộ rel-Xs
+    rel_x_vectors = await relationships_vdb.embedding_func(rel_x_descriptions)
+
+    # So sánh cosine
+    best_score = -1
+    best_idx = -1
+    for i, vec in enumerate(rel_x_vectors):
+        score = cosine_similarity([rel_y_vector], [vec])[0][0]
+        if score > best_score:
+            best_score = score
+            best_idx = i
+
+    if best_idx >= 0:
+        return [use_relations[best_idx]]
+    return use_relations
+
 
 async def _find_most_related_text_unit_from_entities(
     node_datas: list[dict],
@@ -1367,6 +1697,7 @@ async def _find_most_related_edges_from_entities(
     all_related_edges = await asyncio.gather(
         *[knowledge_graph_inst.get_node_edges(dp["entity_name"]) for dp in node_datas]
     )
+    
     all_edges = []
     seen = set()
 
@@ -1383,11 +1714,13 @@ async def _find_most_related_edges_from_entities(
             *[knowledge_graph_inst.edge_degree(e[0], e[1]) for e in all_edges]
         ),
     )
+    logging.info(f"all_edges_pack: {all_edges_pack}")
     all_edges_data = [
         {"src_tgt": k, "rank": d, **v}
         for k, v, d in zip(all_edges, all_edges_pack, all_edges_degree)
         if v is not None
     ]
+    logging.info(f"all_edges_data: {all_edges_data}")
     all_edges_data = sorted(
         all_edges_data, key=lambda x: (x["rank"], x["weight"]), reverse=True
     )

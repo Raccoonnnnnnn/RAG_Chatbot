@@ -221,6 +221,8 @@ Given the query and conversation history, list both high-level and low-level key
 - Prioritize keywords related to books, such as titles, authors, publishers, prices, discounts, sales quantities, ratings, and links.
 - High-level keywords should reflect broad themes or concepts present in the text (e.g., 'publishing', 'authorship', 'market success').
 - Low-level keywords should include specific names, values, or details mentioned (e.g., 'Bản Đồ', '90.000 ₫', 'Nhã Nam').
+- **If "high_level_keywords" is not empty, it must include at least one of the following required keywords:**
+  `authorship`, `sold by`, `published by`, `has price`, `originally priced`, `has discount`, `has sold quantity`, `has rating`, `belongs to category`, `has link`, `has description`.
 - Output the keywords in JSON format with two keys:
   - "high_level_keywords": an array of overarching concepts or themes
   - "low_level_keywords": an array of specific entities or details
@@ -251,7 +253,7 @@ Query: "Giá của sách Bản Đồ là bao nhiêu?"
 ################
 Output:
 {
-  "high_level_keywords": ["Books", "Pricing"],
+  "high_level_keywords": ["Books", "has price"],
   "low_level_keywords": ["Bản Đồ"]
 }
 #############################""",
@@ -260,7 +262,7 @@ Current Query: "Sách Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc
 ################
 Output:
 {
-  "high_level_keywords": ["Books", "Popularity"],
+  "high_level_keywords": ["Books"],
   "low_level_keywords": ["Ikigai - Bí Mật Sống Trường Thọ Và Hạnh Phúc Của Người Nhật"]
 }
 #############################""",
@@ -269,28 +271,8 @@ Current Query: "Who wrote Cây Cam Ngọt Của Tôi?"
 ################
 Output:
 {
-  "high_level_keywords": ["Books", "Authorship"],
+  "high_level_keywords": ["Books", "authorship"],
   "low_level_keywords": ["Cây Cam Ngọt Của Tôi"]
-}
-#############################""",
-    """Example 4:
-
-Query: "What are the environmental consequences of deforestation on biodiversity?"
-################
-Output:
-{
-  "high_level_keywords": ["Environmental consequences", "Deforestation", "Biodiversity loss"],
-  "low_level_keywords": ["Species extinction", "Habitat destruction", "Carbon emissions", "Rainforest", "Ecosystem"]
-}
-#############################""",
-    """Example 5:
-
-Query: "What is the role of education in reducing poverty?"
-################
-Output:
-{
-  "high_level_keywords": ["Education", "Poverty reduction", "Socioeconomic development"],
-  "low_level_keywords": ["School access", "Literacy rates", "Job training", "Income inequality"]
 }
 #############################""",
 ]

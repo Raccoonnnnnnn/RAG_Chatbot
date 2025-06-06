@@ -1,0 +1,502 @@
+[
+    {
+        "query": "Sách du ký nào hiện đang có giá dưới 100,000 VND?",
+        "response": "Dựa trên thông tin mới nhất cung cấp, không có sách du ký nào có giá thấp hơn 100,000 VND. Dưới đây là các sách du ký có giá hiện tại (nếu có) và giảm giá:\n\n- **Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An**:\n  - Giá hiện tại: 90,400 VND\n  - Giảm giá: 30%\n\n- **Cô Đơn Trên Everest (Du Ký)**:\n  - Giá hiện tại: 88,200 VND và 126,000 VND (giá gốc)\n  - Giảm giá: 4.8/5\n\n- **Tuyển Tập Du Ký( Tặng kèm sổ tay)**:\n  - Giá hiện tại: 125,000 VND\n  - Giảm giá: 4%\n\n- **Dự Án Kỳ Lân**:\n  - Giá hiện tại: 229,000 VND (giá gốc)\n  - Giảm giá: 27%\n\nTất cả các sách trên đều có giá cao hơn 100,000 VND. Nếu bạn cần thông tin về sách với mức giá giảm sâu hoặc có thêm yêu cầu khác, hãy cho tôi biết!"
+    },
+    {
+        "query": "Cuốn 'Đừng Chết Ở Ả Rập Xê Út' hiện giá bao nhiêu và có giảm giá không?",
+        "response": "Theo thông tin tôi có, cuốn sách \"Đừng Chết Ở Ả Rập Xê Út\" hiện đang được bán với giá 70,000 VND. Ngoài ra, nó cũng đang có một ưu đãi giảm giá xuống còn 29,000 VND.\n\nBạn có thể mua trực tuyến tại [đây](https://tiki.vn/product-p26412706.html?spid=26412707).\n\nNếu bạn muốn biết thêm thông tin chi tiết hoặc có bất kỳ câu hỏi nào khác, hãy cho tôi biết nhé!"
+    },
+    {
+        "query": "Trong các sách du ký dưới 100,000 VND, cuốn nào có số lượng bán cao nhất?",
+        "response": "Dựa trên thông tin cung cấp, trong danh sách các sách thuộc thể loại du ký, cuốn \"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\" có giá hiện tại là 275,975 VNĐ (tương đương khoảng 280,000 VNĐ) và đã bán được 25 bản. Đây là cuốn duy nhất trong danh sách thuộc thể loại du ký và dưới 300,000 VND.\n\nTuy nhiên, không có thông tin về cuốn sách nào khác thuộc thể loại du ký với giá dưới 100,000 VNĐ. Để trả lời chính xác câu hỏi của bạn, cần thêm thông tin về các sách du ký có giá thấp hơn 100,000 VND.\n\nBạn có muốn tôi tìm kiếm thêm trong nguồn dữ liệu khác không?"
+    },
+    {
+        "query": "So sánh giá hiện tại và mức giảm giá của 'Đi Bộ Xuyên Việt Với Cây Đàn Guitar' với 'Cô Đơn Trên Everest'.",
+        "response": "Dựa trên thông tin đã có, tôi sẽ so sánh mức giảm giá và giá hiện tại của hai cuốn sách:\n\n1. \"Đi Bộ Xuyên Việt Với Cây Đàn Guitar\":\n   - Giá gốc: 124,000 VND (trong dữ liệu không ghi rõ đơn vị, nhưng thường là VND)\n   - Giảm giá: 41% \n   - Giá hiện tại: 73,160 VND\n\n2. \"Cô Đơn Trên Everest\":\n   Thông tin về mức giảm giá của cuốn sách này không có trong dữ liệu.\n\nTừ những thông tin đã có:\n\n- Cuốn sách \"Đi Bộ Xuyên Việt Với Cây Đàn Guitar\" đang được bán với mức giảm 41%, tức là chỉ còn 73,160 VND so với giá gốc 124,000 VND. \n   \n- Trong khi đó, thông tin về mức giảm của \"Cô Đơn Trên Everest\" không có trong dữ liệu.\n\nNếu bạn cần thông tin chi tiết hơn về cuốn sách \"Cô Đơn Trên Everest\", tôi có thể tìm kiếm thêm từ các nguồn khác để cung cấp đầy đủ so sánh."
+    },
+    {
+        "query": "Có cuốn du ký nào dưới 100,000 VND của Nhà Xuất Bản Thế Giới với rating trên 4.5 không?",
+        "response": "Dựa vào dữ liệu mà bạn đã cung cấp, không có cuốn sách du ký nào thỏa mãn cả ba điều kiện sau:\n\n1. Là sách du ký.\n2. Được xuất bản bởi Nhà Xuất Bản Thế Giới.\n3. Có giá bán dưới 100,000 VND và đánh giá trên 4.5.\n\nCuốn \"Những bí ẩn trên thế giới chưa được giải đáp (Bìa cứng) - Tái bản\" của Nhà Xuất Bản Dân Trí là cuốn du ký mà bạn đã nêu, nhưng nó không được bán dưới 100,000 VND và rating của nó chỉ là 5.0.\n\nNếu bạn cần tìm sách phù hợp hơn hoặc có thêm thông tin, xin vui lòng cung cấp chi tiết thêm!"
+    },
+    {
+        "query": "Sách nào trong danh sách đang giảm giá trên 50%?",
+        "response": "Trong danh sách cung cấp, không có sách nào đang được giảm giá hơn 50%. Đây là thông tin về các ưu đãi hiện có:\n\n- \"33\": Giảm 33%\n- \"21\": Giảm 21%\n- \"34\": Giảm 34%\n- \"39\": Giảm 39%\n\nVì vậy, không có sách nào đang được giảm giá trên 50%."
+    },
+    {
+        "query": "Cuốn 'Trên Đỉnh Namsan Ngắm Mặt Trời' có mức giảm giá bao nhiêu?",
+        "response": "The book \"Trên Đỉnh Namsan Ngắm Mặt Trời\" is currently available with a 63% discount."
+    },
+    {
+        "query": "Trong các sách giảm giá trên 40%, cuốn nào có đánh giá trung bình cao nhất?",
+        "response": "Thông tin bạn cung cấp không đề cập đến danh sách sách đang được giảm giá hoặc thông tin về đánh giá trung bình của mỗi cuốn sách. Để trả lời câu hỏi này, tôi cần thêm thông tin về các sách đang được giảm giá và đánh giá trung bình cho từng cuốn. Bạn có thể chia sẻ thêm thông tin này để tôi có thể hỗ trợ bạn tốt hơn không?"
+    },
+    {
+        "query": "So sánh mức giảm giá của 3 cuốn du ký bán chạy nhất trong danh sách.",
+        "response": "Dựa trên thông tin mà bạn đã cung cấp, chúng tôi không có dữ liệu cụ thể về những cuốn du ký nào đang bán chạy nhất hoặc mức độ giảm giá của chúng. Tuy nhiên, nếu bạn cần so sánh mức giảm giá của 3 cuốn sách phổ biến từ danh sách, chúng ta có thể xem xét các cuốn sách sau:\n\n1. **Tư Duy Của Người Giàu Gốc Á - Một Ấn Phẩm Về Nghĩ Giàu Và Làm Giàu**\n   - Giá gốc: 155,000 VND\n   - Giá hiện tại: 110,000 VND (Giảm giá 43.3%)\n   - Khuyến mãi: 29% off\n\n2. **Thép Đã Tôi Thế Đấy**\n   - Thông tin về mức giảm giá không có trong dữ liệu.\n\n3. **Năm Đầu Tiên Khi Tôi 30 (Bộ 2 Cuốn)**\n   - Thông tin về mức giảm giá không có trong dữ liệu.\n\n### Mức Giảm Giá:\n- **Tư Duy Của Người Giàu Gốc Á - Một Ấn Phẩm Về Nghĩ Giàu Và Làm Giàu**: 43.3% (155,000 VND -> 110,000 VND)\n- **Thép Đã Tôi Thế Đấy**: Không có thông tin về mức giảm giá.\n- **Năm Đầu Tiên Khi Tôi 30 (Bộ 2 Cuốn)**: Không có thông tin về mức giảm giá.\n\n### Kết luận:\n- Cuốn sách \"Tư Duy Của Người Giàu Gốc Á - Một Ấn Phẩm Về Nghĩ Giàu Và Làm Giàu\" đang có mức giảm giá cao nhất là 43.3%.\n\nNếu bạn cần thông tin chi tiết về các cuốn sách khác hoặc muốn thêm thông tin về mức giảm giá, vui lòng cung cấp thêm dữ liệu."
+    },
+    {
+        "query": "Cuốn sách giảm giá mạnh nhất của tác giả Di Li là gì và giá hiện tại bao nhiêu?",
+        "response": "Thông tin cung cấp không đề cập đến tác giả Di Li hay cuốn sách cụ thể nào có sự giảm giá mạnh. Dữ liệu hiện tại chỉ bao gồm các tóm tắt về một số cuốn sách khác mà không nêu rõ thông tin về việc giảm giá hoặc tác giả là ai.\n\nNếu bạn muốn biết thông tin chi tiết về cuốn sách giảm giá mạnh nhất của tác giả Di Li, bạn có thể cung cấp thêm thông tin về nơi mua sắm hay trang web đang theo dõi. Hoặc nếu có sẵn trên các nền tảng trực tuyến như Amazon, Barnes & Noble, hoặc trang web của nhà xuất bản, tôi sẽ cần biết chi tiết hơn để hỗ trợ tìm kiếm."
+    },
+    {
+        "query": "Có bao nhiêu sách du ký của Nhà Xuất Bản Trẻ dưới 150,000 VND?",
+        "response": "Dựa trên thông tin hiện có, không có thông tin chi tiết về các sách du ký của Nhà Xuất Bản Trẻ dưới 150,000 VND. Bạn có thể cần cung cấp thêm thông tin hoặc kiểm tra lại danh sách sách để xác nhận thông tin này."
+    },
+    {
+        "query": "Cuốn 'Vạn Dặm Đường Từ Một Bước Chân' của Nhà Xuất Bản Phụ Nữ Việt Nam giá bao nhiêu?",
+        "response": "Xin lỗi, thông tin về giá bán cuốn sách \"Vạn Dặm Đường Từ Một Bước Chân\" không được đề cập trong dữ liệu mà tôi có. Bạn có thể tìm kiếm trực tiếp trên các trang web của nhà xuất bản hoặc cửa hàng sách để biết giá hiện tại nhé."
+    },
+    {
+        "query": "Nhà Xuất Bản Thế Giới có sách du ký nào dưới 100,000 VND với rating 5.0 không?",
+        "response": "Dựa trên thông tin mà tôi có, Nhà Xuất Bản Thế Giới chưa xuất bản bất kỳ cuốn sách du ký nào có giá thấp hơn 100,000 VND và có rating là 5.0. Tuy nhiên, bạn có thể tìm kiếm thêm trong danh sách các sách du ký khác của nhà xuất bản này để xem có phù hợp với yêu cầu không. Dưới đây là một số cuốn sách du ký do Nhà Xuất Bản Thế Giới đã phát hành:\n\n1. **Du hành cùng Herodotus**\n2. **Gỗ mun**\n3. **Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)**\n4. **Đừng Chết Ở Ả Rập Xê Út**\n\nNhững cuốn sách này đều thuộc thể loại du ký, nhưng tôi không có thông tin về giá cả và rating cụ thể của chúng. Bạn có muốn tìm hiểu thêm về một cuốn sách cụ thể trong danh sách trên hay cần hỗ trợ khác?"
+    },
+    {
+        "query": "So sánh giá và số lượng bán của các sách du ký từ Nhà Xuất Bản Lao Động và Nhà Xuất Bản Trẻ.",
+        "response": "Dựa trên thông tin hiện có, tôi không tìm thấy trực tiếp thông tin về các sách du ký từ Nhà Xuất Bản Lao Động và Nhà Xuất Bản Trẻ trong tập dữ liệu bạn cung cấp. Tuy nhiên, chúng ta có thể dựa vào thông tin để so sánh một cách tổng quát.\n\n### Thông Tin Về Sách Du Ký\n\n- **Những bí ẩn trên thế giới chưa được giải đáp (Bìa cứng) - Tái bản**\n  - Nhà Xuất Bản: Dân Trí\n  - Gía gốc: 140,000 VND\n  - Hiện giá: 107,000 VND\n  - Số lượng bán: 11 bản (tính đến thời điểm dữ liệu)\n  - Đánh giá: 5.0\n\n### So sánh các sách du ký khác từ Nhà Xuất Bản Dân Trí:\n\n- **Những bí ẩn trên thế giới chưa được giải đáp (Bìa cứng) - Tái bản**\n  - Nhà xuất bản: Dân Trí\n  - Giá gốc: 140,000 VND\n  - Hiện giá: 107,000 VND\n  - Số lượng bán: 11 bản\n\n### Kết luận:\n\n- **Nhà Xuất Bản Dân Trí (cụ thể là sách \"Những bí ẩn trên thế giới chưa được giải đáp\")**:\n  - Giá hiện tại: 107,000 VND\n  - Số lượng bán: 11 bản\n\nNếu bạn cần thông tin chi tiết hơn hoặc các sách du ký khác từ Nhà Xuất Bản Lao Động và Trẻ, vui lòng cung cấp thêm thông tin để tôi có thể tìm kiếm chính xác."
+    },
+    {
+        "query": "Cuốn sách rẻ nhất của Nhà Xuất Bản Dân Trí hiện nay là gì và có giảm giá không?",
+        "response": "Dựa trên thông tin cung cấp, tôi không thể xác định chính xác cuốn sách rẻ nhất hoặc liệu có sách nào đang được giảm giá hay không, vì các thông tin về giá cả chưa được liệt kê. Tuy nhiên, để trả lời câu hỏi của bạn một cách chính xác nhất, chúng ta cần thêm thông tin về giá bán lẻ (list price) và giá hiện tại (actual price) của từng cuốn sách.\n\nNếu bạn có thể cung cấp thêm thông tin về giá bán lẻ hoặc các chương trình giảm giá hiện đang áp dụng cho Nhà Xuất Bản Dân Trí, tôi sẽ có thể hỗ trợ bạn xác định cuốn sách rẻ nhất. Hoặc nếu bạn chỉ muốn tìm hiểu về một số cuốn sách cụ thể của Nhà Xuất Bản Dân Trí, vui lòng cho tôi biết và tôi sẽ cố gắng giúp bạn."
+    },
+    {
+        "query": "Cuốn du ký nào có đánh giá trung bình 5.0 và giá dưới 120,000 VND?",
+        "response": "Dựa trên thông tin hiện tại, không có cuốn du ký nào được đề cập trong dữ liệu có đánh giá trung bình 5.0 và giá dưới 120,000 VND. \n\nThông tin bạn cung cấp chủ yếu về doanh số bán và giá của các cuốn sách khác nhau. Dữ liệu không chứa thông tin đánh giá trung bình cho bất kỳ cuốn du ký nào.\n\nNếu bạn có thêm thông tin hoặc cần tìm kiếm theo một tiêu chí khác, tôi rất sẵn lòng giúp đỡ!"
+    },
+    {
+        "query": "Cuốn 'Walden Một Mình Sống Trong Rừng' có đánh giá bao nhiêu?",
+        "response": "Cuốn sách \"Walden - Một Mình Sống Trong Rừng\" có đánh giá là 4.8.-Version có phiên bản bỏ túi mang tên \"Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền\" cũng có đánh giá là 5.0."
+    },
+    {
+        "query": "Trong các sách rating 5.0, cuốn nào có giá thấp nhất?",
+        "response": "Dựa trên thông tin cung cấp, cuốn sách có giá thấp nhất với rating 5.0 là \"Cây Cam Ngọt Của Tôi\" với giá 93700 VND."
+    },
+    {
+        "query": "So sánh số lượng bán của 3 cuốn du ký có rating 5.0 cao nhất.",
+        "response": "Dựa trên thông tin cung cấp, tôi không thể so sánh số lượng bán của các cuốn du ký có rating 5.0 cao nhất vì:\n\n1. Không có sách nào trong danh sách được đánh giá là 5.0.\n2. Tất cả các cuốn sách đều có rating từ 4.8 đến 4.1.\n\nTất cả các cuốn sách trong bảng thông tin đều có rating từ 4.1 đến 4.8, không có sách nào đạt rating 5.0. Do đó, tôi không thể thực hiện so sánh số lượng bán cho những cuốn du ký có rating 5.0 cao nhất.\n\nNếu bạn có thêm thông tin về các cuốn sách du ký rating 5.0, vui lòng cung cấp và tôi sẽ giúp so sánh số lượng bán của chúng cho bạn."
+    },
+    {
+        "query": "Cuốn sách giá dưới 150,000 VND nào của tác giả Ryszard Kapuściński có rating cao nhất?",
+        "response": "Dựa trên thông tin bạn cung cấp, không có cuốn sách của tác giả Ryszard Kapuściński nào trong danh sách có giá dưới 150.000 VND. Tuy nhiên, tôi có thể nhìn thấy một số cuốn sách của ông như:\n\n1. \"Hoàng Đế\" - Giá gốc 380.000 VND\n2. \"Gỗ mun\" - Giá hiện tại là 480.000 VND (có giảm giá)\n3. \"Du hành cùng Herodotus\" - Giá hiện tại là 560.000 VND\n\nTrong số đó, không có sách nào dưới 150.000 VND. Nếu bạn cần thông tin về cuốn sách của ông mà có rating cao nhất (dù giá trên 150.000 VND), \"Gỗ mun\" có một số thông tin như sau:\n\n- Tác giả: Ryszard Kapuściński\n- Giá hiện tại: 480.000 VND (sau giảm giá)\n- Rating không được cung cấp trong dữ liệu, nhưng nó có thể là cuốn sách có rating cao nhất của tác giả trên danh sách này.\n\nNếu bạn cần thông tin về một cuốn sách cụ thể khác hoặc có yêu cầu thay đổi, xin vui lòng cho tôi biết."
+    },
+    {
+        "query": "Cuốn du ký nào bán được trên 500 cuốn và giá dưới 150,000 VND?",
+        "response": "Dựa trên thông tin bạn cung cấp, không có cuốn sách du ký nào bán được hơn 500 bản mà giá lại dưới 150,000 VND. \n\nCuốn \"Tây Du Ký Trọn Bộ 4 Tập\" là cuốn duy nhất trong danh sách có giá thấp hơn 150,000 VND (hiện đang là 288,200 VND), nhưng nó không đáp ứng tiêu chí đã bán được trên 500 bản.\n\nNgoài ra, có một số cuốn sách khác với giá dưới 150,000 VND như \"Đổi Mới Từ Cốt Lõi, Thay Đổi Để Dẫn Đầu\" (giá gốc 150,000 VND) nhưng không có thông tin về doanh số bán hàng.\n\nNếu bạn cần thêm thông tin hoặc có yêu cầu khác, vui lòng cho tôi biết!"
+    },
+    {
+        "query": "Cuốn 'Thế Giới Rộng Lớn Đừng Đi Một Mình' đã bán được bao nhiêu cuốn?",
+        "response": "Cuốn sách \"Thế Giới Rộng Lớn Đừng Đi Một Mình\" đã bán được 3,256 bản."
+    },
+    {
+        "query": "Trong các sách du ký bán trên 200 cuốn, cuốn nào rẻ nhất?",
+        "response": "Dựa trên thông tin được cung cấp, để xác định cuốn sách du ký bán trên 200 bản mà giá cả phải chăng nhất, chúng ta cần xem xét những cuốn sách có số lượng đã bán vượt quá 200 bản và sắp xếp theo giá thấp nhất. Dưới đây là một số cuốn du ký đã bán được hơn 200 bản cùng với giá hiện tại:\n\n1. **Cô Đơn Trên Everest (Du Ký)**\n   - Giá hiện tại: 88,200 VNĐ\n   - Số lượng đã bán: 412 bản\n\n2. **Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An**\n   - Giá hiện tại: 90,400 VNĐ\n   - Số lượng đã bán: 290 bản\n\nTrong số các cuốn sách được đề cập, **Cô Đơn Trên Everest (Du Ký)** có giá thấp hơn so với **Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An**, và đã bán được nhiều hơn. Vì vậy, cuốn sách du ký mà bạn đang tìm kiếm, rẻ nhất trong số những cuốn đã bán trên 200 bản, là **Cô Đơn Trên Everest (Du Ký)** với giá hiện tại là 88,200 VNĐ.\n\nNếu có thêm thông tin về các cuốn khác, tôi sẽ cập nhật kết quả cho bạn."
+    },
+    {
+        "query": "So sánh giá và rating của 3 cuốn du ký bán chạy nhất.",
+        "response": "Dựa trên thông tin mới nhất được cung cấp, ba cuốn sách du ký bán chạy nhất là:\n\n1. **\"Cô Đơn Trên Everest (Du Ký)\"**\n   - Giá hiện tại: 88,200 VND\n   - Rating: 4.8\n   - Sách này đã được bán 412 bản.\n\n2. **\"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\"**\n   - Giá hiện tại: 90,400 VND (ban đầu là 129,000 VND)\n   - Rating: 5.0\n   - Sách này đã được bán 290 bản.\n\n3. **\"Du Ký Phan Quang - Tiếc Nuối Hoa Hồng\"**\n   - Giá hiện tại: 342,000 VND (ban đầu là 450,000 VND)\n   - Rating: 5.0\n   - Sách này đã được bán 37 bản.\n\nTóm tắt so sánh:\n- \"Cô Đơn Trên Everest (Du Ký)\" có giá thấp hơn nhưng số lượng bán ít hơn so với hai cuốn khác.\n- \"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\" và \"Du Ký Phan Quang - Tiếc Nuối Hoa Hồng\" cùng có rating cao nhất (5.0) nhưng giá sách của \"Du Ký Phan Quang - Tiếc Nuối Hoa Hồng\" cao hơn nhiều so với \"Con Đường Tơ Lụa\"."
+    },
+    {
+        "query": "Cuốn sách dưới 100,000 VND nào của Nhà Xuất Bản Lao Động bán được nhiều nhất?",
+        "response": "Dựa trên thông tin hiện có, cuốn sách của Nhà Xuất Bản Lao Động có giá thấp hơn 100.000 VND và bán được số lượng lớn nhất là:\n\n\"Trưởng Thành Sau Ngàn Lần Tranh Đấu (Tái Bản)\" - đã bán được 9,819 bản với giá 78,000 VND.\n\nĐây có thể là cuốn sách \"dưới 100.000 VND\" của Nhà Xuất Bản Lao Động bán chạy nhất, mặc dù không phải là dưới 100,000 VND hoàn toàn."
+    },
+    {
+        "query": "Cuốn sách nào của Henry David Thoreau có trong danh sách?",
+        "response": "Trong danh sách đó, có hai cuốn sách của Henry David Thoreau:\n\n1. \"Walden - Một Mình Sống Trong Rừng\"\n2. \"Walden Một Mình Sống Trong Rừng (Ấn Bản Bỏ Túi) - Bản Quyền\"\n\nCả hai đều được ghi nhận là do Henry David Thoreau viết."
+    },
+    {
+        "query": "Cuốn 'Gỗ mun' của Ryszard Kapuściński nói về gì?",
+        "response": "Cuốn sách \"Gỗ mun\" của Ryszard Kapuściński là một tác phẩm được mô tả trong sơ lược như sau:\n\n\"Sơ lược về tác phẩmTrước hết là cái nhìn: Ryszard Kapuściński, đó là một cái nhìn luôn luôn độc đáo và thấu suốt, cho dù đối tượng sự quan sát của ông có là gì, và cho dù không mấy khi ông thích phân...\"\n\nTuy nhiên, chi tiết cụ thể về nội dung của cuốn sách \"Gỗ mun\" chưa được cung cấp đầy đủ. Thông thường, các tác phẩm của Ryszard Kapuściński thường khám phá sâu sắc về xã hội, lịch sử, và văn hóa của các nước Á Phi mà ông đã thăm viếng trong quá trình làm việc cho báo chí.\n\nNếu bạn cần thông tin chi tiết hơn về nội dung cụ thể của cuốn sách này, có thể cần tìm kiếm thêm từ các nguồn đáng tin cậy khác."
+    },
+    {
+        "query": "Tác giả nào có nhiều sách du ký nhất trong danh sách này?",
+        "response": "Trong danh sách thông tin cung cấp, tác giả \"Nhiều tác giả\" là tác giả duy nhất được đề cập đến với nhiều cuốn sách khác nhau. Tuy nhiên, không có đủ thông tin để xác định tác giả nào có nhiều sách du ký nhất vì đa số các tác phẩm trong dữ liệu đều chưa được chỉ định là loại sách du ký hay không.\n\nDưới đây là một số ví dụ về những cuốn sách của \"Nhiều tác giả\":\n\n1. **Thiết Kế Tổ Chức (Organizational Design) - Richard M. Burton, Brge Obel, Dorthe Djbak Hkonsson**\n2. **Quản lý dịch vụ for Dummies**\n3. **Textbook - Quản trị nguồn nhân lực thời đại mới**\n\nNếu cần xác định tác giả có nhiều sách du ký nhất, chúng ta sẽ cần thêm thông tin về loại sách của từng cuốn trong danh sách."
+    },
+    {
+        "query": "So sánh rating và giá của các sách du ký của Di Li.",
+        "response": "Dựa trên thông tin đã cung cấp, chúng tôi có thể so sánh rating và giá của hai cuốn sách du ký của tác giả Di Li:\n\n1. **Cô Đơn Trên Everest (Du Ký)**\n   - Rating: 4.8 \n   - Giá hiện tại: 250,000 VND\n   - Giảm giá: 27% so với giá gốc\n\n2. **Tật Xấu Người Việt**\n   - Rating: 2.0 \n   - Giá hiện tại: 356,000 VND\n   - Giá gốc: 462,000 VND (Giảm 25% so với giá gốc)\n\nSo sánh:\n- **Rating**: \n  - \"Cô Đơn Trên Everest (Du Ký)\" có rating cao hơn với 4.8 so với 2.0 của \"Tật Xấu Người Việt\".\n  \n- **Giá**:\n  - \"Cô Đơn Trên Everest (Du Ký)\" hiện có giá thấp hơn là 250,000 VND so với 356,000 VND của \"Tật Xấu Người Việt\".\n\nTóm lại, \"Cô Đơn Trên Everest (Du Ký)\" có rating cao hơn và giá bán thấp hơn so với \"Tật Xấu Người Việt\"."
+    },
+    {
+        "query": "Cuốn sách nào của Nguyễn Tường Bách có số lượng bán cao nhất và giá hiện tại là bao nhiêu?",
+        "response": "Theo thông tin được cung cấp, cuốn sách \"Đường Xa Nắng Mới - Nguyễn Tường Bách\" là cuốn sách do Nguyễn Tường Bách viết. Thông tin về mức giá hiện tại của cuốn sách này không được đề cập trong dữ liệu đã được chia sẻ.\n\nCuốn sách khác của Nguyễn Tường Bách là \"Mùi Hương Trầm\", nhưng cũng không có thông tin về giá hiện tại.\n\nBạn có thể tìm kiếm thêm thông tin trực tiếp trên các trang bán sách hoặc trang web như Tiki để biết chính xác mức giá hiện tại của cuốn sách \"Đường Xa Nắng Mới - Nguyễn Tường Bách\"."
+    },
+    {
+        "query": "Có cuốn sách du ký nào nói về Tây Tạng không?",
+        "response": " Có, có một cuốn sách du ký nói về Tây Tạng trong danh sách thông tin mới nhất:\n\n- **Tên sách**: \"Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)\"\n- **Thể loại**: Du ký\n- **Thông tin chi tiết**:\n  - Công ty xuất bản: Nhà Xuất Bản Thế Giới\n  - Điểm số đánh giá: 4.7\n  - Giá gốc: 175,000 VNĐ\n  - Giá hiện tại: 118,800 VNĐ (giảm 32% so với giá gốc)\n  - Số lượng đã bán: 569 bản\n\nBạn có quan tâm đến cuốn sách này không? Hay bạn muốn biết thêm thông tin về một cuốn sách khác?"
+    },
+    {
+        "query": "Cuốn 'Con Đường Tơ Lụa' mô tả những địa điểm nào?",
+        "response": "Theo thông tin có sẵn, cuốn sách \"Con Đường Tơ Lụa: Vạn Dặm Xa Từ Pakistan Tới Tây An\" không nêu rõ ràng về các địa điểm cụ thể được mô tả trong sách. Tuy nhiên, tựa đề của cuốn sách cho thấy nội dung có thể tập trung vào việc đi qua và khám phá các địa danh trên con đường tơ lụa từ Pakistan đến Tây An.\n\nNếu bạn muốn biết thông tin chính xác hơn về những địa điểm được mô tả, có thể cần tham khảo thêm nội dung chi tiết của cuốn sách hoặc tìm kiếm đánh giá, nhận xét từ người đã đọc."
+    },
+    {
+        "query": "Sách du ký nào về Ấn Độ có rating cao nhất?",
+        "response": "Dựa trên thông tin hiện có, không có sách du ký cụ thể về Ấn Độ được đề cập và có đánh giá (rating) được chỉ định. Tuy nhiên, để trả lời câu hỏi của bạn một cách chính xác, chúng ta cần thêm thông tin về các sách du ký có liên quan đến Ấn Độ và rating tương ứng của chúng.\n\nNếu bạn muốn tìm hiểu về sách du ký có rating cao nhất, tôi có thể tập trung vào những cuốn sách du ký nổi bật khác mà không phải là Ấn Độ. Hoặc nếu bạn có thêm thông tin về một cuốn sách cụ thể về Ấn Độ, tôi sẽ kiểm tra và cung cấp thông tin chính xác cho bạn.\n\nLiệu bạn có thể cung cấp thêm thông tin hoặc chỉ định một cuốn sách cụ thể về Ấn Độ để chúng tôi tìm kiếm rating của nó?"
+    },
+    {
+        "query": "So sánh nội dung và giá của các sách về châu Âu trong danh sách.",
+        "response": "Trong danh sách bạn cung cấp, có một cuốn sách liên quan đến châu Âu:\n\n- \"Châu Âu Vạn Dặm - Một Cuộc Đời Sống, Vạn Bước Chân Đi\" (tác giả Miha Nguyễn và Nguyễn Hiếu) với giá hiện tại là 115,300 đồng.\n\nCuốn sách này được mô tả như một hành trình đầy màu sắc với những trải nghiệm độc đáo và sâu sắc của hai tác giả. Tuy nhiên, không có thông tin chi tiết về nội dung cụ thể khác so sánh với các cuốn sách khác về châu Âu trong danh sách bạn cung cấp.\n\nNếu bạn muốn so sánh nội dung và giá của nhiều cuốn sách về châu Âu, vui lòng cung cấp thêm sách khác hoặc bổ sung thông tin cho cuốn sách này."
+    },
+    {
+        "query": "Cuốn sách nào về Việt Nam dưới 150,000 VND có đánh giá 5.0?",
+        "response": "Dựa trên thông tin được cung cấp, cuốn sách \"Thi Nhân Việt Nam\" của tác giả Hoài Thanh là cuốn sách phù hợp với yêu cầu bạn đưa ra:\n\n- Giá gốc: 120,000 VND (thấp hơn 150,000 VND)\n- Đánh giá: 5.0\n\nThông tin chi tiết về cuốn sách này bao gồm:\n- Có trang web bán hàng: [https://tiki.vn/product-p466716.html?spid=85257344](https://tiki.vn/product-p466716.html?spid=85257344)\n- Xuất bản bởi Nhà Xuất Bản Văn Học\n- Thuộc thể loại sách tiếng Việt\n\nHy vọng thông tin này hữu ích với bạn!"
+    },
+    {
+        "query": "Cuốn 'Cô Đơn Trên Everest' có phong cách viết như thế nào?",
+        "response": "Theo thông tin được cung cấp, cuốn sách \"Cô Đơn Trên Everest (Du Ký)\" của tác giả Di Li được mô tả với phong cách kể chuyện hấp dẫn, tỉ mỉ và thủ thỉ như một người bạn. Tác giả chia sẻ trải nghiệm một cách chân thật và đầy cảm xúc, làm cho câu chuyện trở nên cuốn hút và thông tin mới lạ.\n\nTóm lại, phong cách viết của tác giả Di Li trong cuốn \"Cô Đơn Trên Everest (Du Ký)\" mang tính cá nhân, truyền cảm hứng và khiến người đọc như được lắng nghe một cuộc trò chuyện thân mật."
+    },
+    {
+        "query": "Có sách du ký nào được viết dưới dạng tự truyện không?",
+        "response": "Dựa trên thông tin mới nhất, có một số cuốn sách thuộc thể loại \"Bút Ký - Tự Truyện\" như:\n\n1. **Hồi Ký. Từ U Minh Đến Cần Thơ…**\n2. **Sơn Nam Và Tô Nguyệt Đình - Chuyện Xưa Tích Cũ**\n3. **Sơn Nam - Lịch Sử Khẩn Hoang Miền Nam (Tái Bản)**\n4. **Đất Gia Định Xưa, Bến Nghé Xưa, Người Sài Gòn**\n5. **Phạm Duy Và Tôi**\n6. **Rong Chơi Miền Chữ Nghĩa - Tập 4**\n7. **Nơi Ánh Sáng Không Bao Giờ Tắt**\n\nNhững cuốn sách này đều thuộc thể loại \"Bút Ký - Tự Truyện\" và có nội dung tự truyện hoặc hồi ký của các tác giả."
+    },
+    {
+        "query": "Sách du ký nào có phong cách kể chuyện hài hước và giá dưới 120,000 VND?",
+        "response": "Dựa trên thông tin hiện có, không có cuốn sách về Tây Du Ký nào có giá bán dưới 120.000 VND. Cuốn \"Tây Du Ký Trọn Bộ 4 Tập\" đang được bán với giá 288.200 VND.\n\nNếu bạn quan tâm đến những cuốn sách khác có phong cách kể chuyện hài hước và phù hợp với ngân sách của bạn, tôi có thể đề xuất một số lựa chọn khác như \"Tư Bản Thế Kỷ 21\" đã bán được 1.217 bản, nhưng giá cụ thể không được cung cấp trong dữ liệu hiện tại.\n\nBạn có muốn tìm kiếm thêm về cuốn sách nào khác không?"
+    },
+    {
+        "query": "So sánh phong cách viết của 'Du Ký Phan Quang' và 'Mùi Hương Trầm'.",
+        "response": "Xin lỗi, nhưng thông tin về \"Du Ký Phan Quang\" không được cung cấp trong dữ liệu mới nhất mà bạn đã chia sẻ. Tuy nhiên, tôi có thể giúp so sánh phong cách viết của \"Mùi Hương Trầm\".\n\n### Phong Cách Viết Của 'Mùi Hương Trầm':\n\n1. **Nội Dung**: Mô tả một hành trình du lịch trải dài từ Ấn Độ đến Tây Tạng qua các địa danh như núi Linh Thứu, vườn Lộc Uyển, Lâm-tì-ni, Lhasa, và thành phố Varanasi.\n2. **Tone**: Tone văn bản mang tính triết lý, không chộn rộn của xu thế hiện đại mà giữ được sự bình yên và sâu sắc qua từng dấu chân du hành.\n3. **Nhấn Đề**: Nhấn mạnh vào trải nghiệm cá nhân và cảm nhận về hương thơm tự nhiên ở những nơi khác nhau trên con đường đi.\n4. **Thể loại**: Có thể thuộc thể loại nhật ký, du ký hoặc tạp văn.\n\n### Phong Cách Viết Của 'Du Ký Phan Quang' (Nếu có thông tin):\n\nTuy nhiên, nếu bạn cung cấp thêm thông tin về \"Du Ký Phan Quang\", tôi sẽ so sánh phong cách viết giữa hai tác phẩm một cách chi tiết. Bạn có thể cung cấp mô tả hoặc đoạn trích từ \"Du Ký Phan Quang\" để chúng ta có thể so sánh?\n\nNếu không, tôi vẫn có thể phân tích thêm về \"Mùi Hương Trầm\" nếu bạn muốn!"
+    },
+    {
+        "query": "Cuốn sách nào của tác giả Việt Nam có phong cách chiêm nghiệm sâu sắc nhất?",
+        "response": "Dựa trên thông tin được cung cấp, cuốn sách \"Thép Đã Tôi Thế Đấy\" (tác giả chưa rõ trong dữ liệu) được mô tả với nội dung chiêm nghiệm và phong cách sống động, thể hiện qua nhân vật trung tâm Pa-ven chính là tác giả Nhi-ca-lai Axtop-xki. Cuốn sách này được đánh giá khá cao về mặt văn phong.\n\nTuy nhiên, thông tin về cụ thể tên tác giả của \"Thép Đã Tôi Thế Đấy\" không được cung cấp trong dữ liệu. Nếu bạn cần thông tin chính xác hơn về tác giả và các chi tiết khác của cuốn sách này, chúng ta có thể cần thêm dữ liệu hoặc tìm kiếm thông tin từ nguồn đáng tin cậy khác."
+    },
+    {
+        "query": "Cuốn 'Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử' tái bản năm nào?",
+        "response": "Thông tin về năm tái bản cụ thể của cuốn sách \"Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)\" không được đề cập trong dữ liệu hiện có. Tuy nhiên, từ tên của bản tái bản, chúng ta có thể推断它在2020年进行了再版。如果您需要确切的再版年份，建议您查询出版商或在线书店以获取更准确的信息。\n确认信息：根据提供的数据，“ Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)”表明这本书在2020年进行了重新发行。但是为了确保准确性，建议进一步核实。\n如果您需要确切的再版年份，可以尝试访问相关的在线书店或者查阅更详细的信息。"
+    },
+    {
+        "query": "Có sách du ký nào tái bản trong năm 2023 không?",
+        "response": "Dựa trên thông tin mới nhất mà tôi có, không có sách du ký nào được liệt kê là tái bản vào năm 2023. Các cuốn sách du ký trong dữ liệu đều là các tác phẩm đã được xuất bản từ trước đó và một số có các bản tái bản. Tuy nhiên, tất cả các bản tái bản trong dữ liệu đều có thời gian khác so với năm 2023.\n\nNếu bạn cần thông tin chính xác nhất về việc tái bản vào năm 2023, tôi khuyên bạn nên kiểm tra trực tiếp tại trang web của nhà xuất bản hoặc sàn thương mại điện tử như Tiki."
+    },
+    {
+        "query": "Sách tái bản nào có số lượng bán cao nhất?",
+        "response": "Dựa trên thông tin hiện có, chúng tôi không có dữ liệu cụ thể về số lượng bán của các cuốn sách tái bản. Tuy nhiên, nếu bạn muốn biết thông tin chi tiết về một cuốn sách cụ thể, tôi có thể cung cấp tóm tắt nội dung như đã đề cập trước đó. Bạn có quan tâm đến cuốn sách nào nhất định không?"
+    },
+    {
+        "query": "So sánh giá và rating của các sách du ký tái bản trong danh sách.",
+        "response": "Dựa trên thông tin bạn đã cung cấp, không có sách du ký tái bản cụ thể được liệt kê. Tuy nhiên, tôi có thể giúp bạn so sánh giá và rating của một số cuốn sách mà bạn đã đề cập nếu đó là những cuốn thuộc thể loại du ký.\n\nNhìn vào danh sách:\n\n1. **Sức Mạnh Của Việc Đặt Câu Hỏi Đúng (Tái Bản)**\n   - Giá hiện tại: 58,410 VNĐ\n   - Rating: 4.7\n\n2. **Chúc Một Ngày Tốt Lành (Tái Bản 2019)**\n   - Không có thông tin về giá và rating.\n\n3. **Doanh Nghiệp Của Thế Kỷ 21 (Tái Bản 2019)**\n   - Giá hiện tại: 58,410 VNĐ\n   - Rating: Không có thông tin.\n\nNếu bạn muốn so sánh giá và rating của sách du ký cụ thể, vui lòng cung cấp thêm thông tin về các cuốn sách đó."
+    },
+    {
+        "query": "Cuốn sách tái bản nào của Nhà Xuất Bản Trẻ dưới 150,000 VND đáng đọc nhất?",
+        "response": "Dựa trên thông tin hiện có, không có cuốn sách cụ thể tái bản của Nhà Xuất Bản Trẻ dưới 150.000 VND được đề cập. Tuy nhiên, tôi có thể xem xét một số cuốn sách khác có liên quan:\n\n1. **150 thuật ngữ văn học (bìa mềm) - tái bản**: \n   - Giá hiện tại: 90,100 VND\n   - Mô tả: Cuốn sách này bao gồm hơn 150 thuật ngữ về văn học, phù hợp cho những người muốn hiểu sâu về lĩnh vực này.\n   \n2. **Vật Chủ (Tiểu Thuyết Khoa Học Viễn Tưởng) - Tái Bản**: \n   - Giá hiện tại: 148,800 VND\n   - Mô tả: Đây là một tiểu thuyết khoa học viễn tưởng tái bản.\n\n3. **Combo Truyện Dài Nguyễn Nhật Ánh: Tôi Là Bêtô + Cho Tôi Xin Một Vé Đi Tuổi Thơ (2 cuốn/ Tặng kèm Bookmark Green Life)**:\n   - Số lượng đã bán: 155\n   - Mô tả: Đây là một combo truyện dài của nhà văn Nguyễn Nhật Ánh, phù hợp với trẻ em và thanh thiếu niên.\n\nTrong số các sách này, \"150 thuật ngữ văn học (bìa mềm) - tái bản\" có mức giá thấp hơn so với 148.800 VND nhưng vẫn dưới 150.000 VND. Đây là một lựa chọn đáng cân nhắc nếu bạn quan tâm đến lĩnh vực phê bình và lý luận văn học.\n\nBạn có muốn biết thêm thông tin về cuốn sách này hay tìm kiếm trong danh mục khác không?"
+    },
+    {
+        "query": "Cuốn 'Cơm nhà xứ Quảng' tặng kèm gì?",
+        "response": "Cuốn sách \"Cơm nhà xứ Quảng (Tặng kèm 1 bộ postcard 6 tấm có gửi hình kèm theo)\" sẽ tặng kèm 1 bộ postcard 6 tấm và có gửi hình kèm theo."
+    },
+    {
+        "query": "Có sách du ký nào tặng kèm bookmark không?",
+        "response": "Theo thông tin hiện có, không có sách du ký nào được đề cập đến là tặng kèm bookmark. Tuy nhiên, có một cuốn sách khác thuộc thể loại Sách ảnh có thông tin tặng kèm:\n\n- Cuốn \"Quy Sơn Cảnh Sách _QB\" (tên nguyên bản: Quy Sơn Cảnh Sách _ QB) thuộc thể loại Sách ảnh và được ghi chú là \"Tặng kèm 1 bộ postcard 6 tấm có gửi hình kèm theo\".\n\nNếu bạn quan tâm đến sách du ký tặng kèm bookmark, có thể cần tìm kiếm thêm thông tin hoặc xác nhận với nhà xuất bản."
+    },
+    {
+        "query": "Sách nào có quà tặng kèm và giá dưới 130,000 VND?",
+        "response": "Dựa trên thông tin mới nhất cung cấp, không có sách nào có giá dưới 130,000 VND và kèm theo quà tặng. Sách \"Namaskar! Xin Chào Ấn Độ (Tái Bản 2020)\" và \"Tuyển tập Vũ Trọng Phụng\" đều có giá là 130,000 VND nhưng không có thông tin về quà tặng kèm."
+    },
+    {
+        "query": "So sánh giá và nội dung của các sách du ký có quà tặng kèm.",
+        "response": "Dựa trên thông tin bạn cung cấp, tôi sẽ so sánh giá và nội dung của các cuốn sách du ký có quà tặng kèm:\n\n1. **Tuyển Tập Du Ký (Tặng kèm sổ tay)**\n   - Giá gốc: 130,000 VND\n   - Giảm giá: 4%\n   - Giá hiện tại: 125,000 VND\n   - Quà tặng kèm: Sổ tay\n\n2. **Đường Xa Nắng Mới - Nguyễn Tường Bách**\n   - Không có thông tin về quà tặng kèm.\n   - Giá sách: Không rõ (nhưng sách thuộc thể loại du ký).\n\nSo sánh:\n\n- Về giá:\n  - \"Tuyển Tập Du Ký\" hiện đang được bán với mức giá giảm, tức là khách hàng sẽ tiết kiệm hơn so với \"Đường Xa Nắng Mới\".\n\n- Về nội dung và quà tặng kèm:\n  - \"Tuyển Tập Du Ký\" cung cấp nhiều tác phẩm du ký khác nhau cùng một cuốn sổ tay làm quà tặng.\n  - \"Đường Xa Nắng Mới\" là một tác phẩm riêng biệt, không có thông tin về quà tặng kèm.\n\nNếu bạn quan tâm đến tổng hợp nhiều tác phẩm trong một cuốn sách và nhận thêm quà tặng như sổ tay, thì \"Tuyển Tập Du Ký (Tặng kèm sổ tay)\" sẽ là lựa chọn phù hợp hơn. Trong trường hợp chỉ muốn mua một cuốn sách du ký cụ thể mà không cần quà tặng, bạn có thể cân nhắc \"Đường Xa Nắng Mới - Nguyễn Tường Bách\".\n\nCần thêm thông tin về các cuốn sách khác để so sánh đầy đủ?"
+    },
+    {
+        "query": "Cuốn sách nào của Lý Thành Cơ có quà tặng kèm và rating bao nhiêu?",
+        "response": "Xin lỗi, nhưng thông tin về các cuốn sách của Lý Thành Cơ, quà tặng kèm và rating không được liệt kê trong dữ liệu mà bạn đã cung cấp. Dữ liệu chỉ đề cập đến một số cuốn sách khác mà không có thông tin cụ thể về tác giả Lý Thành Cơ hay thông tin về quà tặng kèm và đánh giá sách. Bạn có thể tìm kiếm thêm thông tin từ nguồn đáng tin cậy hoặc trang web bán sách trực tuyến."
+    },
+    {
+        "query": "Cuốn 'Con Đường Tơ Lụa' nói về những tuyến đường nào?",
+        "response": "Theo thông tin đã có, cuốn sách \"Con Đường Tơ Lụa\" (tựa gốc tiếng Việt: \"Con Đường Tơ Lụa: Vạn dặm xa từ Pakistan tới Tây An\") mô tả về con đường tơ lụa, một tuyến đường giao thương quan trọng và vĩ đại kéo dài hơn 1.500 năm lịch sử, bắt đầu từ Pakistan và kết thúc ở Tây An (Xi'an), Trung Quốc.\n\nTuy không được nêu explicitly các tên cụ thể của những tuyến đường khác, nhưng có thể nói đây là một trong những tuyến đường quan trọng nhất trong lịch sử giao thương và trao đổi văn hóa giữa Á châu và Âu châu."
+    },
+    {
+        "query": "Có sách nào đề cập đến hành trình từ Ấn Độ sang châu Âu không?",
+        "response": "Dựa trên thông tin hiện có, chưa có sách nào được đề cập trong danh sách rằng nó nói về hành trình từ Ấn Độ sang châu Âu. Tuy nhiên, nếu bạn quan tâm đến chủ đề này, có thể sẽ tìm thấy những cuốn sách lịch sử hoặc tự truyện kể về những chuyến đi thực tế từ Ấn Độ sang châu Âu trong thế kỷ trước. Bạn có thể muốn tra cứu thêm các thư viện trực tuyến như Google Books hoặc Amazon để xem liệu có sách nào phù hợp với yêu cầu của bạn hay không."
+    },
+    {
+        "query": "Sách du ký nào về các tuyến đường cổ có số lượng bán cao nhất?",
+        "response": "Trong danh sách thông tin mới nhất bạn cung cấp, không có sách du ký nào được đề cập đến. Bạn có thể cung cấp thêm thông tin hoặc kiểm tra lại để tôi có thể hỗ trợ bạn tốt hơn. Nếu bạn đang tìm kiếm một cuốn sách du ký cụ thể về các tuyến đường cổ và số lượng bán cao, hãy cho tôi biết chi tiết hơn nhé!"
+    },
+    {
+        "query": "So sánh nội dung của 'Con Đường Tơ Lụa' và 'Đạp Xe Vì Tình Từ Ấn Sang Âu'.",
+        "response": "Curently, there is no available information or summary related to the book \"Đạp Xe Vì Tình Từ Ấn Sang Âu\" in the provided data. However, I do have detailed summaries for \"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\". Please let me know if you would like a comparison between this book and any other specific titles or if you need more details about \"Con Đường Tơ Lụa\"."
+    },
+    {
+        "query": "Cuốn sách nào về tuyến đường lịch sử dưới 150,000 VND có rating 5.0?",
+        "response": "Dựa trên thông tin bạn cung cấp, không có cuốn sách cụ thể về tuyến đường lịch sử với giá dưới 150,000 VND và có đánh giá 5.0. Tuy nhiên, tôi tìm thấy một số cuốn sách liên quan có thể phù hợp:\n\n1. \"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\" với mô tả: \"Con đường tơ lụa là một trong những tuyến đường giao thương quan trọng và vĩ đại của nhân loại trong suốt hơn 1.500 năm lịch sử.\"\n\n2. \"Lịch Sử Khẩn Hoang Miền Nam - Sơn Nam (Tái Bản)\" với mô tả: \"Lịch Sử Khẩn Hoang Miền Nam là tập sách biên khảo về quá trình chinh phục thiên nhiên, thuần hoá đất đai, lập làng dựng nghiệp đầy khó khăn, thử thách của các cư dân Việt trên vùng đất mới.\"\n\nCả hai cuốn sách này đều có nội dung liên quan đến lịch sử, nhưng không xác định được giá chính xác. Bạn có thể kiểm tra tại các cửa hàng sách uy tín để xem liệu chúng có đáp ứng yêu cầu về giá và đánh giá không."
+    },
+    {
+        "query": "Cuốn 'Vòng Quanh Châu Á' nói về những nền văn hóa nào?",
+        "response": "Cuốn sách \"Vòng Quanh Châu Á – Nam Kỳ, Trung Kỳ, Bắc Kỳ\" do Jean Marie Albert Marcel Monnier viết có thể bao gồm nhiều nền văn hóa khác nhau ở các khu vực mà tác giả đã đi qua. Tuy nhiên, thông tin cụ thể về những nền văn hóa nào được đề cập trong cuốn sách không có trong dữ liệu hiện tại.\n\nNếu bạn quan tâm đến chi tiết này, tôi khuyên bạn nên xem xét tìm đọc nội dung của cuốn sách hoặc tra cứu thêm từ nguồn tin cậy khác để có thông tin chính xác hơn."
+    },
+    {
+        "query": "Có sách du ký nào về văn hóa Việt Nam từ trước 1975 không?",
+        "response": "Dựa trên thông tin mới nhất mà tôi có, không có sách du ký cụ thể về văn hóa Việt Nam từ trước 1975 trong cơ sở dữ liệu. Tuy nhiên, để tìm hiểu sâu hơn về văn hóa Việt Nam thời kỳ đó, bạn có thể xem xét các tác phẩm khác như:\n\n1. \"Vũ Trọng Phụng (1912-1939) là một nhà văn, nhà báo nổi tiếng của Việt Nam vào đầu thế kỷ 20.\" - Tuy không phải du ký, nhưng Vũ Trọng Phụng đã viết nhiều truyện ngắn phản ánh văn hóa xã hội thời kỳ đó.\n\n2. \"Cuốn sách là một mảng văn học trào phúng độc đáo của dân tộc Việt Nam\" - Có thể tìm kiếm các tập thơ, tiểu thuyết hoặc truyện ngắn khác của nhà văn Việt Nam từ giai đoạn này để hiểu về văn hóa và xã hội.\n\nNếu bạn cần thông tin cụ thể hơn về một cuốn sách du ký cụ thể, tôi khuyên nên truy cập thư viện quốc gia hoặc cơ sở dữ liệu trực tuyến chuyên về lịch sử văn học Việt Nam."
+    },
+    {
+        "query": "Sách nào về văn hóa châu Á có đánh giá cao nhất và giá dưới 200,000 VND?",
+        "response": "Dựa trên thông tin được cung cấp, sách \"Tư Duy Của Người Giàu Gốc Á - Một Ấn Phẩm Về Nghĩ Giàu Và Làm Giàu\" là cuốn sách phù hợp với yêu cầu của bạn. Sách này có giá bán là 110,000 VND và đánh giá cao với rating 5.0.\n\nTóm tắt thông tin về cuốn sách:\n- Tên sách: Tư Duy Của Người Giàu Gốc Á - Một Ấn Phẩm Về Nghĩ Giàu Và Làm Giàu\n- Giá bán: 110,000 VND\n- Đánh giá: 5.0\n\nBạn có thể mua cuốn sách này tại [Tiki](https://tiki.vn/product-p146065916.html?spid=146065919)."
+    },
+    {
+        "query": "So sánh nội dung của 'Du Ký Việt Nam trên Nam Phong tạp chí' và 'Đà Lạt, một thời hương xa'.",
+        "response": "Xin chào! Dựa vào thông tin được cung cấp, chúng tôi chưa có dữ liệu cụ thể về cuốn sách \"Đà Lạt, một thời hương xa\". Tuy nhiên, để so sánh nội dung của hai cuốn sách:\n\n1. **\"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\"**:\n   - Đây là một tác phẩm thuộc thể loại \"Du ký\".\n   - Được NXB Trẻ xuất bản.\n   - Có giá gốc 890,000 VND và hiện đang bán với mức giá 694,200 VND (giảm 22%).\n   - Đã được bán ra 1 bản.\n   - Có xếp hạng 4.0.\n   - Được Nguyễn Hữu Sơn cùng nhiều tác giả khác viết.\n   - Có tổng cộng 2 cuốn sách.\n\n2. **\"Đà Lạt, một thời hương xa\"** (thông tin chưa có trong dữ liệu):\n   - Không có thông tin về thể loại, nhà xuất bản, giá cả, số lượng bán ra, đánh giá và tác giả của cuốn sách này.\n   \nVì vậy, để so sánh nội dung chi tiết giữa hai cuốn sách, chúng ta cần thêm thông tin về \"Đà Lạt, một thời hương xa\". Bạn có thể cung cấp thêm thông tin về cuốn sách này không? Hoặc nếu bạn chỉ muốn biết thông tin tổng quát về \"Du Ký Việt Nam trên Nam Phong tạp chí\", tôi có thể chia sẻ chi tiết hơn về nội dung của nó."
+    },
+    {
+        "query": "Cuốn sách nào của tác giả Việt Nam viết về văn hóa châu Á bán chạy nhất?",
+        "response": "Dựa trên thông tin tôi có được, không có cụ thể một cuốn sách của tác giả Việt Nam viết về văn hóa châu Á được liệt kê là bán chạy nhất. Tuy nhiên, chúng ta có thể xem xét một số cuốn sách đã được đề cập:\n\n1. **\"Cổ Học Tinh Hoa (Bìa Cứng) (Tái Bản)\"**: Đây là một công trình biên khảo của Ôn Như Nguyễn Văn Ngọc và Tử An Trần Lê Nhân về nền văn minh Hán học, có giá trị lớn nhưng không được xác định là bán chạy nhất.\n\n2. **\"Tôi Đã Ăn Cả Cánh Đồng Hoa\"**: Cuốn sách này thuộc thể loại \"Bút Ký - Tự Truyện\", đã được ghi nhận số lượng bán ra là 313 bản (xem thông tin từ mối quan hệ thứ 7). \n\nNếu bạn cần thông tin chính xác hơn về cuốn sách nào đang bán chạy nhất, tôi đề nghị tra cứu thêm từ các nguồn uy tín như trang web của nhà xuất bản hoặc sàn thương mại điện tử lớn để có được kết quả chính xác."
+    },
+    {
+        "query": "Cuốn 'Du Ký Phan Quang - Tiếc Nuối Hoa Hồng' được viết bởi ai?",
+        "response": "Cuốn sách \"Du Ký Phan Quang - Tiếc Nuối Hoa Hồng\" được viết bởi nhà báo, nhà hoạt động đối ngoại Phan Quang."
+    },
+    {
+        "query": "Có sách du ký nào của nhà báo Lưu Đình Triều không?",
+        "response": "Dựa trên thông tin hiện có, tôi chưa tìm thấy sách du ký nào của nhà báo Lưu Đình Triều. Bạn có thể muốn kiểm tra lại hoặc cung cấp thêm thông tin về cuốn sách cụ thể bạn đang tìm kiếm. Tôi sẽ tiếp tục surveymore to find out if any travel books by Lưu Đình Triều have been published."
+    },
+    {
+        "query": "Sách du ký nào của nhà báo có số lượng bán cao nhất?",
+        "response": "Dựa trên thông tin được cung cấp, sách du ký của nhà báo có số lượng bán cao nhất là \"Cô Đơn Trên Everest (Du Ký)\". Sách này đã bán được 412 bản.\n\nChi tiết:\n- Tên sách: Cô Đơn Trên Everest (Du Ký)\n- Số lượng đã bán: 412 bản\n\nSố lượng bán được phản ánh qua mối quan hệ \"has sold quantity\" trong dữ liệu, với id là 59."
+    },
+    {
+        "query": "So sánh phong cách viết của Phan Quang và Nguyễn Phương Mai trong du ký.",
+        "response": "Để so sánh phong cách viết của Phan Quang và Nguyễn Phương Mai trong du ký, chúng ta cần xem xét một số điểm sau:\n\n1. Chủ đề và nội dung:\n   - Phan Quang: \"Du Ký Phan Quang - Tiếc Nuối Hoa Hồng\" tập trung vào những kỷ niệm du lịch, trải nghiệm cá nhân của tác giả.\n   - Nguyễn Phương Mai: Thông tin chưa có-du ký cụ thể, nhưng dựa trên sách \"Tôi Là Một Con Lừa\", nội dung có thể thiên về trải nghiệm và nhận định xã hội.\n\n2. Thể thức viết:\n   - Phan Quang: Có thể sử dụng nhiều chi tiết, cảm xúc cá nhân.\n   - Nguyễn Phương Mai: Thông tin chưa đầy đủ, nhưng dựa trên tên sách, có thể là một góc nhìn trực tiếp hơn về cuộc sống và con người.\n\n3. Lối văn phong:\n   - Phan Quang: Du ký thường mang tính chất tự sự mạnh mẽ, mô tả chi tiết.\n   - Nguyễn Phương Mai: Thông tin không đầy đủ, cần thêm thông tin để đánh giá chính xác.\n\n4. Cách sử dụng ngôn ngữ:\n   - Phan Quang: Phù hợp với thể loại du ký, có thể sử dụng nhiều từ ngữ về thiên nhiên, cảnh vật.\n   - Nguyễn Phương Mai: Cần thêm thông tin để so sánh.\n\n5. Mục đích viết:\n   - Phan Quang: Có thể nhằm mục đích chia sẻ trải nghiệm cá nhân và cảm xúc khi du lịch.\n   - Nguyễn Phương Mai: Thông tin không đầy đủ, cần thêm thông tin để so sánh chính xác.\n\nTóm lại, dựa trên thông tin hiện có, Phan Quang có vẻ như là một tác giả thiên về mô tả chi tiết và tự sự trong du ký của mình. Trong khi đó, về Nguyễn Phương Mai, chúng ta chỉ có thể đưa ra đánh giá sơ bộ dựa trên tên sách \"Tôi Là Một Con Lừa\", nên cần thêm thông tin để so sánh chính xác hơn về phong cách viết."
+    },
+    {
+        "query": "Cuốn sách nào của nhà báo dưới 150,000 VND có rating trên 4.5?",
+        "response": "Dựa trên thông tin mà bạn đã cung cấp, không có cuốn sách nào của nhà báo có giá dưới 150,000 VND và.rating trên 4.5.\n\nCó một số cuốn sách có rating cao nhưng chưa đáp ứng được cả hai tiêu chí (giá dưới 150,000 VND và rating trên 4.5):\n\n- \"Một Nền Giáo Dục Việt Nam Mới\" với rating 4.1.\n- \"Nguồn Nhân Lực Trong Thời Đại 4.0\" với rating 4.1.\n\nVà một số cuốn khác có rating trên 3.8 nhưng không đáp ứng được cả hai tiêu chí."
+    },
+    {
+        "query": "Cuốn 'Tinh Hoa Du Ký Trên Tri Tân Tạp Chí' có nội dung gì?",
+        "response": "Cuốn sách \"Tinh Hoa Du Ký Trên Tri Tân Tạp Chí (1941-1945)\" cung cấp tư liệu cho người yêu văn hóa, văn học, các ngành du lịch, địa phương học, nhân học và liên ngành khoa học xã hội. \n\nTạp chí Tri Tân là Tuần báo do Nguyễn Tường Phượng làm chủ bút, được thành lập vào năm 1938 tại Huế, phát hành ở cả ba miền Nam - Trung - Bắc. Cuốn sách này tập trung vào những du ký xuất bản trên tạp chí Tri Tân trong giai đoạn từ 1941 đến 1945.\n\nNội dung cụ thể của cuốn sách bao gồm các bài viết về văn hóa, lịch sử địa phương, phong tục tập quán và trải nghiệm cá nhân thông qua các chuyến đi, cung cấp một góc nhìn quý giá về xã hội Việt Nam thời kỳ đó."
+    },
+    {
+        "query": "Có sách du ký nào đề cập đến tư tưởng triết học không?",
+        "response": "Dựa trên thông tin hiện có, tôi chưa tìm thấy bất kỳ cuốn sách du ký cụ thể nào đề cập trực tiếp đến tư tưởng triết học. Tuy nhiên, một số sách du ký có nội dung phong phú và đa dạng chủ đề, có thể bao gồm cả các suy ngẫm triết học về văn hóa, lịch sử hoặc thiên nhiên.\n\nNếu bạn quan tâm tới cuốn \"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\" của Trần Hồng Ngọc, nội dung sách này có thể giúp bạn hiểu rõ hơn về con đường tơ lụa qua các thời kỳ lịch sử và văn hóa khác nhau. Cuốn sách có thể mang lại cho độc giả nhiều suy ngẫm về sự giao thoa giữa lịch sử, văn hóa và triết học.\n\nNgoài ra, nếu bạn quan tâm đến một quyển sách du ký với góc nhìn sâu hơn về tư tưởng và triết học, có thể xem xét các cuốn khác như \"Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ\" hay \"Đà Lạt, một thời hương xa - Du Khảo Văn Hóa Đà Lạt 1954 - 1975\", những cuốn sách này có thể mang đến nhiều góc nhìn triết học về văn hóa và lịch sử."
+    },
+    {
+        "query": "Sách du ký nào có giá trị học thuật cao nhất dựa trên rating và số lượng bán?",
+        "response": "Dựa trên thông tin được cung cấp, hai cuốn sách du ký có rating và số lượng bán cao là:\n\n1. **Cô Đơn Trên Everest (Du Ký)**\n   - Rating: 4.8\n   - Số lượng đã bán: 412 bản\n\n2. **Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An** \n   - Rating: 5.0\n   - Số lượng đã bán: 290 bản\n\nGiữa hai cuốn sách này, **\"Con Đường Tơ Lụa - Vạn Dặm Xa Từ Pakistan Tới Tây An\"** có rating cao hơn (5.0 so với 4.8) và số lượng bán cũng tương đối gần nhau.\n\nTuy nhiên, cần lưu ý rằng cả hai cuốn sách đều có giá trị học thuật cao vì chúng nhận được đánh giá tốt từ độc giả và đã bán được một lượng lớn bản. Bạn có thể chọn bất kỳ cuốn nào trong số này dựa trên nhu cầu cụ thể của mình."
+    },
+    {
+        "query": "So sánh mức độ học thuật của 'Du Ký Việt Nam trên Nam Phong tạp chí' và 'Mùi Hương Trầm'.",
+        "response": "Để so sánh mức độ học thuật giữa hai cuốn sách \"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\" và \"Mùi Hương Trầm\", chúng ta cần xem xét một số yếu tố như:\n\n1. **Nội dung**: \n   - \"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\": Được mô tả là tập hợp các tác phẩm từ tạp chí Nam Phong (1917-1934). Tạp chí này có đóng góp lớn trong việc xây dựng nền quốc văn mới và phổ biến học thuật. Điều này gợi ý rằng nội dung có thể mang tính học thuật cao.\n   - \"Mùi Hương Trầm\": Không có thông tin cụ thể về nội dung của cuốn sách này, nên chúng ta không thể xác định mức độ học thuật một cách chính xác.\n\n2. **Tác giả và nguồn gốc**:\n   - \"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\": Được viết bởi nhiều tác giả và xuất bản bởi NXB Trẻ, có thể là kết quả của sự cộng tác giữa các nhà nghiên cứu văn hóa.\n   - \"Mùi Hương Trầm\": Không có thông tin về tác giả cụ thể hoặc nhà xuất bản.\n\n3. **Thời gian xuất bản**:\n   - \"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\": Được xuất bản với giá gốc là 890,000 VND và hiện có giá bán là 694,200 VND.\n   - \"Mùi Hương Trầm\": Không có thông tin về thời gian xuất bản.\n\nTrên cơ sở những thông tin đã có:\n- **\"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\"** dường như có mức độ học thuật cao hơn do liên quan đến lịch sử văn hóa và xuất bản học của Việt Nam.\n- **\"Mùi Hương Trầm\"**: Do thiếu thông tin, chúng ta không thể đưa ra đánh giá chính xác về mức độ học thuật.\n\nTóm lại, \"Du Ký Việt Nam trên Nam Phong tạp chí (Hộp 2 cuốn)\" có xu hướng có mức độ học thuật cao hơn so với \"Mùi Hương Trầm\" dựa trên thông tin hiện có."
+    },
+    {
+        "query": "Cuốn sách nào dưới 200,000 VND của Nhà Xuất Bản Thanh Niên có giá trị nghiên cứu cao?",
+        "response": "Dựa trên thông tin hiện có, không có cuốn sách cụ thể của Nhà Xuất Bản Thanh Niên trong danh sách có giá thấp hơn 200.000 VND. Tuy nhiên, tôi có thể gợi ý một số cuốn sách khác mà bạn có thể quan tâm:\n\n1. **\"150 thuật ngữ văn học (bìa mềm) - tái bản\"**:\n   - Giá: 90.100 VNĐ\n   - Mô tả: Cuốn sách này chứa khoảng 150 thuật ngữ văn học và thuộc thể loại Phê Bình - Lý Luận Văn Học, có thể mang lại giá trị nghiên cứu cao.\n\n2. **\"Trưởng Thành Sau Ngàn Lần Tranh Đấu (Tái Bản)\"**:\n   - Giá: 98.190 VNĐ\n   - Mô tả: Cuốn sách này đã bán được 9.819 bản, có thể chứa nhiều thông tin giá trị.\n\n3. **\"Trên Lưng Khổng Tượng - Kinh Doanh Online Trên Sàn Thương Mại Điện Tử - Khởi Nghiệp Với Bán Hàng Qua Mạng và Nhãn Hàng Riêng\"**:\n   - Giá: 237.200 VNĐ\n   - Mô tả: Cuốn sách này đã bán được 2.372 bản, phù hợp cho nghiên cứu về kinh doanh trực tuyến.\n\nBạn có thể xem xét cuốn sách \"150 thuật ngữ văn học (bìa mềm) - tái bản\" với giá 90.100 VNĐ và thuộc loại Phê Bình - Lý Luận Văn Học, đây là một lựa chọn hợp lý cho việc nghiên cứu."
+    },
+    {
+        "query": "Cuốn '1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng' kể về trải nghiệm gì?",
+        "response": "Cuốn sách \"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\" do Trần Đặng Đăng Khoa viết, kể về hành trình phiêu lưu kỳ diệu của tác giả khi anh bắt đầu chuyến đi vòng quanh thế giới từ ngày 01/06/2017 tại cửa khẩu Mộc Bài (Tây Ninh). Trong suốt hành trình kéo dài 1.111 ngày, Trần Đặng Đăng Khoa sử dụng chiếc xe máy 100cc có biển số Việt Nam để khám phá các địa điểm trên toàn thế giới.\n\nHành trình này không chỉ là một cuộc phiêu lưu về mặt geografical, mà còn là một chuyến đi tinh thần và tâm hồn, chia sẻ những trải nghiệm, cảm xúc, và quan sát về văn hóa của nhiều quốc gia khác nhau."
+    },
+    {
+        "query": "Có sách nào viết về hành trình đi bộ xuyên Việt không?",
+        "response": "Dựa trên thông tin mới nhất mà tôi có, hiện tại không có sách được liệt kê trực tiếp nói về hành trình đi bộ xuyên Việt. Tuy nhiên, có một số cuốn sách khác có thể phù hợp với chủ đề này:\n\n1. **\"Sự Thật Ta Nắm Giữ - Một Hành Trình Xuyên Nước Mỹ\"**:\n   - Mô tả về một hành trình xuyên suốt Hoa Kỳ, nhưng không nhất thiết là đi bộ xuyên Việt.\n   - Có thể mang ý nghĩa tâm linh và cá nhân như một hành trình.\n\n2. **\"Đi Thật Xa Trên Một Chiếc Camper\"**:\n   - Mặc dù tên sách đề cập đến việc di chuyển bằng xe trại, nhưng nội dung có thể phù hợp với những ai muốn trải nghiệm hành trình dài trên đất nước.\n\nNếu bạn quan tâm đến việc viết về hoặc đọc về các hành trình đi bộ xuyên Việt, tôi khuyên bạn nên tìm kiếm thêm thông tin từ các nguồn sách chuyên nghiệp hơn về chủ đề này."
+    },
+    {
+        "query": "Sách du ký nào về trải nghiệm cá nhân có rating cao nhất?",
+        "response": "Dựa trên thông tin mới nhất, sách du ký về trải nghiệm cá nhân có rating cao nhất là \"Tiếng Anh Du Ký - My English Journey\" với rating 5.0."
+    },
+    {
+        "query": "So sánh trải nghiệm trong 'Đi Bộ Xuyên Việt Với Cây Đàn Guitar' và 'Thế Giới Rộng Lớn Đừng Đi Một Mình'.",
+        "response": "### So Sánh Trải Nghiệm Trong \"Đi Bộ Xuyên Việt Với Cây Đàn Guitar\" và \"Thế Giới Rộng Lớn Đừng Đi Một Mình\"\n\n1. **Nội Dung Truyện:**\n   - **Đi Bộ Xuyên Việt Với Cây Đàn Guitar**: Đây là một cuốn sách thể loại du ký, mô tả hành trình đi bộ xuyên Việt của tác giả Hồ Nhật Hà với cây đàn guitar làm hành trang duy nhất. Cuốn sách không chỉ kể về những trải nghiệm thú vị trên con đường đi bộ dài từ Bắc vào Nam mà còn chia sẻ những suy nghĩ và cảm xúc cá nhân của tác giả, từ niềm vui, nỗi buồn cho đến sự thấu hiểu về bản thân và văn hóa Việt Nam.\n   - **Thế Giới Rộng Lớn Đừng Đi Một Mình**: Đây là một cuốn sách có nội dung tâm lý, tự sự. Cuốn sách thể hiện thông điệp rằng nên đối mặt với các thử thách trong cuộc sống mà không cần phải đi một mình. Tác giả Lý Thành Cơ đã chia sẻ nhiều câu chuyện và suy nghĩ của mình về những nỗi sợ trong cuộc sống như thất nghiệp, thất tình... Đồng thời, ông cũng đưa ra những lời khuyên hữu ích để đối mặt với chúng.\n\n2. **Tác Giả:**\n   - **Đi Bộ Xuyên Việt Với Cây Đàn Guitar**: Tác giả Hồ Nhật Hà đã trải qua hành trình tự lực của mình bằng cây đàn guitar làm hành trang duy nhất.\n   - **Thế Giới Rộng Lớn Đừng Đi Một Mình**: Tác giả Lý Thành Cơ là một nhà văn, nhà tâm lý học có nhiều năm kinh nghiệm trong việc nghiên cứu và phân tích các vấn đề tâm lý.\n\n3. **Khối Lượng Sách:**\n   - **Đi Bộ Xuyên Việt Với Cây Đàn Guitar**: Có 124,000 từ.\n   - **Thế Giới Rộng Lớn Đừng Đi Một Mình**: Có 3,256 trang.\n\n4. **Giá Trị Sách:**\n   - **Đi Bộ Xuyên Việt Với Cây Đàn Guitar**:\n     - Giá gốc: 124,000 đồng\n     - Giá hiện tại: 73,160 đồng (discount 41%)\n     - Có 216 bản đã bán.\n   - **Thế Giới Rộng Lớn Đừng Đi Một Mình**:\n     - Giá gốc: 119,000 đồng\n     - Giá hiện tại: 97,100 đồng (discount 18%)\n     - Có 3,256 bản đã bán.\n\n5. **Xuất Bản:**\n   - **Đi Bộ Xuyên Việt Với Cây Đàn Guitar**: Xuất bản bởi Nhà Xuất Bản Thanh Niên.\n   - **Thế Giới Rộng Lớn Đừng Đi Một Mình**: Xuất bản bởi Nhà Xuất Bản Phụ Nữ.\n\n6. **Hình Thức:**\n   - **Đi Bộ Xuyên Việt Với Cây Đàn Guitar**: Hình thức sách giấy, có hình ảnh và mô tả về hành trình du ký.\n   - **Thế Giới Rộng Lớn Đừng Đi Một Mình**: Hình thức sách giấy, nhiều trang, phù hợp với nội dung tự sự tâm lý.\n\n### Tóm Lược\n- \"Đi Bộ Xuyên Việt Với Cây Đàn Guitar\" mang đến cho độc giả những trải nghiệm du ký hấp dẫn và sâu sắc về văn hóa Việt Nam.\n- Trong khi đó, \"Thế Giới Rộng Lớn Đừng Đi Một Mình\" cung cấp những suy nghĩ tâm lý và lời khuyên hữu ích để đối mặt với những nỗi sợ trong cuộc sống.\n\nCả hai cuốn sách đều có giá trị riêng biệt và sẽ phù hợp cho các độc giả có nhu cầu tìm hiểu về trải nghiệm cá nhân hoặc muốn giải quyết vấn đề tâm lý."
+    },
+    {
+        "query": "Cuốn sách nào về trải nghiệm cá nhân dưới 150,000 VND bán chạy nhất?",
+        "response": "Dựa trên thông tin đã được cung cấp, cuốn sách \"Trải Nghiệm Nhân Viên\" của Matthew Wride và Tracy Maylett có giá hiện tại là 80600 VND và đã bán được 912 bản. Đây là cuốn sách về trải nghiệm cá nhân có giá thấp hơn 150,000 VND và cũng là cuốn bán chạy nhất trong danh sách này.\n\nTóm lại:\n- Tác giả: Matthew Wride và Tracy Maylett\n- Giá hiện tại: 80600 VND \n- Số lượng đã bán: 912 bản\n\nHy vọng thông tin này hữu ích cho bạn! Nếu cần thêm thông tin về cuốn sách này, hãy cho tôi biết nhé."
+    },
+    {
+        "query": "Cuốn 'Cô Đơn Trên Everest' kể về hành trình gì?",
+        "response": "Cuốn sách \"Cô Đơn Trên Everest (Du Ký)\" của tác giả Di Li, được tái bản năm 2022, kể về một hành trình phi thường lên đỉnh Everest. Đây là những trải nghiệm kinh hoàng mà tác giả đã cho thấy rằng chúng không chỉ tồn tại trong tưởng tượng. Sách này được mô tả như một cuốn du ký hấp dẫn, đầy chi tiết và thông tin mới lạ, thể hiện quan sát sắc bén cùng sự tỉ mỉ của tác giả khi chia sẻ những câu chuyện của mình."
+    },
+    {
+        "query": "Có sách nào nói về hành trình đạp xe vòng quanh thế giới không?",
+        "response": "Trong dữ liệu được cung cấp, không có thông tin về bất kỳ cuốn sách nào nói về hành trình đạp xe vòng quanh thế giới. Dữ liệu tập trung chủ yếu vào các sách quản trị doanh nghiệp và lãnh đạo. Bạn có muốn tìm hiểu thêm về một lĩnh vực cụ thể nào khác liên quan đến kinh doanh hay lãnh đạo không?"
+    },
+    {
+        "query": "Sách du ký nào về hành trình mạo hiểm có số lượng bán cao nhất?",
+        "response": "Dựa trên thông tin hiện có, không có sách du ký cụ thể được đề cập trong tập dữ liệu. Tuy nhiên, nếu bạn cần tìm sách du ký có số lượng bán nhiều, chúng ta thường nhìn vào các cuốn sách về hành trình mạo hiểm có ảnh hưởng hoặc hấp dẫn.\n\nTrong danh sách các cuốn sách kinh doanh mà bạn cung cấp không có thông tin chi tiết về số lượng đã bán. Để có câu trả lời chính xác nhất, bạn có thể cần tra cứu từ nguồn khác như Amazon, Goodreads hay Tiki.vn (nếu có dữ liệu bán hàng).\n\nNếu bạn muốn tìm hiểu thêm, tôi có thể giúp bạn tìm kiếm trên các trang web bán sách trực tuyến để kiểm tra số lượng đã bán cho các cuốn sách du ký phổ biến. Bạn có muốn tôi làm điều đó không?"
+    },
+    {
+        "query": "So sánh độ kịch tính của 'Đạp Xe Vì Tình Từ Ấn Sang Âu' và '1111 - Nhật Ký Sáu Vạn Dặm'.",
+        "response": "Có vẻ như thông tin về độ kịch tính của hai cuốn sách \"Đạp Xe Vì Tình Từ Ấn Sang Âu\" và \"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\" chưa được cung cấp trong dữ liệu hiện có. Để so sánh độ kịch tính, chúng ta cần xem xét một số yếu tố như:\n\n1. **Hành trình phiêu lưu**: \"Đạp Xe Vì Tình Từ Ấn Sang Âu\" là về hành trình của Mahanandia bằng xe đạp từ Delhi đến Boras trong 4 tháng.\n2. **Hành trình vòng quanh thế giới**: \"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\" mô tả hành trình của Trần Đặng Đăng Khoa đi qua nhiều quốc gia, có thể bao gồm những trải nghiệm và tình huống phức tạp hơn.\n\nTuy nhiên, độ kịch tính cũng phụ thuộc vào cách viết và góc nhìn của tác giả. Dựa trên thông tin được cung cấp:\n\n- **\"Đạp Xe Vì Tình Từ Ấn Sang Âu\"**: Câu chuyện này mang tính phiêu lưu cao với một hành trình dài bằng xe đạp từ Delhi đến Boras, có thể bao gồm nhiều thử thách và chặng đường khó khăn.\n  \n- **\"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\"**: Hành trình của Trần Đặng Đăng Khoa là dài hơn (1.111 ngày) và có thể bao gồm nhiều trải nghiệm khác nhau ở các quốc gia, tăng độ phong phú và kịch tính.\n\nNếu xét về chiều dài hành trình và khả năng gặp phải nhiều tình huống mới mẻ, \"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\" có thể được coi là có độ kịch tính cao hơn. Tuy nhiên, để đánh giá chính xác hơn, cần thêm thông tin về nội dung cụ thể và lối viết của mỗi cuốn sách.\n\nBạn có muốn biết thêm thông tin về bất kỳ chi tiết nào cụ thể từ các cuốn sách này không?"
+    },
+    {
+        "query": "Cuốn sách nào về hành trình mạo hiểm của tác giả Việt Nam có rating 5.0?",
+        "response": "Dựa trên thông tin được cung cấp, không có cuốn sách cụ thể nào mô tả là một hành trình mạo hiểm của tác giả Việt Nam và có đánh giá là 5.0. Cuốn sách \"Trên Đỉnh Namsan Ngắm Mặt Trời\" nói về trải nghiệm cá nhân của tác giả khi du lịch tại Hàn Quốc, nhưng không phải là một cuốn sách về hành trình mạo hiểm ở Việt Nam.\n\nNếu bạn cần thông tin chi tiết hơn hoặc có yêu cầu khác, xin vui lòng cung cấp thêm chi tiết!"
+    },
+    {
+        "query": "Cuốn 'Từ Rừng Thẳm Amazon Đến Quê Hương Bolero' nói về khu vực nào?",
+        "response": "Theo thông tin được cung cấp, cuốn sách \"Từ Rừng Thẳm Amazon Đến Quê Hương Bolero\" bao gồm 4 phần, trong đó có đề cập đến khu vực Amazon. Cụ thể, một phần của cuốn sách mang tên \"Amazon (Trong rừng thẳm Amazon)\"."
+    },
+    {
+        "query": "Có sách du ký nào về Himalaya không?",
+        "response": "Có, có một cuốn sách du ký về Himalaya trong bộ sưu tập mới nhất của chúng tôi:\n\n- **Tên sách**: Combo Sách Du Ký : HIMALAYA – Hành Trình Chạm Đến Trán Trời + Khơi Lửa Sông Nile + Đừng Chết Ở Ả Rập Xê Út\n- **Tác giả**: Nhiều Tác Giả (bao gồm Mai Lan)\n- **Nhà Xuất Bản**: Nhà Xuất Bản Thế Giới\n- **Giá hiện tại**: 267,000đ\n- **Khuyến mãi**: Đang có chương trình giảm giá 25%\n- **Đánh giá**: Có đánh giá từ người dùng với số điểm là 3.7/5\n\nCuốn sách \"HIMALAYA – Hành Trình Chạm Đến Trán Trời\" trong bộ sách này được viết khi Mai Lan và bạn đồng hành đang trên đường trở về Salleri, một địa điểm gần với Vườn quốc gia Sagarmatha nhất có thể đến bằng ô tô.\n\nNếu bạn quan tâm, bạn có thể mua nó tại trang [Tiki](https://tiki.vn/product-p54426455.html?spid=89920170).\n\nBạn muốn biết thêm thông tin về cuốn sách này không?"
+    },
+    {
+        "query": "Sách nào về vùng đất hoang dã có đánh giá trung bình cao nhất?",
+        "response": "Dựa trên thông tin hiện có, không có sách cụ thể nào được đề cập là về vùng đất hoang dã. Tuy nhiên, nếu bạn quan tâm đến các tác phẩm văn học hoặc lịch sử về vùng đất hoang dã ở Việt Nam hoặc khu vực châu Á, tôi có thể gợi ý một số sách như:\n\n1. \"Tổng Tập Văn Học Các Dân Tộc Thiểu Số Việt Nam (Trọn Bộ 6 Cuốn)\" - Có đề cập đến cuộc sống và văn hóa của các dân tộc thiểu số sinh sống ở vùng núi hoang dã.\n\n2. \"Đế Vương Công Lược (Tập 1)\" - Khả năng cao có một số đoạn miêu tả về các khu vực hoang dã mà nhân vật chính phải đi qua trong quá trình cai trị đất nước.\n\nNếu bạn muốn tìm sách cụ thể hơn về vùng đất hoang dã, tôi sẽ cần thêm thông tin hoặc nguồn để xác định sách phù hợp. Bạn có thể chỉ định một khu vực cụ thể hoặc loại sách (văn học, lịch sử,...) mà bạn quan tâm không?"
+    },
+    {
+        "query": "So sánh nội dung của 'HIMALAYA – Hành Trình Chạm Đến Trán Trời' và 'Tây Tạng Huyền Bí'.",
+        "response": "### So sánh Nội Dung\n\n1. **Tên Sách:**\n   - **HIMALAYA – Hành Trình Chạm Đến Trán Trời:** Đây là tên chính thức của cuốn sách.\n   - **Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020):** Đây là tiêu đề khác của một cuốn sách khác.\n\n2. **Mô Tả Nội Dung:**\n   - **HIMALAYA – Hành Trình Chạm Đến Trán Trời:**\n     ```\n     Cuốn sách được viết khi Mai Lan và người bạn đồng hành đang trên đường trở về Salleri – điểm gần với Vườn quốc gia Sagarmatha nhất có thể đến được bằng ô tô.\n     ```\n   - **Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020):**\n     ```\n     Tây Tạng là một khu vực cao nguyên tại châu Á, ở phía bắc và đông của dãy núi Himalaya. Đây là quê hương của người Tạng cũng như một số dân tộc khác.\n     ```\n\n3. **Phong cách Viết:**\n   - **HIMALAYA – Hành Trình Chạm Đến Trán Trời:** Tập trung vào trải nghiệm cá nhân, hành trình và cảm xúc của tác giả trong chuyến đi đến vùng núi cao Himalaya.\n   - **Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020):** Cung cấp thông tin về lịch sử, văn hóa, địa lý và các phong tục tập quán của Tây Tạng.\n\n4. **Đối tượng Đọc:**\n   - **HIMALAYA – Hành Trình Chạm Đến Trán Trời:** Có thể thu hút những người quan tâm đến du lịch, khám phá tự nhiên và văn hóa.\n   - **Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020):** Dành cho những ai muốn tìm hiểu sâu về văn hóa, lịch sử và truyền thống của Tây Tạng.\n\n### Kết luận\n- **HIMALAYA – Hành Trình Chạm Đến Trán Trời**: Tập trung vào trải nghiệm cá nhân và cảm xúc khi đi du lịch.\n- **Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)**: Đưa ra những thông tin đa chiều về văn hóa, lịch sử, địa lý của Tây Tạng.\n\nNếu bạn quan tâm đến trải nghiệm cá nhân và cảm xúc khi đi du lịch, **HIMALAYA – Hành Trình Chạm Đến Trán Trời** có thể là lựa chọn phù hợp. Ngược lại, nếu bạn muốn tìm hiểu về văn hóa và lịch sử của Tây Tạng, cuốn sách **Tây Tạng Huyền Bí & Nghệ Thuật Sinh Tử (Tái Bản 2020)** sẽ rất hữu ích."
+    },
+    {
+        "query": "Cuốn sách nào về vùng đất hoang dã dưới 200,000 VND bán chạy nhất?",
+        "response": "Dựa trên thông tin hiện có, không có đề cập đến cuốn sách cụ thể nào là về vùng đất hoang dã và có giá bán dưới 200.000 VND. Tuy nhiên, để trả lời chính xác câu hỏi của bạn, chúng ta cần thêm thông tin về sách liên quan đến chủ đề này.\n\nNếu bạn quan tâm đến khu vực miền núi hoặc đồng bào dân tộc thiểu số ở Việt Nam, có thể xem xét cuốn \"Tổng Tập Văn Học Các Dân Tộc Thiểu Số Việt Nam (Trọn Bộ 6 Cuốn)\". Mặc dù đây là một tập hợp văn học thay vì hướng dẫn thực tế về việc quản lý vùng đất hoang dã.\n\nNếu bạn cần thông tin cụ thể hơn, tôi khuyên bạn nên xem xét các trang web bán sách hoặc cửa hàng sách địa phương để tìm kiếm cuốn sách phù hợp với yêu cầu của mình."
+    },
+    {
+        "query": "Cuốn 'Đi Bộ Xuyên Việt Với Cây Đàn Guitar' kể về phương tiện gì?",
+        "response": "Cuốn sách \"Đi Bộ Xuyên Việt Với Cây Đàn Guitar\" được mô tả là đi bộ xuyên Việt với hành trang chỉ có cây đàn guitar và không mang theo đồng tiền trong túi. Đây rõ ràng là một chuyến đi bộ dài bằng chính đôi chân của tác giả cùng với cây đàn guitar như hành lý duy nhất."
+    },
+    {
+        "query": "Có sách nào nói về hành trình bằng xe đạp không?",
+        "response": "Dựa trên thông tin bạn cung cấp, không có sách cụ thể nào đề cập đến chủ đề \"hành trình bằng xe đạp\" trong danh sách đó. Tuy nhiên, nếu bạn đang quan tâm đến việc chia sẻ kinh nghiệm, trải nghiệm hoặc hướng dẫn về việc đi xe đạp, tôi có thể gợi ý một số tựa sách phổ biến khác liên quan đến chủ đề này như \"Đi Xe Đạp: Sự Thay Đổi Trong Cuộc Sống\" hay \"Hành Trình Xe Đạp Quanh Thế Giới\". Bạn có muốn tôi tìm kiếm thêm thông tin về những cuốn sách đó không?"
+    },
+    {
+        "query": "Sách du ký nào về phương tiện độc đáo có số lượng bán cao nhất?",
+        "response": "Dựa trên thông tin hiện có, không có sách du ký về phương tiện độc đáo cụ thể nào được đề cập. Các cuốn sách được liệt kê chủ yếu là về quản lý, lãnh đạo và một số tác phẩm cổ điển khác như Đạo đức kinh. Để trả lời chính xác câu hỏi của bạn, chúng ta cần thêm thông tin về các cuốn sách du ký hoặc bán chạy có liên quan đến phương tiện độc đáo. Bạn có thể cung cấp thêm thông tin không?"
+    },
+    {
+        "query": "So sánh trải nghiệm trong 'Đạp Xe Vì Tình Từ Ấn Sang Âu' và 'Đi Thật Xa Trên Một Chiếc Camper'.",
+        "response": "Xin lỗi, nhưng có vẻ như bạn nhầm lẫn tiêu đề của cuốn sách. Trong dữ liệu tôi cung cấp không có cuốn sách mang tên \"Đạp Xe Vì Tình Từ Ấn Sang Âu\". Tuy nhiên, tôi có thông tin về cuốn sách \"Đi Thật Xa Trên Một Chiếc Camper\".\n\nDựa trên mô tả, đây là những gì chúng ta biết về cuốn sách \"Đi Thật Xa Trên Một Chiếc Camper\":\n\n- Loại: Sách tiếng Việt\n- Mô tả: Khi bạn đọc cuốn sách đầy cảm hứng này, có thể tác giả vẫn đang dấn bước trên một cung đường xa xôi. Ở Khải Đơn, mỗi cuốn sách sẽ vẽ ra một hành trình và hứa hẹn một hành trình tiếp nối. Điều đó truyền cảm hứng cho người đọc đi tiếp con đường của riêng mình.\n- Giá hiện tại: 110000 VND\n- Giảm giá: 36%\n- Đã bán: 105 bản\n\nTuy nhiên, tôi không có thông tin chi tiết về một cuốn sách mang tên \"Đạp Xe Vì Tình Từ Ấn Sang Âu\". Nếu bạn cung cấp thêm thông tin hoặc kiểm tra lại tiêu đề sách, tôi sẽ rất vui được hỗ trợ bạn tốt hơn."
+    },
+    {
+        "query": "Cuốn sách nào về phương tiện độc đáo dưới 150,000 VND có rating trên 4.5?",
+        "response": "Dựa trên thông tin hiện có, không có thông tin chi tiết về cuốn sách nào liên quan đến phương tiện độc đáo với giá dưới 150,000 VND và có rating trên 4.5. Để cung cấp thông tin chính xác nhất, bạn có thể tham khảo các trang bán sách trực tuyến hoặc các diễn đàn đánh giá sách uy tín.\n\nNếu bạn cần hỗ trợ tìm kiếm thông tin về sách trong phạm vi giá và rating khác, tôi sẽ rất sẵn lòng giúp đỡ!"
+    },
+    {
+        "query": "Cuốn 'Đừng Chết Ở Ả Rập Xê Út' kể về thử thách gì?",
+        "response": "\"Đừng Chết Ở Ả Rập Xê Út\" là tự truyện của một người phụ nữ đi xuất khẩu lao động tại Ả Rập Xê Út với mong muốn đổi đời. Cô đã nhận được lời hứa hẹn từ trung tâm tuyển dụng, nhưng chỉ đến khi đặt chân đến đất nước Ả Rập cô mới nhận ra mình bị lừa. Cuốn sách kể về những thử thách và khó khăn mà cô gặp phải trong quá trình làm việc ở đây.\n\nTóm tắt nội dung chính của cuốn sách bao gồm:\n- Mục tiêu đổi đời thông qua công việc xuất khẩu lao động.\n- Lời hứa hẹn từ trung tâm tuyển dụng.\n- Thực tế không như mong đợi khi đến Ả Rập Xê Út.\n- Những khó khăn và thử thách mà người phụ nữ phải đối mặt.\n\nNếu bạn cần thêm thông tin chi tiết hoặc muốn tìm hiểu về tình huống cụ thể, vui lòng cho tôi biết!"
+    },
+    {
+        "query": "Có sách nào viết về hành trình một mình qua sa mạc không?",
+        "response": "Trong danh sách thông tin mới nhất bạn cung cấp, không có sách nào đề cập đến chủ đề là hành trình một mình qua sa mạc. Tuy nhiên, tôi có thể giúp bạn tìm kiếm thêm nếu cần hoặc kiểm tra thông tin khác để xem có sách phù hợp không. Bạn có muốn thử lại với một chủ đề khác hay cần hỗ trợ thêm về sách liên quan đến những chủ đề nào khác không?"
+    },
+    {
+        "query": "Sách nào về hành trình thử thách cá nhân có rating cao nhất?",
+        "response": "Dựa trên thông tin được cung cấp, sách \"Một Ý Niệm An Nhiên\" có mô tả về một hành trình nội tâm, đi sâu vào việc thấu hiểu bản thân. Tuy nhiên, không có thông tin cụ thể về rating của mỗi cuốn sách. \n\nNếu bạn muốn tìm sách có rating cao về hành trình thử thách cá nhân, bạn có thể xem xét \"Trên Đỉnh Namsan Ngắm Mặt Trời\" bởi nó mô tả một hành trình khám phá đất nước và bản thân qua trải nghiệm cá nhân của tác giả Hoài Thanh. Tuy nhiên, để xác định rating chính xác nhất, bạn nên tham khảo thêm từ các nguồn đánh giá sách đáng tin cậy."
+    },
+    {
+        "query": "So sánh thử thách trong 'Walden Một Mình Sống Trong Rừng' và 'Cô Đơn Trên Everest'.",
+        "response": "Để so sánh các thách thức trong \"Walden Một Mình Sống Trong Rừng\" của Henry David Thoreau và \"Cô Đơn Trên Everest (Tái bản 2022)\" của Di Li, chúng ta sẽ phân tích các yếu tố sau:\n\n### Thách thức trong \"Walden Một Mình Sống Trong Rừng\":\n\n1. **Môi trường sống đơn giản**:\n   - Henry David Thoreau ở một mình trong rừng Walden với môi trường tự nhiên khắc nghiệt.\n   \n2. **Tự túc và sinh kế**:\n   - Thoreau phải tự trồng cây, nuôi cá, chăn dắt gia súc để duy trì cuộc sống đơn giản.\n\n3. **Tránh xa xã hội**:\n   - Anh từ bỏ sự tiện nghi của xã hội đô thị để tìm kiếm ý nghĩa thực sự trong cuộc sống.\n   \n4. **Suy ngẫm và suy tư cá nhân**:\n   - Thời gian ở một mình cho phép Thoreau có thời gian suy ngẫm về bản thân, tự nhiên và vũ trụ.\n\n### Thách thức trong \"Cô Đơn Trên Everest\":\n\n1. **Trải nghiệm kinh hoàng trên đỉnh núi cao**:\n   - Di Li phải đối mặt với những điều kiện khắc nghiệt của khí hậu núi cao.\n   \n2. **Sức khỏe thể chất**:\n   - Chuyến đi đòi hỏi sự tập luyện và chuẩn bị kỹ lưỡng về sức khỏe.\n   \n3. **Tinh thần vượt qua khó khăn**:\n   - Những thử thách về tinh thần như mất mát, sợ hãi, và áp lực khi ở độ cao.\n\n4. **Đối mặt với sự cô đơn tuyệt đối**:\n   - Khi đi lên đỉnh Everest, Di Li phải chịu đựng cảm giác cô đơn hoàn toàn.\n   \n5. **Sự nguy hiểm của môi trường**:\n   - Rủi ro về sức khỏe và tính mạng do thời tiết thay đổi thất thường.\n\n### Tổng kết:\n\n- Cả hai tác phẩm đều thể hiện sự đối mặt với thử thách cá nhân và tinh thần vượt qua khó khăn.\n- Tuy nhiên, \"Walden Một Mình Sống Trong Rừng\" tập trung vào việc tìm kiếm ý nghĩa cuộc sống thông qua tự túc và suy ngẫm, trong khi \"Cô Đơn Trên Everest (Tái bản 2022)\" nhấn mạnh vào sự đối mặt với các thử thách thể chất và tâm lý khi trải nghiệm môi trường khắc nghiệt trên đỉnh núi cao.\n\nHy vọng những phân tích này hữu ích cho việc so sánh hai tác phẩm. Bạn có thêm câu hỏi hay cần thông tin chi tiết hơn không?"
+    },
+    {
+        "query": "Cuốn sách nào về hành trình thử thách dưới 120,000 VND bán được trên 300 cuốn?",
+        "response": "Dựa trên thông tin bạn cung cấp, không có cuốn sách nào trong danh sách đã đề cập bán được trên 300 bản với giá thấp hơn 120,000 VND. Chỉ có một vài cuốn sách bán được số lượng từ 110 đến 120 bản, và tất cả chúng đều có giá cao hơn 120,000 VND:\n\n- \"Hành Trình Của Hổ  (Phần 3 series Tình Hổ)\" - Bán 110 bản, giá 110\n- \"Vị Giám Đốc Một Phút\" - Bán 120 bản, giá 120\n\nKhông có cuốn sách nào thỏa mãn cả hai điều kiện: giá thấp hơn 120,000 VND và bán được trên 300 bản. Bạn có muốn tìm kiếm trong phạm vi khác hoặc có thêm yêu cầu không?"
+    },
+    {
+        "query": "Cuốn sách nào của Trần Đặng Đăng Khoa có trong danh sách?",
+        "response": "Trong danh sách thông tin mới nhất, cuốn sách của Trần Đặng Đăng Khoa được đề cập là \"1111 - Nhật Ký Sáu Vạn Dặm Trên Yên Xe Cà Tàng\"."
+    },
+    {
+        "query": "Tác giả Di Li có sách nào về hành trình mạo hiểm không?",
+        "response": "Dựa trên thông tin hiện có, không có thông tin về tác giả Di Li hoặc bất kỳ sách nào của ông/đào liên quan đến hành trình mạo hiểm. Các cuốn sách được liệt kê chủ yếu thuộc các thể loại như kinh doanh, tiểu thuyết ma thuật lãng mạn (như Hành Trình Của Hổ), và có một số tác phẩm về hành trình khởi nghiệp nhưng không liên kết với tác giả Di Li.\n\nNếu bạn cần thông tin thêm hoặc có yêu cầu khác, vui lòng cung cấp chi tiết nhé!"
+    },
+    {
+        "query": "Tác giả phiêu lưu nào có sách bán chạy nhất trong danh sách?",
+        "response": "Dựa trên thông tin hiện tại mà tôi có, không có thông tin cụ thể về tác giả phiêu lưu và sách bán chạy nhất. Danh sách các tác phẩm và mô tả của chúng mà tôi được cung cấp bao gồm nhiều loại chủ đề như văn học Việt Nam, tiểu thuyết, sưu tầm ma quỷ nhưng không đề cập đến doanh số bán hàng hoặc danh sách sách bán chạy. Để trả lời câu hỏi chính xác, chúng ta cần thêm thông tin về xếp hạng hay doanh số bán hàng của các tác phẩm."
+    },
+    {
+        "query": "So sánh nội dung và rating của các sách phiêu lưu của Nguyễn Tập và Lý Thành Cơ.",
+        "response": "Xin lỗi, nhưng thông tin về sách phiêu lưu của Nguyễn Tập và Lý Thành Cơ không có trong dữ liệu mà tôi được cung cấp. Dữ liệu hiện tại chỉ bao gồm một số mô tả tổng quan về các cuốn sách với nhiều thể loại khác nhau như truyện tranh, văn học, tùy bút... nhưng không phân biệt rõ giữa các tác giả cụ thể và chưa có rating.\n\nĐể so sánh nội dung và rating của các cuốn sách phiêu lưu của hai nhà văn này, tôi cần thêm thông tin từ nguồn khác hoặc tìm kiếm trực tiếp trên các trang web bán sách uy tín. Bạn có muốn tôi thực hiện việc đó không?"
+    },
+    {
+        "query": "Cuốn sách nào của Ryszard Kapuściński về phiêu lưu có giá dưới 150,000 VND?",
+        "response": "Dựa trên thông tin đã cung cấp, cuốn sách \"Gỗ mun\" của Ryszard Kapuściński có giá hiện tại là 61,600 VND và tổng cộng đã bán được 67 bản, phù hợp với yêu cầu về giá dưới 150,000 VND."
+    },
+    {
+        "query": "Cuốn 'Lãnh Đạo Tỉnh Thức' nói về điều gì?",
+        "response": "Cuốn sách \"Lãnh Đạo Tỉnh Thức (The Mindful Leader)\" do Michael Bunting viết cho thấy rằng chúng ta thực sự có thể vừa là một nhà lãnh đạo doanh nghiệp thành công, vừa là một con người hiểu biết và đầy lòng trắc ẩn. Cuốn sách này nhấn mạnh việc áp dụng tư duy tỉnh thức vào vai trò của một nhà lãnh đạo để cải thiện hiệu suất cá nhân và tổ chức đồng thời duy trì sự cân bằng giữa cuộc sống chuyên môn và đời sống cá nhân.\n\nĐây là tóm tắt chi tiết về cuốn sách:\n- \"LÃNH ĐẠO TỈNH THỨC(The Mindful Leader)Cuốn sách này cho thấy rằng chúng ta thực sự có thể vừa là một nhà lãnh đạo doanh nghiệp thành công, vừa là một con người hiểu biết và đầy lòng trắc ẩn. Nếu bạn ....\""
+    },
+    {
+        "query": "Có sách nào về lãnh đạo không dùng quyền lực không?",
+        "response": "Dựa trên thông tin mới nhất, có một số cuốn sách liên quan đến việc lãnh đạo mà không dựa vào quyền lực:\n\n1. **\"Nhà Lãnh Đạo Không Chức Danh\"** - Robin Sharma:\n   - Tóm tắt: Suốt hơn 15 năm, Robin Sharma đã thầm lặng chia sẻ với những công ty trong danh sách Fortune 500 và nhiều người siêu giàu khác một công thức thành công. Ông nhấn mạnh tầm quan trọng của việc lãnh đạo không dựa vào quyền lực mà dựa trên lòng tin và ảnh hưởng tích cực.\n\n2. **\"Dám Lãnh Đạo\"** - Brene Brown:\n   - Tóm tắt: Đây là cuốn sách về chủ đề Lãnh đạo – Quản lý của Brené Brown, tập trung vào thế giới nội tâm của những người lãnh đạo. Ông đề cập đến việc trở thành một nhà lãnh đạo xuất sắc mà không cần phải dùng sức mạnh quyền lực.\n\nCả hai cuốn sách này đều cung cấp góc nhìn mới mẻ về cách lãnh đạo mà không phụ thuộc vào quyền lực, thay vào đó tập trung vào lòng tin, ảnh hưởng và sự chân thật."
+    },
+    {
+        "query": "Sách lãnh đạo nào có rating cao nhất và giá dưới 150,000 VND?",
+        "response": "Dựa trên thông tin hiện có, không có sách về lãnh đạo nào có rating là 4.8 và giá dưới 150,000 VND. Tuy nhiên, sách \"Những Thách Thức Của Nhà Lãnh Đạo\" có rating 3.8 nhưng không có thông tin về giá cả. Bạn có muốn tìm hiểu thêm về một loại sách khác hay cần hỗ trợ gì khác không?"
+    },
+    {
+        "query": "So sánh nội dung của 'Lãnh Đạo Phục Vụ' và 'Lãnh Đạo Chuyển Hóa'.",
+        "response": "Hiện tại, chúng tôi chỉ có thông tin về sách \"Lãnh Đạo Phục Vụ (Tái Bản)\" trong cơ sở dữ liệu. Tuy nhiên, để so sánh nội dung của hai cuốn sách này, chúng ta cần thêm thông tin về cuốn sách \"Lãnh Đạo Chuyển Hóa\". \n\nSách \"Lãnh Đạo Phục Vụ\" (Servant Leadership) do Robert K. Greenleaf biên soạn và đã được tái bản với các bản dịch khác nhau như của Trần Vĩnh Tân và Nguyễn Dương Hiếu.\n\nNội dung chính của \"Lãnh Đạo Phục Vụ\":\n\n1. **Tầm nhìn của lãnh đạo phục vụ**: Xác định vai trò của nhà lãnh đạo là người phục vụ, tập trung vào nhu cầu và phát triển của tổ chức và cá nhân.\n2. **Triết lý Servant Leadership**: Nâng cao chất lượng cuộc sống của những người xung quanh, tạo ra môi trường làm việc tích cực hơn.\n3. **Thách thức trong lãnh đạo phục vụ**: Những thách thức về sự hiểu biết, thái độ và kỹ năng cần có để thực hiện tư tưởng này.\n\nĐể so sánh với \"Lãnh Đạo Chuyển Hóa\" (Transformational Leadership), chúng ta cần thêm thông tin về nội dung của cuốn sách này. Bạn có thể cung cấp hoặc chia sẻ thêm thông tin về sách \"Lãnh Đạo Chuyển Hóa\"?"
+    },
+    {
+        "query": "Cuốn sách nào của PACE Books về lãnh đạo bán chạy nhất?",
+        "response": "Dựa trên thông tin được cung cấp, cuốn sách PACE Books về lãnh đạo bán chạy nhất là \"Nhà Lãnh Đạo Không Chức Danh\" với số lượng đã bán là 4175 bản."
+    },
+    {
+        "query": "Cuốn 'Quản Trị Nhân Sự Đúng' có nội dung gì?",
+        "response": "\"Quản Trị Nhân Sự Đúng\" tập trung vào việc quản lý con người, một công việc phức tạp và khó khăn đối với các nhà lãnh đạo. Cuốn sách này sẽ cung cấp các phương pháp và chiến lược hữu ích để giúp các nhà quản trị nhân sự xử lý hiệu quả những thách thức trong môi trường làm việc hiện đại, nơi xã hội luôn biến động mạnh mẽ."
+    },
+    {
+        "query": "Có sách nào về quản trị KPI không?",
+        "response": " Có sách \"Quản Trị KPI - Công Cụ Vận Hành Tổ Chức Và Nhân Sự Một Cách Hiệu Quả\" tập trung vào quản trị KPI. Đây là một số thông tin chính về cuốn sách:\n\n- Tác giả: Kazuya Kusumoto\n- Giá gốc: 140,000 VNĐ \n- Giá hiện tại: 101,000 VNĐ (giảm 28% so với giá gốc)\n- Có xếp hạng 4.5 sao dựa trên nhiều đánh giá của độc giả\n\nCuốn sách này không chỉ đo lường hiệu suất cá nhân và tổ chức thông qua các chỉ số KPI mà còn xác nhận liệu những hoạt động nhằm nâng cao chính chỉ số đó có đang được thực hiện một cách hiệu quả hay không.\n\nBạn có thể tham khảo chi tiết hơn từ liên kết [tại đây](https://tiki.vn/product-p169607070.html?spid=169607075).\n\nNếu bạn quan tâm, tôi có thể cung cấp thêm thông tin về các cuốn sách quản trị khác."
+    },
+    {
+        "query": "Sách quản trị nhân sự nào có số lượng bán cao nhất?",
+        "response": "Trong danh sách thông tin mới nhất, chúng ta có thể thấy các quyển sách quản trị nhân sự và số lượng đã bán:\n\n- \"Quản Trị Nhân Sự Đúng\" đã bán 1696 bản.\n- \"Quản Trị Nhân Sự Thời GEN Z\" đã bán 284 bản.\n\nSách \"Quản Trị Nhân Sự Đúng\" có số lượng bán cao nhất với 1696 bản."
+    },
+    {
+        "query": "So sánh giá và nội dung của 'Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp' và 'Quản Trị KPI'.",
+        "response": "### So sánh giữa \"Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp\" và \"Quản Trị KPI - Công Cụ Vận Hành Tổ Chức Và Nhân Sự Một Cách Hiệu Quả\"\n\n#### 1. **Giá Sách**\n- **Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp**:\n  - Giá gốc: 169,000 VNĐ\n  - Giảm giá: 37%\n  - Giá hiện tại: 106,000 VNĐ\n\n- **Quản Trị KPI - Công Cụ Vận Hành Tổ Chức Và Nhân Sự Một Cách Hiệu Quả**:\n  - Giá gốc: 140,000 VNĐ\n  - Giảm giá: 28%\n  - Giá hiện tại: 101,000 VNĐ\n\n#### 2. **Nội Dung Sách**\n- **Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp**:\n  - Tác giả: Whitney Johnson\n  - Mô tả nội dung: \n    > \"Kỹ năng quản lý nhân sự chuyên nghiệp\" là một cuốn sách quan trọng cho các nhà quản lý muốn giúp các thành viên trong nhóm học hỏi, phát triển và nhận ra tiềm năng của họ. Trong cuốn sách này, Whitney Johnson chia sẻ những kỹ thuật hiệu quả để quản lý và phát triển nguồn lực con người.\n\n- **Quản Trị KPI - Công Cụ Vận Hành Tổ Chức Và Nhân Sự Một Cách Hiệu Quả**:\n  - Tác giả: Kazuya Kusumoto\n  - Mô tả nội dung:\n    > Theo tác giả Kusumoto Kazuya, quản trị KPI không chỉ đo lường hiệu suất cá nhân và tổ chức thông qua các chỉ số, mà còn xác nhận các hoạt động nhằm nâng cao chính chỉ số đó có đang được thực hiện tốt hay chưa.\n\n#### 3. **Tổng Kết**\n- **Giá Trị Đơn Vị**: \n  - \"Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp\" (106,000 VNĐ): Sách tập trung vào kỹ năng quản lý và phát triển con người.\n  - \"Quản Trị KPI - Công Cụ Vận Hành Tổ Chức Và Nhân Sự Một Cách Hiệu Quả\" (101,000 VNĐ): Sách cung cấp công cụ đo lường hiệu suất tổ chức và cá nhân.\n\n- **Thích hợp cho đối tượng**:\n  - \"Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp\": Hợp lý cho những nhà quản lý muốn cải thiện kỹ năng lãnh đạo.\n  - \"Quản Trị KPI - Công Cụ Vận Hành Tổ Chức Và Nhân Sự Một Cách Hiệu Quả\": Hợp lý cho những người cần hiểu rõ hơn về cách đo lường và đánh giá hiệu suất trong tổ chức.\n\nMặc dù cả hai cuốn sách đều liên quan đến quản trị nhân sự, nhưng \"Kỹ Năng Quản Lý Nhân Sự Chuyên Nghiệp\" tập trung vào việc phát triển và khai thác tiềm năng con người, trong khi \"Quản Trị KPI - Công Cụ Vận Hành Tổ Chức Và Nhân Sự Một Cách Hiệu Quả\" cung cấp công cụ đo lường hiệu suất."
+    },
+    {
+        "query": "Cuốn sách nào về nhân sự dưới 150,000 VND của Nhà Xuất Bản Công Thương đáng đọc?",
+        "response": "Dựa trên thông tin hiện có, không có cuốn sách cụ thể về nhân sự do Nhà Xuất Bản Công Thương xuất bản với giá thấp hơn 150.000 VND được đề cập. Tuy nhiên, nếu bạn quan tâm đến các loại sách khác từ nhà xuất bản này hoặc cần tìm kiếm thêm thông tin, tôi sẽ hỗ trợ bạn thực hiện tìm kiếm phù hợp. Bạn có muốn tôi giúp tìm kiếm thêm không?"
+    },
+    {
+        "query": "Cuốn 'Digital Transformation - Chuyển Đổi Số' nói về gì?",
+        "response": "Cuốn sách \"Digital Transformation - Chuyển Đổi Số\" tập trung vào quá trình chuyển đổi số của các tổ chức. Cụ thể, nó thảo luận về những thay đổi lớn từ bên ngoài mà bất kỳ tổ chức nào cũng phải đối mặt trong quá trình chuyển đổi số và cách tổ chức có thể bắt đầu từ đâu để tìm nguồn lực phù hợp.\n\nMột đoạn trích mô tả ngắn gọn nội dung của sách như sau:\n\"Bất kỳ tổ chức nào cũng đều phải đối mặt với những thay đổi lớn tới từ bên ngoài trong quá trình chuyển đổi số. Vậy tổ chức của bạn phải bắt đầu từ đâu? Làm thế nào bạn có được nguồn lực phù hợp? Quá …\"\n\nNgoài ra, sách còn cung cấp các hướng dẫn và chiến lược để các lãnh đạo doanh nghiệp và chính phủ tìm ra con đường chuyển đổi số hiệu quả."
+    },
+    {
+        "query": "Có sách nào về chuyển đổi số giá dưới 150,000 VND không?",
+        "response": "Dựa trên thông tin hiện có, có một số cuốn sách về chuyển đổi số có giá thấp hơn hoặc bằng 150,000 VND:\n\n1. **Chuyển Đổi Số (Digital Transformation)(Tái Bản)**\n   - Giá hiện tại: 132,000 VND\n   - Giá ban đầu: 165,000 VND\n\n2. **Họ Đã Khởi Nghiệp Thế Nào? Câu Chuyện Khởi Nghiệp Của 30 Doanh Nghiệp Thành Công**\n   - Giảm giá: 38%\n   - Giá hiện tại: 93,000 VND\n   - Giá ban đầu: 150,000 VND\n\nCác cuốn sách này đều có giá thấp hơn hoặc bằng 150,000 VND. Bạn có thể tham khảo và mua từ Tiki Trading.\n\nBạn muốn biết thêm thông tin về một cuốn sách cụ thể hay cần hỗ trợ đặt mua?"
+    },
+    {
+        "query": "Sách về chuyển đổi số nào có đánh giá trung bình cao nhất?",
+        "response": "Trong danh sách thông tin mới nhất, hai cuốn sách về chuyển đổi số có đánh giá trung bình cao nhất là:\n\n1. **Chuyển Đổi Số (Digital Transformation)(Tái Bản)**:\n   - Đánh giá: 5.0\n\n2. **Digital Transformation - Chuyển Đổi Số**:\n   - Đánh giá: 4.6\n\nSách \"Chuyển Đổi Số (Digital Transformation)(Tái Bản)\" có đánh giá trung bình cao nhất là 5.0."
+    },
+    {
+        "query": "So sánh nội dung của 'Chuyển Đổi Số' và 'Đổi Mới Từ Cốt Lõi'.",
+        "response": "### So sánh nội dung giữa \"Chuyển Đổi Số (Digital Transformation)\" và \"Đổi Mới Từ Cốt Lõi, Thay Đổi Để Dẫn Đầu\"\n\n1. **\"Chuyển Đổi Số (Digital Transformation)(Tái Bản)\"**:\n   - Tác giả: Không rõ (có thể làThomas Siebel)\n   - Nội dung chính: \n     - Lời khuyên chân thành dành cho lãnh đạo doanh nghiệp và chính phủ.\n     - Mục đích giúp tìm ra con đường chuyển đổi số hiệu quả.\n\n2. **\"Đổi Mới Từ Cốt Lõi, Thay Đổi Để Dẫn Đầu\"**:\n   - Tác giả: Natalie Turner\n   - Nội dung chính: \n     - Nói về tầm nhìn toàn cầu hóa và sự cạnh tranh khốc liệt giữa các nền kinh tế.\n     - Đề cập đến việc cần đổi mới từ cốt lõi để dẫn đầu trong môi trường toàn cầu.\n\n### Tổng kết:\n- **Chủ đề chung**: Cả hai cuốn sách đều tập trung vào chủ đề chuyển đổi và cải tiến, nhưng ở các góc độ khác nhau. \"Chuyển Đổi Số\" tập trung vào việc áp dụng công nghệ số để tăng năng suất và cạnh tranh trong kinh doanh, còn \"Đổi Mới Từ Cốt Lõi\" đề cập đến sự thay đổi nội tại (các quy trình, văn hóa) của một tổ chức.\n\n- **Tập trung**: \n  - \"Chuyển Đổi Số\" tập trung vào công nghệ và kỹ thuật.\n  - \"Đổi Mới Từ Cốt Lõi\" tập trung vào việc thay đổi từ bên trong để thích nghi với môi trường mới.\n\n- **Mục tiêu độc giả**:\n  - \"Chuyển Đổi Số\": Lãnh đạo doanh nghiệp, người quan tâm về công nghệ số.\n  - \"Đổi Mới Từ Cốt Lõi\": Tất cả những ai muốn hiểu về sự thay đổi toàn diện của tổ chức.\n\n- **Phong cách viết**:\n  - \"Chuyển Đổi Số\": Có thể ngắn gọn và tập trung vào thực tiễn ứng dụng công nghệ.\n  - \"Đổi Mới Từ Cốt Lõi\": Có thể dài hơn, sâu sắc hơn về lý thuyết và thực hành.\n\nHy vọng thông tin này hữu ích cho bạn! Nếu cần thêm chi tiết hoặc có câu hỏi gì khác, hãy cứ chia sẻ nhé."
+    },
+    {
+        "query": "Cuốn sách nào về chuyển đổi số của PACE Books có số lượng bán trên 300 cuốn?",
+        "response": "Trong danh sách thông tin mới nhất, cuốn sách \"Chuyển Đổi Số (Digital Transformation) - Thomas Siebel - PACE Books\" đã bán được 308 cuốn, vượt quá số lượng 300 cuốn bạn yêu cầu."
+    },
+    {
+        "query": "Cuốn sách nào của John C. Maxwell có trong danh sách?",
+        "response": "Trong danh sách, có hai cuốn sách của John C. Maxwell:\n\n1. \"Lãnh Đạo Giỏi Hỏi Câu Hỏi Hay (Tái Bản)\"\n2. \"21 Nguyên Tắc Vàng Của Nghệ Thuật Lãnh Đạo\"\n\nCả hai cuốn sách này đều được chỉ rõ là do John C. Maxwell viết."
+    },
+    {
+        "query": "Tác giả Phan Văn Trường có sách nào về quản trị không?",
+        "response": "Phan Văn Trường là tác giả của cuốn sách \"Một Đời Quản Trị - Giáo Sư Phan Văn Trường\". Đây là một tác phẩm thuộc thể loại sách quản trị nhân lực và đã nhận được đánh giá tích cực từ độc giả với điểm số 5.0. Bạn có muốn biết thêm thông tin về nội dung hoặc nơi bán cuốn sách này không?"
+    },
+    {
+        "query": "Tác giả quản trị nào có sách bán chạy nhất trong danh sách?",
+        "response": "Dựa trên thông tin được cung cấp, chúng tôi không có dữ liệu cụ thể về sách quản trị bán chạy nhất. Tuy nhiên, nếu bạn muốn biết thêm chi tiết về các cuốn sách quản trị khác nhau mà chúng tôi đã liệt kê, vui lòng cho tôi biết và tôi sẽ cung cấp thông tin chi tiết hơn!"
+    },
+    {
+        "query": "So sánh rating và giá của các sách của Robert S. Kaplan và David Parmenter.",
+        "response": "Hiện tại, thông tin về các đánh giá (rating) cụ thể và giá của các cuốn sách do Robert S. Kaplan và David Parmenter viết không được cung cấp trong dữ liệu mà bạn đã chia sẻ. Tuy nhiên, tôi có thể đưa ra một số nhận xét cơ bản dựa trên thông tin bạn đã cung cấp:\n\n1. **Robert S. Kaplan và David P. Norton**:\n   - Họ đã xuất bản hai cuốn sách: \"Thẻ Điểm Cân Bằng - The Balanced Scorecard\" và \"Thực Thi Xuất Sắc (The Execution Premium)\".\n   - Cuốn sách \"Thẻ Điểm Cân Bằng - The Balanced Scorecard\" có rank 12 trong dữ liệu.\n   - Cuốn sách \"Thực Thi Xuất Sắc (The Execution Premium)\" cũng có rank tương tự.\n\n2. **David Parmenter**:\n   - Ông đã xuất bản cuốn sách \"KPI Thước Đo Mục Tiêu Trọng Yếu (Key Performance Indicators)\".\n   - Rank của cuốn sách này trong dữ liệu là 12.\n\nĐể so sánh rating và giá, chúng ta thường cần truy cập các nguồn đánh giá trực tuyến như Amazon, Book Depository, hoặc các trang web bán sách khác. Bạn có thể tìm kiếm thông tin cụ thể về rating (đánh giá) và giá của các cuốn sách này trên các nền tảng đó.\n\nNếu bạn muốn tra cứu thêm thông tin chi tiết về rating và giá, tôi khuyên bạn nên tham khảo trực tiếp từ các nguồn bán hàng hoặc đánh giá sách trực tuyến."
+    },
+    {
+        "query": "Cuốn sách nào của Michael Bunting dưới 150,000 VND có rating 5.0?",
+        "response": "Dựa trên thông tin được cung cấp, cuốn sách \"Lãnh Đạo Tỉnh Thức (The Mindful Leader) - Michael Bunting - PACE Books\" thỏa mãn các điều kiện sau:\n\n1. Được viết bởi Michael Bunting.\n2. Giá hiện tại là 108,000 VND (< 150,000 VND).\n3. Có đánh giá (rating) là 5.0.\n\nNgoài ra, đây cũng là cuốn sách duy nhất của Michael Bunting trong danh sách cung cấp thông tin.\n\nVì vậy, cuốn sách \"Lãnh Đạo Tỉnh Thức (The Mindful Leader) - Michael Bunting - PACE Books\" chính là đáp án cho câu hỏi của bạn."
+    },
+    {
+        "query": "Cuốn 'The Culture Code' nói về điều gì?",
+        "response": "'The Culture Code: Khám Phá Sức Mạnh Văn Hóa Đội Nhóm' của tác giả Daniel Coyle, tập trung vào việc khám phá những bí mật giúp tạo nên các nhóm vô cùng thành công. Cuốn sách này cung cấp cho các nhà lãnh đạo tương lai và các chuyên gia quản lý các chiến lược cụ thể để xây dựng và duy trì văn hóa đội nhóm mạnh mẽ.\n\nMột số điểm chính của cuốn sách bao gồm:\n- Khám phá những yếu tố quyết định sự hiệu quả trong một đội nhóm.\n- Cách thức tạo ra môi trường làm việc tích cực và khích lệ sáng tạo.\n- Chiến lược giúp các nhà lãnh đạo hiểu và tác động đến văn hóa tổ chức.\n\nĐây là một tài liệu giá trị cho những ai muốn cải thiện khả năng lãnh đạo, xây dựng đội ngũ hiệu quả hoặc nâng cao văn hóa trong tổ chức của mình."
+    },
+    {
+        "query": "Có sách nào về xây dựng văn hóa doanh nghiệp không?",
+        "response": "Theo thông tin hiện có, chưa có bất kỳ quyển sách cụ thể nào được đề cập đến xây dựng văn hóa doanh nghiệp. Tuy nhiên, các cuốn sách liên quan đến quản lý và phát triển doanh nghiệp có thể cung cấp những kiến thức hữu ích về việc xây dựng và duy trì một văn hóa doanh nghiệp mạnh mẽ.\n\nNếu bạn quan tâm đến những quyển sách đã được đề cập trước đây mà vẫn muốn tìm thông tin thêm, tôi có thể giới thiệu các quyển như:\n\n1. **\"Để Xây Dựng Doanh Nghiệp Hiệu Quả\"** - Tùy thuộc vào nội dung cụ thể của cuốn sách này, bạn có thể học hỏi về cách xây dựng một doanh nghiệp bền vững và phát triển.\n\n2. **\"Chiến Lược Xây Dựng Thương Hiệu Và Quản Lý Sản Phẩm\"** - Có thể cung cấp thông tin về việc xây dựng thương hiệu, điều này có liên quan đến văn hóa doanh nghiệp.\n\n3. **\"Hơn Cả Khởi Nghiệp 2.0: Xây Dựng Công Ty Từ Khởi Nghiệp Đến Vĩ Đại Trường Tồn\"** - Cuốn sách này tập trung vào việc xây dựng và phát triển công ty trong thời gian dài, có thể bao gồm các yếu tố về văn hóa doanh nghiệp.\n\nNếu bạn muốn tìm kiếm thêm về văn hóa doanh nghiệp, tôi đề nghị tìm hiểu những quyển sách chuyên sâu hơn như \"Building a Culture of Innovation\" của Clayton M. Christensen hoặc \"The Culture Code: The Secrets of Highly Successful Groups\" của Daniel Coyle."
+    },
+    {
+        "query": "Sách về văn hóa doanh nghiệp nào có số lượng bán cao nhất?",
+        "response": "Dựa trên thông tin được cung cấp, sách \"Sức Mạnh Của Văn Hóa Doanh Nghiệp\" (作者: Chris Dyer) đã bán được 188 bản, là số lượng cao nhất trong danh sách. Đây là thông tin có sẵn từ dữ liệu:\n\n- Số lượng bán của \"Sức Mạnh Của Văn Hóa Doanh Nghiệp\": 188 bản\n- Số lượng bán của \"Khởi Nghiệp, Lãng Mạn Và Thực Tế\": 148 bản\n- Số lượng bán của \"Họ Đã Khởi Nghiệp Thế Nào? Câu Chuyện Khởi Nghiệp Của 30 Doanh Nghiệp Thành Công\": 493 bản (nhưng không phải sách về văn hóa doanh nghiệp)\n\nVì vậy, trong số các cuốn sách liên quan đến văn hóa doanh nghiệp, \"Sức Mạnh Của Văn Hóa Doanh Nghiệp\" có số lượng bán cao nhất là 188 bản."
+    },
+    {
+        "query": "So sánh nội dung của 'Lãnh Đạo Và Văn Hóa Doanh Nghiệp' và '7 Bước Xây Dựng Văn Hóa Doanh Nghiệp'.",
+        "response": "Cả hai cuốn sách đều tập trung vào chủ đề văn hóa doanh nghiệp, nhưng mỗi cuốn mang lại những góc nhìn và giải pháp khác nhau. Dưới đây là so sánh nội dung của chúng:\n\n### \"Lãnh Đạo Và Văn Hóa Doanh Nghiệp\"\n- **Tiêu đề**: Lãnh Đạo Và Văn Hóa Doanh Nghiệp\n- **Mô tả**: Cuốn sách này cung cấp cách xây dựng văn hóa doanh nghiệp để nâng cao sự hài lòng và hiệu suất của nhân viên. Tác giả đã chia sẻ nhiều kinh nghiệm thực tế và các chiến lược cụ thể giúp lãnh đạo xây dựng một môi trường làm việc tích cực.\n- **Nội dung chi tiết**: Cuốn sách không chỉ đề cập đến văn hóa doanh nghiệp mà còn hướng dẫn cách thức áp dụng những nguyên tắc này vào quản lý nhân sự, tạo động lực cho đội ngũ, và tăng cường tính hiệu quả trong công việc.\n\n### \"7 Bước Xây Dựng Văn Hóa Doanh Nghiệp\"\n- **Tiêu đề**: 7 Bước Xây Dựng Văn Hóa Doanh Nghiệp\n- **Mô tả**: Tác giả đưa ra bảy bước cụ thể để xây dựng văn hóa doanh nghiệp. Cuốn sách không chỉ trình bày lý thuyết mà còn cung cấp các ví dụ thực tế giúp người đọc hiểu rõ hơn về cách triển khai các bước này.\n- **Nội dung chi tiết**: Cuốn sách tập trung vào việc giải quyết những thắc mắc và khó khăn thường gặp khi xây dựng văn hóa doanh nghiệp. Tác giả nhấn mạnh tầm quan trọng của sự nhất quán trong thực hiện các hoạt động và quy trình liên quan đến văn hóa doanh nghiệp.\n\n### So sánh\n- **Phong cách viết**: \"Lãnh Đạo Và Văn Hóa Doanh Nghiệp\" có thể được xem như một cuốn sách tổng hợp kiến thức về văn hóa doanh nghiệp, trong khi \"7 Bước Xây Dựng Văn Hóa Doanh Nghiệp\" đi vào cụ thể hơn với bảy bước hướng dẫn.\n- **Nội dung thực tế**: \"Lãnh Đạo Và Văn Hóa Doanh Nghiệp\" cung cấp nhiều ví dụ thực tế để áp dụng các nguyên tắc, trong khi \"7 Bước Xây Dựng Văn Hóa Doanh Nghiệp\" nhấn mạnh vào quy trình và cách thức triển khai.\n- **Phụ trợ học hỏi**: \"Lãnh Đạo Và Văn Hóa Doanh Nghiệp\" phù hợp cho những người muốn hiểu rõ về văn hóa doanh nghiệp từ góc độ tổng quát, trong khi \"7 Bước Xây Dựng Văn Hóa Doanh Nghiệp\" hữu ích hơn cho những ai đang tìm kiếm hướng dẫn thực tế để xây dựng văn hóa doanh nghiệp.\n\nNhìn chung, cả hai cuốn sách đều cung cấp giá trị lớn về việc xây dựng và duy trì một văn hóa doanh nghiệp mạnh mẽ, nhưng mỗi cuốn tập trung vào các khía cạnh khác nhau của vấn đề."
+    },
+    {
+        "query": "Cuốn sách nào về văn hóa doanh nghiệp dưới 150,000 VND của Nhà Xuất Bản Thế Giới đáng đọc?",
+        "response": "Dựa trên thông tin mới nhất bạn cung cấp, có một số cuốn sách về văn hóa doanh nghiệp của Nhà Xuất Bản Thế Giới có giá thấp hơn hoặc bằng 150.000 VND mà bạn có thể cân nhắc:\n\n1. \"Hiểu Hết Về Kinh Doanh\" - Giá bán: 118.000đ\n2. \"Rethinking Strategy – Tư Duy Lại Chiến Lược\" - Giá bán: 145.000đ\n\nSách \"Hiểu Hết Về Kinh Doanh\" có giá thấp hơn ngưỡng 150.000 VND, nên là lựa chọn phù hợp cho bạn.\n\nCả hai cuốn sách này đều cung cấp kiến thức quan trọng về kinh doanh và văn hóa doanh nghiệp, sẽ hữu ích nếu bạn quan tâm đến lĩnh vực này."
+    }
+]

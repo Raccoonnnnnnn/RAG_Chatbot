@@ -5,7 +5,7 @@ import jsonlines
 from openai import OpenAI
 
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 
 def batch_eval(query_file, result1_file, result2_file, output_file_path):

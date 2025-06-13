@@ -1,9 +1,9 @@
 import os
 from datetime import datetime
 import time
-from data_ingestion.get_books import crawl_books
-from data_comparison.compare_data import detect_changes
-from data_preprocessing.process_tiki_books import process_books_to_texts
+from src.data_ingestion.get_books import crawl_books
+from src.data_comparison.compare_data import detect_changes
+from src.data_preprocessing.process_tiki_books import process_books_to_texts
 import httpx
 import logging
 from dotenv import load_dotenv
@@ -108,7 +108,7 @@ def main():
     """Run the data update process with flexible trigger frequency."""
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     new_file = os.path.join(CRAWL_DIR, f"books_data_{timestamp}.csv")
-    new_file = os.path.join(CRAWL_DIR, f"books_data_2025-04-28_14-30-45.csv")
+    new_file = os.path.join(CRAWL_DIR, f"books_data_2025-06-13_14-30-45.csv")
     changes_file = os.path.join(COMPARE_DIR, f"changes_{timestamp}.csv")
 
     os.makedirs(CRAWL_DIR, exist_ok=True)

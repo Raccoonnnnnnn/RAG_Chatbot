@@ -1,9 +1,9 @@
 import os
 from datetime import datetime
 import time
-from src.crawl_tiki_data.get_books import crawl_books
-from src.compare_data.compare_data import detect_changes
-from src.preprocess_data.process_tiki_books import process_books_to_texts
+from data_ingestion.get_books import crawl_books
+from data_comparison.compare_data import detect_changes
+from data_preprocessing.process_tiki_books import process_books_to_texts
 import httpx
 import logging
 from dotenv import load_dotenv

@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import pandas as pd
-from src.preprocess_data.insert_custom_kg import create_custom_kg_for_batch
+from data_preprocessing.insert_custom_kg import create_custom_kg_for_batch
 
 # Load environment variables from .env file
 load_dotenv()

@@ -14,13 +14,15 @@ ENTITY_MAPPING = {
     "author": "Authors"
 }
 
+
 # Normalize values
 def normalize_value(value):
     value = str(value).strip().lower()
     value = value.replace(",", ".")  # Standardize decimal notation
-    value = value.replace("%", "")   # Remove percentage symbol
+    value = value.replace("%", "")  # Remove percentage symbol
     value = value.replace(" sao", "")  # Remove "sao" in rating
     return value
+
 
 # Read data from Excel
 def load_ground_truth(excel_file):
@@ -29,7 +31,7 @@ def load_ground_truth(excel_file):
 
     for entity_type, column_name in ENTITY_MAPPING.items():
         if column_name == "Authors":
-            authors = df[column_name].apply(lambda x: eval(x) if isinstance(x, str) else [])            
+            authors = df[column_name].apply(lambda x: eval(x) if isinstance(x, str) else [])
             # Add other delimiters
             ground_truth[entity_type] = [normalize_value(author) for sublist in authors for author in sublist]
         elif column_name == "Publisher":
@@ -37,15 +39,17 @@ def load_ground_truth(excel_file):
             ground_truth[entity_type] = [normalize_value(publisher) for sublist in publishers for publisher in sublist]
         elif column_name == "Manufacturer":
             manufacturers = df[column_name].apply(lambda x: eval(x) if isinstance(x, str) else [])
-            ground_truth[entity_type] = [normalize_value(manufacturer) for sublist in manufacturers for manufacturer in sublist]
+            ground_truth[entity_type] = [normalize_value(manufacturer) for sublist in manufacturers for manufacturer in
+                                         sublist]
         elif column_name == "Price (vnd)":
             ground_truth[entity_type] = [f"{normalize_value(price)} vnd" for price in df[column_name]]
         elif column_name == "Rating":
             ground_truth[entity_type] = [f"{normalize_value(rating)}" for rating in df[column_name]]
         else:
             ground_truth[entity_type] = [normalize_value(str(x)) for x in df[column_name]]
-    
+
     return ground_truth
+
 
 # Read data from .graphml
 def load_graphml_data(graphml_file):
@@ -53,6 +57,7 @@ def load_graphml_data(graphml_file):
     root = tree.getroot()
     namespaces = {'ns': 'http://graphml.graphdrawing.org/xmlns'}
     return root, namespaces
+
 
 # Evaluation
 def evaluate_entities(root, namespaces, ground_truth):
@@ -107,6 +112,7 @@ def evaluate_entities(root, namespaces, ground_truth):
         "false_negatives": false_negatives
     }
 
+
 # Main function
 def main():
     excel_file = "./data/tiki_books_vn.xlsx"
@@ -122,6 +128,7 @@ def main():
     print(f"True Positives: {results['true_positives']}")
     print(f"False Positives: {results['false_positives']}")
     print(f"False Negatives: {results['false_negatives']}")
+
 
 if __name__ == "__main__":
     main()

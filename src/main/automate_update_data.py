@@ -28,16 +28,17 @@ logging.basicConfig(
     filemode=LOG_FILE_MODE
 )
 
+
 def get_latest_file(directory, prefix, extension=".csv", exclude_file=None):
     """Find the most recent file in the directory based on timestamp, excluding a specified file."""
     files = [f for f in os.listdir(directory) if f.startswith(prefix) and f.endswith(extension)]
     if exclude_file:
         files = [f for f in files if os.path.join(directory, f) != exclude_file]
-    
+
     if not files:
         logging.info(f"No valid files found in {directory} with prefix {prefix} after exclusion")
         return None
-    
+
     valid_files = []
     for f in files:
         try:
@@ -51,14 +52,17 @@ def get_latest_file(directory, prefix, extension=".csv", exclude_file=None):
         except ValueError:
             logging.warning(f"Skipping file with invalid timestamp: {f}")
             continue
-    
+
     if not valid_files:
         logging.info(f"No valid files found in {directory} with prefix {prefix} after validation")
         return None
-    
-    latest_file = max(valid_files, key=lambda f: datetime.strptime(f"{f.split('_')[-2]}_{f.split('_')[-1].replace(extension, '')}", "%Y-%m-%d_%H-%M-%S"))
+
+    latest_file = max(valid_files,
+                      key=lambda f: datetime.strptime(f"{f.split('_')[-2]}_{f.split('_')[-1].replace(extension, '')}",
+                                                      "%Y-%m-%d_%H-%M-%S"))
     logging.info(f"Latest file found: {latest_file}")
     return os.path.join(directory, latest_file)
+
 
 def cleanup_old_files(directory, days_to_keep=DAYS_TO_KEEP):
     """Delete files older than the specified number of days."""
@@ -81,6 +85,7 @@ def cleanup_old_files(directory, days_to_keep=DAYS_TO_KEEP):
             logging.warning(f"Skipping cleanup of invalid file: {filename}")
             continue
 
+
 def process_and_insert(file_path):
     """Process a file and insert its data into LightRAG."""
     try:
@@ -102,6 +107,7 @@ def process_and_insert(file_path):
             logging.info(f"END inserting {len(texts)} books into LightRAG\n")
     except Exception as e:
         logging.error(f"Insert failed for {file_path}: {e}")
+
 
 def main():
     logging.info(f"\n\nSTART crontab...")
@@ -137,16 +143,17 @@ def main():
             start_time = time.time()
             temp_changes_file = detect_changes(old_file, new_file)
             logging.info(f"Comparison time: {time.time() - start_time:.2f} seconds")
-            
+
             # if changes data today not differrent with changes data yesterday => don't save change files
             if temp_changes_file:
                 latest_change_file = get_latest_file(COMPARE_DIR, "changes")
 
                 should_save = True
                 if latest_change_file:
-                    with open(temp_changes_file, 'r', encoding='utf-8') as f1, open(latest_change_file, 'r', encoding='utf-8') as f2:
+                    with open(temp_changes_file, 'r', encoding='utf-8') as f1, open(latest_change_file, 'r',
+                                                                                    encoding='utf-8') as f2:
                         diff = list(unified_diff(
-                            f1.readlines(), 
+                            f1.readlines(),
                             f2.readlines()
                         ))
                         if not diff:
@@ -161,7 +168,7 @@ def main():
                     os.remove(temp_changes_file)
             else:
                 logging.info("No new or changed books. Nothing to insert.")
-            
+
             logging.info(f"END comparing data.\n\n\n")
         except Exception as e:
             logging.error(f"Comparison failed: {e}")
@@ -174,6 +181,7 @@ def main():
     # Clean up old files
     cleanup_old_files(CRAWL_DIR, DAYS_TO_KEEP)
     cleanup_old_files(COMPARE_DIR, DAYS_TO_KEEP)
+
 
 if __name__ == "__main__":
     main()

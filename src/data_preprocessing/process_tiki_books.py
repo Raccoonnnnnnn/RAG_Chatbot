@@ -1,6 +1,7 @@
 import pandas as pd
 import time
 
+
 def process_books_to_texts(csv_file):
     print("🕷️ START process books to texts...\n")
     start_time = time.perf_counter()
@@ -24,28 +25,29 @@ def process_books_to_texts(csv_file):
         category = row["category"] if pd.notna(row["category"]) else "N/A"
         short_desc = row["short_description"] if pd.notna(row["short_description"]) else "N/A"
         book_info = f"""Book Name: {name}
-Link: {link}
-Current Price: {price}
-Original Price: {original_price}
-Discount: {discount}
-Rating: {rating}
-Sold Quantity: {sold}
-Authors: {authors}
-Seller Name: {seller_name}
-Manufacturer: {manufacturer}
-Category: {category}
-Description: {short_desc}"""
+                        Link: {link}
+                        Current Price: {price}
+                        Original Price: {original_price}
+                        Discount: {discount}
+                        Rating: {rating}
+                        Sold Quantity: {sold}
+                        Authors: {authors}
+                        Seller Name: {seller_name}
+                        Manufacturer: {manufacturer}
+                        Category: {category}
+                        Description: {short_desc}"""
         return book_info
 
     texts = df.apply(generate_book_description, axis=1).tolist()
     ids = df["id"].astype(str).tolist()
-    
+
     print(f"✅ Processed {len(texts)} books from {csv_file}\n")
     print("🕷️ END process books to texts\n\n")
-    
+
     end_time = time.perf_counter()
     print(f"⏳ Running time: {(end_time - start_time) / 60:.4f} minutes\n")
     return texts, ids
+
 
 if __name__ == "__main__":
     texts, ids = process_books_to_texts("./data/crawl_tiki_data/books_data.csv")

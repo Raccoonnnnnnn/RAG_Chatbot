@@ -1,3 +1,8 @@
+faiss-cpu
+networkx
+tqdm
+numpy
+sentence-transformers
 aiohttp
 configparser
 future

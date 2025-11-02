@@ -108,7 +108,7 @@ Keep this terminal running to ensure the API is active.
 Open a new terminal and start the API:
 ```bash
 cd LightRAG
-python src/lightrag_ollama_api.py
+python src/api.py
 ```
 The API will start at `http://localhost:8000`.
 

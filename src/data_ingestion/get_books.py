@@ -15,6 +15,7 @@ CRAWL_DIR = os.getenv("CRAWL_DIR", "data/crawl_tiki_data")
 BOOKS_CRAWL_LIMIT = int(os.getenv("BOOKS_CRAWL_LIMIT", 500))
 NUM_CATEGORIES = int(os.getenv("NUM_CATEGORIES", 20))
 
+
 def crawl_books(output_file):
     print("\n\n\n🕷️ START crawling books from Tiki...\n")
     start_time = time.perf_counter()
@@ -137,11 +138,12 @@ def crawl_books(output_file):
     df = pd.DataFrame(all_books)
     df.to_csv(output_file, index=False)
     print(f"✅ Total books: {len(all_books)} saved to {output_file}")
-    
+
     end_time = time.perf_counter()
     print("\n🕷️ END crawling books from Tiki...\n\n")
     print(f"⏳ Running time: {(end_time - start_time) / 60:.4f} minutes\n")
     return output_file, len(all_books)
+
 
 if __name__ == "__main__":
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

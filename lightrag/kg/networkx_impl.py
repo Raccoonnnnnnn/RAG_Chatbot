@@ -152,7 +152,10 @@ class NetworkXStorage(BaseGraphStorage):
         self, source_node_id: str, target_node_id: str
     ) -> dict[str, str] | None:
         graph = await self._get_graph()
-        return graph.edges.get((source_node_id, target_node_id))
+        if isinstance(graph, (nx.MultiGraph, nx.MultiDiGraph)):
+            return graph.edges.get((source_node_id, target_node_id, 0))
+        else:
+            return graph.edges.get((source_node_id, target_node_id))
 
     async def get_node_edges(self, source_node_id: str) -> list[tuple[str, str]] | None:
         graph = await self._get_graph()

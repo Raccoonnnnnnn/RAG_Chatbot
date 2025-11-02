@@ -116,16 +116,16 @@ def main():
     os.makedirs("logs", exist_ok=True)
 
     # Step 1: Crawl new data
-    # try:
-    #     logging.info("START crawling data...")
-    #     start_time = time.time()
-    #     _, num_books_collected = crawl_books(new_file)
-    #     end_time = time.time()
-    #     logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
-    #     logging.info(f"END crawling data, output: {new_file}\n")
-    # except Exception as e:
-    #     logging.error(f"Crawl failed: {e}")
-    #     return
+    try:
+        logging.info("START crawling data...")
+        start_time = time.time()
+        _, num_books_collected = crawl_books(new_file)
+        end_time = time.time()
+        logging.info(f"\n\nCrawled {num_books_collected} books in {end_time - start_time:.2f} seconds.")
+        logging.info(f"END crawling data, output: {new_file}\n")
+    except Exception as e:
+        logging.error(f"Crawl failed: {e}")
+        return
 
     # Step 2: Find the most recent old file for comparison, excluding the new file
     logging.info(f"Scanning directory: {CRAWL_DIR} for files with prefix: books_data")

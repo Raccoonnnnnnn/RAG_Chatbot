@@ -1,1 +1,33 @@
-{}
+{
+  "hybrid": {
+    "1a29a79a7b663d438672c0abc05ca331": {
+      "return": "{\"high_level_keywords\": [\"Books\"], \"low_level_keywords\": [\"truy\\u1ec7n gia \\u0111\\u00ecnh\", \"g\\u00e3i ng\\u1ee9a\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "truyện gia đình gãi ngứa"
+    },
+    "025a34dc2d1e8f59d5eefbeee2d01b79": {
+      "return": "## Thông tin mới về \"Truyện Gia Đình Gãi Ngứa\" dựa trên dữ liệu:\n\n- **Tên bộ truyện:** Truyện Gia Đình Gãi Ngứa có hai tập chính: \n    -  **Tập 1:** Gia Đình Gãi Ngứa: Tuyển Tập Ký Ức Tuổi Thơ - Vẩn Vơ Hiện Tại\n    -  **Tập 2:** Gia Đình Gãi Ngứa - Tuyển Tập Khi Người Lớn …… Trẻ Con\n\n- **Nội dung:** Bộ truyện xoay quanh nhân vật và những câu chuyện gia đình đầy màu sắc, hài hước. Câu chuyện được kể theo phong cách hồi tưởng về tuổi thơ, xen lẫn với hiện tại.\n\n- **Tác giả:** Quang Nino\n\n- **Thể loại:** Tranh Truyện, Phiêu Lưu, Giả Tưởng\n\n- **Nhà xuất bản:** NXB Dân Trí\n- **Giá bán:** \n    - Combo bộ 2 tập: 199750 đồng (ban đầu 235.000)\n    - Tập 2 (Gia Đình Gãi Ngứa – Tuyển Tập Khi Người Lớn …… Trẻ Con): 103.000 đồng (ban đầu 125.000)\n\n- **Nơi mua sắm:** Tiki, ...\n\n\n\n---\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "truyện gia đình gãi ngứa"
+    }
+  },
+  "naive": {
+    "d29662b679f0d055da733ba6ec1dde11": {
+      "return": "Dựa vào thông tin mới nhất, có ba cuốn sách về \"Gia Đình Gãi Ngứa\":\n\n1. **Gia Đình Gãi Ngứa – Tuyển Tập Khi Người Lớn …… Trẻ Con:** \n    - Giá: 103.000 VND (giảm từ 125.000 VND)\n    - Đánh giá: 4,8 sao\n    - Mô tả: Là một fanpage giải trí xoay quanh nhân vật...\n2. **Combo Gia Đình Gãi Ngứa ( Bộ 2 Quyển ):**\n    - Giá: 199.750 VND (giảm từ 235.000 VND)\n    - Đánh giá: 5,0 sao\n    - Bao gồm hai cuốn: \"Gia Đình Gãi Ngứa: Tuyển Tập Ký Ức Tuổi Thơ - Vẩn Vơ Hiện Tại\" và \"Gia Đình Gãi Ngứa - Tuyển Tập Khi Người Lớn …… Trẻ Con\".\n3. **Truyện Tranh: Gia Đình Gãi Ngứa - Tuyển Tập Chúng Ta Rồi Sẽ Lớn:** \n    - Giá: 114.540 VND (giảm từ 138.000 VND)\n    - Đánh giá: 5,0 sao\n    - Mô tả:  Là cuốn thứ ba trong series \"Gia đình gãi ngứa\", giới thiệu về...\n\nBạn có muốn biết thêm chi tiết về một trong những cuốn sách này?\n\n\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "truyện gia đình gãi ngứa"
+    }
+  }
+}

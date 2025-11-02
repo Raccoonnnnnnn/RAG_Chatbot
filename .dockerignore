@@ -60,4 +60,4 @@ TODO.md
 .git
 .github
 .gitignore
-.pre-commit-config.yaml
+.pre-commit-config.yaml.example

@@ -1,9 +1,7 @@
-2025-11-02 21:56:38 - INFO - Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: Can not load face (unknown file format; error code 0x2)
-2025-11-02 21:56:38 - INFO - generated new fontManager
-2025-11-02 21:56:50 - INFO - Load (4520, 768) data
-2025-11-02 21:56:50 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama/vdb_entities.json'} 4520 data
-2025-11-02 21:56:51 - INFO - Load (9874, 768) data
-2025-11-02 21:56:51 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama/vdb_relationships.json'} 9874 data
-2025-11-02 21:56:51 - INFO - Load (900, 768) data
-2025-11-02 21:56:51 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama/vdb_chunks.json'} 900 data
-2025-11-02 21:56:51 - INFO - ✅ LightRAG is ready with: gemma2:9b
+2025-11-15 18:42:11 - INFO - Load (4520, 768) data
+2025-11-15 18:42:11 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama\\vdb_entities.json'} 4520 data
+2025-11-15 18:42:11 - INFO - Load (9874, 768) data
+2025-11-15 18:42:11 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama\\vdb_relationships.json'} 9874 data
+2025-11-15 18:42:11 - INFO - Load (900, 768) data
+2025-11-15 18:42:11 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama\\vdb_chunks.json'} 900 data
+2025-11-15 18:42:11 - INFO - LightRAG initialized with model: gemma2:9b

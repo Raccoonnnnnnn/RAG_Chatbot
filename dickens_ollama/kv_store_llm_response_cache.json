@@ -17,6 +17,105 @@
       "embedding_min": null,
       "embedding_max": null,
       "original_prompt": "truyện gia đình gãi ngứa"
+    },
+    "735e511e7fef3c7c94502c8f2078e155": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"literary\"], \"low_level_keywords\": [\"v\\u0103n th\\u01a1\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách về văn thơ"
+    },
+    "1814d8f02e66345289a42d9792c4018a": {
+      "return": "## Gợi ý sách về văn thơ \n\nDựa trên yêu cầu của bạn \"\", hệ thống gợi ý ba cuốn sách sau:\n\n\n**1.  *Văn học Việt Nam* - Nguyễn Minh Châu**\n\n   * **Thể loại:** Văn học, Lịch sử văn học\n   * **Mô tả:** Tập sách này là một tổng quan về văn học Việt Nam từ thời cổ đến hiện đại. \n\n   * **Lý do phù hợp:** Cuốn sách này cung cấp cho bạn kiến thức cơ bản về lịch sử và sự phát triển của văn thơ Việt Nam, lý tưởng nếu bạn muốn tìm hiểu sâu hơn về nền văn học nước nhà.\n\n\n**2. *Chữ Linh - Vần Hoa - Nét Huyền* - Nguyễn Khuyến **\n\n   * **Thể loại:** Thơ\n   * **Mô tả:** Đây là tập thơ nổi tiếng của nhà thơ Nguyễn Khuyến, thể hiện sự khôn ngoan, sâu sắc về cuộc sống và con người. \n\n   * **Lý do phù hợp:** Nếu bạn yêu thích thơ cổ điển Việt Nam, đặc biệt là phong cách lãng mạn, trữ tình và châm biếm của Nguyễn Khuyến, cuốn sách này sẽ là lựa chọn tuyệt vời.\n\n\n**3. *Giấc mơ hồng* -  Ngô Văn N定时** \n\n   * **Thể loại:** Thơ hiện đại\n   * **Mô tả:** Tập thơ này được đánh giá cao về chất liệu ngôn ngữ và cảm xúc lãng mạn, trữ tình.\n\n   * **Lý do phù hợp:** Nếu bạn thích thơ hiện đại với ngôn ngữ mang hơi hướng tâm trạng, lãng mạn, cuốn sách này sẽ là gợi ý thú vị dành cho bạn.",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách về văn thơ"
+    },
+    "b2eabb264d0f93e54237524d08234052": {
+      "return": "{\"high_level_keywords\": [\"Books\"], \"low_level_keywords\": [\"h\\u1ecdc thu\\u1eadt\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách học thuật hay"
+    },
+    "76d122c86a27d5f833b649b1a7dc460e": {
+      "return": "Bạn muốn tìm kiếm những cuốn sách thuộc thể loại học thuật? \n\nDưới đây là 3 gợi ý cho bạn:\n\n1. **Sapiens: A Brief History of Humankind** -  **Thể loại:** Lịch sử, Khoa học xã hội\n   - Mô tả: Cuốn sách này cung cấp một cái nhìn sâu sắc về lịch sử loài người từ thời sơ khai đến hiện đại, giải thích những bước ngoặt quan trọng đã định hình con người và thế giới chúng ta sống. \n   - Lý do phù hợp: Bạn muốn tìm kiếm các tác phẩm thuộc thể loại học thuật, \"Sapiens\" là một cuốn sách nổi tiếng được sử dụng rộng rãi trong giảng dạy lịch sử và khảo cổ học.\n\n2. **Thinking, Fast and Slow** - **Thể loại:** Tâm lý học\n   - Mô tả:  Tác giả Daniel Kahneman khám phá hai hệ thống tư duy của con người: hệ thống 1 (tư duy nhanh) và hệ thống 2 (tư duy chậm), giải thích cách chúng ảnh hưởng đến quyết định, suy nghĩ và hành vi.\n   - Lý do phù hợp: Cuốn sách này thuộc lĩnh vực tâm lý học, được viết dựa trên nghiên cứu khoa học sâu rộng, mang lại những kiến thức học thuật quý giá về cách con người hoạt động.\n\n3. **The Sixth Extinction: An Unnatural History** -  **Thể loại:** Khoa học tự nhiên\n   - Mô tả: Elizabeth Kolbert khám phá cuộc tuyệt chủng hiện nay do tác động của con người gây ra, phân tích những hậu quả thảm khốc và đưa ra lời cảnh báo về tương lai của hành tinh. \n   - Lý do phù hợp:  Cuốn sách này là một nghiên cứu khoa học uy tín về vấn đề môi trường, được công nhận rộng rãi trong cộng đồng khoa học và giáo dục.\n\n\n\nBạn có thể tham khảo thêm các tác giả hoặc thể loại liên quan nếu muốn tìm kiếm nhiều hơn.",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách học thuật hay"
+    },
+    "18b7f27c54d8afe4a013caa94ed8b4bb": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"belongs to category\"], \"low_level_keywords\": [\"Truy\\u1ec7n c\\u1ed5 t\\u00edch\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Truyện cổ tích hay"
+    },
+    "7291f62d9ca593399e9337014c17835c": {
+      "return": "## Gợi ý cho bạn những truyện cổ tích hay:\n\nDựa vào yêu cầu \"\", tôi đoán bạn thích những câu chuyện cổ tích với yếu tố thần kỳ, nhân vật thú vị và bài học đạo đức. \n\n**Dưới đây là 3 gợi ý phù hợp:**\n\n1. **Tên:**  Sự Dịu Du Trên Núi Cấm\n    * **Thể loại:** Cổ Tích Viễn Dông\n    * **Mô tả:** Một cô gái trẻ tuổi, thông minh và mạnh mẽ, leo lên Núi Cấm để tìm kiếm sự thật về người cha mình. Cô phải vượt qua nhiều thử thách nguy hiểm, gặp gỡ những sinh vật kỳ bí và cuối cùng khám phá ra một bí mật kinh thiên động địa.\n    * **Lý do:** Truyện có yếu tố phiêu lưu mạo hiểm, kết hợp với huyền bí cổ tích. \n\n2. **Tên:**  Nàng Tiên Xanh Mắt Ngời\n    * **Thể loại:** Cổ Tích Lãng Mạn\n    * **Mô tả:** Nàng tiên xanh mắt ngời xinh đẹp, giỏi phép thuật và sống ở một khu rừng thần bí. Cô yêu thương con người nhưng bị cấm yêu bởi luật pháp Tiên giới. Nàng phải lựa chọn giữa tình yêu và trách nhiệm.\n    * **Lý do:**  Truyện có yếu tố lãng mạn, kỳ ảo và tình huống bi thương đầy cảm xúc.\n\n3. **Tên:**  Bí Mật Của Những Ngôi Sao Lùn\n    * **Thể loại:** Cổ Tích Khoa Huyễn\n    * **Mô tả:** Một bé trai thông minh vô cùng thích ngắm sao. Khi cậu phát hiện ra những ngôi sao lùn có bí mật, cậu bắt đầu cuộc hành trình phiêu lưu tìm hiểu về vũ trụ và các thế giới thần bí khác.\n    * **Lý do:**  Truyện kết hợp yếu tố khoa học viễn tưởng với cổ tích, mang đến cho bạn câu chuyện độc đáo và đầy trí tưởng tượng.\n\n\n\nChúc bạn có những giây phút đọc truyện vui vẻ!",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Truyện cổ tích hay"
+    },
+    "2f8e48bcf3069414cb7bb618fc7cc7c5": {
+      "return": "{\"high_level_keywords\": [\"Books\"], \"low_level_keywords\": [\"Truy\\u1ec7n trinh th\\u00e1m\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Truyện trinh thám nên đọc"
+    },
+    "d4cb3f401e01c2d22412bd64afa8be5c": {
+      "return": "## Gợi ý truyện trinh thám cho bạn:\n\nDựa vào yêu cầu \"\", tôi gợi ý 3 cuốn sách sau:\n\n**1. Tên:**  **\"Cuộc Chiến Bí Mật\"**\n    * **Thể loại:** Trinh thám, Viễn tưởng khoa học\n    * **Mô tả:** Trong tương lai xa, một viên cảnh sát được giao nhiệm vụ điều tra vụ án mạng có dấu hiệu liên quan đến công nghệ trí tuệ nhân tạo. Anh phải đối mặt với những bí mật đen tối và chiến đấu chống lại kẻ thủ nguy hiểm ẩn sau lớp vỏ bọc hiện đại.\n    * **Lý do:** Cuốn sách kết hợp yếu tố trinh thám truyền thống với sự pha trộn viễn tưởng khoa học, hứa hẹn mang đến một câu chuyện hấp dẫn, đầy bất ngờ cho bạn.\n\n**2. Tên:** **\"Gái Xấu\"**\n    * **Thể loại:** Trinh thám, Tâm lý\n    * **Mô tả:** Một nữ cảnh sát trẻ tuổi và xinh đẹp phải đối mặt với những kẻ thủ tàn ác trong vụ án giết người bí ẩn liên quan đến một băng nhóm nguy hiểm. Cô phải dùng trí tuệ sắc bén và sự can đảm của mình để khám phá sự thật và bảo vệ bản thân.\n    * **Lý do:** \"Gái Xấu\" mang đến một góc nhìn mới về thế giới trinh thám, kết hợp yếu tố tâm lý với hành động rực lửa, hứa hẹn sẽ cuốn hút bạn từ đầu chí cuối.\n\n**3. Tên:** **\"Nơi Bóng Dài\"**\n    * **Thể loại:** Trinh thám lịch sử, Gothic\n    * **Mô tả:** Vào những năm 1800 ở Anh Quốc, một vụ án mạng kinh hoàng xảy ra tại một dinh thự cổ kính bí ẩn. Một thám tử tài năng phải điều tra để tìm kiếm hung thủ và giải mã những bí mật đen tối được chôn giấu trong lòng lâu đài.\n    * **Lý do:** Cuốn sách mang đến cho bạn cảm giác hồi hộp, bí ẩn khi khám phá thế giới lịch sử xa xưa đầy rùng rợn. \n\n\n\nHy vọng danh sách này sẽ giúp bạn tìm thấy cuốn truyện trinh thám phù hợp với sở thích!",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Truyện trinh thám nên đọc"
+    },
+    "bfb2b303c4f4c9ba35ee87649e3c2917": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"has sold quantity\"], \"low_level_keywords\": []}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "cuốn nào được yêu thích nhất"
+    },
+    "4eb80a46c53ffd74c04bb0c43edefbd2": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"belongs to category\"], \"low_level_keywords\": [\"h\\u1ecdc thu\\u1eadt\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách học thuật nên đọc"
+    },
+    "5d41fa23c15af277bf736e7315ef18c5": {
+      "return": "Vui lòng cung cấp [CONTEXT] và [history] để tôi có thể phân tích sở thích của bạn và đưa ra những gợi ý sách học thuật phù hợp nhất! 📚  \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách học thuật nên đọc"
     }
   },
   "naive": {
@@ -28,6 +127,26 @@
       "embedding_min": null,
       "embedding_max": null,
       "original_prompt": "truyện gia đình gãi ngứa"
+    },
+    "56bcd09143f59f16a68870386c935053": {
+      "return": "ện, tác giả đưa ra phân tích sâu sắc về những thách thức và cơ hội mà Trung Quốc đang đối mặt.\n* **Lý do phù hợp:** Đây là một chủ đề nóng bỏng được nhiều người quan tâm hiện nay, cuốn sách cung cấp kiến thức lịch sử và chính trị sâu rộng cho bạn hiểu rõ hơn về thế giới.\n\n**2. Khoa học thần kinh:**\n\n* **Tên:** \"Tâm trí tiềm năng\"\n* **Thể loại:** Khoa học - tâm lý học\n* **Mô tả:** Cuốn sách này giải thích hoạt động của não bộ, khám phá bí mật về tư duy, trí nhớ và cảm xúc con người. \n* **Lý do phù hợp:** Nếu bạn quan tâm đến lĩnh vực khoa học thần kinh và muốn hiểu rõ hơn về bản thân, cuốn sách này là một lựa chọn tuyệt vời.\n\n**3. Văn học hiện đại:**\n\n* **Tên:** \"Hội chứng anh hùng\"\n* **Thể loại:** Sách tiểu thuyết - triết lý\n* **Mô tả:** Cuốn tiểu thuyết này xoay quanh câu chuyện của một người đàn ông trẻ tuổi đang tìm kiếm ý nghĩa sống trong xã hội hiện đại. \n* **Lý do phù hợp:** Đây là một tác phẩm văn học sâu sắc, mang đến cho bạn những suy ngẫm về cuộc sống và con người.\n\n\n\nMong rằng những gợi ý trên sẽ hữu ích cho bạn. Hãy cung cấp thêm thông tin về sở thích của mình để tôi có thể đưa ra những đề xuất chính xác hơn!",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Sách học thuật hay"
+    }
+  },
+  "global": {
+    "58fa7403dc4bee7f8582feab894ce22c": {
+      "return": "Để tôi có thể đưa ra những gợi ý sách/truyện phù hợp nhất cho bạn, vui lòng cung cấp thêm thông tin về [USER PROFILE / HISTORY] và [QUERY] của bạn nhé! \n\nVí dụ, bạn có thể cho tôi biết:\n\n* **[USER PROFILE / HISTORY]:** Những thể loại sách/truyện bạn thường đọc? Bạn thích những câu chuyện nào (ví dụ: hành động, lãng mạn, phiêu lưu, viễn tưởng...)? Những tác giả nào bạn yêu thích?\n* **[QUERY]:** Bạn đang tìm kiếm một cuốn sách/truyện cụ thể về chủ đề gì? Hay bạn muốn khám phá một thể loại mới? \n\n\nCàng nhiều thông tin bạn cung cấp, tôi càng có thể hiểu rõ sở thích của bạn và đưa ra những gợi ý chính xác và hữu ích! \n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "cuốn nào được yêu thích nhất"
     }
   }
 }

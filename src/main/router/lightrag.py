@@ -205,8 +205,3 @@ async def query_rag(request: QueryRequest):
     return {"query": request.query, "response": response}
 
 
-# =====================================================
-# Entry Point
-# =====================================================
-if __name__ == "__main__":
-    asyncio.run(initialize_rag())

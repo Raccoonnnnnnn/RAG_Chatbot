@@ -31,3 +31,4 @@ pandas
 # Database
 sqlalchemy
 psycopg2-binary
+asyncpg

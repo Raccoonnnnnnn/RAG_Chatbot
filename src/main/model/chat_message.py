@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 import enum
 
-from src.main.model.base import Base
+from src.main.core.database import Base
 
 
 class SenderEnum(str, enum.Enum):

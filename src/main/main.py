@@ -6,10 +6,10 @@ from src.main.core.database import Base, engine
 from src.main.router.user import user_router
 from src.main.api import initialize_rag
 from src.main.router.lightrag import lightrag_router
+from src.main.model import user, user_interaction, chat_message, chat_session
 
 # Tạo bảng database
 Base.metadata.create_all(bind=engine)
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

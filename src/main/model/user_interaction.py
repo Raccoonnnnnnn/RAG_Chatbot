@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 import enum
 
-from src.main.model.base import Base
+from src.main.core.database import Base
 
 
 class ActionTypeEnum(str, enum.Enum):
@@ -22,7 +22,7 @@ class UserInteraction(Base):
     user_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
 
     action_type = Column(Enum(ActionTypeEnum), nullable=False)
-    metadata = Column(JSON)
+    meta_data  = Column(JSON)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow)
 

@@ -1,7 +1,8 @@
-2025-11-15 18:42:11 - INFO - Load (4520, 768) data
-2025-11-15 18:42:11 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama\\vdb_entities.json'} 4520 data
-2025-11-15 18:42:11 - INFO - Load (9874, 768) data
-2025-11-15 18:42:11 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama\\vdb_relationships.json'} 9874 data
-2025-11-15 18:42:11 - INFO - Load (900, 768) data
-2025-11-15 18:42:11 - INFO - Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': './dickens_ollama\\vdb_chunks.json'} 900 data
-2025-11-15 18:42:11 - INFO - LightRAG initialized with model: gemma2:9b
+2025-11-26 01:48:17 - INFO - select pg_catalog.version()
+2025-11-26 01:48:17 - INFO - [raw sql] {}
+2025-11-26 01:48:17 - INFO - select current_schema()
+2025-11-26 01:48:17 - INFO - [raw sql] {}
+2025-11-26 01:48:17 - INFO - show standard_conforming_strings
+2025-11-26 01:48:17 - INFO - [raw sql] {}
+2025-11-26 01:48:17 - INFO - BEGIN (implicit)
+2025-11-26 01:48:17 - INFO - COMMIT

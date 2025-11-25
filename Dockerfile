@@ -32,4 +32,4 @@ RUN mkdir -p /app/data/rag_storage /app/data/inputs
 EXPOSE 9621
 
 # Set entrypoint
-ENTRYPOINT ["python", "-m", "lightrag.api.lightrag_server"]
+ENTRYPOINT ["python", "-m", "src.main.api"]

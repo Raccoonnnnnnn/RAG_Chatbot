@@ -8,14 +8,14 @@ from src.main.model.user_interaction import ActionTypeEnum
 class UserInteractionCreate(BaseModel):
     user_id: int
     action_type: ActionTypeEnum
-    metadata: Optional[Any] = None
+    meta_data: Optional[Any] = None
 
 
 class UserInteractionResponse(BaseModel):
     id: int
     user_id: int
     action_type: ActionTypeEnum
-    metadata: Optional[Any]
+    meta_data: Optional[Any]
     created_at: datetime
     updated_at: datetime
 

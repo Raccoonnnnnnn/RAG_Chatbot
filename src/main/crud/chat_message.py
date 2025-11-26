@@ -1,8 +1,9 @@
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
+from sqlalchemy import select
+from datetime import datetime
+
 from src.main.model.chat_message import ChatMessage
 from src.main.schemas.chat_message import ChatMessageCreate
-from datetime import datetime
 
 
 async def create_message(db: AsyncSession, data: ChatMessageCreate):

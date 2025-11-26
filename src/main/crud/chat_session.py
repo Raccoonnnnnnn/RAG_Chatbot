@@ -1,5 +1,5 @@
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
+from sqlalchemy import select
 from src.main.model.chat_session import ChatSession
 from src.main.schemas.chat_session import ChatSessionCreate
 from datetime import datetime

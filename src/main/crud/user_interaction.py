@@ -9,7 +9,7 @@ async def create_interaction(db: AsyncSession, data: UserInteractionCreate):
     interaction = UserInteraction(
         user_id=data.user_id,
         action_type=data.action_type,
-        metadata=data.metadata,
+        meta_data=data.meta_data,
         created_at=datetime.utcnow(),
         updated_at=datetime.utcnow(),
     )
@@ -23,4 +23,16 @@ async def get_interactions_by_user(db: AsyncSession, user_id: int):
     result = await db.execute(
         select(UserInteraction).where(UserInteraction.user_id == user_id)
     )
+    return result.scalars().all()
+
+
+async def get_interaction(db: AsyncSession, interaction_id: int):
+    result = await db.execute(
+        select(UserInteraction).where(UserInteraction.id == interaction_id)
+    )
+    return result.scalar_one_or_none()
+
+
+async def get_all_interactions(db: AsyncSession):
+    result = await db.execute(select(UserInteraction))
     return result.scalars().all()

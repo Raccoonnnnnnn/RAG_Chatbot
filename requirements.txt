@@ -32,3 +32,7 @@ pandas
 sqlalchemy
 psycopg2-binary
 asyncpg
+python-multipart
+passlib
+python-jose
+starlette

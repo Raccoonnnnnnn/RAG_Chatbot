@@ -39,4 +39,4 @@ async def login(data: LoginRequest, db: AsyncSession = Depends(get_db)):
 
     token = create_access_token({"sub": user.username})
 
-    return LoginResponse(access_token=token)
+    return LoginResponse(access_token=token, user=user)

@@ -6,7 +6,7 @@ from src.main.schemas.chat_session import ChatSessionCreate, ChatSessionResponse
 from src.main.crud.chat_session import (
     create_chat_session,
     get_sessions_by_user,
-    get_session,
+    get_session, update_session,
 )
 
 chat_session_router = APIRouter()
@@ -36,3 +36,11 @@ async def get_chat_session_route(
     db: AsyncSession = Depends(get_db),
 ):
     return await get_session(db, session_id)
+
+@chat_session_router.post("/{session_id}", response_model=ChatSessionResponse)
+async def update_chat_session_route(
+        session_id: int,
+        data: ChatSessionCreate,
+        session: AsyncSession = Depends(get_db)
+):
+    return await update_session(session, session_id, data)

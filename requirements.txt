@@ -35,4 +35,6 @@ asyncpg
 python-multipart
 passlib
 python-jose
+bcrypt
+passlib[argon2]
 starlette

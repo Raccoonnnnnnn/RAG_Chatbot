@@ -29,3 +29,11 @@ async def get_session(db: AsyncSession, session_id: int):
         select(ChatSession).where(ChatSession.id == session_id)
     )
     return result.scalar_one_or_none()
+
+async def update_session(db: AsyncSession, session_id: int, data: ChatSessionCreate):
+    chat_session = await get_session(db, session_id)
+    chat_session.session_title = data.session_title
+    db.add(chat_session)
+    await db.commit()
+    await db.refresh(chat_session)
+    return chat_session

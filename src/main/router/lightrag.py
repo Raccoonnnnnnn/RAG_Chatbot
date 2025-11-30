@@ -202,7 +202,7 @@ async def query_rag(request: QueryRequest):
             conversation_history=request.conversation_history,
             history_turns=3,
         ),
-        system_prompt=PROMPTS["custom"],
+        system_prompt=PROMPTS["think_response"],
     )
 
     return {"query": request.query, "response": response}

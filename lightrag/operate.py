@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
 import re
 import logging
 from typing import Any, AsyncIterator
@@ -661,19 +662,29 @@ async def kg_query(
     end_time = time.time()
     logging.info(f"\n\n⏳ Time for KG_QUERY -> context: {(end_time - start_time):.4f} s")
 
-    
+    import os
 
     log_path = f"./data/eval5/topk6_old/time_query_context_topk{query_param.top_k}.log"
+
+    # 🔥 Tạo thư mục trước khi mở file
+    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+
     elapsed_time = round(time.time() - start_time, 3)
     with open(log_path, "a", encoding="utf-8") as log_f:
         log_f.write(f"{1}\t{elapsed_time}\t{query}\n")
 
-
     log_path = f"./data/eval5/topk6_old/number_token_context_topk{query_param.top_k}.log"
+
+    # 🔥 Tạo thư mục trước khi mở file (1 lần nữa)
+    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+
+    try:
+        token_count = count_token_of_text(context)
+    except Exception:
+        token_count = 0
+
     with open(log_path, "a", encoding="utf-8") as log_f:
-        log_f.write(f"{1}\t{count_token_of_text(context)}\t{query}\n")
-
-
+        log_f.write(f"{1}\t{token_count}\t{query}\n")
 
     if query_param.only_need_context:
         return context

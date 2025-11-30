@@ -124,6 +124,9 @@ async def insert_custom_kg(request: InsertCustomRequest):
     """Insert custom knowledge graph batches."""
     global is_just_updated_KG
 
+    if not rag:
+        raise HTTPException(status_code=500, detail="LightRAG is not initialized")
+
     try:
         custom_kgs, df = create_custom_kg_for_batch(request.path, batch_size=request.batch_size)
         total_batches = len(custom_kgs)

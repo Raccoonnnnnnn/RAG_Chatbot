@@ -48,7 +48,8 @@ logging.basicConfig(
     handlers=[
         logging.FileHandler(LOG_FILE, mode=LOG_FILE_MODE),
         logging.StreamHandler()
-    ]
+    ],
+    encoding="utf-8",
 )
 logger = logging.getLogger(__name__)
 
@@ -186,6 +187,7 @@ async def delete_document(request: DeleteRequest):
 @lightrag_router.post("/query")
 async def query_rag(request: QueryRequest):
     global is_just_updated_KG
+
     if not rag:
         raise HTTPException(status_code=500, detail="LightRAG is not initialized")
 
@@ -193,6 +195,12 @@ async def query_rag(request: QueryRequest):
     if is_just_updated_KG:
         request.conversation_history = []
         is_just_updated_KG = False
+
+    # ===== Recommendation System (RS) =====
+    top_books: list[str] = []  # TODO: lấy từ RS
+    recommendation_data = ""
+    if top_books:
+        recommendation_data = "- " + "\n- ".join(top_books)
 
     response = await rag.aquery(
         request.query,
@@ -202,9 +210,17 @@ async def query_rag(request: QueryRequest):
             conversation_history=request.conversation_history,
             history_turns=3,
         ),
-        system_prompt=PROMPTS["think_response"],
+        system_prompt=PROMPTS["think_response"].replace(
+            "{recommendation_data}",
+            recommendation_data
+        ),
     )
 
-    return {"query": request.query, "response": response}
+    return {
+        "query": request.query,
+        "recommendation": top_books,
+        "response": response
+    }
+
 
 

@@ -407,8 +407,13 @@ Khi xử lý thông tin có timestamp:
 
 PROMPTS["think_response"] = """
 ---Instructions---
-- "Thông tin mới nhất": các thông tin sách mới nhất thu thập được.
-- "Thông tin từ cuộc trò chuyện trước": chỉ  dùng để tham khảo.
+- Dựa CHỦ YẾU vào "Thông tin mới nhất" để trả lời.
+- "Thông tin từ cuộc trò chuyện trước" chỉ dùng để tham khảo.
+- "Gợi ý sách" chỉ dùng khi câu hỏi liên quan đến sách.
+- Không bịa thông tin ngoài dữ liệu.
+
+---Gợi ý sách (Recommendation System)---
+{recommendation_data}
 
 ---Thông tin mới nhất---
 {context_data}
@@ -416,6 +421,7 @@ PROMPTS["think_response"] = """
 ---Thông tin từ cuộc trò chuyện trước---
 {history}
 """
+
 
 
 PROMPTS["no_context_response"] = """---Role---

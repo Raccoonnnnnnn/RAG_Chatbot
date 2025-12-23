@@ -6,6 +6,7 @@ DEFAULT_QUERY_MODE = os.getenv("DEFAULT_QUERY_MODE", "local")
 
 
 class QueryRequest(BaseModel):
+    user_id: int
     query: str
     mode: str = DEFAULT_QUERY_MODE
     conversation_history: list[dict[str, str]] = []

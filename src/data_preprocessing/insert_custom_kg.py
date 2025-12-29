@@ -1,7 +1,12 @@
 import pandas as pd
 from typing import Dict, Any
 
-def create_custom_kg_for_batch(csv_file, batch_size: int = 100) -> list[Dict[str, Any]]:
+from pandas import DataFrame
+from pandas.io.parsers import TextFileReader
+
+
+def create_custom_kg_for_batch(csv_file, batch_size: int = 100) -> tuple[list[Any], list[Any]] | tuple[
+    list[Any], DataFrame | TextFileReader]:
 
     try:
         df = pd.read_csv(csv_file)

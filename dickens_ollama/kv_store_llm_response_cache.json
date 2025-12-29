@@ -116,6 +116,24 @@
       "embedding_min": null,
       "embedding_max": null,
       "original_prompt": "Sách học thuật nên đọc"
+    },
+    "835c5b2a47d0f3e6503df0ee15793c9d": {
+      "return": "{\"high_level_keywords\": [\"Books\", \"sales \", \"published by\", \"has price\", \"discount\"], \"low_level_keywords\": [\"V\\u1ea1n d\\u1eb7m \\u0111\\u01b0\\u1eddng t\\u1eeb m\\u1ed9t b\\u01b0\\u1edbc ch\\u00e2n\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cho tôi thông tin về sách Vạn dặm đường từ một bước chân"
+    },
+    "bf78e3448a7820bca09167074f74e700": {
+      "return": "Sách **Vạn Dặm Đường Từ Một Bước Chân** là một cuốn sách du ký nổi tiếng do tác giả Mavis Vi Vu Ký viết. \n\nDưới đây là một số thông tin chi tiết:\n\n\n**Thông tin chung:**\n\n* **Tựa đề chính:** Vạn dặm đường từ một bước chân\n* **Tác giả:** Mavis Vi Vu Ký \n* **Loại sách:** Du ký\n* **Ngôn ngữ:** Tiếng Việt\n\n**Nội dung:**\n\n* Sách kể về hành trình khám phá của tác giả, Mavis Vi Vu Ký, trong  6 năm khi đi dọc 63 tỉnh thành Việt Nam. \n* Tác giả sử dụng cách kể chuyện chân thực, mang tính cá nhân để chia sẻ những trải nghiệm và cảm nhận của mình. \n* Cuốn sách được xuất bản với hình ảnh minh họa chi tiết.\n\n**Thông tin khác:**\n\n* **Giá: **  Sách có giá bán khá bình dân, bạn có thể tìm mua ở các cửa hàng sách hoặc trên các trang web bán sách uy tín.\n* **Đánh giá:** Sách được đánh giá cao bởi độc giả, đặc biệt là những ai yêu thích du ký và muốn chiêm nghiệm văn học chân thật về cuộc sống Việt Nam.\n\n\nBạn có muốn biết thêm thông tin gì về sách Vạn dặm đường từ một bước chân?\n<|im_end|>",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Cho tôi thông tin về sách Vạn dặm đường từ một bước chân"
     }
   },
   "naive": {

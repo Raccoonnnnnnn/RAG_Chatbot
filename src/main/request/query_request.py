@@ -9,4 +9,5 @@ class QueryRequest(BaseModel):
     query: str
     mode: str = DEFAULT_QUERY_MODE
     conversation_history: list[dict[str, str]] = []
-    top_k: int = TOP_K
+    top_k: int = TOP_K,
+    user_id: int | None = None
